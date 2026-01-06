@@ -1,0 +1,168 @@
+\section{Aritmética ordinal}
+Continuando con la sección anterior, se dará a continuación una estructura aritmética sobre los ordinales, que nos permitirá operar con ellos como con cualquier otro conjunto de números, teniendo en cuenta unas cuantas excepciones a lo que comúnmente se hace al operar con otros conjuntos. {\cite{SetTheory}}
+\begin{defn}\label{d22}
+    Sea $\alpha\in\ON$. Por recursión sobre $\beta\in\ON$, definimos un ordinal $\alpha+\beta$ como:
+    \begin{itemize}
+        \item $\alpha+0=\alpha$;
+        \item $\alpha+\beta=S(\alpha+\gamma)$, si $\beta=S(\gamma)$;
+        \item $\alpha+\beta=\bigcup_{\gamma\in\beta}(\alpha+\gamma)$, si $\beta$ es un ordinal límite mayor a cero.
+    \end{itemize}
+\end{defn}
+\begin{lem}\label{l23}
+    Sea $\alpha,\beta\in\ON$. Entonces,
+    \begin{equation}\tag{1}\label{1}
+        \alpha+\beta=\alpha\cup\set{\alpha+\gamma|\gamma<\beta}
+    \end{equation}
+\end{lem}
+\begin{proof}
+    Procedemos por inducción sobre $\beta$:
+    \begin{itemize}
+        \item Si $\beta=0$ entonces lo de la derecha de {\eqref{1}} es $\alpha\cup\nt=\al$. Lo de la izquierda es $\alpha+0$, lo cual es igual a $\alpha$ por definción.
+        \item Asumiendo la ecuación {\eqref{1}} valida para $\gamma$ y $\beta=S(\gamma)$. Entonces, 
+            \[\alpha\cup\set{\alpha+\delta|\delta<\beta}=\alpha\cup\set{\alpha+\delta|\delta<\gamma}\cup\set{\alpha+\gamma} \text{ (y por hipótesis inductiva)}\]
+            \[=\alpha+\gamma\cup\set{\alpha+\gamma}=S(\alpha+\delta)\text{ (y por la definición {\ref{d22}})}\]
+            \[=\alpha+\beta.\]
+        \item Ahora, asumimos que $\beta$ es un ordinal límite y que {\eqref{1}} es valida para cada $\gamma<\beta$. Entonces, para cada $\delta<\beta$ existe una $\gamma$ tal que $\delta<\gamma<\beta$, y también:
+            \[\alpha\cup\set{\alpha+\delta|\delta<\beta}=\alpha\cup\bigcup_{\gamma<\beta}\set{\alpha+\delta|\delta<\gamma}\]
+            \[=\bigcup_{\gamma<\beta}(\alpha\cup\set{\alpha+\delta|\delta<\gamma})\text{ (y por hipótesis de inducción)}\]
+            \[=\bigcup_{\gamma<\beta}(\alpha+\gamma)\text{ (y por la definición {\ref{d22}})}\]
+            \[=\alpha+\beta.\]
+    \end{itemize}
+\end{proof}
+\begin{cor}\label{c24}
+    Supongase que $\alpha,\beta,\gamma,\delta$ son ordinales tales que $\gamma<\beta$. Entonces,
+    \[\alpha\leq\alpha+\gamma<\alpha+\beta.\]
+\end{cor}
+\begin{cor}\label{c25}
+    Sean $\alpha,\beta\in\ON$ tales que $\alpha<\beta$. Entonces, existe exactamente un ordinal $\gamma_o$ tal que $\alpha+\gamma_o=\beta$.
+\end{cor}
+\begin{proof}
+    Fijamos $\alpha, \beta$ como en la hipótesis, y sea $F_\alpha(\gamma)=\alpha+\gamma$. Se sigue del corolario {\ref{c24}} que $F_\alpha$ es una clase funcional inyectiva. Por el corolario {\ref{c16}}, existe un ordinal $\delta$ tal que $F_\alpha(\delta)\not\in\beta$. Fijamos pues a $\delta$. Como $F_\alpha(\delta)=\alpha+\delta\in\ON$, por el lema {\ref{l6}}, tenemos que $\alpha+\delta=\beta$, o $\beta\in\alpha+\delta$. En el primer caso, $\gamma_o=\beta$ es lo requerido. En el segundo, por el lema {\ref{l23}}, $\beta\in\set{\alpha+\gamma|\gamma<\delta}$, lo cuál nuevamente produce el resultado deseado.
+\end{proof}
+\begin{defn}
+    Sea $\langle A,\preceq_A\rangle$ y $\langle B,\preceq_B\rangle$ órdenes parciales. El orden suma $\langle A,\preceq_A\rangle \oplus \langle B,\preceq_B\rangle$ es el orden parcial $\langle C,\preceq\rangle$, donde
+    \[C = A \times \{0\} \cup B \times \{1\},\]
+    y la relación $\preceq$ está dada por
+    \[
+    \lar{a,b}\preceq\lar{c,d} \Longleftrightarrow
+    \begin{cases} 
+    b=0\land d=1 \text{ ó}\\
+    b=d=0\land a\preceq_A c \text{ ó}\\
+    b=d=1\land a\preceq_B c 
+    \end{cases}
+    \]
+\end{defn}
+\begin{thm}\label{t26}
+    Sean $\lar{X,\preceq_X}$ y $\lar{Y,\preceq_Y}$ buenos ordenes, y sea $\alpha=\ot(\lar{X,\preceq_X})$, $\beta=\ot(\lar{Y,\preceq_Y})$. Entonces, $\alpha+\beta=\ot(\lar{X,\preceq_X}\oplus\lar{Y,\preceq_Y})$.
+\end{thm}
+\begin{proof}
+    Sea $f:X\longrightarrow\alpha$ un isomorfismo de orden entre $\lar{X,\prec_X}$ y $\lar{\alpha,\in}$, y sea $g:Y\longrightarrow\beta$ un isomorfismo de orden entre $\lar{Y,\prec_Y}$ y $\lar{\beta,\in}$. Definimos una función $h:X\times\set0\cup Y\times\set1\longrightarrow\alpha+\beta$ por:
+    \[
+    h(x,0)=f(x); h(y,1)=\alpha+g(y).
+    \] 
+    Se sigue del lema {\ref{l23}} que el rango de $h$ es $\alpha+\beta$, y el corolario {\ref{c24}} implica que $h$ preserva orden. Luego, $h$ es un isomorfismo de orden, y hemos probado el teorema.
+\end{proof}
+Vale la pena recalcar que la suma de ordinales no es conmutativa. Esto se observa del siguiente hecho: 
+\[1+\omega=\omega<S(\omega)=\omega+1.\]
+\begin{prop}\label{ex26}
+    \[(\forall\alpha,\beta,\gamma\in\ON)(\alpha\leq\beta\Longrightarrow\alpha+\gamma\leq\beta+\gamma).\]
+\end{prop}
+\begin{prop}\label{p27}
+    \[(\forall\alpha,\beta,\gamma\in\ON)((\alpha+\beta)+\gamma=\alpha+(\beta+\gamma)).\]
+\end{prop}
+\begin{proof}
+ Se sigue del teorema {\ref{t26}} y las propiedades de la suma de ordenes.
+\end{proof}
+\begin{defn}\label{d28}
+    Sea $\alpha\in\ON$. Por recursión sobre $\beta\in\ON$ definimos un ordinal $\alpha\cdot\beta$ como sigue:
+    \begin{itemize}
+    \item $\alpha\cdot0=0$;
+    \item $\alpha\cdot\beta=(\alpha\cdot\gamma)+\alpha$, si $\beta=S(\gamma)$;
+    \item $\alpha\cdot\beta=\bigcup_{\gamma\in\beta}(\alpha\cdot\gamma)$, si $\beta$ es un límite ordinal no cero.
+    \end{itemize}
+\end{defn}
+Observemos que 
+\[2\cdot\omega=\bigcup_{n\in\omega}(2\cdot n)=\omega<\omega+\omega=\omega\cdot2.\] 
+De aquí se sigue que el producto de ordinales no es conmutativo.
+\begin{lem}\label{l29}
+    Sea $\alpha,\beta\in\ON$. Entonces, 
+    \begin{equation}\tag{2}\label{2}
+        \alpha\cdot\beta=\set{\alpha\cdot\xi+\eta|\xi<\beta\land\eta<\alpha}
+    \end{equation}
+\end{lem}
+\begin{proof}
+    Procedemos por inducción sobre $\beta$:
+    \begin{itemize}
+    \item Si $\beta=0$, entonces 
+        \[\alpha\cdot\beta=\alpha\cdot0=0=\nt=\set{\alpha\cdot\xi+\eta|\xi<\beta\land\eta<\alpha}.\]
+    \item Si {\eqref{2}} se mantiene para $\gamma$, y si $\beta=S(\gamma)$, entonces
+        \[\alpha\cdot\beta=\alpha(\gamma+1)=\alpha\cdot\gamma+\alpha\text{ (por el lema {\ref{l23}})}\]
+        \[=\alpha\cdot\gamma\cup\set{\alpha\cdot\gamma+\eta|\eta<\alpha}\text{ (por hipótesis de inducción)}\]
+        \[=\set{\alpha\cdot\xi+\eta|\xi<\gamma\land\eta<\alpha}\cup\set{\alpha\cdot\gamma+\eta|\eta<\alpha}\]
+        \[=\set{\alpha\cdot\xi+\eta|\xi<\beta\land\eta<\alpha}.\]
+    \item Si {\eqref{2}} se mantiene para cada $\gamma<\beta$, con $\beta$ un ordinal límite:
+        \[\alpha\cdot\beta=\bigcup_{\gamma\in\beta}(\alpha\cdot\gamma)\text{ (por hipótesis de inducción)}\]
+        \[=\bigcup_{\gamma\in\beta}\set{\alpha\cdot\xi+\eta|\xi<\gamma\land\eta<\alpha}\]
+        \[=\set{\alpha\cdot\xi+\eta|\xi<\beta\land\eta<\alpha}.\]
+    \end{itemize}
+\end{proof}
+\begin{cor}\label{c30}
+    Sean $\alpha,\beta,\gamma\in\ON$ tales que $\alpha>0$ y $\beta<\gamma$. Entonces, $\alpha\cdot\beta<\alpha\cdot\gamma$.
+\end{cor}
+\begin{cor}\label{c31}
+    (Algoritmo de la división)\\
+    Supongase $\alpha,\beta\in\ON$ tales que $1\leq\alpha<\beta$. Entonces, existe un único par de ordinales $\lar{\xi,\eta}$ tales que
+    \begin{equation}\tag{3}\label{3}
+        \eta<\alpha\land\beta=\alpha\cdot\xi+\eta
+    \end{equation}
+\end{cor}
+\begin{proof}
+    Sean $\alpha,\beta$ como en la hipótesis. La existencia de $\xi$ y de $\eta$ como en {\eqref{3}} se sigue del lema {\ref{l29}}. Para mostrar la unicidad, suponemos:
+    \begin{equation}\tag{4}\label{4}
+        \alpha\cdot\xi+\eta=\alpha\xi'+\eta'\land\eta,\eta'<\alpha
+    \end{equation}
+    \begin{enumerate}[label=\roman*]
+        \item Supongamos $\xi=\xi'$. Entonces, $\alpha\cdot\xi=\alpha\cdot\xi'$, y se sigue del corolario {\ref{c24}} que $\eta=\eta'$.
+        \item Supongamos $\xi\neq\xi'$. Sin perdida de generalidad, $\xi<\xi'$. Entonces, $\xi+1\leq\xi'$, y $\alpha\cdot\xi+\eta<\alpha\xi+\alpha=\alpha\cdot(\xi+1)\leq\alpha\xi'\leq\alpha\cdot\xi'+\eta'$, lo cuál contradice {\eqref{4}}.
+    \end{enumerate}
+\end{proof}
+\begin{thm}\label{t32}
+    Sea $\lar{X,\preceq_X}$ y $\lar{Y,\preceq_Y}$ un buen orden, y sea $\alpha=\ot(\lar{X,\preceq_X})$, $\beta=\ot(\lar{Y,\preceq_Y})$. Entonces, 
+    \[\alpha\cdot\beta=\ot(\lar{X,\preceq_X}\otimes^a\lar{Y,\preceq_Y}),\] 
+    con $\otimes^a$ el producto antilexicográfico.
+\end{thm}
+\begin{cor}
+    Sea $\alpha,\beta,\gamma\in\ON$. Entonces,
+    \begin{itemize}
+    \item $(\alpha\cdot\beta)\cdot\gamma=\alpha\cdot(\beta\cdot\gamma)$
+    \item $\alpha\cdot(\beta+\gamma)=\alpha\cdot\beta+\alpha\cdot\gamma$
+    \end{itemize}
+\end{cor}
+\begin{defn}\label{d34}
+    Sea $\alpha\in\ON$. Por recursión sobre $\beta$, definimos un ordinal $\alpha^\beta$ como sigue:
+    \begin{itemize}
+        \item $\alpha^0=1$;
+        \item $\alpha^\beta=\alpha^\gamma\cdot\alpha$, si $\beta=\gamma+1$;
+        \item $\alpha^\beta=\bigcup_{\gamma<\beta}\alpha^\gamma$, si $\beta$ es un ordinal límite mayor a cero.
+    \end{itemize}
+\end{defn}
+A continuación presentaremos un ordinal importante:
+\begin{defn}\label{ex28}
+    Consideremos la siguiente notación:
+    \[\omega_0=\omega\land\omega_{n+1}=\omega^{\omega_{n}}.\]
+    Luego, definimos el siguiente ordinal:
+    \[\varepsilon_0=\bigcup_{n\in\omega}\omega_{n}.\]
+\end{defn}
+Así mismo, cabe señalar que $\varepsilon_0$ es un conjunto numerable.
+\begin{ex}\label{ex29}
+    Consideremos los ordinales 2,3 y $1\leq\omega$, entonces 
+    \[2^\omega=3^\omega.\]
+\end{ex}
+\begin{prop}\label{ex30}
+    Sean $\alpha,\beta,\gamma\in\ON$. Entonces,
+    \begin{itemize}
+    \item $(1<\alpha\land\beta<\gamma)\Longrightarrow\alpha^\beta<\alpha^\gamma$;
+    \item $\alpha^{\beta+\gamma}=\alpha^\beta\cdot\alpha^\gamma$;
+    \item $\alpha^{\beta\cdot\gamma}={(\alpha^\beta)}^\gamma$.
+    \end{itemize}
+\end{prop}

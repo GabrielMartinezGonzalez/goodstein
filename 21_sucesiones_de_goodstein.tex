@@ -1,0 +1,80 @@
+\section{Sucesiones de Goodstein}
+\begin{thm}\label{t35}
+    (Forma normal de Cantor)\\
+    Sean $\alpha,\beta\in\ON$ tales que $1<\alpha\leq\beta$. Entonces existe una única $k$ y únicos $\gamma_0,\ldots,\gamma_{k-1}$ y $\delta_0,\ldots,\delta_{k-1}$ con $\gamma_0>\gamma_1>\cdots>\gamma_{k-1}$ y $0<\delta_i<\alpha$ para $i<k$ tal que
+    \begin{equation}\tag{5}\label{5}
+        \beta=\alpha^{\gamma_0}\cdot\delta_0+\alpha^{\gamma_1}\cdot\delta_1+\cdots+\alpha^{\gamma_{k-1}}\cdot\delta_{k-1}
+    \end{equation}
+\end{thm}
+\begin{proof}
+    Sea $\alpha>0$, fijo. Por inducción sobre $\beta\geq0$, mostremos la existencia de una expansión como en {\eqref{5}}. Si $\beta=1$, entonces $\alpha^0\cdot1$ es la expansión deseada. Asumamos que $\beta>1$, y que una expansión como en {\eqref{5}} existe para cada $\eta$ tal que $1\leq\eta<\beta$. SEa $\Gamma=\set{\gamma|\alpha^\gamma\leq\beta}$.\\
+    Afirmamos que el conjunto $\Gamma$ tiene un elemento máximal. En efecto, supongase que no lo tiene y sea $\gamma_0=\bigcup\Gamma$. Como se satisface {\eqref{H}}, $\gamma_0$ es un ordinal límite y $\gamma_0\not\in\Gamma$. Por otro lado, por definición: 
+    \[\alpha^{\gamma_0}=\bigcup\set{\alpha^\gamma|\gamma\in\gamma_0}=\bigcup\set{\alpha^\gamma|\gamma\in\Gamma}\subeq\beta.\]
+    Por la proposición {\ref{p8}}, $\alpha^{\gamma_0}\leq\beta$, y entonces $\gamma_0\in\Gamma$, lo cuál es una contradicción.
+    Ahora, sea $\gamma_0$ el ordinal más grande en $\Gamma$. Por el corolario {\ref{c31}}, existen los ordinales $\delta_0>0$ y $\beta_1<\beta$ tal que $\beta=\alpha^{\gamma_0}\cdot\delta_0+\beta_1$. Notemos que $\delta_0<\alpha$, pues en caso contrario
+    \[\beta=\alpha^{\gamma_0}\cdot\delta_0+\beta_1\geq\alpha^{\gamma_0}\cdot\delta_0\geq\alpha^{\gamma_0+1},\]
+    lo que contradice la elección de $\gamma_0$. Ahora bien, si $\beta_1=0$, entonces $\alpha^{\gamma_0}\cdot\delta_0$ es la expansión deseada. Por otro lado; si $\beta>0$, entonces, por hipótesis de inducción, $\beta_1$ tiene una expansión como en {\eqref{5}}; es decir, $\beta_1=\alpha^{\gamma_1}\cdot\delta_1+\cdots+\alpha^{\gamma_{k-1}}\cdot\delta_{k-1}$ con $\gamma_1>\gamma_2>\cdots>\gamma_{k-1}$ y $0<\delta_i<\alpha$, para $0<i<k$.
+    Notemos que $\alpha^{\gamma_1}\leq\beta_1<\beta$, por lo que $\gamma_1\in\Gamma$, luego $\gamma_1<\gamma_0$. Así, añadiendo el termino $\alpha^{\gamma_0}\cdot\delta_0$ a la izquierda de la expansión $\beta_1$, obtenemos la expansión deseada para $\beta$. Ahora, mostremos la unicidad: supongamos las siguientes expansiones:
+    \[\beta=\alpha^{\gamma_0}\cdot\delta_0+\alpha^{\gamma_1}\cdot\delta_1+\cdots+\alpha^{\gamma_{k-1}}\cdot\delta_{k-1};\] 
+    \[\beta=\alpha^{\gamma_0}\cdot\delta'_0+\alpha^{\gamma_1}\cdot\delta'_1+\cdots+\alpha^{\gamma_{k-1}}\cdot\delta'_{k-1},\]
+    donde $\gamma_0>\gamma_1>\cdots>\gamma_{k-1}$, $\alpha>\delta_i,\delta'_i$ para $i<k$, y $\max\set{\delta_0,\delta'_0}>0$ (pues, por asumir que $\delta_i=\delta'_i=0$, podemos asumir que la secuencia de exponentes es la misma en ambas expansiones), Más aún, si $\delta_0=\delta'_0$, entonces $\beta_1=\beta=\alpha^{\gamma_0}\cdot\delta'_0+\alpha^{\gamma_1}\cdot\delta'_1+\cdots+\alpha^{\gamma_{k-1}}\cdot\delta'_{k-1}$ es el más pequeño ordinal con dos expansiones diferentes, lo cuál contradice la elección de $\beta$, por lo que podemos suponer $\delta_0\neq\delta'_0$. Sin perdida de generalidad, $\delta_0<\delta'_0$. Pero entonces:
+    \[\beta=\alpha^{\gamma_0}\cdot\delta_0+\alpha^{\gamma_1}\cdot\delta_1+\cdots+\alpha^{\gamma_{k-1}}\cdot\delta_{k-1}\]
+    \[<\alpha^{\gamma_0}\cdot\delta_0+\alpha^{\gamma_1}\cdot\delta_1+\cdots+\alpha^{\gamma_{k-1}}\cdot\alpha\text{ (pues $\delta_{k-1<\alpha}$)}\]
+    \[=\alpha^{\gamma_0}\cdot\delta_0+\alpha^{\gamma_1}\cdot\delta_1+\cdots+\alpha^{\gamma_{k-1}+1}\]
+    \[\leq\alpha^{\gamma_0}\cdot\delta_0+\alpha^{\gamma_1}\cdot\delta_1+\cdots+\alpha^{\gamma_{k-2}}\cdot\delta_{k-2}+\alpha^{\gamma_{k-2}}\text{ (pues $\gamma_{k-1}+1\leq\gamma_{k-2}$)}\]
+    \[=\alpha^{\gamma_0}\cdot\delta_0+\alpha^{\gamma_1}\cdot\delta_1+\cdots+\alpha^{\gamma_{k-2}}(\delta_{k-2}+1)\]
+    \[\leq\alpha^{\gamma_0}\cdot\delta_0+\alpha^{\gamma_1}\cdot\delta_1+\cdots+\alpha^{\gamma_{k-2}}\alpha\text{ (pues $\delta_{k-2}+1\leq\alpha$)}\]
+    \[\leq\cdots\leq\alpha^{\gamma_0}\cdot(\delta_0+1)\leq\alpha^{\gamma_0}\cdot\delta'_0\text{ (pues $\delta_0+1\leq\delta'_0$)}\]
+    \[\leq\alpha^{\gamma_0}\cdot\delta'_0+\alpha^{\gamma_1}\cdot\delta'_1+\cdots+\alpha^{\gamma_{k-1}}\cdot\delta'_{k-1}=\beta;\]
+    lo que es una contradicción.
+\end{proof}
+Un concepto útil será el de \textbf{super base $n$}, donde en ninguna parte de la expansión aparecen números mayores a $n$, es decir, si tenemos una representación en base 2:
+\[27=2^4+2^3+2^1+2^0;\]
+entonces, la representación en super base 2 es:
+\[27=2^{(2^2)}+2^{(2^1+1)}+2^1+2^0.\]
+\begin{defn}\label{d37}
+    (Operador salto de base)\\
+    Para cada $n<\omega$, con $n\geq2$, sea $S_n:\omega\longrightarrow\omega$ la función definida por recursividad:
+    \[S_n(k)=k,\text{ si }k<n;\]
+    \[S_n(k\cdot n^t+b)=k{(n+1)}^{S_n(t)}+S_n(b),\text{ si }k<n,b<n^t,t\geq1.\]
+\end{defn}
+\begin{defn}\label{d38}
+    Para cada $n<\omega$, con $n\geq2$, sea $f_n:\omega\longrightarrow\omega_1$ la función definida por recursividad:
+    \[f_n(k)=k,\text{ para }k<n\]
+    \[f_n(k\cdot n^t+b)=\omega^{f_n(t)}\cdot k+f_n(b),\text{ para }k<n,b<n^t,t\geq1.\]
+\end{defn}
+\begin{prop}\label{ex32}
+    Para $m,n,k\in\omega$,
+    \begin{itemize}
+    \item $k<m\Longrightarrow f_n(k)<f_n(m)$.
+    \item $(\forall n,k<\omega\land n\geq2)(f_{n+1}(S_n(k))=f_n(k))$.
+    \end{itemize}
+\end{prop}
+\begin{defn}\label{d39}
+    (Sucesiones de Goodstein)\\
+    Para cada $n<\omega$, con $n\geq1$, definimos $g_n:\omega\longrightarrow\omega$ dada por:
+    \[g_1(m)=m;\]
+    \[
+        g_{n+1}(m)=
+        \begin{cases}
+        S_{n+1}(g_n(m))-1, & \text{si }g_n(m)>0\\
+        0,&\text{cualquier otro caso.} 
+        \end{cases}
+    \]
+\end{defn}
+\begin{thm}\label{t40}
+    (Goodstein)
+    \[(\forall m<\omega)(\exists n\geq 1)(g_n(m)=0)\]
+\end{thm}
+\begin{proof}
+    Sea $m<\omega$, fijo. Consideremos la sucesión:
+    \[{(f_{n+1}(g_n(m)))}_{1\leq n<\omega}.\]
+    Como $g_{n+1}(m)>0$, de acuerdo con la definición de $g_{n+1}(m)$, tenemos que 
+    \[f_{n+2}(g_{n+1}(m))=f_{n+2}(S_{n+1}(g_n(m))-1).\]
+    Por el primer inciso de la proposición {\ref{ex32}}, tenemos:
+    \[f_{n+2}(S_{n+1}(g_n(m)-1))<f_{n+2}(S_{n+1}(g_n(m))),\]
+    y del segundo inciso de la proposición {\ref{ex32}}, tenemos
+    \[f_{n+2}(S_{n+1}(g_n(m)))=f_{n+1}(g_n(m)).\]
+    Entonces, \[f_{n+2}(g_{n+1}(m))<f_{n+1}(g_n(m)).\]
+    Como no hay secuencias decrecientes infinitas de ordinales, para una $n$ suficientemente grande, tendremos $g_n(m)=0$.
+\end{proof}

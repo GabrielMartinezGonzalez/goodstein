@@ -1,0 +1,80 @@
+\section{Indemostrabilidad}
+Un trabajo común en matemáticas es demostrar que una propiedad no se sigue de ciertos enunciados. Este tipo de demostraciones suelen llevarse a cabo exhibiendo un \textit{algo} que satisface el enunciado en cuestión, pero que no satisface la propiedad. Por ejemplo, se puede demostrar fácilmente que la conmutatividad no se sigue de los axiomas de grupo, simplemente dando un grupo que no es conmutativo. La siguiente demostración consiste en eso: exhibir un modelo de $\PA$ que no satisface el teorema de Goodstein (asumiendo que sí lo hace y llegando a una contradicción); teniendo como consecuencia que el teorema de Goodstein no se puede seguir de los axiomas de Peano (ni de ningún conjunto de axiomas equivalente).\cite{Goodstein}
+\begin{thm}
+    El teorema de Goodstein no se puede demostrar bajo $\PA$.
+\end{thm}
+\begin{proof}
+    Supongamos que
+    \begin{equation}\tag{TG}\label{tg}
+        \PA\vdash(\forall m)(\exists k)(g_{k}(m)=0);
+    \end{equation}
+    es decir, que el teorema de Goodstein es demostrable en $\PA$.
+    Del corolario {\ref{corind1}}, para cada $n$, número natural, existe $b_n$ tal que $[[1,b_n]]$ es $\n_{n+1}-$grande. Por el corolario {\ref{cor10304}} tenemos que $n+1<b_n$. Luego, consideremos $Y$ como en el teormea {\ref{tks}}, por lo que
+    \[Y(1,b_n)=\text{máx}\set{c|[[1,b_n]]\text{ es }\n_c-\text{grande}},\]
+    podemos afirmar que:
+    \[Y(1,b_n)\geq n+1>n.\]
+    Luego, por el teorema {\ref{los}} y tomando $b:\n\longrightarrow\n$ tal que $b(n)=b_n$, tenemos que:
+    \[[[{[c_1]}_\sim,{[b]}_\sim]]\text{ es }\n_{{[\id+c_1]}_\sim}-\text{grande}.\]
+    Más aún, denotando $i={[\id]}_\sim$. Tenemos que 
+    \[Y({[c_1]}_\sim,{[b]}_\sim)> i.\]
+    Por lo que tenemos que $Y({[c_1]}_\sim,{[b]}_\sim)$ es no estandar. Por lo tanto, existe un segmento inicial $I$ de $\hp$ tal que
+    \[I\vDash\PA\land{[b]}_\sim\not\in I.\]
+    Por lo tanto, el conjunto
+    \[\cC=\set{{{[t]}_\sim}|[[{[c_1]}_\sim,{[t]}_\sim]]\text{ es }\n_{{[\id+c_1]}_\sim}-\text{grande}\land Y({[c_1]}_\sim,{[t]}_\sim)\text{ es no estandar}}\neq\nt.\]
+    Pues ${[b]}_\sim\in\cC$. Tomemos ${[j]}_\sim$ el mínimo elemento de este conjunto. Entonces,
+    \[[[{[c_1]}_\sim,{[j]}_\sim]]\text{ es }\n_{{[\id+c_1]}_\sim}-\text{grande}\land Y({[c_1]}_\sim,{[j]}_\sim)\text{ es no estandar};\]
+    luego existe $M$, segmento inicial de $\hp$, tal que:
+    \[M\vDash\PA\land{[j]}_\sim\not\in M.\]
+    Luego, tenemos:
+    \begin{equation}\tag{NE}\label{ne}
+        M\vDash(\neg\exists {[j]}_\sim)([[{[c_1]}_\sim,{[t]}_\sim]]\text{ es }\n_{{[\id+c_1]}_\sim}-\text{grande}).
+    \end{equation}
+    Ahora, consideremos en $M$ el número $d=2^{2^{\cdot^{\cdot^{\cdot^{2}}}}}$ con ${[\id+c_1]}_\sim$ exponenciaciones iteradas. Así, considerando $f_n$ como en {\ref{d38}}, tenemos que:
+    \[f_2(d)=\n_{{[\id+c_1]}_\sim}.\]
+    Ahora, por {\ref{tg}}, existe ${[e]}_\sim\in M$ suficientemente grande tal que
+    \[g_{{[e]}_\sim}(d)=0.\]
+    Dado que la proposición {\ref{kpp8}} se puede probar bajo $\PA$, tenemos en $M$:
+    \[[[{[c_1]}_\sim,{[c_2+e]}_\sim]] \text{ es } \n_{{[\id+c_1]}_\sim}-\text{grande},\]
+    lo que contradice {\ref{ne}}. Por lo tanto, en $M$ no se satisface el teorema de Goodstein. Luego, 
+    \[\PA\not\vdash(\forall m)(\exists k)(g_{k}(m)=0).\]
+\end{proof}
+Ahora, veamos el equivalente para hidras.
+\begin{thm}
+    El enunciado \textit{toda estrategía computable es una estrategia ganadora} no es demostrable bajo $\PA$.
+\end{thm}
+\begin{proof}
+    Sea $\tau$ una estrategía recursiva tal que 
+    \[G_\tau(\alpha,n)=F(\alpha,n).\]
+    Cualquier prueba de que $\tau$ es ganadora es equivalente a demostrar lo mismo por inducción sobre $\alpha\in\varepsilon_0$; es decir, se puede demostrar por inducción que:
+    \[(\exists k)(F(\alpha,k)=0).\]
+    Luego, esto significa que para cada $\alpha\in\varepsilon_0$, se puede calcular en una cantidad finita de pasos el ordinal $F(\alpha,n)$ (pues para $n<k$, se puede hacer como el algoritmo de $\tau$ indica, y para $k\geq n$ siempre vale 0), esto es que 
+    \[F:\varepsilon_0\times\n\longrightarrow\varepsilon_0\]
+    es total computable. Nuevamente, como $\alpha$ se puede codificar bajo $\eta$ como en {\ref{eta}}, todo esto se podría hacer bajo $\PA$.
+    Así, consideremos la función:
+    \[\begin{array}{c}
+        Q:\n\times\n\longrightarrow\n\\
+        (n,x)\mapsto q_n(x)
+    \end{array},\]
+    con $q_n$ como en el corolario {\ref{3tks}}. Así pues, tenemos
+    \begin{verbatim}
+        input(n,x)
+        for(y=x+1; ;y++):
+            if grande([x,y],omega_n)
+                return y
+    \end{verbatim}
+    Claramente este es el algoritmo qué calcula $Q$, más aún, como $F$ es total computable, la parte del código
+    \begin{verbatim}
+        if grande([x,y],omega_n)
+    \end{verbatim}
+    está bien definida y no es necesario usar que $F$ es decreciente dejando fijo el primer argumento (no se podría usar esto, pues el primer argumento varia en $\varepsilon_0$). Esto prueba que $Q$ es total computable. Sin embargo, observemos lo siguiente: definimos:
+    \[\begin{array}{c}
+        q:\n\longrightarrow\n\\
+        x\mapsto\max\set{q_j(i)}[j,i\leq x]+1
+    \end{array};\]
+    la cuál es una función computable, gracias a qué $Q$ lo es.
+    Luego, por el corolario {\ref{3tks}}, existe $n$ tal que para cada $x$ suficientemente grande
+    \[q(x)<q_n(x).\]
+    En particular, tomando $x>n$ y suficientemente grande, tenemos:
+    \[q_n(x)<q(x)<q_n(x),\]
+    lo cuál es absurdo. Así, tenemos qué no se puede demostrar que $\tau$ es ganadora. 
+\end{proof}

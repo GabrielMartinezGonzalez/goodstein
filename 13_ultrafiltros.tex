@@ -1,0 +1,80 @@
+\section{Ultrafiltros}
+A continuación presentaremos algunos resultados importantes sobre las estructuras conocidas como ultrafiltros, los cuales serán muy importantes en el desarrollo de capítulos posteriores.{\cite{Ultrafilter}}
+\begin{defn}\label{u1}
+    Sea $X$ un conjunto. Un ultrafiltro sobre $X$ es una familia $u\in \PX$ que satisface para cada $A,B\in \PX$:
+    \begin{itemize}
+        \item $A\cap B\in u\Longleftrightarrow (A\in u\land B\in u)$
+        \item $A\cup B\in u\Longleftrightarrow (A\in u\lor B\in u)$
+        \item $A\in u\Longleftrightarrow X\setminus A\not\in u$
+    \end{itemize}
+\end{defn}
+\begin{obs}
+    Dado que toda conectiva lógica se puede poner en terminos de el trazo de Sheffer, podemos encontrar una equivalencia con la definición de ultrafiltro, como una familia que satisface que, para cada $A,B\in \PX$,
+    \[X\setminus(A\cap B)\in u\Longleftrightarrow\text{no ambos }A\in u\land B\in u.\]
+\end{obs}
+Una cosa que es buena tener en cuenta es que no existen ultrafiltros sobre $\nt$.
+\begin{prop}\label{u2}
+    Cada ultrafiltro es cerrado por arriba. Esto es, si $X$ es un conjunto y $u$ es un ultrafiltro sobre $X$, entonces 
+    \[(A\in u\land A\subeq B\subeq X)\Longrightarrow B\in u.\]
+    En particular, $X\in u$.
+\end{prop}
+\begin{proof}
+    Supongase que $A\in u$ y $A\subeq B\subeq X$. Como $A\in u$, tenemos que $A\in u$ o $B\in u$. Entonces, por {\ref{u1}}, tenemos que $B=A\cup B\in u$.
+\end{proof}
+\begin{prop}\label{u3}
+    Sea $X$ un conjunto y sea $u$ un ultrafiltro sobre $X$. Si $A\in u$ y $A=A_1\cup\cdots\cup A_n$, entonces existe un indice $i\in[[1,n]]$ tal que $A_i\in u$; más aún, si todos los $A_j$ son disjuntos a pares, entonces $i$ es único. En particular, para cada partición finita de $X$, sólo un elemento de dicha partición pertenece a $u$.
+\end{prop}
+\begin{proof}
+    La primera parte de la proposición es por inducción, donde el caso base $n=2$ se sigue directamente de la definición {\ref{u1}}. Para la segunda parte, observemos que si los $A_j$ son disjuntos a pares, y tenemos $A_i,A_k\in u$, para $i\neq k$, entonces tenemos también que $\nt=A_i\cap A_k\in u$, lo cuál contradice la proposición {\ref{u2}}.
+\end{proof}
+\begin{obs}
+    Observemos que para cualquier conjunto no vacio $X$ y para cualquier elemento $x$ de este conjunto, la familia $\set{A\in \PX|x\in A}$ es un ultrafiltro sobre $X$. En efecto, pues para $A,B\in \PX$:    
+    \[A\cap B\in u\Longleftrightarrow x\in A\cap B\Longleftrightarrow (x\in A\land x\in B)\Longleftrightarrow (A\in u\land B\in u)\]
+    \[A\cup B\in u\Longleftrightarrow x\in A\cup B\Longleftrightarrow (x\in A\lor x\in B)\Longleftrightarrow (A\in u\lor B\in u)\]
+    \[A\in u\Longleftrightarrow x\in A\Longleftrightarrow x\not\in X\setminus A\Longleftrightarrow X\setminus A\not\in u\]
+\end{obs}
+\begin{defn}\label{u4}
+    Sean $X$ un conjunto. Un ultrafiltro $u$ sobre $X$ es llamado \textbf{principal} si existe un elemento $x$ de $X$ tal que
+    \[u_x:=\set{A\in \PX|x\in A}=u.\]
+    En otro caso, $u$ es \textbf{no principal}.
+\end{defn}
+\begin{thm}\label{u5}
+    Sea $X$ un conjunto y $u$ un ultrafiltro sobre $X$. Entonces, $u$ es principal si y sólo si existe un conjunto finito $F\in \PX$ tal que $F\in u$.
+\end{thm}
+\begin{proof}
+    Si $u$ es principal, entonces existe $x\in X$ tal que $u=u_x$. En particular, $\set{x}\in u_x$, lo que demuestra esa implicación. Inversamente, supongamos $F\subeq X$ es un conjunto finito; digamos $F=\set{x_1,\ldots,x_n}$, tal que $F\in u$. Entonces, $F=\set{x_1}\cup\cdots\set{x_n}$ y por la proposición {\ref{u3}}, existe un indice $i\in[[1,n]]$ tal que $\set{x_i}\in u$. Así, afirmamos $u=u_{x_1}$. En efecto, sea $A\in u$ y tenemos que $\set{x_i}\in u$, entonces por la definición {\ref{u1}}, $A\cap\set{x_i}\in u$. Observemos que para $Y\in \PX$:
+    \[Y\cap\set{x_i}=
+        \begin{cases}
+        \set{x_i} &\text{si }x_i\in Y\\
+        \nt &\text{en cualquier otro caso.}
+        \end{cases}
+    \]
+    Y como $\nt\not\in u$, se sigue que si $A\in u$, entonces $x_i\in A$, por lo que $u=u_{x_i}$.
+\end{proof}
+El teorema anterior tiene una consecuencia inmediata, y es que si tenemos un ultrafiltro no principal, todos sus elementos son infinitos. Sin embargo, aún no hemos demostrado o garantizado la existencia de dichos ultrafiltros.
+\begin{defn}\label{u6}
+    Diremos que una familia $\cF$ de subconjuntos de $X$ es buena si es no vacía, cerrada bajo intersecciones y $\nt\not\in\cF$.
+\end{defn}
+\begin{lem}\label{u7}
+    Sea $\cM$ una familia buena maximal. Si un conjunto $A\in \PX$ inersecta cada elemento de $\cM$, entonces $A\in\cM$. En particular, $\cM$ es cerrado por arriba.
+\end{lem}
+\begin{proof}
+    Como $\set{X}\cup\cM$ es también una buena familia que contiene a $\cM$, entonces por maximalidad tenemos $\cM=\cM\cup\set{X}$ y también $X\in\cM$. Ahora, supongamos que $A\in \PX$ intersecta cada $B\in\cM$. Entonces, la familia
+    \[\set{A\cap B|B\in\cM}\cup\cM\] 
+    es buena y contiene a $\cM$, por lo que, por maximalidad, $\cM=\cM\cup\set{A\cap B|B\in\cM}$ y, en particular (como $X\in\cM$), $A=A\cap X\in\cM$. Esto demuestra la primera parte. Para la segunda parte, si $A\in\cM$ y $A\subeq B$, entonces para cada $C\in\cM$ tenemos que $A\cap C\subeq B\cap C$, con ambos siendo elementos de $\cM$; y como $\nt\not\in\cM$, tenemos que $B\cap C\neq\nt$. Por la primera parte, se sigue que $B\in\cM$.
+\end{proof}
+\begin{lem}\label{u8}
+    Una familia de subconjuntos de $X$ es buena maximal si, y sólo si es un ultrafiltro.
+\end{lem}
+\begin{proof}
+    Primero demostremos la implicación inversa. Si $u$ es un ultrafiltro, inmediatamente $u$ es una familia buena. Supongamos que $\cF$ es otra familia buena con $u\subeq\cF$. Si la inclusión fuera propia, tomando $A\in\cF\setminus u$ tendríamos que $X\setminus A\in u\subeq\cF$, y por lo tanto $\nt=A\cap(X\setminus A)\in\cF$, una contradicción. Luego $u=\cF$ y hemos terminado.\\
+    Ahora, para la implicación, sea $\cM$ una buena familia maximal. Podemos usar la caracterización de ultrafiltros por el trazo de Sheffer, esto es, probaremos que $\cM$ es un ultrafiltro mostrando que, para $A,B\in \PX$, tenemos $X\setminus(A\cap B)\in\cM$ si, y sólo si se cumple que no ambos $A$ y $B$ pertenecen a $\cM$. Primero supongamos que $X\setminus(A\cap B)\in\cM$; como $\nt\not\in\cM$ y $\cM$ es cerrado bajo intersecciones, esto significa que $A\cap B\not\in\cM$. Por el lema {\ref{u7}} esto implica que existe $C\in\cM$ que es disjunto a $A\cap B$. Si $A\in\cM$, entonces $A\cap C\in\cM$ es disjunto a $B$; como $\cM$ es cerrado bajo intersecciones y no contiene a $\nt$, tenemos que $B\not\in\cM$. El caso para $B\in\cM$ es completamente análogo, concluyendo que $B\not\in\cM$; por lo que se ha probado que $A$ y $B$ no pertenecen ambos a $\cM$. Inversamente, supongamos que no se cumple que ambos $A\in\cM$ y $B\in\cM$. Asumimos que $A\not\in\cM$ (complemtanete análogo si suponemos $B\not\in\cM$).Por el lema {\ref{u7}} hay un $C$ en $\cM$ que es disjunto a $A$, lo cuál implica que $C\subeq X\setminus A$. Como $X\setminus A\subeq X\setminus(A\cap B)$ y $\cM$ es cerrado por arriba por el lema {\ref{u7}}, concluimos que $X\setminus(A\cap B)\in\cM$, y hemos terminado.
+\end{proof}
+\begin{thm}\label{u9}
+    Si $X$ es un conjunto infinito, entonces existe un ultrafiltro no principal sobre $X$.
+\end{thm}
+\begin{proof}
+    Dado $X$, un conjunto, observemos que la familia de los subconjuntos cofinitos de $X$,
+    \[\mathscr{P}_{\text{cf}}(X)=\set{A\in \PX|X\setminus A\text{ es finito}}\]
+    es una familia buena. Por lo tanto, por el lema de Zorn, existe un ultrafiltro $u$ con $\mathscr{P}_{\text{cf}}(X)\subeq u$. Claramente $u$ es no principal, pues en caso contrario existiría un conjunto finito $F$ con $F\in u$ por {\ref{u5}}, y como $X\setminus F\in\mathscr{P}_{\text{cf}}(X)\subeq u$, lo que significa que $\nt=F\cap(X\setminus F)\in u$, una contradicción.
+\end{proof}

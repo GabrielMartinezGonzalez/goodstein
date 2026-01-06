@@ -1,0 +1,40 @@
+\section{Los axiomas de Peano}
+En la siguiente sección se formalizarán algunos resultados ya vistos en el capítulo 3, así como se explicará su importancia fundamental en el trabajo al señalar lo que es un modelo estandar y un modelo no estandar. \cite{indicators}
+
+\begin{defn}
+    La siguiente lista de proposiciones son conocidos como \textbf{los axiomas de Peano}, \textit{la axiomatica de Peano} o los axiomas de \textit{la aritmética de Peano (PA)}:
+    \begin{enumerate}
+        \item $\forall x\hspace{0.5cm}\neg(\gc=Sx)$,
+        \item $\forall x\forall y\hspace{0.5cm}(Sx=Sy\Longrightarrow x=y)$,
+        \item $\forall x\hspace{0.5cm}\neg(x<\gc)$,
+        \item $\forall x\forall y\hspace{0.5cm}(x<Sy\Longrightarrow (x<y\lor x=y))$,
+        \item $\forall x\forall y\hspace{0.5cm}(x<y\lor x=y\lor y<x)$,
+        \item $\forall x\hspace{0.5cm}(x+\gc=x)$,
+        \item $\forall x\forall y\hspace{0.5cm}(x+Sy=S(x+y))$,
+        \item $\forall x\hspace{0.5cm}(x\cdot\gc=\gc)$,
+        \item $\forall x\forall y\hspace{0.5cm}(x\cdot Sy=x\cdot y+x)$,
+        \item $(\ph[\gc/x]\land\forall x(\ph\Longrightarrow\ph[Sx/x]))\Longrightarrow\forall x\ph$; con $\ph(x)$ una formula.
+    \end{enumerate}
+\end{defn}
+\begin{obs}
+    La lista anterior consiste de 9 axiomas y un esquema de axioma, es decir, una infinidad de axiomas (pues existen una infinidad de formulas en el lenguaje de la aritmetica).
+\end{obs}
+\begin{defn}
+    Consideremos la estructura 
+    \[\mathcal{N}=(\n,+,\cdot,S,<,0),\]
+    la cuál llamaremos \textit{los números naturales}. También se le conoce como \textit{modelo estandar de la axiomatica de Peano}.
+\end{defn}
+Consideremos que esta estrucutra se define en función de los axiomas de Peano, de forma en que satisfaga todos.
+\begin{obs}
+    Vale la pena mencionar que cualquier otro modelo que satisfaga \textit{PA} será llamado un \textbf{modelo no estandar} de la axiomatica de Peano.
+\end{obs}
+
+\begin{defn} \textit{(Jerarquia de Kleene-Mostowski)}
+    \begin{itemize}
+        \item Si una fórmula $\phi$ tiene o bien cuantificadores acotados, o ningún tipo de cuantificadores, entonces decimos que $\phi$ es del tipo $\Sigma_0$, $\Pi_0$ y $\Delta_0$.
+        \item Si una fórmula $\phi$ que es equivalente a una fórmula $\exists m_1\exists m_2\cdots\exists m_k\psi$, donde $\psi$ es $\Delta_0$, entonces $\phi$ es del tipo $\Sigma_1$.
+        \item Si una fórmula $\phi$ que es equivalente a una fórmula $\forall m_1\forall m_2\cdots\forall m_k\psi$, donde $\psi$ es $\Delta_0$, entonces $\phi$ es del tipo $\Pi_1$.
+        \item Si una formula $\phi$ es tanto $\Sigma_1$ como $\Pi_1$, entonces $\phi$ también es $\Delta_1$.
+    \end{itemize}
+\end{defn}
+Notese que en la definición anterior, dicha $k$ puede valer $0$, por lo que $\Delta_0\subeq\Sigma_1\cap\Pi_1$.

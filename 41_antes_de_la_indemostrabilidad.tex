@@ -1,0 +1,444 @@
+\section{Antes de la indemostrabilidad}
+En la siguiente sección daremos herramientas y resultados útiles para dar con el objetivo de este trabajo: demostrar la Indemostrabilidad del teorema de Goodstein bajo los axiomas de Peano.
+\begin{obs}
+    En lo siguiente, designaremos al conjunto de todas las tuplas finitas con entradas de números naturales por $T$.
+\end{obs}
+\begin{defn}
+    Definimos la función $v:T\longrightarrow\n$ dada para cada $(x_1,x_2,\ldots,x_n)\in T$ como,\[v(x_1,x_2,\ldots,x_n)=p_1^{x_1}\cdot p_2^{x_2}\cdots p_n^{x_{n}+1},\] con $p_i$ el $i-$ésimo número primo.
+\end{defn}
+\begin{defn}
+    Definimos la función $u:\varepsilon_0\longrightarrow T$, dada por $\forall \alpha\in\varepsilon_0$,
+    \[
+        u(\alpha)=
+        \begin{cases}
+        (\alpha,0)&\text{si }\alpha\in\omega \\
+        (\delta_0,v(u(\gamma_0)),\ldots,\delta_n,v(u(\gamma_n)))&\text{si }\alpha=\n^{\gamma_0}\cdot\delta_0+\cdots+\n^{\gamma_n}\cdot\delta_n
+        \end{cases},
+    \]
+    donde, en el segundo caso, la suma $\n^{\gamma_0}\cdot\delta_0+\cdots+\n^{\gamma_n}\cdot\delta_n$ es la forma normal de $\alpha$.
+\end{defn}
+\begin{defn}\label{eta}
+    Nombramos la función $\eta:\varepsilon_0\longrightarrow\n$, la cuál está dada por \[\eta=v\circ u.\]
+\end{defn}
+\begin{obs}
+Observemos que la función $\eta$, quitando de su dominio el ordinal $0$, es inyectiva. 
+\end{obs}
+
+Las anteriores funciones simplemente se ponen de manifiesto para recalcar que todos los resultados sobre ordinales e hidras son traducibles al lenguaje de la aritmetica de Peano y, por lo tanto, todo es demostrable bajo $\PA$.
+
+\begin{prop}
+    Existe una estrategía computable $\tau$ tal que 
+    \[G_\tau(\alpha,n)=F(\alpha,n+1).\]
+\end{prop}
+\begin{proof}
+    Definamos $\tau$ como la siguiente estrategía:\\
+    \textit{Comenzando desde la raíz, subimos por el árbol de tal forma que, habiendo llegado a un nodo, viajamos al nodo inmediatamente por encima de él que tiene el ordinal asignado más bajo entre todos los nodos inmediatamente por encima. (Si más de uno de ellos tiene el ordinal mínimo, elegimos, digamos, el de más a la izquierda.) Eventualmente, llegamos a un nodo superior y la cabeza a la que está unido es la que hay que cortar.}\\
+    Dado que tenemos un algoritmo para $\tau$, es una estrategía computable. Sólo basta demostrar que $G_\tau(\alpha,n)=F(\alpha,n+1)$. Sea $n$ un número natural; procedemos por inducción sobre $\alpha$:\\
+    Si $\alpha$ es ordinal sucesor, entonces \[G_\tau(\alpha,n)=\alpha-1=F(\alpha,n+1).\]
+    Así nuestro caso base es $\alpha=1$.
+    Si, para cada ordinal menor a $\alpha$ se satisface la igualdad; consideremos  
+    \[\alpha=\n^{\beta_1}+\cdots+\n^{\beta_m},\]
+    con $\beta_1\geq\cdots\geq\beta_m$; la cuál es la forma usual de un ordinal asociado a una hidra que no es sucesor. Entonces, la cabeza qué se cortará está asociada al ordinal $\n^{\beta_m}$. Consideraremos $\n^{\beta_m}\neq 0$ para evitar el caso sucesor.
+    \begin{itemize}
+        \item Si $\beta_m$ es un sucesor, entonces $\n^{\beta_m}=\n^{\gamma+1}$ y $G(\alpha,n)=\n^{\beta_1}+\cdots+\n^{\gamma}\cdot (n+1)=F(\alpha,n+1)$;
+        \item si $\beta_n$ es límite, entonces, dado que $\beta_n<\alpha$, tenemos:
+            \[G_\tau(\alpha,n)=\n^{\beta_1}+\cdots+\n^{G_\tau(\beta_m,n)}=\n^{\beta_1}+\cdots+\n^{F(\beta_m,n+1)}=F(\alpha,n+1).\] 
+    \end{itemize}
+    Esto completa la prueba.
+\end{proof}
+
+
+
+\begin{defn}\label{defH}
+    Se define la operación $H:\varepsilon_0\times\n\longrightarrow\varepsilon_0$ como sigue:
+    \[H(\alpha,n)=
+        \begin{cases}
+        0, & \text{si }\alpha=0,\\
+        \beta, &\text{si }\alpha=\beta+1,\\
+        \n^\delta\cdot\beta+\n^{H(\delta,n)}\cdot n+H(\n^{H(\delta,n)},n), & \alpha=\n^\delta(\beta+1).
+        \end{cases}
+    \]
+\end{defn}
+\begin{defn} (operador cambio de base)\\
+    Se define el operador de cambio de base como sigue: dados $m,n\in\n$, donde
+    \[m=n^k\cdot a_k+n^{k-1}\cdot a_{k-1}+ \cdots +n\cdot a_1+a_0;\]
+    definimos $f^{m,n}:\n+1\longrightarrow\varepsilon_0$ como:
+    \[f^{m,n}(x)=\sum_{i=0}^k a_i\cdot x^{f^{i,n}(x)};\]
+    donde el caso base es 
+    \[f^{0,n}(x)=0.\]
+\end{defn}
+\begin{obs}
+    Dado $m>0$, tenemos:
+    \[g_n(m)=f^{m,n}(n+1)-1,\]
+    y
+    \[f_n(m)=f^{m,n}(\n);\]
+    donde $g_n$ y $f_n$ son como en las definiciones {\ref{d39}} y {\ref{d38}}, respectivamente.
+\end{obs}
+\begin{lem}\label{kpl3i}
+    Para $m\geq 0$, $n>1$, si $\alpha=f_{n+1}(m)$, entonces $f_{n+1}(m-1)=H(\alpha,n)$.
+\end{lem}
+\begin{proof}
+     Consideremos la representación en base $n+1$ de $m$: sea
+     \[m=a_p{(n+1)}^{f^{p,n+1}(n+1)}+a_{p-1}{(n+1)}^{f^{p-1,n+1}(n+1)}+\cdots+a_0{(n+1)}^{f^{0,n+1}(n+1)},\]
+     con $0\leq a_i\leq n$, y (dado que $m\neq0$) sea $j$ el número más pequeño tal que $a_j\neq 0$. El resultado es claro si $j=0$, por lo que asumimos $j>0$ y que el resultado es valido para cada $m'\in[[0,m]]\setminus\set{0,m}$. Entonces,
+    \[f_{n+1}(m-1)=\left(\sum_{i=j+1}^p \n^{f^{i,n+1}(\n)}\cdot a_i\right)+\n^{f^{j,n+1}(\n)}(a_j-1)+\]
+    \[+f_{n+1}(n\cdot{(n+1)}^{f^{j,n+1}(n+1)-1})+f_{n+1}({(n+1)}^{f^{j,n+1}(n+1)-1}-1),\]
+    mientras que
+    \[H(\alpha,n)=\left(\sum_{i=j+1}^p\n^{f^{i,n+1}(\n)}\cdot a_i\right)+\n^{f^{j,n+1}(\n)}(a_j-1)+\n^{H(f^{j,n+1}(\n),n)}n+H(\n^{H(f^{j,n+1}(\n),n)},n).\]
+    Usando la hipótesis de inducción es fácil ver que estas dos son iguales.
+\end{proof}
+\begin{lem}\label{kpl3ii}
+    Para $n>1$,
+    \[H(f_{n}(m),n)=f_{n+1}(g_n(m)).\]
+\end{lem}
+\begin{proof}
+    Sea
+    \[m=\sum_{i=j}^{p}b_{i}n^{f^{i,n}(n)}\]
+    donde $0\leq b_i<n$ y $b_j\neq 0$. Si $j=0$, entonces es claro que
+    \[H(f_n(m),n)=f_{n+1}(g_n(m)),\]
+    así que asumiremos $j>0$. Así,
+    \[H(f_n(m),n)=\left({\sum_{i=j+1}^p\n^{f^{i,n}(\n)}b_i}\right)+\n^{f^{j,n}(\n)}(b_j-1)+\n^{H(f^{j,n}(\n),n)}n+H(\n^{H(f^{j,n}(\n),n)},n)\]
+    y
+    \[f_{n+1}(g_n(m))=\left({\sum_{i=j+1}^p\n^{f^{i,n}(\n)}b_i}\right)+f_{n+1}({(n+1)}^{f^{j,n}(n+1)}b_j-1)\]
+    \[=\left({\sum_{i=j+1}^p\n^{f^{i,n}(\n)}b_i}\right)+\n^{f^{j,n}(\n)}(b_j-1)+f_{n+1}({(n+1)}^{f^{j,n}(n+1)-1}n)\]
+    \[+f_{n+1}({(n+1)}^{f^{j,n}(n+1)-1}-1).\]
+    Luego, por {\ref{kpl3i}}
+    \[f_{n+1}({(n+1)}^{f^{j,n}(n+1)-1}n)=\n^{H(f^{j,n}(\n),n)}n,\]
+    y
+    \[f_{n+1}({(n+1)}^{f^{j,n}(n+1)-1}-1)=H(\n^{H(f^{j,n}(\n),n)},n);\]
+    lo cuál nos da lo requerido para concluir lo deseado.
+\end{proof}
+\begin{obs}
+    Para alguna operación $P(\alpha,n)$, denotamos:
+    \[P(\beta,\lpr{n_1,\ldots,n_k}):=P(P(\beta,n_1),\lpr{n_2,\ldots,n_k});\]
+    es decir, iterando la operación $P$, $k-$veces, de forma que el primer parametro en cada ocación es, o bien el ordinal $\beta$, o bien la iteración anterior; y el segundo parametro uno de los elementos del conjunto $\set{n_1,\ldots,n_k}$.
+    De manera análoga, si contamos con un conjunto $X=\set{x_1,\ldots,x_n}$, con sus elementos ordenados de forma ascendente, tenemos:
+    \[P(\beta,X)=P(\beta,\lpr{x_1,\ldots,x_k}).\]
+\end{obs}
+\begin{lem}\label{eselemita}
+    Dado un conjunto finito $X=\set{x_1,\ldots,x_k}$, con al menos dos elementos,
+    \[X\text{ es }\alpha-\text{grande}\Longleftrightarrow F(\alpha,X)=0.\]
+\end{lem}
+\begin{proof}
+    Procedemos por inducción sobre $\alpha$:\\
+    Si $X$ es $1-$grande, tenemos que $X$ tiene al menos dos elementos; luego,
+    \[F(1,x_1)=0,\]
+    es decir:
+    \[F(1,X)=F(F(1,x_1),\lpr{x_2,\ldots,x_k})=0.\]
+    Por otro lado, si $X$ es tal que 
+    \[F(1,X)=0,\]
+    entonces,
+    \[F(F(1,x_1),\lpr{x_2,\ldots,x_k})=0;\]
+    luego, como $\set{x_2,\ldots,x_k}\neq\nt$, tenemos que $X$ es $1-$grande.
+    Así pues, si tenemos
+    \[X\text{ es }\alpha-\text{grande},\]
+    de inmediato tenemos que
+    \[\set{x_2,\ldots,x_k}\text{ es }F(\alpha,x_1)-\text{grande}.\]
+    Así, considerando que $F(\alpha,x_1)<\alpha$, por hipótesis de inducción tenemos:
+    \[F(F(\alpha,x_1),\lpr{x_2,\ldots,x_k})=F(\alpha,X)=0.\]
+    Reciprocamente, si tenemos $F(\alpha,X)=0$, tenemos que
+    \[F(F(\alpha,x_1),\lpr{x_2,\ldots,x_k})=0,\]
+    lo cuál, por hipótesis de inducción nos arroja que 
+    \[\set{x_2,\ldots,x_k}\text{ es }F(\alpha,x_1)-\text{grande};\]
+    es decir
+    \[X\text{ es }\alpha-\text{grande},\]
+    justo lo que buscabamos.
+\end{proof}
+\begin{defn}
+    Escribimos 
+    \[\beta\underset{n}{\rightarrow}\al\]
+    si para algunos $j_1,\ldots,j_k\leq n$,
+    \[\al=F(\beta,\lpr{j_1,\ldots,j_k}),\]
+    o si $\alpha=\beta$.
+    También escribimos:
+    \[\beta\underset{n}{\Rightarrow}\al\]
+    si sucede los mismo con $j_1=\cdots=j_k=n$, o también se cumple la igualdad.
+\end{defn}
+\begin{obs}
+    La relación $\underset{n}{\Rightarrow}$ es transitiva, pues si tenemos $\alpha\underset{n}{\Rightarrow}\beta$ y $\beta\underset{n}{\Rightarrow}\gamma$,
+    \[\beta=F(\alpha,\underbrace{(n,\ldots,n)}_{k-\text{veces}})\land\gamma=F(\beta,\underbrace{(n,\ldots,n)}_{k'-\text{veces}});\]
+    por lo que:
+    \[\gamma=F(F(\alpha,\underbrace{(n,\ldots,n)}_{k-\text{veces}}),\underbrace{(n,\ldots,n)}_{k'-\text{veces}})=F(\alpha,\underbrace{(n,\ldots,n)}_{(k+k')-\text{veces}}),\]
+    es decir,
+    \[\alpha\underset{n}{\Rightarrow}\gamma.\]
+    De manera equivalente con $\underset{n}{\rightarrow}$.
+\end{obs}
+%%a partir de aquí faltan demostraciones xd%%
+\begin{lem} {\label{lemkpl5}}
+    Sea $n>0$ y sea $l\in\n$ tal que 
+    \[F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{l-\text{veces}})\geq\n^\delta(n-1)\]
+    entonces, existen $\xi_1,\ldots,\xi_l$ ordinales tales que:
+    \begin{itemize}
+        \item $k<l\Longrightarrow F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{k-\text{veces}})=\n^\delta(n-1)+\xi_k$;
+        \item $\n^\delta>\xi_1>\cdots>\xi_l$.
+    \end{itemize}
+\end{lem}
+\begin{proof}
+    Procedemos por inducción finita sobre $k$: si $k=1$:
+    \begin{itemize}
+        \item Si $\delta\in\text{SUCC}$:
+            \[F(\n^\delta\cdot n,n)=\n^\delta(n-1)+\n^{\delta-1}\cdot n=\n^{\delta-1}(\n(n-1)+n),\]
+            así, $\xi_1=\n^{\delta-1}\cdot n$.
+        \item Si $\delta\in\text{LIM}$:
+            \[F(\n^\delta\cdot n,n)=\n^\delta(n-1)+\n^{F(\delta,n)}=\n^{F(\delta,n)}(\n^{\delta-F(\delta,n)}(n-1)+1),\]
+            así, $\xi_1=\n^{F(\delta,n)}$. Observemos que si bien, no tiene sentido hablar de $\delta-F(\delta,n)$, ya que delta es límite, podemos entenderlo como para algún ordinal entre $F(\delta,n)$ y $\delta$, y al tomar el límite (el supremo) esto coincide con lo que buscamos.
+    \end{itemize}
+    Ahora, supongamos que ya están dado los $\xi_1,\ldots,\xi_k$, con $k\in[1,l-1]$, entonces
+    \[F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{(k+1)-\text{veces}})=F(F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{k-\text{veces}}),n)=F(\n^\delta(n-1)+\xi_k,n).\]
+    Observemos que $\xi_k\neq 0$, pues por hipótesis:
+    \[F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{l-\text{veces}})\geq \n^\delta(n-1);\]
+    entonces, si $\xi_k=0$, por lo que:
+    \[F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{k-\text{veces}})=\n^\delta(n-1);\]
+    luego,
+    \[F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{(k+1)-\text{veces}})<\n^\delta(n-1);\]
+    por lo que,
+    \[F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{l-\text{veces}})<\n^\delta(n-1),\]
+    lo cuál es una contradicción.
+    \begin{itemize}
+        \item Si $\xi_k=\gamma+1$, para algún ordinal $\gamma$, entonces
+            \[F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{k-\times{veces}})=\n^\delta(n-1)+\gamma+1,\]
+            el cuál es sucesor. Por lo tanto,
+            \[F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{(k+1)-\times{veces}})=\n^\delta(n-1)+\gamma,\]
+            por lo tanto, $\xi_{k+1}=\gamma<\gamma+1=\xi_k$.
+        \item Si $\xi_k$ es límite, tenemos dos posibles casos:
+            \[\xi_k=\n^{\alpha}(\beta+1)\land (\alpha\in\text{SUCC} \land \alpha\in\text{LIM}).\]
+            Además, como $\xi_k<\n^\delta$, 
+            \[\n^\alpha\leq\n^\alpha(\beta+1)<\n^\delta,\]
+            luego
+            \[\alpha<\delta.\]
+            Señalemos que
+            \[F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{k-\text{veces}})=\n^\delta(n-1)+\n^\alpha(\beta+1)=\n^\alpha(\n^{\delta-\alpha}(n-1)+\beta+1),\]
+            y
+            \[F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{(k+1)-\text{veces}})=F(\n^\alpha(\n^{\delta-\alpha}(n-1)+\beta+1),n).\]
+            \begin{enumerate}
+                \item Caso 1: $\alpha\in\text{SUCC}$:
+                    \[F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{(k+1)-\text{veces}})=\n^\alpha(\n^{\delta-\alpha}(n-1)+\beta)+\n^{\alpha-1}\cdot n\]
+                    \[=\n^\delta(n-1)+\n^\alpha\cdot\beta+\n^{\alpha-1}\cdot n.\]
+                    Además, 
+                    \[F(\n^\alpha(\beta+1),n)=\n^\alpha\cdot\beta+\n^{\alpha-1}\cdot n,\]
+                    por lo que, por el caracter decreciente de la función $F$,
+                    \[\n^\alpha\cdot\beta+\n^{\alpha-1}\cdot n<\n^\alpha(\beta+1).\]
+                    Así, tomamos $\xi_{k+1}=\n^\alpha\cdot\beta+\n^{\alpha-1}\cdot n$, y claro que
+                    \[\xi_{k+1}<\xi_k.\]
+                \item Caso 2: $\alpha\in\text{LIM}$:
+                    \[F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{(k+1)-\text{veces}})=\n^\alpha(\n^{\delta-\alpha}(n-1)+\beta)+\n^{F(\alpha,n)}\]
+                    \[=\n^\delta(n-1)+\n^\alpha\cdot\beta+\n^{F(\alpha,n)}.\]
+                    Y como
+                    \[F(\n^\alpha(\beta+1),n)=\n^\alpha\cdot\beta+\n^{F(\alpha,n)},\]
+                    por el caracter decreciente de la función $F$,
+                    \[\n^\alpha\cdot\beta+\n^{F(\alpha,n)}<\n^\alpha(\beta+1).\]
+                    Así, tomamos $\xi_{k+1}=\n^\alpha\cdot\beta+\n^{F(\alpha,n)}$, y claro que:
+                    \[\xi_{k+1}<\xi_k.\]
+            \end{enumerate}
+    \end{itemize}
+    Esto concluye la prueba.
+\end{proof}
+\begin{obs}
+    Vale la pena señalar que los $\xi_k$ en el lema {\ref{lemkpl5}} son únicos, dado que $F$ es una función, por lo que estos no varían con la elección de $l$.
+\end{obs}
+
+\begin{lem}\label{kpl5}
+    Se cumplen los siguientes enunciados:
+    \begin{enumerate}
+        \item $(\beta\underset{n}{\Rightarrow}\alpha\land n>0)\Longrightarrow\n^\beta\underset{n}{\Rightarrow}\n^\al$.
+        \item $0<i<j\leq n\Longrightarrow F(\beta,j)\underset{n}{\Rightarrow}F(\beta,i)$.
+        \item $\beta\underset{n}{\Rightarrow}\alpha\Longleftrightarrow\beta\underset{n}{\rightarrow}\alpha$.
+        \item Supongase $\beta=\n^{\beta_1}+\cdots+\n^{\beta_k}$, $\gamma=\n^{\gamma_1}+\cdots+\n^{\gamma_m}$, con
+            \[\beta_1\geq\cdots\geq\beta_k\geq\gamma_1\geq\cdots\geq\gamma_m.\]
+            Entonces, 
+            \[\gamma\underset{n}{\rightarrow}\delta\Longrightarrow\beta+\gamma\underset{n}{\rightarrow}\beta+\delta.\]
+            En particular $\beta+\gamma\underset{n}{\rightarrow}\beta$.
+    \end{enumerate}
+\end{lem}
+\begin{proof}\hspace{0.5cm}
+    \begin{enumerate}
+        \item Procedemos por inducción sobre $\beta$:
+            si $\beta=0$ y $\beta\underset{n}{\Rightarrow}\alpha$, entonces:
+            \[\alpha=F(\beta,\underbrace{(n,\ldots,n)}_{k-\text{veces}})=F(0,\underbrace{(n,\ldots,n)}_{k-\text{veces}})=0.\]
+            Por lo tanto $\alpha=\beta$ y $\n^\alpha=\n^\beta$, lo cual es suficiente.
+            Consideremos que se cumple para cada $\lambda<\beta$. El caso $\beta=\alpha$ es inmediato, por lo que consideraremos $\alpha\neq\beta$. 
+            \begin{itemize}
+                \item Si $\beta\in\text{LIM}$, existe $k>0$ tal que: 
+                    \[\beta\underset{n}{\Rightarrow}\alpha\Longleftrightarrow \alpha=F(\beta,\underbrace{(n,\ldots,n)}_{k-\text{veces}})=F(F(\beta,n),\underbrace{(n,\ldots,n)}_{(k-1)-\text{veces}})\Longleftrightarrow F(\beta,n)\underset{n}{\Rightarrow}\alpha.\]
+                    Como $F(\beta,n)<\beta$, por hipótesis de inducción:
+                    \[\n^{F(\beta,n)}\underset{n}{\Rightarrow}\n^{\alpha};\]
+                    es decir, existe $j$ tal que:
+                    \[\n^\alpha=F(\n^{F(\beta,n)},\underbrace{(n,\ldots,n)}_{j-\text{veces}})\]
+                    Ahora, observemos que:
+                    \[F(\n^\beta,n)=\n^{F(\beta,n)},\]
+                    por lo que:
+                    \[\n^\alpha=F(F(\n^\beta,n),\underbrace{(n,\ldots,n)}_{j-\text{veces}})=F(\n^\beta,\underbrace{(n,\ldots,n)}_{(j+1)-\text{veces}});\]
+                    es decir, 
+                    \[\n^\beta\underset{n}{\Rightarrow}\n^\alpha.\]
+                \item Si $\beta\in\text{SUCC}$, existe un ordinal límite $\gamma$, y un ordinal finito no nulo $k$ tal que $\beta=\gamma+k$. Primero, observemos que:
+                    \[\beta=\gamma+k\underset{n}{\Rightarrow}\gamma+k-1\underset{n}{\Rightarrow}\cdots\underset{n}{\Rightarrow}\gamma.\]
+                    Ahora, afirmamos que para cada $n>0$,
+                    \[\n^{\gamma+k}\underset{n}{\Rightarrow}\n^{\gamma+k-1}.\]
+                    En efecto, tenemos que:
+                    \[F(\n^{\gamma+k},n)=\n^{\gamma+k-1}\cdot n,\]
+                    es decir,
+                    \[\n^{\gamma+k}\underset{n}{\Rightarrow}\n^{\gamma+k-1}\cdot n.\]
+                    Ahora, consideremos el conjunto
+                    \[C=\set[i\in\n\setminus\set0]{F(\n^{\gamma+k-1}\cdot n,\underbrace{(n,\ldots,n)}_{i-\text{veces}})\geq\n^{\gamma+k-1}\cdot(n-1)}.\]
+                    Este conjunto claro que no es vacio, pues al menos $1\in C$ por definción.
+                    Observemos que $C$ debe tener elemento máximo, pues en caso contrario tendríamos un decrecimiento infinito dado por los $\xi_i$ del lema {\ref{lemkpl5}}, lo cuál es imposible. Más aún, como estos $\xi_i$ determinan una sucesión decreciente, 
+                    \[\xi_{\max{C}}=0;\]
+                    es decir:
+                    \[F(\n^{\gamma+k-1}\cdot n,\underbrace{(n,\ldots,n)}_{\max{C}-\text{veces}})=\n^{\gamma+k-1}\cdot(n-1),\]
+                    es decir,
+                    \[\n^{\gamma+k-1}\cdot n\underset{n}{\Rightarrow}\n^{\gamma+k-1}\cdot (n-1);\]
+                    y como $n$ es arbitraria, tenemos que:
+                    \[\n^{\gamma+k-1}\cdot n\underset{n}{\Rightarrow}\n^{\gamma+k-1}\cdot (n-1)\underset{n}{\Rightarrow}\cdots\underset{n}{\Rightarrow}\n^{\gamma+k-1}.\]
+                    Así pues, tenemos lo que afirmabamos.
+                    Ahora, como $k$ es fijo (y sólo depende de la elección de $\beta$), tenemos que:
+                    \[\n^{\gamma+k}\underset{n}{\Rightarrow}\n^{\gamma+k-1}\underset{n}{\Rightarrow}\cdots\underset{n}{\Rightarrow}\n^\gamma.\]
+                    Finalmente, tenemos tres casos:
+                    \begin{itemize}
+                        \item $\alpha=\gamma+k'$, con $0<k'<k$. Entonces, por lo señalado anteriormente:
+                            \[\n^{\gamma+k}\underset{n}{\Rightarrow}\n^{\gamma+k'}=\n^\alpha.\]
+                        \item $\alpha=\gamma$. Entonces, nuevamente por lo anterior:
+                            \[\n^{\gamma+k}\underset{n}{\Rightarrow}\n^{\gamma}=\n^\alpha.\]
+                        \item $\alpha<\gamma$. Entonces, como $\beta\underset{n}{\Rightarrow}\alpha$, entonces existe $m$ tal que:
+                            \[F(\beta,\underbrace{(n,\ldots,n)}_{m-\text{veces}})=\alpha.\]
+                            Además, $F(\beta,\underbrace{(n,\ldots,n)}_{k-\text{veces}})=\gamma$, or lo que $k<m$ y $\gamma\underset{n}{\Rightarrow}\alpha$. Así, como ya tenemos que
+                            \[\n^{\gamma+k}\underset{n}{\Rightarrow}\n^\gamma,\]
+                            y por el caso límite, ya sabemos que:
+                            \[\n^\gamma\underset{n}{\Rightarrow}\n^\alpha.\]
+                            Así, tenemos que:
+                            \[\n^{\gamma+k}\underset{n}{\Rightarrow}\n^\alpha.\]
+                    \end{itemize}
+            \end{itemize}
+            Esto concluye este inciso.
+        \item Procedemos por inducción sobre $\beta$:\\
+            El caso $\beta=0$ es inmediato, pues $F(0,x)=0$, para cada $x$. Ahora, supongamos que para cada ordinal menor a $\beta$, se satisface el enunciado.
+            \begin{itemize}
+                \item $\beta=\gamma+1$: tenemos que para cada $m\in\n$, 
+                    \[F(\beta,m)=F(\gamma+1,m)=\gamma;\]
+                    por lo tanto,
+                    \[F(\beta,i)=F(\beta,j).\]
+                \item $\beta=\n^{\theta+1}(\gamma+1)$: observemos lo siguiente:
+                    \[F(\beta,j)=\n^{\theta+1}\cdot\gamma+\n^{\theta}\cdot j=\n^{\theta}(\n\cdot\gamma+j).\]
+                    Ahora, por el lema {\ref{lemkpl5}}, y usandolo como en el primer inciso de este lema, tenemos la siguiente secuencia:
+                    \[F(\beta,j)=\n^{\theta}(\n\cdot\gamma+j)\underset{n}{\Rightarrow}\n^{\theta}(\n\cdot\gamma+j-1)\underset{n}{\Rightarrow}\cdots\underset{n}{\Rightarrow}\n^{\theta}(\n\cdot\gamma+i)=F(\beta,i).\]
+                \item $\beta=\n^{\delta}(\gamma+1)$: tenemos que, como los ordinales que estamos considerando son menores que $\varepsilon_0$, $\delta<\beta$, por lo que:
+                    \[F(\delta,j)\underset{n}{\Rightarrow}F(\delta,i).\]
+                    Luego, por el primer inciso, tenemos que:
+                    \[\n^{F(\delta,j)}\underset{n}{\Rightarrow}\n^{F(\delta,i)},\]
+                    por lo tanto,
+                    \[\n^\delta\cdot\gamma+\n^{F(\delta,j)}\underset{n}{\Rightarrow}\n^\delta\cdot\gamma+\n^{F(\delta,i)},\]
+                    es decir,
+                    \[F(\beta,j)\underset{n}{\Rightarrow}F(\beta,i).\]
+            \end{itemize}
+            Esto termina el inciso.
+        \item La necesidad es inmediata por definición. Para la suficiencia procedemos por contrapositiva:
+            supongamos que $\beta\underset{n}{\not\Rightarrow} \alpha$, es decir, para cada número natural $k$ tenemos,
+            \[\alpha\neq F(\beta,\underbrace{(n,\ldots,n)}_{k-\text{veces}}).\]
+            Ahora, supongamos que existen $j_1,\ldots,j_m$ tales que:
+            \[(\forall i\in[1,m])(j_i<n)\land F(\beta,(j_1,\ldots,j_m))=\alpha.\]
+            Por el inciso anterior, tenemos que:
+            \[F(\beta,n)\underset{n}{\Rightarrow}F(\beta,j_1),\]
+            es decir, existe $m_{j_1}$ tal que:
+            \[F(\beta,j_1)=F(F(\beta,n),\underbrace{(n,\ldots,n)}_{m_{j_1}-\text{veces}})=F(\beta,\underbrace{(n,\ldots,n)}_{m_{j_1}+1-\text{veces}}).\]
+            Aplicando el mismo proceso a $F(\beta,n)$ y a las expresiones resultantes con cada $j_i$, tenemos que:
+            \[F(\beta,(j_1,\ldots,j_m))=F(\beta,\underbrace{(n,\ldots,n)}_{m_{j_1}+\cdots+m_{j_m}+1-\text{veces}}).\]
+            Por lo tanto, tomando $k=m_{j_1}+\cdots+m_{j_m}+1$, tenemos:
+            \[\alpha= F(\beta,\underbrace{(n,\ldots,n)}_{k-\text{veces}}).\]
+            Esto es una contradicción, y por lo tanto, tenemos que:
+            \[\beta\underset{n}{\not\rightarrow}\alpha.\]
+            Esto termina el inciso.
+        \item Procedemos por inducción sobre $\beta$:
+            el caso base es $\beta=1$. En este caso, a $\gamma$ no le queda otra que ser $1$. Luego, si tenemos que $\gamma\underset{n}{\rightarrow}\delta$, entonces:
+            \[\gamma=1\Longrightarrow(\delta=1\lor \delta=0).\]
+            En cualquier caso, $\beta+\gamma=2$, y tenemos que:
+            \[2\underset{n}{\rightarrow}1\underset{n}{\rightarrow}0;\]
+            además que $\beta+\delta$ queda justo en esa secuencia, siempre menor o igual que $\beta+\gamma$, por lo que se cumple el caso base.
+            Supongamos que la proposición se cumple para cada $\lambda<\beta$.
+            \begin{itemize}
+                \item $\beta=\alpha+1$: por la forma que suponemos que tienen $\beta$ y $\gamma$, al ser $\beta$ un sucesor, debe ser de la forma:
+                    \[\beta=\n^{\beta_1}+\cdots+\n^{\beta_{k}}+\n^{0};\]
+                    y $\gamma$, por el orden en los exponente, no tiene otra que ser $1$, por lo que $\beta+\gamma=\beta+1$. Así pues, si tenemos que $\gamma\underset{n}{\rightarrow}\delta$, nuevamente $\delta$ tiene que ser $1$ o $0$, por lo que $\beta+\delta=\beta+1$ o $\beta+\delta=\beta$; en el primer caso tendríamos la igualdad y terminamos, mientras que en el segundo caso se cumple por como se define la función $F$ para sucesores.
+                \item $\beta=\n^{\alpha}(l+1)$: se tiene entonces que en la descomposición por suma de potencias de $\n$, el menor exponente es $\alpha$; por lo que $\gamma$ tiene como exponente más grande, a lo sumo, a $\alpha$. Observemos que:
+                    \[\n^\alpha\cdot l<\beta;\]
+                    por lo que, por hipótesis de inducción:
+                    \[\n^{\alpha}\cdot l+\gamma\underset{n}{\rightarrow}\n^{\alpha}\cdot l+\delta.\]
+                    Ahora, observemos que el exponente más grande que tiene $\n^{\alpha}\cdot l+\gamma$ es $\alpha$. Además, $\n^\alpha<\beta$, por lo que nuevamente, por hipótesis de inducción,
+                    \[\n^\alpha+\n^{\alpha}\cdot l+\gamma\underset{n}{\rightarrow}\n^{\alpha}+\n^{\alpha}\cdot l+\delta;\]
+                    es decir,
+                    \[\beta+\gamma\underset{n}{\rightarrow}\beta+\delta.\]
+            \end{itemize}
+            Esto concluye el inciso.
+    \end{enumerate}
+    Esto concluye el lema.
+\end{proof}
+
+\begin{lem}\label{kpl6}
+    Supongase que $\beta\underset{n}{\rightarrow}\alpha$ y $0<n\leq n_1<n_2<\cdots<n_k$. Entonces,
+    \[F(\beta,\set{n_1,\ldots,n_k})\geq F(\alpha,\set{n_1,\ldots,n_k}).\]
+\end{lem}
+\begin{proof}
+    Procedemos por inducción sobre $\beta$:\\
+    El caso $\beta=0$ es trivial, pues dado que $\beta\underset{n}{\rightarrow}\alpha$, entonces existen $j_1,\ldots,j_n$ tales que:
+    \[\al=F(\beta,\lpr{j_1,\ldots,j_k});\]
+    luego, por el comportamiento de $F$ decreciente, tenemos que $0=\beta\geq\alpha$, por lo que $\alpha=0$.
+    Así, para cualesquiera elementos como en el enunciado, tenemos:
+    \[F(\beta,\set{n_1,\ldots,n_k})=F(\alpha,\set{n_1,\ldots,n_k})=0.\]
+    Así, supongamos que el resultado se mantiene para elementos menores a $\beta$. Como $n\leq n_1$, tenemos:
+    \[\beta\underset{n_1}{\rightarrow}\alpha\underset{n_1}{\rightarrow}F(\alpha,n_1),\]
+    es decir, tenemos elementos $j_1,\ldots,j_r<n\leq n_1$ tales que:
+    \[F(\beta,(j_1,\ldots,j_r))=\alpha\]
+    luego, 
+    \[F(F(\beta,(j_1,\ldots,j_r)),n_1)=F(\alpha,n_1),\]
+    y como $F(F(\beta,(j_1,\ldots,j_r)),n_1)=F(\beta,(j_1,\ldots,j_r,n_1))$, tenemos que:
+    \[\beta\underset{n_1}{\rightarrow}F(\alpha,n_1).\]
+    Por el inciso 3 del lema {\ref{kpl5}}, afirmamos que:
+    \[F(\beta,n_1)\underset{n_1}{\rightarrow}F(\alpha,n_1);\]
+    en efecto: como $\beta\underset{n_1}{\rightarrow}F(\alpha,n_1)$, tenemos en particular que:
+    \[\beta\underset{n_1}{\Rightarrow}F(\alpha,n_1).\]
+    Si $F(\beta,n_1)=F(\al,n_1)$, entonces $\beta=\alpha$ y se tiene lo deseado. Por otro lado, si 
+    \[F(\beta,\underbrace{(n_1,\ldots,n_1)}_\text{al menos dos})=F(\alpha,n_1),\]
+    entonces,
+    \[F(F(\beta,n_1),\underbrace{(n_1,\ldots,n_1)}_\text{al menos uno})=F(\alpha,n_1),\]
+    y se tiene lo deseado. Luego, como $F(\beta,n_1)<\beta$ y por hipótesis de inducción:
+    \[F(F(\beta,n_1),\set{n_2,\ldots,n_k})\geq F(F(\alpha,n_1),\set{n_2,\ldots,n_k})\]
+    es decir,
+    \[F(\beta,\set{n_1,\ldots,n_k})\geq F(\alpha,\set{n_1,\ldots,n_k}).\]
+\end{proof}
+\begin{prop}\label{kpp7}
+    Para cada $\alpha\in\varepsilon_0$ y $j\in\n$,
+    \[H(\alpha,j)\underset{j}{\rightarrow}F(\alpha,j).\]
+\end{prop}
+\begin{proof}
+    Procedemos por inducción sobre $\alpha$:\\
+    Si $\alpha=0$, es trivial, pues 
+    \[F(H(0,j),n_1)=F(0,n_1)=0=F(0,j).\]
+    En el caso de ordinales sucesores, tenemos:
+    \[H(\beta+1,j)=F(\beta+1,j),\]
+    y se tiene lo deseado. Así, considerando ordinales límites; si $\alpha=\n^{\gamma+1}(\beta+1)$, entonces por las definiciones {\ref{defF}} y {\ref{defH}}, tenemos:
+    \[F(\alpha,j)=\n^{\gamma+1}\beta+\n^{\gamma}j\land H(\alpha,j)=F(\alpha,j)+H(\n^\gamma,j).\]
+    Aplicando el inciso 4 del lema {\ref{kpl5}}, tenemos:
+    \[H(\alpha,j)\underset{j}{\rightarrow}F(\alpha,j).\]
+    Si $\alpha=\n^\delta(\beta+1)$, con $\delta\in\text{LIM}$, entonces por hipótesis de inducción:
+    \[H(\delta,j)\underset{j}{\rightarrow}F(\delta,j).\]
+    Por el inciso 1 del lema {\ref{kpl5}}, tenemos 
+    \[\n^{H(\delta,j)}\underset{j}{\rightarrow} \n^{F(\delta,j)}.\]
+    Entonces,
+    \[H(\alpha,j)=\n^{\delta}\beta+\n^{H(\delta,j)}+H(\n^{H(\delta,j)},j)\underset{j}{\rightarrow}\n^\delta\beta+\n^{H(\delta,j)}\text{, inciso 4 del lema {\ref{kpl5}}}\]
+    \[\underset{j}{\rightarrow}\n^\delta\beta+\n^{F(\delta,j)}=F(\alpha,j).\]
+\end{proof}
+
+\begin{thm}\label{kpp8}
+    Sean $b_0,b_1,b_2,\ldots$ la sucesión de Goodstein de $m$ en el $n-$ésimo paso y sea $k$ el mínimo número tal que $b_k=0$. Entonces, $[[n-1,n+k]]$ es $f_n(m)-$grande.
+\end{thm}
+\begin{proof}
+    Consideremos $\alpha=f_n(b_0)$. Tomando en cuenta el lema {\ref{kpl3ii}}, tenemos la siguiente sucesión de ordinales:
+    \[f_n(m)=f_n(b_0)=\alpha,\]
+    \[f_{n+1}(b_1)=H(\alpha,n),\]
+    \[f_{n+2}(b_2)=H(\alpha,\set{n,n+1}),\]
+    \[\vdots\]
+    \[f_{n+k}(b_k)=f_{n+k}(0)=0=H(\alpha,\set{n,n+1,\ldots,n+k}).\]
+    Por el lema {\ref{kpl6}} y el teorema {\ref{kpp7}},
+    \[F(\alpha,\set{n,n+1,\ldots,n+k})\leq F(H(\alpha,n),\set{n+1,\ldots,n+k})\]
+    \[\leq F(H(\alpha,\set{n,n+1}),\set{n+2,\ldots,n+k})\]
+    \[\leq\cdots\leq H(\alpha,\set{n,\ldots,n+k})=0.\]
+    Luego, por el lema {\ref{eselemita}}, $[[n-1,n+k]]$ es $\alpha-$grande.
+\end{proof}

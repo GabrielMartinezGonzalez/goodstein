@@ -1,0 +1,348 @@
+\section{Propiedades de los ordinales}
+A continuación se presenta la teoria de ordinales, su tratamiento en la teoría de conjuntos y sus relaciones con elementos importantes de la matemática, como los segmentos iniciales o los buenos ordenes.{\cite{SetTheory}}
+\begin{defn}\label{d1}
+Un conjunto $\alpha$ es llamado un ordinal si $\alpha$ es transitivo y estrictamente bien ordenado por $\in$.
+\end{defn}
+La definición anterior se puede escribir de la siguiente forma:
+$\alpha$ es ordinal si $(\forall a,b,c\in\alpha)$,
+\[(a\in b\land b\in c)\Longrightarrow a\in c,\]
+y todo subconjunto de $\alpha$ tiene primer elemento.
+\begin{thm}\label{t1}
+    $\alpha$ es un ordinal si, y sólo si, $\alpha$ es transitivo y se cumple la tricotomía bajo $\in$.
+\end{thm}
+\begin{proof}
+Definimos $\prec$ como la relación tal que, para cualesquiera $\beta$ y $\gamma$, elementos de $\alpha$,
+\[\beta\prec\gamma\Longleftrightarrow (\beta\in\gamma\lor\beta=\gamma)\]
+Es decir, $\prec$ es el orden parcial inducido por la relación $\in$ en $\alpha$. Luego, consideremos el subconjunto de $\alpha$ $\{\beta,\gamma\}$. Como $\prec$ es un buen orden, tenemos que $\beta\prec\gamma\lor\gamma\prec\beta$. Así, tenemos que:
+\[\beta\in\gamma\lor\beta=\gamma\lor\gamma\in\beta\]
+\end{proof}
+
+Considerando $\langle X,\prec\rangle$ un buen orden estricto. Entonces, $\prec$ es una relación bien fundada estricta sobre $X$. Luego, existe exactamente un conjunto transitivo $\alpha$, llamado \textit{el colapso de Mostowki} de $\langle X,\prec\rangle$, y una única biyección $F:X\longrightarrow\alpha$, llamada \textit{la función colapsante} tal que
+\begin{equation}\tag{M}\label{M}
+(\forall x,x'\in X)(x\prec x'\Longleftrightarrow F(x)\in F(x'))
+\end{equation}
+
+\begin{thm}\label{t2}
+Sea $\alpha$ un conjunto. Entonces,
+$\alpha$ es un ordinal si, y sólo si, $\alpha$ es el colapso de Mostowski de un buen orden estricto $\langle X,\prec\rangle$.
+\end{thm}
+\begin{proof}
+Si $\alpha$ es un ordinal, entonces $\alpha$ es el colapso de Mostowski de $\langle\alpha,\in\rangle$, con la función colapsante dada por la identidad. Por otro lado, se muestra que si $\alpha$ es el colapso de Mostowski de un buen orden estricto $\langle X,\prec\rangle$, entonces $\alpha$ es un ordinal y la función colapsante es un isomorfismo de orden entre $\langle X,\prec\rangle$ y $\langle\alpha,\in\rangle$.
+\end{proof}
+
+\begin{prop}\label{p1}
+Si $\la X,\prec_X\ra$ y $\la Y,\prec_Y\ra$ son isomorfos (bajo su orden parcial estricto), entonces estos tienen el mismo colapso de Mostowski.
+\end{prop}
+\begin{proof}
+Sea $\alpha$ es colapso de Mostowski de $\la X,\prec_X\ra$ y $F:X\longrightarrow \alpha$ su función colapsante. Entonces, se satisface {\eqref{M}}. Luego, sea $\varphi:X\longrightarrow Y$ el isomorfismo de orden parcial estricto entre $Y$ y $X$.
+Tomemos $F'=F\circ\varphi$, una biyección. Observemos que si tenemos $y,y'\in Y$ y $x,x'\in X$ tales que $x=\varphi(y)$ y $x'=\varphi(y')$, entonces:
+\[y\prec_Y y'\Longleftrightarrow x\prec_X x'\Longleftrightarrow F(x)\in F(x')\Longleftrightarrow F(\varphi(y))\in F(\varphi(y'))\Longleftrightarrow F'(y)\in F'(y')\]
+Así pues, tomando $F'$ como la función colapsante de $\la Y,\prec_Y\ra$, tenemos que $\alpha$ es el colapso de Mostowski de $\la Y,\prec_Y\ra$. Esto completa la prueba.
+\end{proof}
+
+\begin{defn}\label{d2}
+Se define el conjunto $\text{WOT}$ como el conjunto de las parejas ordenadas $\la x,y\ra$ tales que $x$ es un buen orden estricto y $y$ es el colapso de Mostowski de $x$.
+\end{defn}
+Lo anterior puede escribirse como:
+\[\text{WOT}=\set{\la x,y\ra|x \text{ es buen orden estricto}\land y \text{ es colapso de Mostowski de }x}\]
+
+\begin{prop}\label{p2}
+WOT es una clase funcional que satisface lo siguiente:
+\begin{enumerate}
+    \item Si $\la x,y\ra\in\text{WOT}$, entonces $x$ y $\la y,\in\ra$ son bien ordenado estricto isomorfos. 
+    \item El dominio de WOT es la clase de todos los buenos ordenes estrictos.
+    \item Para cualesquiera buenos ordenes estrictos $x$ y $y$, y para todo ordinal $z$, si $\la x,z\ra\in\text{WOT}$ y $x\cong y$, entonces $\la y,z\ra\in\text{WOT}$.
+\end{enumerate}
+\end{prop}
+\begin{proof} Que sea clase funcional viene del hecho de que el colapso de Mostowski es único. Por otro lado:
+    \begin{enumerate}
+        \item Como $\la x,y\ra\in\text{WOT}$, $x$ es buen orden estricto, de la forma $\la X,\prec\ra$, y $y$ su colapso de Mostowski. Luego, existe una función biyectiva $F:X\longrightarrow y$ tal que se satisface {\eqref{M}}, ecuación la cuál garantiza que $F$ preserva el orden entre $x=\la X,\prec\ra$ y $\la y,\in\ra$. Más aún, por un teorema anterior, ya sabemos que $\in$ es un orden parcial estricto en $y$ (por ser colapso de Mostowski, luego ordinal), por lo que se satisface la proposición, con $F$ el isomorfismo.
+        \item Inmediato del hecho de que sólo pedimos que $x$ sea un buen orden estricto para asegurar la existencia de su colapso de Mostowski.
+        \item Por la proposición anterior, $x$ y $y$ tienen el mismo colapso de Mostowski, el cuál, por hipótesis, es $z$. Luego, por la proposición anterior, como $y$ es un buen orden estricto y $z$ su colapso de Mostowski, $\la y,z\ra\in\text{WOT}$.
+    \end{enumerate}
+\end{proof}
+
+\begin{defn}\label{d3}
+    Sean X un conjunto:
+    \begin{itemize}
+        \item Sea $\la X,\prec\ra$ un buen orden estricto. Se define el tipo de orden de $\la X,\prec\ra$, escrito como $\ot(\lar{X,\prec})$, como el único ordinal $\al$ tal que \[\lar{X,\prec}\cong\lar{\al,\in}.\]
+        \item Sea $\lar{X,\preceq}$ un buen orden, y sea 
+            \[\prec=\set{(x,y)\in X\times X|x\preceq\land x\neq y},\] 
+            el buen orden estricto correspondiente a $\preceq$. Se define el tipo de orden $\ot(\lar{X,\preceq})$ como sigue: 
+            \[\ot(\lar{X,\preceq})=\ot(\lar{X,\prec}).\]
+    \end{itemize}
+\end{defn}
+\begin{prop}\label{p3}
+    \[\ot(\lar{X,\preceq})=\al\Longleftrightarrow\lar{\lar{X,\prec},\al}\in \text{WOT}.\]
+\end{prop}
+\begin{proof}
+    Notemos que 
+    \[\ot(\lar{X,\preceq})=\al\Longleftrightarrow \ot(\lar{X,\prec})=\al.\] 
+    Si $\ot(\lar{X,\prec})=\al$, por ser $\lar{X,\prec}$ buen orden estricto, existe un $\beta$, ordinal, tal que $\beta$ es el colapso de Mostowski de $\lar{X,\prec}$. Luego $\lar{\lar{X,\prec},\beta}\in\text{WOT}$, y por la proposición anterior, $\lar{X,\prec}\cong\lar{\beta,\in}$. Por como se define el tipo de orden, $\al=\beta$ y $\lar{\lar{X,\prec},\al}\in\text{WOT}$. \\
+    Por otro lado, si suponemos $\lar{\lar{X,\prec},\alpha}\in\text{WOT}$, de inmediato tenemos (por la proposición anterior) \[\lar{X,\prec}\cong\lar{\al,\in},\] luego $\ot(\lar{X,\preceq})=\al$.
+\end{proof}
+
+\begin{defn}\label{d4}
+    La clase de todos los ordinales se denota \text{ON}.
+\end{defn}
+\begin{lem}\label{l4}
+    \[(\forall\al\in\text{ON})(\al\subseteq\text{ON}).\]
+\end{lem}
+\begin{proof}
+    Sea $\al\in\text{ON}$ y $\beta\in\al$. Como $\al$ es transitivo, $\beta\subseteq\alpha$. La restricción de buen orden estricto a cualquier subconjunto de su dominio es un buen orden estricto. Por lo tanto, $\beta$ está estrictamente bien ordenado por $\in$. Para mostrar que $\beta$ es conjunto transitivo, asumamos $\gamma\in\beta$ y $\delta\in\gamma$. Se necesita probar que $\delta\in\beta$. Por la transitividad de $\alpha$, ambos $\gamma,\delta\in\alpha$. Más aún, como $\alpha$ está estrictamente bien ordenado por $\in$, se cumple la ley de tricotomía:
+    \[\delta\in\beta\lor\beta\in\delta\lor\beta=\gamma,\]
+    de los cuales, los últimos dos casos son imposibles. Así pues, $\beta\in\text{ON}$ y se concluye lo deseado.
+\end{proof}
+\begin{defn}
+    Sea $X$ un conjunto no vacio. Sea $x\in X$ y $Y\subseteq X$. Asumimos que $W$ es una relación bien fundada en $X$. El conjunto $\set{z\in X|\lar{z,x}\in W\land z\neq x}$ es llamada segmento inicial de $\lar{X,W}$ determinado por $x$, y denotado por $I_W(x)$. Decimos que $x$ es $W\text{-minimal}$ para $Y$ si 
+    \[x\in Y\land I_W(x)\cap Y=\varnothing.\] 
+    Si $x$ es $W\text{-minimal}$ para $x$, entonces decimos que $x$ es $W\text{-minimal}$.
+\end{defn}
+\begin{cor}\label{c5}
+    Cada segmento inicial de un ordinal es un ordinal.
+\end{cor}
+\begin{proof}
+    Sea $\al\in\text{ON}$ y sea $I\subseteq\al$ un segmento inicial del buen orden estricto $\lar{\alpha,\in}$. Si $I=\alpha$, entonces no hay nada que probar. Si $I$ es un segmento inicial propio de $\lar{\al,\in}$, entonces $I=I_\in(\zeta)$ para algún $\zeta\in\al$. Pero como el buen orden estricto es $\in$, tenemos que 
+    \[I_\in(\zeta)=\set{\beta\in\al|\beta\in\zeta}.\] 
+    Por transitividad de $\al$, el último conjunto es igual a \[\set{\beta|\beta\in\zeta}=\zeta.\] 
+    Como $\zeta\in\alpha$, del lema anterior tenemos que $\zeta\in\text{ON}$
+\end{proof}
+\begin{defn}
+    Sea $\lar{X,\preceq}$ un orden parcial. Un subconjunto $I\subseteq X$ es llamado un segmento inicial de $\lar{X,\preceq}$ si 
+    \[(\forall y\in I)(\forall x\in X)(x\preceq y\Longrightarrow x\in I).\] 
+    Si $Y$ es cualquier subconjunto de $X$, entonces se denota el conjunto \[\text{DC}(Y)=\set{x\in X|(\exists y\in Y)(x\preceq y)}\] 
+    el cuál es llamado la cerradura inferior de $Y$ o el segmento inicial de $\lar{X\preceq}$ generado por $Y$. 
+\end{defn}
+En \textit{teoría de conjuntos}, se demuestra el hecho presentado a continuación.
+\begin{prop}
+    Si $\lar{X,\preceq}$ es un buen orden y $Y$ es un segmento inicial de $X$, entonces 
+    \[I(Y)=X\lor \text{DC}(Y)=T_{\preceq}(x_o),\] 
+    donde $x_o$ es el elemento mínimo de $X\setminus\text{DC}(Y)$.
+\end{prop}
+\begin{lem}\label{l6}
+    \[(\forall\alpha,\beta\in\text{ON})(\al\in\beta\lor\beta\in\alpha\lor\alpha=\beta)\]
+\end{lem}
+\begin{proof}
+    Sea $\alpha,\beta\in\text{ON}$. Por \textit{teoría de conjuntos}, sabemos que $\lar{\alpha,\in}$ es isomorfo (bajo orden) a un segmento inicial de $\lar{\beta,\in}$, o $\lar{\beta,\in}$ es isomorfo a un segmento inicial de $\lar{\al,\in}$. Sin perdida de generalidad, asumimos lo primero y sea $F:\al\longrightarrow\beta$ una función inyectiva que mapea $\al$ a un segmento inicial $I$ de $\beta$ tal que 
+    \begin{equation}\tag{*}\label{*}
+        (\forall\xi,\eta\in\al)(\xi\in\eta\Longleftrightarrow F(\xi)\in F(\eta))
+    \end{equation}
+    Por el corolario anterior, $\text{rng}(F)$ es un ordinal. En particular, el rango de $F$ es un conjunto transitivo. Se tiene que {\eqref{*}} es la misma condición que {\eqref{M}} para la función colapsante de $\lar{\alpha,\in}$. Por lo tanto, $\text{rng}(F)$ es el colapso de Mostowski de $\lar{\alpha, \in}$. Por el teorema 3, $\text{rng}(F)=\alpha$. Si $F$ es sobreyectiva, entonces $\al=\text{rng}(F)=\beta$. En caso contrario, $\alpha=\text{rng}(F)=I_\in(\zeta)=\zeta$, para algún $\zeta\in\beta$. En otras palabras, $\alpha\in\beta$.
+\end{proof}
+\begin{cor}
+    La clase relacional $\in\cap(\ON\times\ON)$ bien ordena estrictamente $\ON$.
+\end{cor}
+\begin{proof}
+    Por simplicidad, escribiremos $in$ en lugar de $in\cap\ON\times\ON$. Procederemos explicado dos casos:
+    \begin{itemize}
+        \item Cualquier conjunto (no vacio) de $\ON$ tiene elemento mínimo: Sea $X$ un conjunto (no vacio) cuyos elementos son ordinales. Denotamos:
+            \[\alpha:=\bigcap X.\] 
+            Por demostrar $(\alpha\in X)\land(\forall\beta\in X)(\alpha\in\beta\lor\alpha=\beta)$:
+        Lo segundo es inmediato ya que, por como se definió $\alpha$, 
+            \[(\forall\beta\in X)(\alpha\subseteq\beta).\] 
+            Luego, por el lema anterior, si $\beta\in\alpha$, tenemos que 
+            \[\beta\in\beta,\] lo cuál es absurdo. Luego, tenemos que 
+            \[\alpha\in\beta\lor\alpha=\beta.\] 
+            Por otro lado, consideremos que $\alpha$ no es elemento de $X$; por lo anteriormente mostrado, dado cualquier $\beta$ elemento de $X$, tenemos que $\alpha\in\beta$, luego, como está en todos, está en la intersección:
+            \[\alpha\in\bigcap_{\beta\in X}\beta=\bigcap X=\alpha.\] 
+            Como $\alpha$ es conjunto, esto es una contradicción, luego $\alpha\in X$. Así, $\alpha$ como fue definido es nuestro primer elemento bajo la relación $\in$.
+        \item Cualquier clase (no vacia) de $\ON$ tiene elemento mínimo: Consideremos la clase (no vacia) $\mathcal{X}$ definida por la formula (de teoría de conjuntos) $\varphi(x)$ y cuyos elementos son todos ordinales. Tomemos $\alpha$ tal que $\varphi(\alpha)$ (es decir, $\alpha$ pertenece a la clase $\mathcal{X}$). Tenemos dos casos: 
+            \[(\forall\beta\in\alpha)(\neg\varphi(\beta)),\] 
+            es decir, $\beta$ no es miembro de la clase $\mathcal{X}$, entonces no hay nada que demostrar y $\al$ es elemento mínimo de $\mathcal X$. Si, por otro lado, 
+            \[X=\set{\beta\in\alpha|\varphi(\beta)}\neq\varnothing,\] 
+            tenemos que $X$ es conjunto (dado que $\alpha$ lo es) y, por el punto anterior, este posee elemento mínimo, que será el elemento mínimo de todo $\mathcal X$.
+    \end{itemize}
+\end{proof}
+\begin{defn}
+    Se define la relación $<$ sobre $\ON$ como sigue: 
+    \[\alpha<\beta\Longleftrightarrow\alpha\in\beta.\]
+\end{defn}
+Teniendo en cuenta resultadoa anteriores, se tiene de inmediato lo siguiente:
+\[\alpha\leq\beta\Longleftrightarrow\alpha\text{ es segmento inicial de }\beta.\]
+\begin{prop}\label{p8}
+    Sean $\al,\beta\in\ON$. Entonces 
+    \[\alpha\leq\beta\Longleftrightarrow\alpha\subseteq\beta.\]
+\end{prop}
+\begin{proof}
+    Sean $\al,\beta\in\ON$. Por un lema anterior, $(\forall\xi\in\ON)(\xi\subseteq\ON)$, entonces denotamos: 
+    \[\alpha=\set{\gamma\in\ON|\gamma<\alpha}\land\beta=\set{\gamma\in\ON|\gamma<\beta}.\] 
+    Es evidente que 
+    \[\alpha\leq\beta\Longrightarrow\alpha\subseteq\beta.\] 
+    Asumiendo entonces $\alpha\subseteq\beta$:
+    \begin{itemize}
+        \item Si $\alpha=\beta$, no hay nada que probar.
+        \item Si $\alpha\neq\beta$, y tomamos $\gamma\in\beta\setminus\alpha$; como $\beta\not\in\alpha$, tenemos que 
+            \[\alpha=\gamma\veebar\alpha\in\gamma\in\beta.\] 
+            Como $\beta$ es transitivo, en ambos casos $\alpha\leq\beta$.
+    \end{itemize}
+\end{proof}
+Supongamos que $\lar{X,\preceq}$ es un buen orden, y asumimos $y\not\in X$. Por \textit{teoría de conjuntos}, si $Y=X\cup\set y$ y $\preceq_Y=\preceq\cup\set{\lar{x,y}|x\in Y}$, entonces $\lar{Y,\preceq_Y}$ está también bien ordenado.
+\begin{prop}\label{ex7}
+    \[\alpha=\ot(\lar{X,\preceq})\Longrightarrow S(\alpha)=\ot(\lar{Y,\preceq_Y}).\]
+\end{prop}
+%%a partir de acá demostraciones
+La propiedad anterior muestra que, para cualquier ordinal $\alpha$, su sucesor $S(\alpha)$ también es un ordinal. Más aún, como $S(\alpha)=\alpha\cup\set\alpha$, tenemos que $\alpha\in S(\alpha)$, y si $\beta\in S(\alpha)$, entonces $\beta\in\alpha\veebar\beta=\alpha$. Por lo tanto, $S(\alpha)$ es el más pequeño ordinal, mayor que $\alpha$; por lo que $S(\alpha)$ es el sucesor inmediato de $\alpha$ en $\ON$.\\
+El conjunto vacio es un ordinal. Esto se ve de que $\varnothing$ satisface la definción, o porque $\varnothing$ es el colapso de Mostowski de $\lar{\varnothing,\varnothing}$. Más aún, como $\varnothing$ no contiene elementos, este debería ser el ordinal más pequeño. Los siguientes ordinales son $S(\nt),S(S(\nt)),\ldots$, etcetera. En la teoria de conjuntos, se denota al $n-$ésimo sucesor de $\nt$ por $\widetilde n$ y se identifica por el número natural $n$. Entonces, ahora vemos que cada $\widetilde n$ es un ordinal; más aún, la relación $<$ restringida a los ordinales $\widetilde n$ restringida a los ordinales $\widetilde{n}$ es el orden estricto usual de los números naturales, y $\widetilde n=\ot(\lar{\set{0,1,\ldots,n-1},<})$. Así, los números naturales son los ordinales finitos.
+\begin{prop}
+    Muestre que un ordinal $\alpha$ es un conjunto finito si, y sólo si es un número natural.
+\end{prop}
+Observemos que el más pequeño de los ordinales infinitos es el conjunto $\omega$ de todos los números naturales (pues no hay números naturales que sean infinitos). Así mismo, $\omega$ es el colapso de Mostowski de $\lar{\omega,<}$.
+\begin{lem}\label{l9}
+    (ZF): $\omega$ es el más pequeño ordinal $\alpha$ tal que
+    \begin{enumerate}
+        \item $\alpha\neq0$.
+        \item $(\forall\beta\in\alpha)(S(\beta)\in\alpha)$.
+    \end{enumerate}
+\end{lem}
+\begin{proof}
+    Consideremos que existe un ordinal $\alpha<\omega$, no cero, y tal que 
+    \[(\forall\beta\in\alpha)(S(\beta)\in\alpha).\]
+    Como $\alpha\in\omega$, entonces $\alpha$ se identifica por un número natural $n$. Por como se definió $\alpha$ y como $n-1\in n=\alpha$, entonces $S(n-1)\in\alpha=n$, luego $n\in n$, lo cuál es absurdo.
+\end{proof}
+\begin{thm}\label{t10}
+    Sea $A$ un conjunto de ordinales, entonces:
+    \begin{enumerate}
+        \item $\bigcup A\in\ON$
+        \item $(\forall\alpha\in A)(\exists\beta\in A)(\al<\beta)\Longrightarrow(\bigcup A$  es el más pequeño ordinal mayor a cada elemento de $A)$
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+    Tomamos $A$ un conjunto de ordinales:
+    \begin{enumerate}
+        \item Inmediato (del hecho de que $\in$ bien ordena los ordinales, y que en $\ON$ se cumple la tricotomía).
+        \item Sea $A$ un conjunto de ordinales y sea $\delta=\bigcup A$. Entonces, 
+        \[\delta=\set{\alpha|(\exists\beta\in A)(\alpha\in\beta)}.\]
+        Asumiendo que para cada $\alpha\in A$, existe $\beta \in A$ tal que $\alpha<\beta$, esto implica que $\alpha\in\delta$, para cada $\alpha\in A$. Por otro lado, si $\alpha\in\delta$, entonces $\alpha\in\beta$ para algún $\beta\in A$. Por lo tanto, no hay ordinales más pequeños que $\delta$ que contenga todos los elementos de $A$.
+    \end{enumerate}
+\end{proof}
+Si se satisface la hipótesis del segundo inciso en el teorema anterior, es decir, si 
+
+\begin{equation}\tag{H}\label{H}
+    (\forall\alpha\in A)(\exists\beta\in A)(\al<\beta),
+    \end{equation}
+entonces escribiremos $\sup(A)$ en lugar de $\bigcup A$. Si $A=\set{\alpha_\beta|\beta<\gamma}$ y $\alpha_\beta\leq\alpha_{\beta'}$ para cada $\beta<\beta'<\gamma$, entonces se escribe con frecuencia 
+\[\lim_{\beta\rightarrow\gamma}\alpha_\beta\]
+en lugar de $\sup\set{\alpha_\beta|\beta<\gamma}$.
+\begin{cor}
+    $\ON$ es una clase propia
+\end{cor}
+\begin{proof}
+    Primero, notemos que no existe un ordinal mayor a todos, pues si $\alpha$ es cualquier ordinal, entonces $S(\alpha)$ es un ordinal mayor. Ahora, supongamos que $\ON$ es un conjunto; como $\ON$ no tiene elemento máximo, {\eqref{H}} se satisface. Pero entonces, $\bigcup\ON$ es un ordinal que es mayor a cualquier otro ordinal, lo cuál es contradictorio.
+\end{proof}
+\begin{defn}\label{d12}
+    Una clase $X\subeq\ON$ se dice \textit{cofinal} en $\ON$ si 
+    \[(\forall\alpha\in\ON)(\exists\beta\in X)(\alpha\leq\beta).\]
+    Un ordinal $\alpha$ es llamado \textit{ordinal sucesor} si existe un ordinal $\beta$ tal que $\alpha=S(\beta)$. Un ordinal el cual no es sucesor es llamado \textit{ordinal límite}. Denotatemos la clase de ordinales sucesores por $\text{SUCC}$ y la clase de ordinales limite por $\text{LIM}$. 
+\end{defn}
+Observemos que los números naturales son ordinales sucesores (empezando por el 1), mientras que 0 y $\omega$ son ordinales límite. Por otro lado, si $\alpha\in\ON$, entonces $\alpha<S(\alpha)\in\text{SUCC}$, por lo que $SUCC$ es cofinal en $\ON$. Por otro lado, $\text{LIM}$ es cofinal en $\ON$.
+\begin{prop}
+    Si un conjunto de ordinales $A$ satisface {\eqref{H}}, entonces $\bigcup A$ es un ordinal límite.
+\end{prop}
+\begin{thm}\label{t13}
+    Cada subclase cofinal de $\ON$ es propia. En particular, $\text{SUCC}$ y $\text{LIM}$ son ambas clases propias.
+\end{thm}
+Los siguientes resultados muestran la relación entre los ordinales y los buenos ordenes, entre otros conceptos asociados.
+\begin{defn}
+    Sea $Z$ un conjunto arbitrario, sea $W$ una relación bien fundada sobre $Z$, y sea $\lar{X,\prec}$ un buen orden estricto. Una función $\rk:Z\longrightarrow X$ es llamada una función rango para $W$ con respecto a $\prec$ si 
+    \[(\forall z\in Z)(\rk(z)={\sup}^+\text{rng}(\rk|I(z))).\]
+\end{defn}
+\begin{prop}
+    \text{\  }
+    \begin{enumerate}
+        \item Sea $W$ una relación bien fundada sobre un conjunto $Z$, $\lar{X,\prec}$ un buen orden estricto, y $\rk:Z\longrightarrow X$ una función rango para $W$ con respecto a $\prec$. Sea $\alpha=\ot(\lar{X,\prec})$, y sea $F:X\longrightarrow\alpha$ el isomorfismo de orden entre $\lar{X,\prec}$ y $\lar{\alpha,\in}$. Muestre que la composición $F\circ\rk:Z\longrightarrow\alpha$ es una función rango para $W$ con respecto a $\in$.
+        \item Para cada relación bien fundada, existe una única función rango con respecto a $\in$ cuyo rango es un ordinal.
+    \end{enumerate}
+\end{prop}
+\begin{defn}
+    $R$ es una relación bien fundada en $X$ si es una relación y 
+    \[(\forall Y\subeq X)(\exists y\in Y)(\not\exists r\in Y)(rRy).\]
+\end{defn}
+\begin{prop}\label{p15}
+    Sea $x$ cualquier conjunto. Cada función de $x$ en un ordinal $\alpha$ es la función rango de una relación estrictamente bien fundada en $x$.
+\end{prop}
+\begin{proof}
+    Sea $x$ un conjunto, sea $\alpha\in\ON$ y sea $f:x\longrightarrow\alpha$ una función. Definimos la relación $R_f$ sobre $x$ como \[R_f=\set{\lar{y,z}|f(y)<f(z)}.\] Mostremos que $R_f$ está estrictamente bien fundada: en caso contrario, existe una sucesión $\lar{y_n}_{n\in\omega}$ de elementos de $x$ tales que $\lar{y_{n+1},y_n}\in R_f$ para toda $n\in\omega$. Por definición de $R_f$, esto significa que $f(y_{n+1})\in f(y_n)$, para toda $n\in\omega$, lo cual es imposible, por el axioma de fundación.
+\end{proof}
+\begin{thm}\label{t14}
+    (ZF): Para cada conjunto $x$, existe un ordinal $\alpha>0$ tal que $x$ no puede mapearse en $\alpha$.
+\end{thm}
+\begin{proof}
+    Se sigue de la proposición anterior.
+\end{proof}
+\begin{prop}\label{ex17}
+    Existe una formula $\Psi(r,\alpha)$ de $L_s$ con dos variables libres tal que $\Psi(r,\alpha)$ es valida si, y sólo si $r$ es una relación de buen oriden estricto en $x$ y $\alpha$ es el rango de la función rango para $r$.
+\end{prop}
+\begin{cor}\label{c16}
+    Para cada conjunto $x$, existe un ordinal $\alpha$ tal que $\alpha$ no puede ser mapeado en $x$ por una función inyectiva.
+\end{cor}
+\begin{proof}
+    Si $x=\nt$, ningún ordinal $\beta>0$ puede mapearse en $x$. Si $x\neq\nt$, sea $\alpha>0$ un ordinal tal que $x$ no puede ser mapeado en $\al$. Luego $\alpha$ no puede mapearse en $x$ por una función inyectiva.
+\end{proof}
+\begin{lem}\label{l17}
+    (ZF) Si cada conjunto no vacio admite estructura de grupo, entonces cada conjunto puede ser bien ordenado.
+\end{lem}
+\begin{proof}
+    Asumimos que cada conjunto admite estructura de grupo, y sea $x$ cualquier conjunto. Sea $\alpha>0$ un ordinal tal que no hay una inyección de $\alpha$ en $x$. Consideremos el conjunto $y=x\cup\alpha$. Como $\alpha>0$, por hipótesis $y$ admite estructura de grupo, es decir, tenemos $e\in y$ y una operación $*:y\times y\longrightarrow y$ con la cuál $\lar{y,*,e}$ es un grupo. Fijamos $e,*$.
+    Afirmamos 
+    \[(\forall z\in x)(\exists\beta\in\al)(z*\beta\in\alpha).\] 
+    En efecto, fijamos $z\in x$ y consideremos la función $f:\alpha\longrightarrow y$ dada por la formula $f(\beta)=z*\beta$. Como $z^{-1}*f(\beta)=\beta$, para cada $\beta\in\alpha$, la función $f$ es intectiva. Por la elección de $\alpha$, el rango de $f$ no está contenido en $x$. Pero, si $f(\beta)\in y\setminus x$, entonces $f(\beta)\in\alpha$, lo que prueba la proposición.
+    Ahora, sea $\preceq_{a}$ la orden antilexicográfica sobre $\alpha\times\alpha$. Ahora, claro que $\preceq_a$ es una relación de buen orden. Definimos una función $g:x\longrightarrow\alpha\times\alpha$ siendo $g(z)$ el $\preceq_a$-elemento mínimal $\lar{\beta,\gamma}$ de $\alpha\times\alpha$ tal que $z*\beta=\gamma$. Notemos que si $g(z)=\lar{\beta,\gamma}$, entonces $z=\gamma*\beta^{-1}$. Así, $g$ es una función inyectiva. Luego, definimos la relación $\preceq$ sobre $x$ por: 
+    \[z\preceq z'\Longleftrightarrow g(z)\preceq_{a}g(z').\] 
+    Ahora, $\preceq$ es una relación de buen orden sobre $x$. Esto prueba el teorema.
+\end{proof}
+\begin{thm}
+    (Principio de inducción sobre un conjunto bien fundado)\\
+    Sea $X$ un conjunto no vacio, sea $Y\subeq X$ y sea $W$ una relación bien fundada sobre $X$. Si la implicación
+    \begin{equation}\tag{Ind}\label{Ind}
+        I_W(x)\subeq Y\Longrightarrow x\in Y,
+    \end{equation}
+    es valida para cada $x\in X$, entonces $X=Y$.
+\end{thm}
+\begin{proof}
+    Sea $X,Y$ y $W$ como en el enunciado y asumimos que {\eqref{Ind}} es valida para cada $x\in X$. Supongamos $C=X\setminus Y\neq \nt$. Por la bien fundación de $W$, existe un elemento $W-$mínimal de $C$. Pero, si $x_o$ es un elemento $W-$mínimal de $C$, entonces $I_W(x_o)\subeq Y$, y de {\eqref{Ind}} (considerada con $x_o$) se sigue que $x_o\in Y$, lo cuál es imposible, pues $x_o\in X\setminus Y$, lo cuál es una contradicción.
+\end{proof}
+\begin{thm}
+    (Principio de Definición Recursiva Generalizado)\\
+    Sean $X,Z\neq\nt$, y sea $W$ una relación bien fundada sobre $Z$. Además, suponganse que $G$ es una función con valores en $X$ tal que $\text{dom}(G)$ consiste de todos los pares de la forma $\lar{f,z}$, donde $z\in Z$ y $f$ es una función que mapea $I_W(z)$ en $X$. Entonces, existe exactamente una función $F:Z\longrightarrow X$ tal que
+    \begin{equation}\tag{R}\label{R}
+        (\forall z\in Z)(F(z)=G(F|I_W(z),z))
+    \end{equation}
+\end{thm}
+\begin{thm}
+    (Principio de Construcción Recursiva Generalizado)\\
+    Sean $X,Z\neq\nt$, y sea $W$ una relación bien fundada sobre $Z$. Además, suponganse que $G^*$ es una función con valores en $\PX\setminus\set{\nt}$ tal que $\text{dom}(G^*)$ consiste de todos los pares de la forma $\lar{f,z}$, donde $z\in Z$ y $f$ es una función que mapea $I_W(z)$ en $X$. Entonces, existe una función $F:Z\longrightarrow X$ tal que
+    \begin{equation}\tag{R*}\label{R*}
+        (\forall z\in Z)(F(z)\in G^*(F|I_W(z),z))
+    \end{equation}
+\end{thm}
+Consideremos un ordinal arbitrario $\alpha$. Como $\in$ es una relación bien fundada sobre $\alpha$, son validos los teoremas anteriores. La inducción y recursión sobre $\in$ en ordinales son comúnmente referenciadas como \textbf{inducción transfinita} y \textbf{recursión transfinita}.
+\begin{thm}\label{t19}
+    (ZF) Sea $X$ un conjunto, sea $C$ una familia de subconjuntos de $X$ que es cerrado bajo uniones de subfamilias que son inealmente ordenados por inclusión, y sea $f:C\longrightarrow C$ una función con 
+    \[(\forall c\in C)(c\subeq f(c)).\] 
+    Entonces, existe un $c_o\in C$ tal que $f(c_o)=c_o$.
+\end{thm}
+\begin{proof}
+    Sea $X,C$ y $f$ como en la hipótesis, y sea $\alpha>0$ un ordinal que no puede mapearse en $C$ por una función inyectiva. Definimos por recursión transfinita una función $F:\alpha\longrightarrow \PX$ como sigue:\\
+    Supongamos $\beta\in\alpha$ y $F(\gamma)$ está definida para toda $\gamma<\beta$. Definimos:
+    \[
+    F(\beta) =
+    \begin{cases} 
+    f\left(\bigcup\set{F(\gamma)|\gamma<\beta}\right) & \text{si } \bigcup\set{F(\gamma)|\gamma<\beta}\in C, \\
+    X & \text{en cualquier otro caso.}
+    \end{cases}
+    \]
+    Afirmamos que 
+    \begin{equation}\tag{P}\label{P}
+        (\forall\gamma<\beta<\alpha)(F(\gamma)\subeq F(\beta)).
+    \end{equation}
+    En efecto, sea $\gamma<\beta<\alpha$. Si $F(\beta)=X$, entonces la inclusión $F(\gamma)\subeq F(\beta)$ se sigue del hecho de que $F(\gamma)\in \PX$. Si $F(\beta)\neq X$, entonces $\bigcup\set{F(\delta)|\delta<\beta}\in C$, y por como asumimos $f$, tenemos 
+    \[F(\gamma)\subeq\bigcup\set{F(\delta)|\delta<\beta}\subeq f\left(\bigcup\set{F(\delta)|\delta<\beta}\right)=F(\beta).\]
+    Por otro lado, afirmamos 
+    \begin{equation}\tag{Q}\label{Q}
+        (\forall\beta\in\alpha)(F(\beta)\in C).
+    \end{equation}
+    En efecto, por inducción sobre $\beta$: sea $\beta<\alpha$, y supongase $F(\gamma)\in C$, para cada $\gamma<\beta$. Consideramos $\mathcal{F}=\set{F(\gamma)|\gamma<\beta}$. Por hipótesis de inducción, $\mathcal{F}\subeq C$. La proposición {\eqref{P}} muestra que $\cal F$ está linealmente ordenado por inclusión. Así, la hipótesis sobre $C$ implica que $\bigcup\mathcal F\in C$. Como el rango de $f$ está contenido en $C$, se tiene $F(\beta)=f\left(\bigcup\mathcal F\right)\in C$.
+    Así, continuando con la Demostración principal, de {\eqref{Q}}, $F$ mapea $\alpha$ en $C$. Por la elección de $\alpha$, existen $\gamma<\beta<\alpha$ tal que $F(\gamma)=F(\beta)$. Fijamos $\gamma,\beta$. Si $F(\beta)=X$, entonces $X\in C$, y $f(X)=X$ por la hipótesis sobre $f$, por lo que en ese caso $C=X$ atestigua que el teorema se cumple. Si $F(\beta)\neq X$, entonces sea $c_o=\bigcup\set{F(\delta)|\delta<\beta}$. La definición de $F$ implica que $c_o\in C$. Más aún, 
+    \[F(\beta)=F(\gamma)\subeq\bigcup\set{F(\delta)|\delta<\beta}\subeq f\left(\bigcup\set{F(\delta)|\delta<\beta}\right)=F(\beta).\] 
+    Se sigue que $f(c_o)=c_o$, lo que prueba el teorema.
+\end{proof}

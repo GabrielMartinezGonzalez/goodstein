@@ -1,0 +1,338 @@
+\section{Los teoremas de Ketonen-Solovay}
+En la siguiente sección desarrollaremos unas cuantas herramientas muy especificas: los teoremas de Ketonen-Solovar. Así mismo, presentaremos en medida de lo posible todo aquello que sea útil para demostrar dichos teoremas.
+A continuación se definirán los indicadores y se escribiran explicitamente definiciones y resultados que permitirán el desarrollo de ideas en el último capítulo.{\cite{indicators}}
+
+Vale la pena aclarar que cuando hablamos de elementos o números \textit{no estandar} nos referiremos a elementos de la forma como en el teorema {\ref{noest}}.
+\begin{defn}
+    Sea $M\vDash\PA$ un modelo no estandar de $\PA$ y sea $Q$ una propiedad de segmentos iniciales $I$ de $M$. Una función $Y:M^2\longrightarrow M$ es un indicador de $Q$ en $M$ si para cada $a,b\in M$,
+    \[Y(a,b)\text{ es no estandar de }\PA\Longleftrightarrow (\exists I\subeq M)(a\in I\land b\not\in I\land I\text{ satisface }Q).\] 
+\end{defn}
+Observemos que $Q$ puede ser $I\vDash\PA$. Este es un caso particular de la definición, pero que nos será útil, por lo que daremos una definición remplanzdo explicitamente $Q$.
+\begin{defn}
+    Sea $M\vDash\PA$ un modelo no estandar de $\PA$. Una función $Y:M^2\longrightarrow M$ es un indicador para modelos de $\PA$ si para cada $a,b\in M$,
+    \[Y(a,b)\text{ es no estandar de }\PA\Longleftrightarrow (\exists I\subeq M)(a\in I\land b\not\in I\land I\vDash\PA);\]
+    con $I$ un segmento inicial de $M$. 
+\end{defn}
+
+\begin{thm}\cite{thmsigma1comp}\\
+    Sea $f:\n^k\longrightarrow\n$. Entonces, son equivalentes las siguientes proposiciones:
+    \begin{itemize}
+        \item $f$ es demostrablemente computable en $\PA$,
+        \item la relación $f(x)=y$ es equivalente a una fórmula $\Sigma_1$ tal que:
+            \[\PA\vdash\forall x\exists y\ph(x,y).\]
+    \end{itemize}
+\end{thm}
+\begin{proof}
+    Necesidad: supongamos que $f$ es demostrablemente computable. Entonces, existe una máquina de Turing $M$ tal que $\PA$ demuestra:
+    \[\forall x\exists t\hspace{0.2cm}(M(x)\text{ se detiene en }t\text{ pasos}).\]
+    Ahora, se define:
+    \[\text{Comp}_M(x,y,t),\]
+    que se puede entender como \textit{$t$ codifica una computación válida de $M$ sobre $x$ con salida $y$}. Esta fórmula es $\Delta_0$, pues la verificación finita es un cálculo aritmetico y acotado. Ahora, definimos:
+    \[\ph(x,y)=\exists t\text{Comp}_M(x,y,t);\]
+    donde $\ph$ es $\Sigma_1$. Por otro lado, $\PA$ demuestra que $M$ termina, por lo que:
+    \[\forall x\exists y\ph(x,y);\]
+    más aún, como la máquina es determinista, tenemos que:
+    \[\forall x\forall y_1,y_2\hspace{0.2cm}(\ph(x,y_1)\land\ph(x,y_2)\implies y_1=y_2);\]
+    por lo que la gráfica de $f$ está definida por una fórmula $\Sigma_1$, que es lo que buscabamos.\\
+    Suficiencia: supongamos que existe una fórmula $\Sigma_1$ de la forma:
+    \[\ph(x,y)=\exists t\psi(x,y,t),\]
+    con $\psi$ del tipo $\Delta_0$, tal que $\PA$ demuestra:
+    \[\forall x\exists!y\ph(x,y).\]
+    Ahora, definimos el siguiente algoritmo:
+    \begin{verbatim}
+        for y=0,1,2,... 
+            for t = 0,1,2,... 
+                if \psi(x,y,t)
+                    return y
+    \end{verbatim}
+    Este algoritmo es efectivo, pues $\psi$ es $\Delta_0$, luego es decidible, además de que la busqueda es computable. Ahora bien, $\PA$ demuestra que:
+    \[\forall x\exists y\exists t\psi(x,y,t);\]
+    esto significa que la busqueda siempre encuentra un testigo, por lo tanto $\PA$ demuestra que el algoritmo termina y que devuelve un único $y$. Así, con dicho algoritmo se contruye una  máquina de Turing $M_\ph$ tal que busca testigos de forma efectiva, siempre termina y devuelve las salidas de $f$; y $\PA$ demuestra que la máquina termina.
+\end{proof}
+Este resultado se utilizará libremente a lo largo de esta sección, pues una caracterización importante de la funciones demostrablemente computables.
+
+\begin{defn}
+    Un indicador $Y(x,y)$ se dice que es un indicador bien comportado para $Q$ en $\PA$ si 
+    \begin{enumerate}
+        \item $Y(x,y)=z$ es una $\Sigma_1$ $\cL_A-$formula con únicamente las variables libres $x$, $y$ y $z$;
+        \item $\PA\vdash\forall x,y\exists!z Y(x,y)=z$;
+        \item $\PA\vdash\forall x,y Y(x,y)\leq y$;
+        \item $\PA\vdash x,y,x',y'(x'\leq x\land y\leq y'\imp Y(x,y)\leq Y(x',y'))$;
+        \item para cada módelo no estandar $M\vDash\PA$ y para cada $a,b\in M$, $Y(a,b)$ es no estandar si, y sólo si existe $I\subeq_i M$ con $a\in I$ e $I$ tiene la propiedad $Q$.
+    \end{enumerate}
+\end{defn}
+
+\begin{thm} {\label{tks0}}
+    Sea $M$ un modelo no estandar de $\PA$. La función $Y:M^2\longrightarrow \n$ dada por 
+    \[Y(a,b)=\text{máx}\set{c|[a,b]\text{ es }\n_c-\text{grande}},\]
+    es un indicador bien comportado para modelos de $\PA$.
+\end{thm}
+\begin{proof} \hspace{1cm}\\
+    1. Observemos lo siguiente:
+        \begin{align*}
+            Y(a,b)=d &\Longleftrightarrow \max\set[c]{[a,b]\text{ es }\n_c-\text{grande}}=d\\
+            &\Longleftrightarrow \exists c\hspace{0.3cm}([a,b]\text{ es }\n_c-\text{grande}\land [a,b]\text{ no es }\n_{c+1}-\text{grande}).
+        \end{align*}
+    3. Procedemos por contradicción: si tenemos que $y<Y(x,y)$, entonces tenemos que $y+1\leq Y(x,y)$. Así pues, por la proposición {\ref{mdcg}}, tenemos que $[x,y]$ es $\n_{y+1}-$grande. Luego, por el teorema {\ref{thm10304}} tenemos:
+        \[y-x+1\geq (y+1)+1,\]
+        \[-x\geq 1;\]
+        y dado que $x$ es un mayor o igual a 0, tenemos una contradicción.\\
+    2. Tenemos dos casos: si $\set[c]{[a,b]\text{ es }\n_c-\text{grande}}$ es vacío, basta considerar que
+        \[\max\nt=0,\]
+        lo cuál basta para dar un elemento máximal único. Por otro lado, si el conjunto es no vacío, dado que es un conjunto acotado (por el punto 3), tenemos que posee un elemento máximal, el cuál es único.\\
+    4. Sean $x,y,x',y'$ tales que $x'\leq x$ y $y\leq y'$. Nombremos los siguientes conjuntos:
+        \[A=\set{c|[x,y] \text{ es } \n_c-\text{grande}},\]
+        \[B=\set{c|[x,y'] \text{ es } \n_c-\text{grande}},\]
+        \[C=\set{c|[x',y'] \text{ es } \n_c-\text{grande}}.\]
+        Claramente, por definición, $Y(x,y)=\max{A}$, $Y(x,y')=\max{B}$ y $Y(x',y')=\max{C}$. Así pues, por la proposición {\ref{siabb}}, como $[x,y]$ es $Y(x,y)-$grande, entonces $[x,y']$ es $Y(x,y)-$grande; así, $Y(x,y)\in B$, y por lo tanto
+        \[Y(x,y)\leq Y(x,y').\]
+        Ahora bien, $[x,y']$ es $Y(x,y')-$grande, así, por el lema {\ref{lbdcpd}}, $[x',y']$ es $Y(x,y')-$grande. Así, tenemos que $Y(x,y')\in C$, y por lo tanto, 
+        \[Y(x,y')\leq Y(x',y').\]
+        De estas dos desigualdades, tenemos que $Y(x,y)\leq Y(x',y')$.\\
+    5. Para la suficiencia, consideremos $I\subeq_i M$ tal que $I\vDash\PA$, $a\in I$y $b\not\in I$. Dado $k$ estandar, por la proposición {\ref{prop328}} existe $d_k>a$ tal que $d_k\in I$ (por el teorema {\ref{los}}) y $[a,d_k]$ es $\n_k-$grande, luego como $b>d_k$ y por la proposición {\ref{siabb}} y el teorema {\ref{los}}, $[a,b]$ es $\n_k-$grande. Como $k$ es arbitraria (sólo pidiendole que sea estándar), para cada $k$ estándar tenemos que:
+        \[[a,b]\text{ es }\n_k-\text{grande}.\]
+        Por el principio {\ref{overspill}}, existe una $c$ no estándar tal que
+        \[[a,b]\text{ es }\n_c-\text{grande},\]
+        y como la función $Y$ se define como un máximo, $Y(a,b)$ es no estandar.\\
+        Para la necesidad basta observar lo siguiente: los segmentos iniciales de un modelo de $\PA$ son cerrados bajo funciones demostrablemente computables, esto es porque si $f(x)=y$ es equivalente a una expresión $\Sigma_1$ en $M$, entonces también lo es en $I$, para $I$ segmento inicial.
+        Luego, por el punto 1, tenemos que $Y$ es una función demostrablemente computable. Así pues, tenemos que:
+        \[(a\in I\land b\in I)\implies Y(a,b)\in I;\]
+        o lo que es lo mismo:
+        \[Y(a,b)\not\in I\implies (a\not\in I\lor b\not\in I).\]
+        Ahora bien, todo modelo de $\PA$ tiene segmentos iniciales que satisfacen $\PA$ (al menos, la sección isomorfa al módelo estandar). Sea $I\subeq_i M$ tal que $a\in I$ y $I\vDash\PA$. Si $Y(a,b)$ es no estandar (es decir, no está en $I$), entonces 
+        \[b\not\in I.\]
+\end{proof}
+
+\begin{lem}\label{tks} (Primer Teorema de Ketonen-Solovay)\\
+    Sea $M$ un modelo no estandar de $\PA$. La función $Y:M^2\longrightarrow \n$ dada por 
+    \[Y(a,b)=\text{máx}\set{c|[a,b]\text{ es }\n_c-\text{grande}},\]
+    es un indicador para modelos de $\PA$.
+\end{lem}
+\begin{proof}
+    Se sigue del teorema {\ref{tks0}}.
+\end{proof}
+
+\begin{lem}\label{p3tks}
+    Sea $Y(x,y)$ un indicador bien comportado para la propiedad $I\vDash \PA$ de segmentos iniciales $I$, y $Q_n:A_n\longrightarrow\n$ dada por 
+    \[Q_n(x)=\min\set{y\geq x|Y(x,y)\geq n},\] 
+    con $n\in\n$ y $A_n\in\mathcal{P}(\n)$. Si $a\in I\vDash \PA$ para algún segmento inicial $I\subeq_i \n$, entonces
+    \[\forall n\in\n\hspace{0.5cm}\mathcal{N}\vDash\exists c\hspace{0.1cm} Q_n(a)=c.\]
+    Además, $\PA\vdash\forall x\exists!y\hspace{0.1cm} Q_n(x)=y$, y también cada $Q_n(x)$ es demostrablemente computable en $\PA$.
+\end{lem}
+\begin{proof}
+    Si $a\in I$ y $b\in\hp\setminus I$, con $I\vDash \PA$, entonces $\mathcal{N}\vDash Y(a,b)=d$ para algún $d$ no estandar, pues $Y$ indica segmentos iniciales que satisfacen $\PA$. Luego, $M\vDash\exists x(Y(a,b)\geq n)$ y el menor $x\geq a$ es $Q_n(a)$.
+    Entonces para cada $a\in \mathcal{N}$ y cada $b\in \hp\setminus \mathcal{N}$ tenemos que $Y(a,b)$ es no estandar, ya que $\mathcal{N}$ satisface $\PA$. Por lo tanto, $\hp\vDash\exists x(Y(a,x)\geq n)$, es decir, $\mathcal{N}\vDash\exists x(Y(a,x)\geq n)$ como $\mathcal{N}\prec \hp$, y de nuevo el mínimo $x$ es $Q_n(a)$.
+    Finalmente, para verificar que cada $Q_n(a)$ es demostrablemente computable en $\PA$ deberíamos simplemente verificar que la fórmula $Q_n(x)=y$ es equivalente a una $\Sigma_1$ fórmula. Pero $Q_n(x)=y$ es 
+    \[Y(x,y)\geq n\land\forall z<y\exists w(Y(x,y)=w\land w<n)\]
+    la cuál es $\Sigma_1(\PA)$ ya que $Y(x,y)=z$ es $\Sigma_1$ y $\Sigma_1(\PA)$ es cerrador bajo cuantificaciones acotadas.
+\end{proof}
+\begin{obs}
+    Una cosa importante a resaltar es que:
+    \[\min\set[y\geq x]{\max\set[c]{[x,y]\text{ es }\n_c-\text{grande}}\geq n}=\min\set[y\geq x]{[x,y]\text{ es }\n_n-\text{grande}}.\]
+    Este hecho se sigue de lo siguiente:\\
+    Sea $y'=\min\set[y\geq x]{\max\set[c]{[x,y]\text{ es }\n_c-\text{grande}}}$. Es decir, el mayor $c$ tal que $[x,y']$ es $\n_c-$grande, es mayor a $n$; entonces, como $c\geq n$ y por el lema {\ref{mdcg}}, $[x,y']$ es $\n_n-$grande. Luego \[y'\in\set[y\geq x]{[x,y]\text{ es }\n_n-\text{grande}}.\] Por otro lado, si $y''=\min\set{\set[y\geq x]{[x,y]\text{ es }\n_n-\text{grande}}}$, entonces el mayor $c$ tal que $[x,y'']$ es $\n_c-$grande es mayor o igual a $n$, luego \[y''\in \set[y\geq x]{\max\set[c]{[x,y]\text{ es }\n_c-\text{grande}}}.\] Luego, se sigue la igualdad.
+\end{obs}
+
+\begin{defn} \textit{(Jerarquia de Hardy)}\\
+    Definimos la función $h_\alpha:\n\longrightarrow\n$ de la siguiente forma:
+    \begin{center}
+        $h_0(n)=n$,\\
+        $h_\alpha(n)=h_{F(\alpha,n)}(n+1)$.
+    \end{center}
+\end{defn}
+\begin{defn}
+    Para cada $i\in\n$, definimos las funciones $q_i:\n\longrightarrow\n$
+    \[q_i(x)=\min\set{y\geq x|[x,y]\text{ es }\n_i-\text{grande}}.\]
+\end{defn}
+\begin{comment}
+\begin{lem}{\label{lemfc1}}
+    Sean $m,n\in\n$ tales que $n<m$, entonces para toda $x$ suficientemente grande (es decir, a partir de cierta $x$)
+    \[q_n(x)<q_m(x).\]
+\end{lem}
+\begin{proof}
+    Primero observemos que si $n<m$, $q_n(x)\leq q_m(x)$: en efecto, tenemos que $[x,q_m(x)]$ es $\n_m-$grande. Entonces, por el lema {\ref{mdcg}}, tenemos que $[x,q_m(x)]$ es $\n_n-$grande. Luego, como $q_n(x)$ es el mínimo número $y$ tal que $[x,y]$ es $\n_n-$grande, tenemos que:
+    \[q_n(x)\leq q_m(x).\]
+    Ahora, demostraremos la desigualdad estricta (para $x$ suficientemente grande) por inducción sobre $m$ a partir de $n+1$: por el corolario {\ref{corutil}}, tenemos lo siguiente:
+    \[[x,y]\text{ es }\n_n-\text{grande}\implies y\geq n+x,\]
+    \[[x,y]\text{ es }\n_{n+1}-\text{grande}\implies y\geq n+x+1;\]
+    por lo que, al pasar al caso de las mínimas $y$ que satisfacen las hipótesis de las implicaciones anteriores, tendríamos que:
+    \[q_n(x)=n+x\land q_{n+1}(x)=n+x+1.\]
+    Si estos números coinciden, tendríamos 
+    \[n+x=n+x+1,\]
+    lo que implica 
+    \[0=1,\]
+    lo cuál es absurdo para toda $x$. Ahora, consideremos que para cada $k\leq m$ ya se cumple que existe una cierta $x_k$ a partir de la cuál $q_n(x_k)<q_k(x_k)$. Observemos que para demostrar que $q_m(x_m)<q_{m+1}(x_m)$ seguimos exactamente el mismo razonamiento que en el caso base. De esta forma, tenemos que:
+    \[\forall x\geq x_m\hspace{0.3cm}q_m(x_m)<q_{m+1}(x_m);\]
+    además de que por hipótesis de inducción, 
+    \[\forall x\geq x_m\hspace{0.3cm}q_n(x_m)<q_{m}(x_m).\]
+    De esta forma, tenemos que:
+    \[\forall x\geq x_m\hspace{0.3cm}q_n(x_m)<q_{m+1}(x_m),\]
+    lo qué completa la inducción y la prueba del lema.
+\end{proof}
+\end{comment}
+\begin{lem}{\label{lemaxd}}
+    Sea $n$ un número natural. Entonces, para cada $x$:
+    \[q_n(x+1)=q_{n+1}(x).\]
+\end{lem}
+\begin{proof}
+    Por el corolario {\ref{corutil}}, tenemos las siguientes implicaciones:
+    \begin{center}
+        $[x,y]$ es $\n_{n+1}-$grande $\implies y-x+1\geq (n+1)+1$;\\
+        $[x+1,y]$ es $\n_n-$grande $\implies y-(x+1)+1\geq n+1$.
+    \end{center}
+    Así, tomando los mínimos valores que puede tomar $y$ en cada caso, tenemos lo siguiente:
+    \[q_{n+1}(x)-x+1= (n+1)+1\land q_n(x)-(x+1)+1= n+1.\]
+    Haciendo algebra sobre las expresiones anteriores, tenemos que:
+    \[q_{n+1}(x)=n+1+x\land q_n(x)=n+1+x,\]
+    por lo que tenemos de inmediato que 
+    \[q_{n+1}(x)=q_n(x).\]
+\end{proof}
+\begin{lem}{\label{lem1nuevo}}
+    Para cada $\alpha$, se tiene que para toda $x$ suficientemente grande
+    \[h_\alpha(x)<q_N(x),\]
+    con $N=\min\set[n\in\n]{\alpha<\n_n}$ o $N=\min\set[n\in\n]{\alpha<\n_n}+1$.
+\end{lem}
+\begin{proof}
+    Procedemos por inducción sobre $\alpha$:\\
+    Observemos que $x< q_0(x)$, pues $[x,q_0(x)]$ es $\n-$grande si y sólo si $[x+1,q_0(x)]$ es $F(\n_0,x+1)-$grande, pero  $F(\n_0,x+1)=x+1$, además que
+    \[X\text{ es }n-\text{grande}\Longleftrightarrow |X|\geq n+1,\]
+    por lo que tenemos, por la mínimalidad de $q_0(x)$, que $q_0(x)-(x+1)+1=(x+1)+1$, es decir:
+    \[q_0(x)=2(x+1)>x.\]
+    Como $h_0$ es simplemente la identidad, para cada $x$, $h_0(x)<q_0(x)$, además
+    \[0=\min\set[n\in\n]{0<\n_n}.\]
+    Ahora, supongamos que el lema se cumple para cada $\xi<\alpha$. Tenemos dos casos: $\alpha=\n_{N'}$, para alguna $N'$, o para cada $n$ se tiene que $\alpha\neq\n_n$.
+    \begin{itemize}
+        \item Si $\alpha=\n_{N'}$, para cada $\eta$ tal que $\n_{N'-1}\leq \eta <\alpha$,
+            \[N'=\min\set[n\in\n]{\eta<\n_n};\]
+            luego, dado que ${(F(\alpha,n))}_{n\in\n}$ forma una sucesión creciente de ordinales que converge a $\alpha$, a partir de un cierto indice $m$, se tiene que
+            \[{F(\alpha,m)}\geq \n_{N'-1};\]
+            por lo que, por el lema {\ref{lemaxd}} y por hipótesis de inducción, existe un número $l$ tal que para toda $x$ mayor o igual que $\max\set{m,l}$,
+            \[h_\alpha(x)=h_{F(\alpha,x)}(x+1)<q_{N'}(x+1)=q_{N'+1}(x).\]
+            Ahora, tomando $N=N'+1$, tenemos que en efecto 
+            \[N=\min\set[n\in\n]{\alpha<\n_N}.\]
+        \item Si $\alpha\neq\n_n$ para cualquier $n$, nuevamente considerando que ${(F(\alpha,n))}_{n\in\n}$ forma una sucesión creciente de ordinales que converge a $\alpha$ y que cada termino de la sucesión es menor estricto que $\alpha$, tenemos que a partir de cierto indice $m$
+            \[\n_{N-1}\leq F(\alpha,m)<\alpha<\n_N;\]
+            para $N=\min\set[n\in\n]{\alpha<\n_n}$. Entonces, por el lema {\ref{lemaxd}} y por la hipótesis de inducción, existe un $l$ tal que para toda $x$ mayor o igual que $\max\set{m,l}$,
+            \[h_\alpha(x)=h_{F(\alpha,x)}(x+1)<q_N(x+1)=q_{N+1}(x).\]
+    \end{itemize}
+    Esto termina la prueba.
+\end{proof}
+
+\begin{lem} {\label{exhaus}} {\cite{demoscomp}}\hspace{0.5cm}\\
+    Para una función $f:\n^k\longrightarrow\n$, las siguientes proposiciones son equivalentes:
+    \begin{itemize}
+        \item $f$ es demostrablemente computable en $T$;
+        \item existe una fórmula $\psi(x,y,t)\in\Delta_0$ tal que
+            \[T\vdash\forall x\exists!y\exists t\psi(x,y,t),\]
+            y $f(x)=y$ es el único $y$ que satisface esto.
+    \end{itemize}
+\end{lem}
+\begin{proof}
+    Comencemos por la necesidad:\\
+    Si $f$ es demostrablemente computable, existe una máquina de Turing $M$ tal que:
+    \[T\vdash\forall x\exists t\text{Halt}_M(x,t),\]
+    donde $\text{Halt}_M(x,t)$ se interpreta como \textit{$M$ se detiene sobre $x$ en $t$ pasos}. Ahora bien, la relación 
+    \[\text{Comp}_M(x,y,t),\]
+    la cuál se interpreta como \textit{$t$ codifica un cálculo válido de $M$ sobre $x$ que termina con salida $y$} es tal que toda verificación es finita y se recorren los $t$ pasos; es decir, es $\Delta_0$. Ahora, definimos el algoritmo:
+    \begin{verbatim}
+        for y = 0,1,2,... 
+            for t = 0,1,2,... 
+                if Comp_M(x,y,t)
+                    return y
+    \end{verbatim}
+    Este algoritmo es computable y $\PA$ demuestra que existe algún $t$ en donde termina el algoritmo y que el $y$ encontrado es único. Cabe recalcar que esta busqueda es exhaustiva.\\
+    Para la suficiencia:\\
+    Supongamos que existe $\psi(x,y,t)\in\Delta_0$ tal que 
+    \[T\vdash\forall x\exists!y\exists t\psi(x,y,t).\]
+    Definimos el algoritmo:
+    \begin{verbatim}
+        for y = 0,1,2,... 
+            for t = 0,1,2,... 
+                if Comp_M(x,y,t)
+                    return y
+    \end{verbatim}
+    Este algoritmo es efectivo porque $\Delta_0$ es decidible y la busqueda es computable. $\PA$ también demuestra que:
+    \[\forall x\forall y_1\forall y_2(\exists t_1\psi(x,y_1,t_1)\land \exists t_2\psi(x,y_2,t_2)\implies y_1=y_2),\]
+    lo cuál implica que la salida $y$ es la correcta y única. Ahora, como el algoritmo define una máquina de Turing que siempre termina y que $\PA$ demuestra esto último, entonces $f$ es demostrablemente computable.
+\end{proof}
+\begin{obs}
+    El anterior lema se puede entender como lo siguiente: una función es demostrablemente computable si, y sólo si puede obtenerse por una busqueda exhaustiva efectiva cuya terminación puede demostrarse en la teoría.
+\end{obs}
+
+\begin{prop}
+    Dado $\alpha\in\varepsilon_0$, $h_\alpha$ es una función estrictamente creciente.
+\end{prop}
+\begin{proof}
+    Supongamos que no, es decir, existe un número natural $x$ tal que:
+    \[h_\alpha(x+1)\leq h_\alpha(x).\]
+    Ya sabemos que no existen decrecimientos infinitos en los ordinales, por lo que si aplicamos la función $F$ a $\alpha$, como en la definición de las funciones $h_\alpha$, en una cantidad finita de pasos, digamos $\xi$ pasos, tenemos que:
+    \[h_0(x+1+\chi)\leq h_0(x+\chi);\]
+    pero esto es:
+    \[x+1+\chi\leq x+\chi,\]
+    lo que implica
+    \[1\leq 0,\]
+    lo cuál es una contradicción.
+\end{proof}
+\begin{prop} \label{paralonoestandarxdxdxd}
+    Sean $\alpha$ y $\beta$ dos ordinales. Entonces, para $x$ suficientemente grande, tenemos que:
+    \[\alpha<\beta\implies h_\alpha(x)<h_\beta(x).\]
+\end{prop}
+\begin{proof}
+    Procedemos por inducción sobre $\beta$:\\
+    Para el caso $\beta=1$, $\alpha$ no tiene de otra que ser $0$, por lo que:
+    \[h_\alpha(x)=x<x+1=h_0(x+1)=h_1(x)=h_\beta(x);\]
+    por lo que se cumple para todo $x$. Para el caso $\beta=\gamma+1$, $\alpha\leq\gamma$, por lo que:
+    \[h_\alpha(x)\leq h_\gamma(x)=h_\beta(x-1)<h_\beta(x);\]
+    por lo que se cumple para cada $x$.
+    Finalmente, si $\beta$ es límite,
+    \[h_\beta(x)=h_{F(\beta,x)}(x+1).\]
+    Tomando $x$ suficientemente grande para que 
+    \[F(\beta,x)>\alpha,\]
+    entonces, por hipótesis de inducción,
+    \[h_\alpha(x+1)<h_{F(\beta,x)}(x+1);\]
+    luego
+    \[h_\alpha(x)<h_\alpha(x+1)<h_{F(\beta,x)}(x+1)=F_\beta(x).\]
+\end{proof}
+\begin{lem}
+    Dado $x\in\n$, existe un $\alpha\in\varepsilon_0$ tal que:
+    \[\forall n\in\n\hspace{0.2cm}n\leq h_\alpha(x).\]
+\end{lem}
+\begin{proof}
+    Procedemos por inducción sobre los naturales:\\
+    Para el caso $n=0$: basta tomar $\alpha=0$, pues 
+    \[\forall m\in\n\hspace{0.2cm}(0\leq m);\]
+    luego
+    \[0\leq h_\alpha(x).\]
+    Ahora, si ya se cumple que $n\leq h_\alpha(x)$, para algún $\alpha$, tenemos que:
+    \[n+1\leq h_\alpha(x)+1\leq h_{\alpha+1}(x).\]
+\end{proof}
+
+\begin{lem}{\label{yaelmeroultimo}}
+    Para cualquier función $f$ demostrablemente computable, existe un $\alpha\in\varepsilon_0$ tal que, para $x$ suficientemente grande,
+    \[f(x)<h_\alpha(x).\]
+\end{lem}
+\begin{proof}
+    Supongamos que existe $f$ una función tal que, para todo $\alpha\in\varepsilon_0$, se cumple que:
+    \[\forall y\exists x>y\hspace{0.2cm}(h_\alpha(x)\leq f(x));\]
+    demostraremos que $f$ no es demostrablemente computable. Observemos que si $x$ es tal que
+    \[\forall\alpha\in\varepsilon_0\hspace{0.2cm}(h_\alpha(x)\leq f(x)),\]
+    entonces, para cada $n\in\n$ y para cada $\alpha$, tenemos que:
+    \[n\leq h_\alpha(x)\leq f(x);\]
+    más aún, como es para cada $\alpha$, y por la proposición {\ref{paralonoestandarxdxdxd}}, la primer desigualdad es estricta, pues podemos tomar $\alpha$ suficientemente grande para ello (consideramos $\alpha_n$ como el ordinal que mayora a cada $n$ bajo $h_{\alpha_n}$ y tomamos el supremo de todos esos $\alpha_n$ como $\alpha$). Entonces;
+    \[n< h_\alpha(x)\leq f(x).\]
+    Como $n$ es arbitrario, $f(x)$ es un número no estandar. Luego, por el lema {\ref{exhaus}}, $f$ no puede ser demostrablemente computable bajo $\PA$, dado que un algoritmo de busqueda exhaustiva jamás podría dar con $f(x)$ es una cantidad finita de pasos.
+\end{proof}
+
+Otro argumento útil para el final del lema anterior (\ref{yaelmeroultimo}) es porque los modelos de $\PA$ son cerrados bajo funciones demostrablemente computables, como vimos en la demostración del teorema {\ref{tks0}}.
+
+\begin{cor}\label{3tks} (Tercer Teorema de Ketonen-Solovay)\\
+    Las funciones
+    \[\begin{array}{c}
+        q_n:\n\longrightarrow\n\\
+        x\mapsto\min\set{y\geq x|[x,y]\text{ es }\n_n-\text{grande}}
+    \end{array}\]
+    son total computables (demostrable en $\PA$), y para dacada función total demostrablemente computable $f$, existe $n\in\n$ tal que $f(x)<q_n(x)$ para toda $x\in\n$ suficientemente grande.
+\end{cor}
+\begin{proof}
+    La primera parte se sigue del teorema {\ref{p3tks}}., tomando $Y(x,y)$ como el indicador del teorema {\ref{tks}} y $Q_n=q_n$. Lo segundo se sigue directamente de {\ref{yaelmeroultimo}}.
+\end{proof}

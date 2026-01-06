@@ -1,0 +1,182 @@
+\section{Conjuntos $\alpha-$grandes}
+En el siguiente capítulo desarrollaremos la teoria de conjuntos $\alpha-$grande; una poderosa teoría que será exageradamente útil en lo que resta del presente trabajo.
+
+\begin{defn}\label{defF}
+    Definimos la operación $F:\varepsilon_0\times\n\longrightarrow\varepsilon_0$ como sigue:
+    \[
+        F(\alpha,n)=
+        \begin{cases}
+            0 & \text{si }\alpha=0\\
+            \beta &\text{si }\alpha=\beta+1\\
+            \n^{\gamma+1}\cdot\beta+\n^\gamma\cdot n&\text{si }\alpha=\n^{\gamma+1}\cdot(\beta+1)\\
+            \n^\delta\beta+\n^{F(\delta,n)} &\text{si }\alpha=\n^\delta\cdot(\beta+1)\land \delta\in\text{LIM}
+        \end{cases}
+    \]
+\end{defn}
+Vale la pena observar que $F(\al,n)<\al$, para cualquier ordinal $\al$. Más aún, $F$ es inyectiva con respecto a su primer entrada; es decir:
+\[F(\alpha,n)=F(\beta,n)\Longrightarrow \alpha=\beta.\]
+\begin{defn}
+    Definiremos el concepto de $\al-$grande por inducción sobre $\alpha\in\varepsilon_0\setminus\set{0}$ como sigue:
+    Sea $X\subeq\n$, finito. Enumeramos los elementos de $X$ en orden ascendente en la forma $x_0,x_1,\ldots,x_{|X|-1}$. Así,
+    \begin{itemize}
+        \item $X$ es $1-$grande si $2\leq |X|$;
+        \item $X$ es $\alpha-$grande si $X\setminus\set{x_0}$ es $F(\al,x_1)-$grande.
+    \end{itemize}
+\end{defn}
+\begin{obs}
+    Por como se definio el concepto de $\alpha-$\textit{grande} y la función $F$, tenemos:
+    \begin{itemize}
+        \item Para $X$ un conjunto y $n\in\n$, 
+            \[X\text{ es }n-\text{grande}\Longleftrightarrow |X|\geq n+1.\]
+        \item Para cualquier $n\in\n$,
+            \[F(\n,n)=n.\]
+    \end{itemize}
+\end{obs}
+\begin{prop} {\label{siabb}}
+    Si $X$ es $\alpha-$grande y $X$ es segmento inicial de $Y$, entonces $Y$ también es $\alpha-$grande.
+\end{prop}
+\begin{proof}
+    Procedemos por inducción sobre $\alpha$:\\
+    Como caso base; supongamos $X$ tal que es $1-$grande. Entonces $X$ tiene al menos dos elementos. Luego, cualquier conjunto $Y$ que tenga a $X$ como segmento inicial tiene al menos dos elementos, luego $Y$ es $1-$grande.
+    Ahora; consideremos $X=\set{x_1,\ldots,x_k}$ tal que es $\alpha-$grande y $Y=\set{x_1,\ldots,x_k,y_{k+1},\ldots,y_m}$. 
+    Entonces, $\set{x_2,\ldots,x_k}$ es $F(\alpha,x_2)-$grande. Como $F(\alpha,x_2)<\alpha$, tenemos que, por hipótesis de inducción que
+        \[\set{x_2,\ldots,x_k,y_{k+1},\ldots,y_m}\text{ es }F(\alpha,x_2)-\text{grande}.\]
+    Luego, $\set{x_2,\ldots,x_k,y_{k+1},\ldots,y_m}$ es $F(\alpha,x_2)-$grande. Entonces,
+        \[Y\text{ es }\alpha-\text{grande}.\]
+\end{proof}
+
+\begin{prop}{\label{prop328}}
+    Dados $\alpha\in\varepsilon_0$ y $X\subeq \n$, existe $Y$, con $X$ un segmento inicial de $Y$, tal que $Y$ es $\alpha-$grande.
+\end{prop}
+\begin{proof}
+    Procedemos por inducción sobre $\alpha$:\\
+    Como caso base, dado cualquier conjunto $X$, si añadimos dos elementos $y_1,y_2$ tendremos que
+    \[|X\cup\set{y_1,y_2}|\geq 2,\]
+    por lo que $Y=X\cup\set{y_1,y_2}$ es $1-$grande.
+    Por otro lado; consideremos $X=\set{x_1,\ldots,x_k}$. Por hipótesis de inducción, existen $y_1,\ldots,y_m$ tales que
+    \[\set{x_2,\ldots,x_k,y_1,\ldots,y_m}\text{ es }F(\alpha,x_2)-\text{grande},\]
+    luego, $Y=\set{x_1,\ldots,x_k,y_1,\ldots,y_m}$ es $\alpha-$grande.
+\end{proof}
+\begin{cor}\label{corind1}
+    \[(\forall n\in\n)(\exists b_n\in\n)([1,b_n]\text{ es }\alpha-\text{grande}).\]
+\end{cor}
+\begin{proof}
+    Se sigue de la proposición {\ref{prop328}} considerando $X=\set{1}$.
+\end{proof}
+\begin{lem}\label{lem10304}
+    Para cada $n,l\in\omega$, y para cada ordinal sucesor $\beta$, existe un ordinal $\alpha$ tal que
+    \[F\left(\underbrace{\n^{\cdot^{\cdot^{\cdot^{\n^\beta}}}}}_{\n,n\text{ veces}},l\right)=\underbrace{\n^{\cdot^{\cdot^{\cdot^{\n^\al}}}}}_{\n,n-1\text{ veces}}.\]
+    donde la primer torre de exponentes (la que aparece en la función $F$) tiene $n$ apariciones de $\n$, y la segunda tiene $n-1$ apariciones de $\n$. 
+\end{lem}
+\begin{proof}
+    Procedemos por inducción sobre $n$:\\
+    Para el caso $n=1$, tenemos que:
+    \[F(\n^\beta,l)=\n^{\beta-1}\cdot l.\]
+    Tomando a $\alpha=\n^{\beta-1}\cdot l$, se cumple la propiedad. Ahora, asumimos que se cumple:
+    \[F\left(\underbrace{\n^{\cdot^{\cdot^{\cdot^{\n^\beta}}}}}_{\n,n\text{ veces}},l\right)=\underbrace{\n^{\cdot^{\cdot^{\cdot^{\n^\al}}}}}_{\n,n-1\text{ veces}},\]
+    y demostramos para el caso $n+1$:
+    \[F\left(\underbrace{\n^{\cdot^{\cdot^{\cdot^{\n^\beta}}}}}_{\n,n+1\text{ veces}},l\right)=\n^{\left(\underbrace{\n^{\cdot^{\cdot^{\cdot^{\n^\beta}}}}}_{\n,n\text{ veces}},l\right)}=\n^{\left(\underbrace{\n^{\cdot^{\cdot^{\cdot^{\n^\al}}}}}_{\n,n-1\text{ veces}}\right)}=\underbrace{\n^{\cdot^{\cdot^{\cdot^{\n^\al}}}}}_{\n,n\text{ veces}}.\]
+    Esto completa la prueba.
+\end{proof}
+\begin{lem}\label{lem20304}
+    Si $X=\set{x_1,\ldots,x_k}$ es $\underbrace{\n^{\cdot^{\cdot^{\cdot^{\n^\beta}}}}}_{\n,n\text{ veces}}-$grande (con $\beta>0$), entonces $k\geq n$.
+\end{lem}
+\begin{proof}
+    Procedemos por inducción sobre $n$:\\
+    Considerando $n=0$, tenemos que $X$ es $\beta-$grande, entonces $k=|X|\geq2>0$.
+    Asumamos que se cumple el caso $n-$ésimo, entonces tenemos que
+    \[X=\set{x_1,\ldots,x_k}\text{ es }\underbrace{\n^{\cdot^{\cdot^{\cdot^{\n^\beta}}}}}_{\n,n+1\text{ veces}}-\text{grande},\]
+    así pues,
+    \[\set{x_2,\ldots,x_k}\text{ es }F\left(\underbrace{\n^{\cdot^{\cdot^{\cdot^{\n^\beta}}}}}_{\n,n+1\text{ veces}},x_2\right)-\text{grande},\]
+    por lo que, gracias al lema {\ref{lem10304}}, existe un ordinal $\alpha$ tal que:
+    \[\set{x_2,\ldots,x_k}\text{ es }\underbrace{\n^{\cdot^{\cdot^{\cdot^{\n^\alpha}}}}}_{\n,n\text{ veces}}-\text{grande},\]
+    luego, por hipótesis de inducción:
+    \[|\set{x_2,\ldots,x_k}|=k-1\geq n,\]
+    es decir:
+    \[k\geq n+1.\]
+\end{proof}
+\begin{thm}\label{thm10304}
+    Si $X$ es $\n_n-$grande, entonces $|X|\geq n+1$. 
+\end{thm}
+\begin{proof}
+    Sea $X=\set{x_1,\ldots,x_k}$ tal que es $\n_n-$grande. Entonces, por definición:
+    \[\set{x_2,\ldots,x_k}\text{ es }F(\n_n,x_2)-\text{grande},\]
+    o lo que es lo mismo:
+    \[\set{x_2,\ldots,x_k}\text{ es }F\left(\underbrace{\n^{\cdot^{\cdot^{\cdot^{\n^1}}}}}_{\n,n+1\text{ veces}},x_2\right)-\text{grande},\]
+    luego, por el lema {\ref{lem10304}}, existe $\alpha$ tal que:
+    \[\set{x_2,\ldots,x_k}\text{ es }\underbrace{\n^{\cdot^{\cdot^{\cdot^{\n^\al}}}}}_{\n,n\text{ veces}}-\text{grande}.\]
+    Ahora bien, por el lema {\ref{lem20304}} tenemos que
+    \[|X|-1=|\set{x_2,\ldots,x_k}|\geq n;\]
+    es decir,
+    \[|X|\geq n+1.\]
+\end{proof}
+\begin{cor}{\label{corutil}}
+    Si $[a,b]$ es $\n_c-$grande, entonces $b\geq c+a$.
+\end{cor}
+\begin{proof}
+    Por el teorema {\ref{thm10304}}, tenemos que
+    \[b-a+1\geq c+1\]
+    luego, 
+    \[b\geq c+a.\]
+\end{proof}
+\begin{cor}\label{cor10304}
+    Si $[1,b]$ es $\n_c-$grande, entonces $c<b$.
+\end{cor}
+\begin{proof}
+    Por el teorema {\ref{thm10304}}, tenemos que $b-1\geq c+1$. Entonces,
+    \[b>c+1,\]
+    y por lo tanto
+    \[b>c.\]
+\end{proof}
+\begin{prop} {\label{mdff}}
+    \[\forall n\in\n\hspace{0.3cm}(\alpha<\beta\implies F(\alpha,n)<F(\beta,n)).\]
+\end{prop}
+\begin{proof}
+    Procedemos por inducción sobre $\beta$:
+    \begin{itemize}
+        \item $\beta=2$:
+            si $\beta=2$, entonces $\alpha$ es igual a 1 o a 0. De cualquier forma; $F(\beta,n)=1$ y $F(\alpha,n)=0$. Así, se cumple el enunciado.
+        \item $\beta=\alpha+1$:
+            como $\alpha<\beta$, tenemos que $\alpha\leq\gamma<\beta$. Si $\alpha<\gamma$, entonces por hipótesis de inducción $F(\alpha,n)<F(\gamma,n)$. Si $\alpha=\gamma$, entonces $F(\alpha,n)=F(\gamma,n)$.
+            Así pues, 
+            \[F(\alpha,n)\leq F(\gamma,n)<\gamma=F(\gamma+1,n)=F(\beta,n),\]
+            lo cuál es justo lo que queríamos.
+        \item $\beta=\n^{\gamma}(\lambda+1)$:
+            consideremos $y$ igual a $\n^{F(\gamma,n)}$ o a $\n^{\gamma-1}\cdot n$, dependiendo si $\gamma$ es límite o sucesor, respectivamente. Por propiedades del producto y la potencia ordinal, tenemos que como $\alpha<\beta$, entonces $\alpha$ es un sucesor, o $\alpha=\n^{\gamma_1}(\lambda_1+1)$, con $\gamma_1<\gamma$ o $\lambda_1<\lambda$. Ahora, el caso de $\alpha$ sucesor se divide en dos casos. Si $\alpha$ es finito, la conclusión es inmediata, pues $F(\alpha,n)$ también sería finito, mientras que $F(\beta,n)=F(\n^{\gamma}(\lambda+1),n)=\n^{\gamma}\lambda+\n^{F(\gamma,n)}\cdot n$, el cuál es un ordinal infinito (de hecho, límite).
+            Si $\alpha$ es infinito, entonces es de la forma $\n^{\gamma_2}(\lambda_2+1)+m$, con $m\in\n\setminus\set{0}$, $\gamma_2<\gamma$ o $\lambda_2<\lambda$ (lo cuál implica que $\lambda_2+1\leq\lambda$); en ambos casos:
+            \begin{align*}
+                F(\alpha,n)&=F(\n^{\gamma_2}(\lambda_2+1)+m,n)\\
+                &=\n^{\gamma_2}(\lambda_2+1)+m-1\\
+                &\leq\n^{\gamma}\lambda+m-1\\
+                &<\n^{\gamma}\lambda+y\\
+                &=F(\beta,n);
+            \end{align*}
+            lo cuál es lo que queríamos, independientemente de si $\gamma$ es sucesor o límite.
+            Finalmente, si tenemos el caso donde $\alpha=\n^{\gamma_1}(\lambda_1+1)$, tenemos:
+            \[F(\alpha,n)=\n^{\gamma_1}\lambda_1+y<\n^{\gamma}\lambda+y=F(\beta,n),\]
+            independientemente de si $\gamma$ es sucesor o límite.
+    \end{itemize}
+\end{proof}
+\begin{lem} {\label{mdcg}}
+    Sean $X$ un conjunto y $\alpha$ y $\beta$ dos ordinales. Si $X$ es $\alpha-$grande y $\beta<\alpha$, entonces $X$ es $\beta-$grande.
+\end{lem}
+\begin{proof}
+    Procedemos por inducción sobre $\alpha$:
+    \begin{itemize}
+        \item Si $X$ es $2-$grande, entonces tiene al menos tres elementos, entonces tiene al menos dos elementos, entonces es $1-$grande. 
+        \item Ahora, supongamos que $X=\set{x_1,\ldots,x_n}$. Si $X$ es $\alpha-$grande, entonces $\set{x_2,\ldots,x_n}$ es $F(\alpha,x_2)-$grande. Por la proposición {\ref{mdff}} tenemos que $F(\beta,x_2)<F(\alpha,x_2)$, y por hipótesis de inducción, $\set{x_2,\ldots,x_n}$ es $F(\beta,x_2)-$grande. Luego, por definición, $X$ es $\beta-$grande.
+    \end{itemize}
+\end{proof}
+\begin{lem} {\label{lbdcpd}}
+    Sean $X$ un conjunto y $\alpha$ un ordinal. Si $X$ es $\alpha-$grande y $Y$ es un conjunto tal que 
+    \[(\forall y\in Y)(\forall x\in X)(y\leq x),\]
+    entonces $X\cup Y$ es $\alpha-$grande.
+\end{lem}
+\begin{proof}
+    Sin perdida de generalidad, suponemos $Y$ no vacío. Procedemos por inducción sobre $\alpha$:
+    \begin{itemize}
+        \item Si $\alpha=1$, entonces al ser $X$ $\alpha-$grande, $X$ tiene al menos dos elementos; luego para cualquier conjunto $Y$ como en el enunciado, $X\cup Y$ tiene al menos dos elementos, luego $X\cup Y$ es $\alpha-$grande.
+        \item Supongamos que el enunciado se cumple para todo ordinal menor a $\alpha$; y supongamos $Y=\set{y_1,\ldots,y_n}$, con $n\geq 2$. Ahora, por el lema {\ref{mdcg}} que $X$ sea $\alpha-$grande implica que $X$ es $F(\alpha,y_2)-$grande. Ahora, por hipótesis de inducción, $(Y\setminus\set{y_1})\cup X$ es $F(\alpha,y_2)-$grande. Así, por definición, $Y\cup X$ es $\alpha-$grande. En el caso de que $Y$ sea un conjunto de un sólo elemento, si $X\cap Y=\nt$ podemos considerar el conjunto $Y'=Y\cup\min{X}$ y el paso inductivo se cumple igual para este nuevo conjunto; en otro caso, no hay nada que probar, pues $Y\subeq X$.
+    \end{itemize}
+\end{proof}
+

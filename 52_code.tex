@@ -1,0 +1,66 @@
+\section{Código que cálcula sucesiones de Goodstein}
+A continuación presentaremos un código en \textit{Python} que se desarrollo como primer acercamiento a las sucesiones de Goodstein, de forma en que se pueda visualizar la velocidad con la que crecen estas mismas:
+\clearpage
+\begin{verbatim}
+import math as mt
+
+def base_n(n,p):
+    p1=p
+    p_base=[]
+    if p%n!=0:
+        p_base.append(p%n)
+        p1=p1-p%n
+        if p1!=0:
+            p_base.append("+")
+        else:
+            return p_base
+    i=1
+    while i!=0:
+        con=0
+        while mt.pow(n,con+1)<=p1:
+            con=con+1
+        kon=1
+        while (kon+1)*mt.pow(n,con)<=p1:
+            kon=kon+1
+        if kon!=1:
+            p_base=p_base+[kon,"*",n,"^",con]
+        else:
+            p_base=p_base+[n,"^",con]
+        p1=p1-kon*mt.pow(n,con)
+        if p1!=0:
+            p_base.append("+")
+        else:
+            return p_base
+
+def salto(p_base,n,p):
+    p_aux=p_base
+    if p_base==[]:
+        return 0
+    if len(p_base)==1:
+        return p_base[0]
+    if p_base[1]=="+":
+        p_aux=p_aux[2:]
+        return int(p_base[0]+salto(p_aux,n,p))
+    if p_base[1]=="^":
+        p_aux=p_aux[4:]
+        return int(mt.pow((p_base[0]+1),
+                salto(base_n(n,p_base[2]),n,p))+salto(p_aux,n,p))
+    if p_base[1]=="*":
+        p_aux=p_aux[6:]
+        return int(p_base[0]*mt.pow((p_base[2]+1),
+                salto(base_n(n,p_base[4]),n,p))+salto(p_aux,n,p))
+
+def goodstein(p,i):
+    if i==1:
+        return p
+    a=goodstein(p,i-1)
+    if a>0:
+        return salto(base_n(i,a),i,p)-1
+    return 0
+
+def sucesion_g(p,k):
+    a=[]
+    for i in range(k):
+        a.append(goodstein(p,i+1))
+    return a
+\end{verbatim}

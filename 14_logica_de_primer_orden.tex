@@ -1,0 +1,434 @@
+\section{Lógica de primer orden}
+En el siguiente espacio presentaremos conceptos básicos de lógica, con la intención de usarlos en capítulos siguientes despreocupadamente. Por esta misma razón, lo que siguiente será ya enfocado al lenguaje de la \textbf{aritmetica de Peano}. \cite{logic}
+
+\begin{defn} \textit{(Lenguaje)}\\
+    El lenguaje de la aritmetica de Peano consta del siguiente alfabeto:\\
+    \textbf{Símbolos lógicos:}
+    \begin{itemize}
+        \item variables: $v_1,\ldots,v_n,\ldots$;
+        \item conectivas lógicas: $\neg,\Longrightarrow,\land,\lor$;
+        \item cuantificadores: $\forall,\exists$;
+        \item igualdad: $=$.
+    \end{itemize}
+    \textbf{Símbolos no lógicos:}
+    \begin{itemize}
+        \item símbolo de constante: $\gc$;
+        \item símbolos de funciones: $+,\cdot,S$;
+        \item símbolo de relación: $<$
+    \end{itemize}
+    y se denota por:
+    \[\mathcal{L}_{\PA}=\set{\gc,+,\cdot,S,<}.\]
+\end{defn}
+\begin{defn}
+    Un término de $\mathcal{L}_{\PA}$ es una sucesión finita de símbolos del alfabeto de $\mathcal{L}_{AP}$ que proviene de las cláusuras siguientes:
+    \begin{enumerate}
+        \item Para cada $n$, $v_n$ es un término;
+        \item $\gc$ es un término;
+        \item si $t_1$ y $t_2$ son términos, entonces $t_1+t_2$, $t_1\cdot t_2$ y $St_1$ son todos términos.
+    \end{enumerate}
+\end{defn}
+\begin{defn}
+    Una fórmula es una sucesión fínita de símbolos de alfabeto de $\mathcal{L}_{AP}$, que proviene de alguna de las siguientes cláusuras:
+    \begin{enumerate}
+        \item Si $t_1$ y $t_2$ son términos, entonces $t_1=t_2$ es una fórmula;
+        \item si $t_1$ y $t_2$ son términos, entonces $t_1<t_2$ es una fórmula;
+        \item si $\varphi$ es fórmula, $\neg\varphi$ es también fórmula;
+        \item si $\varphi$ y $\psi$  son fórmulas, $\varphi\Longrightarrow\psi$ es también fórmula;
+        \item si $\varphi$ es una fórmula y $v_i$ es una variable, $\forall v_i\varphi$ también lo es.
+    \end{enumerate}
+\end{defn}
+
+\begin{defn}
+    Diremos que una generalización para la formula $\ph$ es cualquier fórmula de la forma $\forall x\ph$, con $x$ una variable.
+\end{defn}
+
+\begin{obs}
+Consideremos el conjunto de las variables de nuestro lenguaje, el cuál denotaremos por \textit{var}, el conjunto de términos de nuestro lenguaje, el cuál denotaremos por \textit{Term}, el conjunto de tuplas con entradas $\{0,1\}\cup\text{var}$, denotado por \textit{tup}, y consideremos la operación de concatenación de tuplas (es decir, pegar tuplas y volverlas una más grande) mediante el símbolo $\oplus$. Observemos entonces la función:
+
+\begin{center}
+         Fr: Term $\longrightarrow$ tup\\ 
+\end{center}
+Definida por las siguientes reglas:\\
+   Fr($C_k)=\emptyset$ (es decir, la tupla vacía),\\
+   Fr($V_k)=(V_k,1)$, \hspace{5mm} Fr$(F_k t_1 \cdots t_n)=$Fr$(t_1) \oplus\cdots\oplus $Fr$(t_n)$. \\
+
+Esta función simplemente recoge las variables que aparecen en un cierto termino, en orden y con repeticiones, y pone un 1 inmediatamente después de cada una. Ahora, consideremos el conjunto de formulas, al cuál denotaremos por \textit{Form}. Consideremos la siguiente función:
+
+\begin{center}
+        Op:tup$\times$var$\longrightarrow$tup
+\end{center}
+Dada por:
+    Op(${(x_\alpha)}_{\alpha\in[[1,k]]},v_i$)$={(y_\alpha)}_{\alpha\in[[1,k]]}$, donde:
+
+\[y_\alpha=\begin{cases}
+    0, x_{\alpha-1}=v_i;\\
+    x_\alpha, \text{en otro caso}.
+\end{cases}\]
+
+Ahora, consideremos la siguiente función:
+
+\begin{center}
+         Free:Form $\longrightarrow$ tup \\
+\end{center}
+Definida por:
+   \begin{itemize}
+       \item  Free($t_1t_2$)=Free$(t_1) \oplus $ Free($t_2$)
+       \item  Free($R_kt_1,\ldots,t_n)=$Free$(t_1) \oplus\cdots\oplus$ Free($t_n$)
+       \item  Free ($\neg \varphi$) = Free ($\varphi$)
+       \item  Free ($\Rightarrow \varphi \psi$)=Free($\varphi$)$\oplus$Free($\psi$)
+       \item  Free($\forall V_k \varphi$)= Op(Free($\varphi$),$V_k$).
+   \end{itemize}
+\end{obs}
+El anterior es simplemente un bosquejo, pues una formalización de dichos conceptos requeriría un mayor desarrollo que después no será útil en este trabajo.
+
+\begin{defn}
+    Sea una variable $v_i$ tal que $v_i={(\text{Free}(\ph))}_{j}$, para algún $j\in\n$.
+    Diremos que $v_i$ es libre en $\ph$ si ${(\text{Free}(\ph))}_{j+1}=1$. En caso contrario, es decir, ${(\text{Free}(\ph))}_{j+1}=0$, diremos que está ligada en $\ph$.
+\end{defn}
+\begin{obs}
+    Denotaremos por $\ph\left[t/x\right]$ al resultado de sustituir (en $\ph$) cada aparición libre de $x$ con el termino $t$.
+\end{obs}
+\begin{defn}
+    Diremos que $t$ es sustituible por $x$ en $\ph$ si cada aparición de $t$ en $\ph\left[t/x\right]$ contiene únicamente variables libres.
+\end{defn}
+\begin{obs}
+    La expresión $\ph[\psi\rightsquigarrow\xi]$ hace referencia a cualquier función que tenga la misma estructura de $\ph$, solo sustituyendo algunas (pero no necesariamente todas) las apariciones de $\psi$ en $\ph$, por $\xi$. Así mismo, $\ph[\psi\leftrightsquigarrow\xi]$ es lo mismo, sólo que se pueden sustituir algunas apariciones de $\psi$ por $\xi$ y viceversa.
+\end{obs}
+
+\begin{defn} \textit{(Los axiomas de la lógica de primer orden)} {\label{axiomas}}\\
+    Consideraremos los siguientes axiomas:\\
+    \textbf{Axiomas de lógica proposicional:}
+    \begin{enumerate}
+        \item $\ph\Longrightarrow(\psi\Longrightarrow\ph)$;
+        \item $\ph\Longrightarrow((\psi\Longrightarrow\neg\ph)\Longrightarrow\neg\psi)$;
+        \item $\ph\imp\ph[\psi\leftrightsquigarrow\neg\neg\psi]$;
+        \item $\ph\imp\ph[\psi\imp\chi\leftrightsquigarrow\neg\chi\imp\neg\psi]$;
+        \item $\ph\imp\ph[\neg\psi\imp\psi\leftrightsquigarrow\psi]$;
+        \item $(\ph\imp(\chi\imp\psi))\imp((\ph\imp\chi)\imp(\ph\imp\psi))$;
+        \item la regla de inferencia \textbf{Modus Ponens}:
+        \[
+        \begin{array}{c}
+          \ph \imp \psi \\
+          \ph \\
+          \hline
+          \therefore \psi
+        \end{array}
+        \]
+    \end{enumerate}
+    \textbf{Las generalizaciones de esquemas de axiomas de primer orden:}
+    \begin{enumerate}
+        \item $(\forall x)(\ph\imp\psi)\imp(\forall x\ph\imp\forall x\psi)$;
+        \item $\ph\imp(\forall x\ph)$, si $x$ no aparece libre en $\ph$;
+        \item $x=x$;
+        \item $x=y\imp(\ph\imp\ph')$, si $\ph$ es atómica y donde $\ph'$ resulta de reemplazar algunas apariciones de $x$ por $y$ en $\ph$;
+        \item $\forall x\ph\imp(\ph\left[t/x\right])$ si $t$ es un término, sustituible por $x$ en $\ph$.
+    \end{enumerate}
+\end{defn}
+
+\begin{defn} \textit{(demostración)}
+    \begin{itemize}
+        \item Una demostración de $\ph$ a partir de $\Sigma$ es una sucesión finita de formulas $(\ph_1,\ldots,\ph_n)$ tal que $\ph_i$ es elemento de $\Sigma$, axioma lógico o existen $j,k<i$ tales que $\ph_k$ es la fórmula $\ph_j\imp\ph_i$.
+        \item $\Sigma\vdash\ph$ significa que existe una demostración formal de $\ph$ a partir de $\Sigma$.
+        \item $\Sigma$ es consistente si no hay $\psi$ tal que 
+        \[\Sigma\vdash\psi\land\neg\psi.\]
+    \end{itemize}
+\end{defn}
+No prestaremos mayor importancia al cálculo deductivo, pues sale de las intenciones de este trabajo; sin embargo, por completitud, presentaremos algunas reglas de inferencia a continuación. Claramente no presentaremos prueba de todas ellas, sólo de algunas para ejemplificar.\\
+\textbf{Modus Tollens:}
+\[
+    \begin{array}{c}
+      \ph \imp \psi \\
+      \neg\psi \\
+      \hline
+      \therefore \ph
+    \end{array}
+\]
+La prueba de dicha regla va como sigue:
+\[
+        \begin{array}{c c c}
+            1. & \ph\imp\psi & \text{premisa}\\
+            2. & \neg\psi & \text{premisa}\\
+            3. & (\ph\imp\psi)\imp(\neg\psi\imp\neg\ph) & \text{inst. Del axioma 4 de lógica prop.}\\
+            4. & \neg\psi\imp\neg\ph & \text{Modus Ponens con 3 y 1}\\
+            5. & \neg\ph & \text{Modus Ponens con 4 y 2}
+        \end{array}
+    \]
+\textbf{Equivalencia de la conjunción:}
+\[
+    \begin{array}{c}
+      \ph\land\psi\\
+      \hline
+      \therefore \neg(\ph\imp\neg\psi)
+    \end{array}
+\]
+\[
+    \begin{array}{c}
+      \neg(\ph\imp\neg\psi)\\
+      \hline
+      \therefore \ph\land\psi
+    \end{array}
+\]
+\textbf{Equivalencia de la disyunción:}
+\[
+    \begin{array}{c}
+      \ph\lor\psi\\
+      \hline
+      \therefore \neg\ph\imp\psi
+    \end{array}
+\]
+\[
+    \begin{array}{c}
+      \neg\ph\imp\psi\\
+      \hline
+      \therefore \ph\lor\psi
+    \end{array}
+\]
+\textbf{Adición:}
+\[
+    \begin{array}{c}
+      \ph\\
+      \hline
+      \therefore \ph\lor\psi
+    \end{array}
+\]
+\textbf{Simplificación:}
+\[
+    \begin{array}{c}
+      \ph\land \psi\\
+      \hline
+      \therefore\psi
+    \end{array}
+\]
+\textbf{Conjugación:}
+\[
+    \begin{array}{c}
+      \ph\\
+      \psi\\
+      \hline
+      \therefore \ph\land\psi
+    \end{array}
+\]
+\textbf{Silogismo disyuntivo:}
+\[
+    \begin{array}{c}
+      \ph\lor\psi\\
+      \neg\ph\\
+      \hline
+      \therefore\psi
+    \end{array}
+\]
+\textbf{Dobles negaciones:}
+\[
+    \begin{array}{c}
+      \ph\\
+      \hline
+      \therefore \ph[\psi\leftrightsquigarrow \neg\neg\psi]
+    \end{array}
+\]
+\textbf{Transposición:}
+\[
+    \begin{array}{c}
+      \ph\imp\psi\\
+      \hline
+      \therefore \neg\psi\imp\neg\ph
+    \end{array}
+\]
+\textbf{Leyes de Morgan:}
+\[
+    \begin{array}{c}
+      \neg(\ph\land\psi)\\
+      \hline
+      \therefore \neg\ph\lor\neg\psi
+    \end{array}
+\]
+La prueba de dicha regla va como sigue:
+\[
+    \begin{array}{c c c}
+        1. & \neg\neg(\ph\imp\neg\psi) & \text{Equivalencia de la conjunción}\\
+        2. & \ph\imp\neg\psi & \text{Doble negación}\\
+        3. & \neg\neg\ph\imp\neg\psi & \text{Doble negación}\\
+        4. & \neg\ph\lor\neg\psi & \text{Equivalencia de la disyunción}
+    \end{array}
+\]
+\[
+    \begin{array}{c}
+      \neg(\ph\lor\psi)\\
+      \hline
+      \therefore \neg\ph\land\neg\psi
+    \end{array}
+\]
+La prueba de dicha regla va como sigue:
+\[
+    \begin{array}{c c c}
+        1. & \neg(\neg\ph\imp\psi) & \text{Equivalencia de la disyunción}\\
+        2. & \neg(\neg\ph\imp\neg\neg\psi) & \text{Doble negación}\\
+        3. & \neg\ph\land\neg\psi & \text{Equivalencia de la conjunción}
+    \end{array}
+\]
+Mencionaremos dos teoremas antes de dar las últimas reglas de inferencia.
+\begin{thm} (de deducción) {\label{deduc}}\\
+    Sean $\ph$ y $\psi$ formulas y $\Sigma$ un conjunto de fórmulas. Entonces,
+    \[\Sigma\cup\set{\ph}\vdash\Longleftrightarrow\Sigma\vdash(\ph\imp\psi).\]
+\end{thm}
+\begin{thm}
+    Sea $\ph$ una fórmula, y sea $\Sigma$ un conjunto de fórmulas. Entonces,
+    \[\Sigma\cup\set{\neg\ph}\vdash\psi\land\neg\psi\imp\Sigma\vdash\ph.\]
+\end{thm}
+\textbf{Instanciación universal:}
+\[
+    \begin{array}{c}
+      \forall x\ph\\
+      \hline
+      \therefore \ph[t/x] 
+    \end{array}\hspace{1cm}\text{(siempre que $t$ sea sustituible).}
+\]
+La prueba de dicha regla va como sigue:
+\[
+    \begin{array}{c c c}
+        1. & \forall x\ph & \text{premisa}\\
+        2. & \forall x\ph\imp\ph[t/x] & \text{axioma 5 de primer orden}\\
+        3. & \ph[t/x] & \text{Modus Ponens}
+    \end{array}
+\]
+\textbf{Generalización existencial:}
+\[
+    \begin{array}{c}
+      \ph[t/x]\\
+      \hline
+      \therefore \exists x\ph
+    \end{array}\hspace{1cm}\text{(siempre que $t$ sea sustituible).}
+\]
+La prueba de dicha regla va como sigue:
+\[
+    \begin{array}{c c c c}
+        & 1. & \ph[t/x] & \text{premisa}\\
+        \rightarrow & 2. & \forall x\neg\ph & \text{premisa extra}\\
+        & 3. & \neg\ph[t/x] & \text{Instanciación universal}\\
+        & 4. & \ph[t/x]\land\neg\ph[t/x] & \text{conjunción}\\
+        \hline
+        & 5. & \neg\forall x\neg\ph & \text{contradicción de 2 a 4}
+    \end{array}
+\]
+\textbf{Generalización universal:}
+\[
+    \begin{array}{c}
+      \ph\\
+      \hline
+      \therefore \forall x\ph
+    \end{array}\hspace{1cm}\text{(siempre que $x$ no aparezca libre en alguna premisa).}
+\]
+\textbf{Cambio de variable:}
+\[
+    \begin{array}{c}
+      \forall x\ph\\
+      \hline
+      \therefore \forall z\ph[z/x]
+    \end{array}\hspace{1cm}\text{(si $z$ no aparece libre en $\ph$ ni en ninguna premisa).}
+\]
+La prueba de dicha regla va como sigue:
+\[
+    \begin{array}{c c c}
+        1. & \forall x\ph & \text{premisa}\\
+        2. & \ph[z/x] & \text{Instanciación universal}\\
+        3. & \forall z\ph[z/x] & \text{Generalización universal}
+    \end{array}
+\]
+\begin{thm} (Instanciación existencial)\\
+    Sean $\ph$ y $\psi$ dos fórmulas y sea $\Sigma$ un conjunto de fórmulas. Sea $w$ una variable que no aparece libre en ningún elemento de $\Sigma$ ni tampoco en las fórmulas $\exists x\ph$ ni en $\psi$. Suponga además que la variable $x$ no aparece libre en ningún elemento de $\Sigma$. Si $\Sigma\cup\set{\ph[w/x]}\vdash\psi$, entonces $\Sigma\cup\set{\exists x\ph}\vdash\psi$.
+\end{thm}
+\begin{proof}
+    La hipótesis, junto con el teorema de la deducción, implican que $\Sigma\vdash\ph[w/x]\imp\psi$. Entonces, considere la siguiente demostración por contradicción a partir de $\Sigma\cup\set{\exists x\ph}$.
+    \[
+    \begin{array}{c c c c}
+        \rightarrow & 1. & \neg\psi & \text{suposición extra}\\
+        & 2. & \ph[w/x]\imp\psi & \text{demostrable a partir de }\Sigma\\
+        & 3. & \neg\ph[w/x] & \text{Modus Ponens de 2 y 1}\\
+        & 4. & \forall w\neg\ph[w/x] & \text{generalización universal}\\
+        & 5. & \forall x\neg\ph & \text{cambio de variable en 4}\\
+        & 6. & \neg\forall x\neg\ph & \text{premisa}\\
+        & 7. & \forall x\neg\ph\land\neg\forall x\neg\ph & \text{conjunción 5 y 6}\\
+        \hline
+        & 8. & \psi & \text{contradicción de 1 a 7}
+    \end{array}
+    \]
+\end{proof}
+\begin{lem}
+    \[\Sigma\cup\set{\forall x\ph}\vdash\forall z\ph[z/x],\]
+    siempre que $z$ sea sustituible por $x$ en $\ph$ y $z$ no aparezca libre en ningún elemento de $\Sigma\cup\set{\forall x\ph}$.
+\end{lem}
+\begin{proof}
+\[
+    \begin{array}{c c c}
+        1. & \forall x\ph & \text{premisa}\\
+        2. & \forall x\ph\imp\forall z\forall x \ph & \text{axioma 2 de primer orden}\\
+        3. & \forall z\forall x\ph & \text{Modus Ponens de 2 y 1}
+    \end{array}
+\]
+\end{proof}
+\begin{thm}
+    Sea $\ph$ una fórmula y $\Sigma$ un conjunto de fórmulas. Si $\Sigma\vdash\ph$, y $x$ no aparece libre en ningún elemento de $\Sigma$, entonces $\Sigma\vdash\forall x\ph$.
+\end{thm}
+\begin{proof}
+    Sea $\Gamma=\set{\psi|\Sigma\vdash\forall x\psi}$. Afirmamos:
+    \begin{itemize}
+        \item Si $\psi$ es axioma lógico, o $\psi\in\Sigma$, entonces $\psi\in\gamma$.
+        \item Si $\psi\in\Gamma$ y $\psi\imp\xi\in\Gamma$, entonces $\xi\in\Gamma$; es decir, $\Gamma$ es cerrado bajo Modus Ponens.
+    \end{itemize}
+    Con esto, podría concluir que si $\Gamma\vdash\psi$, entonces $\psi\in\Gamma$ y hemos terminado. Así pues,
+    \begin{itemize}
+        \item El conjunto de axiomas lógico es \textit{cerrado bajo generalizaciones}, luego si $\psi$ es axioma lógico, entonces $\forall x\psi$ también lo es y $\Sigma\vdash\forall x\psi$, luego $\psi\in\Sigma$. Por otro lado, si $\psi\in\Sigma$, entonces,
+            \[
+            \begin{array}{c c c}
+                1. & \psi & \text{premisa}\\
+                2. & \psi\imp\forall x\psi & \text{axioma 2 de primer orden ($x$ no aparece libre en )}\psi\in\Sigma\\
+                3. & \forall x\psi & \text{Modus Ponens de 2 y 1}
+            \end{array}
+            \]
+            Por lo tanto, $\Sigma\vdash\forall x\psi$; luego
+            \[\psi\in\Gamma.\]
+        \item Supongamos $\psi\imp\xi,\psi\in\Gamma$. Entonces,
+            \[\Sigma\vdash\forall x(\psi\imp\xi)\land\Sigma\vdash\forall x\psi,\]
+            \[
+            \begin{array}{c c c}
+                1. & \forall x(\psi\imp\xi) & \text{demostrable en }\Sigma\\
+                2. & \forall x\psi & \text{demostrable en }\Sigma\\
+                3. & \forall x(\psi\imp\xi)\imp(\forall x\psi\imp\forall x\xi) & \text{axioma 1 de primer orden}\\
+                4. & \forall x\psi\imp\forall x\xi & \text{Modus Ponens de 3 y 1}\\
+                5. & \forall x\xi & \text{Modus Ponens de 4 y 2}
+            \end{array}
+            \]
+    \end{itemize}
+\end{proof}
+\begin{thm}
+    Si $\Sigma\cup\set{\ph[w/x]}\vdash\psi$, entonces $\Sigma\cup\set{\exists x\ph}\vdash\psi$ siempre y cuando $w$ no aparezca libre en ningún elemento de $\Sigma$, ni en $\psi$, ni en $\exists x\ph$, ni $x$ aparezca libre en ningún elemento de $\Sigma$.
+\end{thm}
+\begin{proof}
+    Por hipótesis y el teorema de la deducción {\ref{deduc}},
+    \[\Sigma\vdash\set{\ph[w/x]}\imp\psi.\]
+    Considere la siguiente demostración a partir de $\Sigma\cup\set{\exists x\ph}$:
+    \[
+        \begin{array}{c c c c}
+            \rightarrow & 1. & \neg\psi & \text{premisa extra}\\
+            & 2. & \ph[w/x]\imp\psi & \text{demostrable en }\Sigma\\
+            & 3. & \neg\ph[w/x] & \text{Modus Tollens de 2 y 1}\\
+            & 4. & \exists x\ph & \text{premisa}\\
+            & 5. & \forall w\neg\ph[w/x] & \text{Generalización universal}\\
+            & 6. & \forall x\neg\ph & \text{cambio de variable en 5}\\
+            & 7. & \neg\exists x\ph & \text{equivalente a 6}\\
+            & 8. & \exists x\ph\land\neg\exists x\ph & \text{conjunción}\\
+            \hline
+            & 9. & \psi & \text{Contradicción de 1 a 8}
+        \end{array}
+    \]
+\end{proof}
+Por completud, mencionaremos la siguiente regla de inferencia:\\
+\textbf{Sustitución:}
+\[
+    \begin{array}{c}
+      x=y\\
+      \ph\\
+      \hline
+      \therefore \ph'
+    \end{array}
+\]
+Donde $\ph'$ es como en la definición {\ref{axiomas}}.

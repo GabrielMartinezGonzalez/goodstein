@@ -1,0 +1,91 @@
+\section{Semantica en la lógica de primer orden}
+A continuación, presentaremos la útilidad de la sección anterior, mediante los resultados más significativos. Así mismo, omitiremos varias demostraciones. \cite{logic}
+
+\begin{defn} \textit{(Modelo)}\\
+    Sea $\mathcal{L}_{\PA}=\set{\gc,+,\cdot,S,<}$ el lenguaje de la aritmetica de Peano previamente definido. Un modelo para $\cL_{\PA}$ es una tupla de la forma
+    \[(A,O,\oplus,\odot,s,\prec)\]
+    tal que
+    \begin{enumerate}
+        \item $A$ es conjunto no vacío;
+        \item $O\in A$;
+        \item $<$ es un símbolo de relación binaria tal que $\prec\subeq A^2$; 
+        \item $+,\cdot$ son símbolos de funcion binaria tal que $\oplus,\odot:A^2\longrightarrow A$ y $S$ es símbolo de función unaria tal que $s:A\longrightarrow A$.
+    \end{enumerate}
+\end{defn}
+\begin{defn} \textit{(interpretación)}\\
+    Sea $\cL_{\PA}$ el lenguaje de la aritmetica de Peano, y sea
+    \[\mathcal{A}=(A,O,\oplus,\odot,s,\prec)\]
+    un modelo para $\cL_{\PA}$.
+    Una interpretación para $\cA$ es una función
+    \[\iota:\set[v_i]{i\in\n}\longrightarrow A.\]
+\end{defn}
+\begin{thm}
+    Sea el lenguaje $\cL_{\PA}$, el modelo $\cA$ para $\cL_{\PA}$ y dada una interpretación $\iota:\set[v_i]{i\in\n}\longrightarrow A$, existe una única función $\hat{\iota}$, a la que llamatemos una extensión de $\iota$: 
+    \[\hat{\iota}:\set[t]{t\text{ es un }\cL-\text{término}}\longrightarrow A\]
+    tal que
+    \begin{itemize}
+        \item $\hat{\iota}(v_i)=\iota(v_i)$;
+        \item $\hat{\iota}(\gc)=O$;
+        \item si $t_1$ y $t_2$ son términos, 
+            \[\hat{\iota}(+t_{1}t_{2})=\oplus(\hat{\iota}(t_1),\hat{\iota}(t_2));\]
+            \[\hat{\iota}(\cdot t_{1}t_{2})=\odot(\hat{\iota}(t_1),\hat{\iota}(t_2));\]
+            \[\hat{\iota}(S{t_1})=s(\hat{\iota}(t_1)).\]
+    \end{itemize}
+\end{thm}
+\begin{defn} \textit{(satisfacción)}\\
+    Sea $\cL_{\PA}$ el lenguaje de la aritmetica de Peano. Sea
+    \[\mathcal{A}=(A,O,\oplus,\odot,s,\prec)\]
+    un modelo para $\cL_{\PA}$ y sea $\iota$ una interpretación.
+    Dada una fórmula $\ph$, definimos $\cA\vDash\ph[\iota]$, leido como $\cA$ satisface $\ph$ de acuerdo a la interpretación $\iota$, por recursión sobre $\ph$:
+    \begin{enumerate}
+        \item $\cA\vDash(t_1=t_2)[\iota]\Longleftrightarrow\hat{\iota}(t_1)$ es lo mismo que $\hat{\iota}(t_2)$;
+        \item $\cA\vDash<{t_1}{t_2}[\iota]\Longleftrightarrow(\hat{\iota}(t_1),\hat{\iota}(t_2))\in\prec$;
+        \item $\cA\vDash(\neg\ph)[\iota]\Longleftrightarrow\cA\not\vDash\ph[\iota]$;
+        \item $\cA\vDash(\ph\imp\psi)[\iota]\Longleftrightarrow(\cA\not\vDash\ph[i]\veebar \cA\vDash\psi[i])$;
+        \item $\cA\vDash(\forall v_i\ph)[\iota]\Longleftrightarrow\forall a\in A\hspace{0.3cm}\cA\vDash\ph[\iota(a/v_i)]$.
+    \end{enumerate}
+\end{defn}
+\begin{lem}
+    Sea $\cL_{\PA}$ el lenguaje de la aritmetica de Peano, $\cA$ un modelo para $\cL_{\PA}$, sean $\iota$ e $\iota'$ dos interpretaciones y sean $v_{i_1},\ldots,v_{i_k}$ tales que
+    \[\forall j\hspace{0.5cm}(\iota(v_{i_j})=\iota'(v_{i_j})).\]
+    \begin{enumerate}
+        \item Si $t$ es un término y todas las varaibles que aparecen en $t$ se encuentran entre $v_{i_1},\ldots,v_{i_k}$, entonces
+            \[\hat{\iota}(t)=\hat{\iota}'(t);\]
+        \item Si $\ph$ es una fórmula con todas sus variables libres entre $v_{i_1},\ldots,v_{i_k}$; entonces
+            \[\cA\vDash\ph[\iota]\Longleftrightarrow\cA\vDash\ph[\iota'].\]
+    \end{enumerate}
+\end{lem}
+\begin{defn} \textit{(consecuencía lógica)}
+    \[\Sigma\vDash\ph\Longleftrightarrow(\forall\cA)(\forall\iota)(\cA\vDash\Sigma[\iota]\Longrightarrow\cA\vDash\ph[\iota]).\]
+\end{defn}
+\begin{thm} (de correctud del cálculo proposicional)\\
+    Sea $\ph$ una fórmula y sea $\Sigma$ un conjunto de fórmulas. Entonces, 
+    \[\Sigma\vdash\ph\imp\Sigma\vDash\ph.\]
+\end{thm}
+\begin{defn}
+    Un conjunto de fórmulas $\Sigma$ es satisfacible si existe un módelo $\cA$ y una interpretación $\iota$ tal que $\cA\vDash\Sigma[\iota]$.
+\end{defn}
+\begin{thm} \textit{(de completud de Gödel)}\\
+    Si $\Sigma$ es un conjunto de fórmulas consistentes, entonces es satisfacible.
+\end{thm}
+\begin{cor}
+    $\Sigma$ satisfacible $\imp\Sigma$ consistente.
+\end{cor}
+\begin{proof}
+    Si $\Sigma$ fuera inconsistente, tendríamos $\Sigma\vdash\psi\land\neg\psi$. Por correctud,
+    \[\Sigma\vDash\psi\land\neg\psi,\]
+    entonces, si $\cA\vDash\Sigma[\iota]$, entonces $\cA\vDash\psi\land\neg\psi$, lo que es absurdo. Por lo tanto, $\Sigma$ es consistente. 
+\end{proof}
+\begin{thm}
+    $\Sigma$ es consistente $\Longleftrightarrow\Sigma$ es satisfacible.
+\end{thm}
+\begin{thm}
+    \[\Sigma\vdash\ph\Longleftrightarrow\Sigma\vDash\ph.\]
+\end{thm}
+\begin{cor} \textit{(teorema de compacidad)}\\
+    Si $\Sigma\vDash\ph$, entonces existe $\Delta\subeq\Sigma$, con $\Delta$ finito, tal que
+        \[\Delta\vDash\ph.\]
+\end{cor}
+\begin{proof}
+    Si $\Sigma\vDash\ph$, entonces $\Sigma\vdash\ph$; sea $(\ph_1,\ldots,\ph_n)$ una demostración y $\Delta=\set{\ph_1,\ldots,\ph_n}\cap\Sigma$. Entonces, $\Delta$ es finito y $\Delta\vdash\ph$. Por lo tanto, $\Delta\vDash\ph$.
+\end{proof}

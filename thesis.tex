@@ -1,0 +1,182 @@
+\documentclass[12pt,a4paper]{book}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage[colorlinks,allcolors=blue]{hyperref}
+\usepackage[english,spanish]{babel}
+\decimalpoint
+\usepackage[width=16cm,height=20cm]{geometry}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{enumitem}
+\usepackage{comment} 
+\usepackage{amsfonts}
+\usepackage{pdfpages}
+\usepackage{enumitem}
+\usepackage{forest}
+\usepackage{mathrsfs}
+\usepackage{tikz}
+\usepackage{bbm}
+\usepackage{amsmath,amssymb,mathtools}
+\hypersetup{linkcolor=black}
+\newcommand{\arccot}{\operatorname{arccot}}
+\newcommand{\bC}{\mathbb{C}}
+\newcommand{\eqdef}{\coloneqq} % 
+\newcommand{\bN}{\mathbb{N}} % números naturales
+\newcommand{\bR}{\mathbb{R}} % números reales
+\newcommand{\bZ}{\mathbb{Z}} % números enteros
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cN}{\mathcal{N}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\sign}{\operatorname{sgn}}
+\newcommand{\SimpleFunctions}{\mathcal{S}}
+\newcommand{\dif}{\mathrm{d}}
+\newcommand{\ph}{\varphi}
+\newcommand{\de}{\delta}
+\newcommand{\al}{\alpha}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\gc}{\mathfrak{0}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\PX}{\mathscr{P} (X)}
+\newcommand{\ot}{\operatorname{ot}}
+\newcommand{\conv}{\operatorname{conv}}
+\newcommand{\ON}{\text{ON}}
+\newcommand{\nt}{\varnothing}
+\newcommand{\ind}{\text{Ind}}
+\newcommand{\rk}{\text{rk}}
+\newcommand{\n}{\omega}
+\newcommand{\subeq}{\subseteq}
+\newcommand{\Loneper}{L^1_{2\pi\text{-per}} (\bR)}
+\newcommand*\rfrac[2]{{}^{#1}\!/_{#2}}
+\newcommand{\hp}{\prod{\rfrac{\n}{u}}}
+\newcommand{\PA}{\textit{PA}}
+\newcommand{\imp}{\Longrightarrow}
+\newcommand{\dom}{\operatorname{dom}}
+\newcommand{\ran}{\operatorname{ran}}
+\newcommand{\cb}{\mathbf{0}}
+\usepackage{extarrows}
+\usepackage{mathabx}
+\usepackage{xparse}
+\NewDocumentCommand{\set}{o m}{%
+  % <code>
+  \IfNoValueTF{#1}
+    {\left\{#2\right\}}
+    {\left\{#1 \mid#2\right\}}%
+  % <code>
+}
+\NewDocumentCommand{\lar}{o m}{%
+  % <code>
+  \IfNoValueTF{#1}
+    {\la#2\ra}
+    {\la#1 \mid#2\ra}%
+  % <code>
+}
+\NewDocumentCommand{\lpr}{o m}{%
+  % <code>
+  \IfNoValueTF{#1}
+    {\left(#2\right)}
+    {\left(#1 \mid#2\right)}%
+  % <code>
+}
+\usepackage{xcolor}
+\usepackage{amsthm}
+\swapnumbers
+\newtheorem{thm}{Teorema}
+\numberwithin{thm}{chapter}
+\newtheorem{prop}[thm]{Proposición}
+\newtheorem{demo}[thm]{Demostración}
+\newtheorem{lem}[thm]{Lema}
+\newtheorem{cor}[thm]{Corolario}
+\newtheorem{obs}[thm]{Observación}
+\theoremstyle{definition}
+\newcommand{\dem}{\newline\textbf{Demostración: }}
+\newtheorem{defn}[thm]{Definición}
+\newtheorem{ex}[thm]{Ejemplo}
+\newtheorem{exercise}[thm]{Ejercicio}
+\newtheorem{ex*}[thm]{dotless}
+\newenvironment{solution}%
+{\begin{proof}[]}{\end{proof}}
+
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+\newenvironment{mynote}{\par\medskip\color{blue}}{\par\medskip}
+
+\urlstyle{ }
+
+\title{Sobre el teorema de Goodstein}
+%\date{Otoño de 2024}
+\author{Gabriel Martínez González}
+
+\begin{document}
+\include{portada}
+%%\includepdf[pages=1]{portada.pdf}
+
+% Agradecimientos
+\chapter*{Agradecimientos}
+\addcontentsline{toc}{chapter}{Agradecimientos}
+\noindent XXX\\
+XXX\\
+XXX\\
+
+% Resumen
+\chapter*{Resumen}
+\addcontentsline{toc}{chapter}{Resumen}
+\noindent Desde que Kurt Gödel desmostró sus famosos teoremas de incompletitud en 1931, los matemáticos se han encontrado con una gran cantidad de enunciados que, aunque pueden ser escritos en una cierta teoría, no pueden ser demostrados. En este trabajo se aborda como eje central el \textit{teorema de Goodstein}, un teorema que habla de unas ciertas sucesiones de números naturales y su extraño y completamente antiintuitivo comportamiento. Además, estudiamos de forma paralela unas extrañas estructuras llamadas \textit{hidras} las cuáles tienen un comportamiento parecido a las sucesiones de Goodstein.
+Para esto nos hemos valido de la teoria de conjuntos, en especial de la teoría de ordinales; así como de herramientas de la teoria de modelos. Todo esto con el objetivo de demostrar el teorema de Goodstein en teoría de conjuntos y dar una prueba sólida, y lo mejor explicada posible, sobre la imposibilidad de demostrar dicho teorema bajo los axiomas que Giuseppe Peano publicó en 1889 (o un conjunto equivalente de axiomas).
+Así mismo, desarrollaremos las herramientas necesarias para encontrar las conexiones entre las sucesiones de Goodstein y las hidras, y también demostraremos que el hecho de que las hidras puedan ser derrotadas bajo cualquier estrategía es algo indemostrable bajo los mismos axiomas de Peano. Ambas pruebas de indemostrabilidad se darán por medio de teoremas distintos, aunque valge la pena aclarar que, dadas las conexiones, ambos resultados se podrían resolver de la misma forma.
+
+En el primer capítulo, nos encargamos de dar todo resultado que se podría abordar en un curso de licenciatura en matemáticas o equivalente, en el segundo capítulo presentamos nuestros objetos de estudio: las sucesiones de Goodstein y las hidras, en el tercer capítulo desarrollamos nuestra teoría de la aritmética, es decir, aquellas consecuencias de los axiomas de Peano, y también veremos la herramienta más importante de todo este trabajo: los conjuntos $\alpha-$grandes, en el cuarto capítulo veremos las últimas herramientas necesarias para probar la indemostrabilidad de los teoremas mencionador, y finalmente en el quinto capítulo mencionaremos una equivalencia útil en muchas áreas de las matemáticas, y daremos una prueba de que las sucesiones de Goodstein son funciones computables.
+
+%\noindent Palabras clave: Palabra reservada1, Palabra reservada2...
+
+% Índice
+\tableofcontents
+
+
+% Capítulos
+\chapter{Preliminares}
+En este capítulo abordaremos las herramientas básicas para abordar los problemas que son el objetivo de este trabajo. Así mismo, este capítulo se compone de temas que se podrían dar en algún curso de licenciatura, o que de hecho se dan, enfocandolos sobre todo a lo necesario para este escrito.
+
+\input{11_propiedades_de_los_ordinales.tex}
+\input{12_aritmetica_ordinal.tex}
+\input{13_ultrafiltros.tex}
+\input{14_logica_de_primer_orden.tex}
+\input{15_semantica_logica_de_primer_orden.tex}
+\input{16-computabilidad.tex}
+\input{17-problema_detencion.tex}
+\input{18-computabilidad_y_logica.tex}
+
+\chapter{Sucesiones e hidras}
+En este capítulo se presentan las sucesiones de Goodstein, y el teorema central que protagonizan dichas sucesiones.{\cite{SetTheory}} Así mismo, se presentan las hidras y un teorema similar al de Goodstein, que determina como deben abordarse las hidras para evitar catastrofes.{\cite{Goodstein}} 
+
+\input{21_sucesiones_de_goodstein.tex}
+\input{22_hidras_asociadas_a_ordinales.tex}
+
+\chapter{Sistema axiomatico}
+En el presente capítulo presentaremos el sistema axiomatico propuesto por Peano, el cuál es el sistema en el que pretendemos demostrar que el teorema de Goodstein es indemostrable. Así mismo, en este capítulo demostraremos todo aquello que tiene que ver con el modelo de los números naturales que sea importante para nuestros obejtivos.
+
+\input{31_los_axiomas_de_peano.tex}
+\input{32_ultraproductos.tex}
+\input{33_indicadores_de_modelos.tex}
+
+\chapter{La indemostrabilidad del teorema de Goodstein}
+
+\input{40_teoremas_ketonen_solovay.tex}
+\input{41_antes_de_la_indemostrabilidad.tex}
+\input{42_indemostrabilidad.tex}
+
+\chapter{Anexo}
+A continuación se presentaran algunos elementos que se usaron o desarrollaron durante la realización de este trabajo, pero que no tendría sentido introducir en algún capítulo.
+
+\input{51_ae_lz.tex}
+\input{52_code.tex}
+
+\medskip
+
+\bibliographystyle{cmpj}
+\bibliography{bibliography}
+\addcontentsline{toc}{chapter}{Bibliografía}
+\end{document}

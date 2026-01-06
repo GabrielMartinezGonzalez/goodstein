@@ -1,0 +1,44 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem{SetTheory}
+Just~W., Weese~M., Discovery modern set theory, Vol.~1, American Mathematical
+  Society, (1996).
+
+\bibitem{Ultrafilter}
+Fernández~Bretón~D.~J., The American Mathematical Monthly, (2021),
+  \textbf{129}, 116--131.
+
+\bibitem{logic}
+Enderton~H.~B., A mathematical introduction to logic, Academic Press Inc.,
+  (1972).
+
+\bibitem{comp1}
+Weber~R., Computability theory, American Mathematical Society, 1 edn., (1977).
+
+\bibitem{Goodstein}
+Kirby~L., Paris~J., Bulletin of the London Mathematical Society, (1982),
+  \textbf{14}, 285--293.
+
+\bibitem{indicators}
+Kaye~R., Models of Peano Arithmetic, Oxford University Press, 1 edn., (1991).
+
+\bibitem{Ultraproducts}
+Chang~C.~C., Keisler~H.~J., Model theory, Elsevier Science Publishers, 3 edn.,
+  (1990).
+
+\bibitem{thmsigma1comp}
+Hájek~P., Pudlák~P., Metamathematics of first-order arithmetic, Cambridge
+  University Press, 1 edn., (1998).
+
+\bibitem{demoscomp}
+Schwichtenberg~H., Wainer~S.~S., Proofs and computations, Cambridge University
+  Press, 1 edn., (2012).
+
+\end{thebibliography}

@@ -1,0 +1,385 @@
+\section{Los teoremas de incompletitud de Gödel}
+A continuación se presentarán dos de los resultados más importantes en la historia de las matemáticas, así como varios resultados previos que desembocaron en estos teoremas que dieron fama mundial a Kurt Gödel y que sustentan la existencia de proposiciones indemostrables. \cite{comp1}
+
+\begin{obs}
+    Sea $\mathcal{S}$ el conjunto de sucesiones finitas de símbolos de $\mathcal{L}$. Entonces, los siguientes conjuntos son computables:
+    \[\text{Term}=\{t\in\mathcal{S}|t\text{ es término}\},\]
+    \[\text{Form}=\{\varphi\in\mathcal{S}|\varphi\text{ es una fórmula}\},\]
+    \[\{(\varphi,x)\in\mathcal{S}\times\text{variables}|x\text{ es variable libre de }\varphi\},\]
+    \[\text{Sent}=\{\varphi\in\mathcal{S}|\varphi\text{ es un enunciado}\},\]
+    \[\{\varphi\in\mathcal{S}|\varphi\text{ es axioma lógico}\},\]
+    \[\{(a_1,a_2,a_3)\in\mathcal{S}^3|a_1\equiv a_2\Rightarrow a_3\lor a_2\equiv a_1\Rightarrow a_3\},\]
+    \[\text{Dem}=\{(\varphi_1,\ldots,\varphi_n)|(n\in\n)(\varphi_i\text{ es fórmula})\land(\varphi_1,\ldots,\varphi_n)\text{ es demostración formal}\}.\]
+    Por otro lado, el conjunto
+    \[\text{Teor}=\{\varphi\in\mathcal{S}|\text{ existe una demostración de }\varphi\}\]
+    no es computable, pero es computablemente enumerable.
+\end{obs}
+
+\begin{prop}
+    Sea $\Sigma$ un conjunto de $\mathcal{L}-$fórmulas.
+    \[\text{Dem}(\Sigma)=\{(\varphi_1,\ldots,\varphi_n)|(n\in\n)(\varphi_i\text{ fórmula})\land(\varphi_1,\ldots,\varphi_n)\text{ demostración a partir de $\Sigma$}\}.\]
+    Si $\Sigma$ es computable, entonces $\text{Dem}(\Sigma)$ también lo es. Por otro lado,
+    \begin{align*}
+        \text{Teor} &= \{\varphi\in\mathcal{S}|\text{existe una demostración de }\varphi\text{ a partir de }\Sigma\} \\
+        &= \{\varphi\in\mathcal{S}|\Sigma\vdash\varphi\}
+    \end{align*}
+    es computablemente enumerable.
+\end{prop}
+\begin{defn} (completud)\\
+    Un conjunto de fórmulas $\Sigma$ es completo si para cada fórmula $\varphi$, 
+    \[\Sigma\vdash\varphi\lor \Sigma\vdash\neg\varphi.\]
+\end{defn}
+\begin{obs}
+    Si $\Sigma$ es completo y computable, entonces $\text{Teor}(\Sigma)$ es computable.
+    Si $\Sigma$ es completo, entonces
+    \[\mathcal{S}\setminus\text{Teor}(\Sigma)=\{\varphi|\varphi\text{ no es fórmula }\lor \Sigma\vdash\neg\varphi\}.\]
+\end{obs}
+
+Tenemos el siguiente hecho:
+\textit{Ningún $\Sigma$ en $\mathcal{L}_A=\{+,\cdot,\mathbf{0},S,<\}$, que sea un intento razonable de axiomatizar $\n$, puede ser completo y computable.}
+
+\begin{defn} {\label{definiblexd}}
+    Un conjunto $X\subseteq\n^k$ es definible si existe una formula $\varphi(x_1,\ldots,x_k)$ tal que
+    \[X=\{(a_1,\ldots,a_k)|\n\vDash\varphi[a_1,\ldots,a_k]\}.\]
+\end{defn}
+
+\begin{obs}
+    Señalaremos una nueva forma de códificar parejas:
+    \[(a,b)\text{ se codifica por }(a+b)^2+a.\]
+    Dadp $n$, me fijo en la sucesión de cuadrados perfectos ${(n^2)}_{n\in\n}$, y encuentro $m$ tal que $m^2\leq n<{(m+1)}^2$. Hacemos $a=n-m^2$, $b=m-a$, y $n$ codifica $(a,b)$. Notemos:
+    \[''n\text{ codifica }(a,b)''\Longleftrightarrow \n\vDash ((x+y)*(x+y)+x=z)[a,b,n].\]
+    Ahora, para codificar tuplas:
+    Para cada $i$, $q_i=\text{código}(m_i,i)$. Sea
+    \[n=\max\{q_0,\ldots,q_{k-1}\},\]
+    y sea
+    \[u=\prod_{i<k}(1+(q_i+1)n!);\]
+    entonces,
+    \[(m_0,\ldots,m_{n-1})\text{ se codifica como }(u+n!)^2+u=\text{código}(u,n!).\]
+\end{obs}
+\begin{lem}
+    Si $q<r<n$, entonces $(1+(q+1)n!)$ es primo relativo con $(1+(r+1)n!)$.
+\end{lem}
+\begin{proof}
+    Supongamos que $p$ es primo y
+    \[p|1+(q+1)n!\land p|1+(r+1)n!,\]
+    entonces
+    \[p|n!(r-q)\]
+    pero $p\not|n!$ (en tal caso, $p=1$ lo cuál es absurdo), por lo tanto,
+    \[p|r-q.\]
+    Como $(p,i)=1$, para todo $i<n$ y $r-q<n$, esto es una contradicción.
+\end{proof}
+\begin{lem}
+    Si $q<n$, entonces
+    \[(1+(q+1)n!)|u\Longleftrightarrow q=q_j,\text{ para algún }j.\]
+\end{lem}
+\begin{proof}
+    Por el lema anterior, si $q<n$ es distinto de $q_0,\ldots,q_{k-1}$, entonces
+    \[(\forall l\in[[0,k-1]])((1+(q+1)n!,1+(q_l+1)n!)=1).\]
+    Luego, 
+    \[1+(q+1)n!\text{ es primo relativo con } \prod_{j<k}(1+(q_j+1)n!)=u.\]
+\end{proof}
+\begin{lem}
+    Para cada $i$, $m_i$ es el mínimo $m$ tal que
+    \begin{equation}\tag{R}\label{R}
+        1+(\text{código}(m,i)-1)n!|u
+    \end{equation}
+\end{lem}
+\begin{proof}
+    $m_i$ sí satisface (\ref{R}), falta ver que ningún $m<m_i$ satisface (\ref{R}). Supongamos que $m<m_i$ satisface (\ref{R}), entonces sea $q=\text{código}(m,i)$.Entonces, $(1+(q+1)n!)|u$, pero por el lema anterior
+    \[q=q_j,\text{ para algún }j.\]
+    Luego, $q=q_i$, es decir, $m=m_i$, lo cuál es absurdo.
+\end{proof}
+\begin{obs}
+    $a$ es la $i-$ésima entrada de la tupla codificada por $t$.
+    \[(\exists u<t\land \exists v<t)[(t\text{ códifica a }(u,v)\land \exists z(z\text{ codifica a }(a,i))\land 1+(z+1)v|u)]\]
+    \[\land(\text{además, $a$ es el mínimo con esa propiedad}).\]
+    \[(\exists a)\psi(a,i,t)\land \forall j>i\exists a\psi(a,i,t)\]
+    ''la sucesión codificada por $t$ es de longitud $i$''.
+\end{obs}
+\begin{obs}
+    $T$ máquina de Turing.
+
+    Estados $\{s_i,s_f\}$.
+    
+    $T=\{(0,s_i,1,s_i,>),(1,s_i,1,s_i,>),(*,s_i,*,s_f,-)\}$.
+
+    En cada paso, tenemos la foto instantanea
+    \[(i,j,k)\]
+    donde,
+    \begin{itemize}
+        \item $i$ es el estado actual,
+        \item $j$ es la posición,
+        \item $k$ es lo que hay escrito en la cinta.
+    \end{itemize}
+    Así pues,
+    \begin{itemize}
+        \item $''(x,y,z)$ es una foto instantanea valida'' $(FI(x,y,z))$:\\
+            $(x=\cb\lor x=S\cb)\land\forall u(\exists l(u<l\land \text{long}(l,z)) (\exists l(\text{long}(l,z)\land y\leq l)\implies \exists v(\text{Tupla}(v,n,z)$
+            $\implies(v=\cb\lor v=S\cb\lor v=SS\cb)))).$
+        \item $''(x_1,y_1,z_1)$ es la foto instantanea inmeadiatamente posterior a $(x_2,y_2,z_2)''$ \\
+        $T(x_1,y_1,z_1,x_2,y_2,z_2)$:\\
+            $\left(''(x_{1}, y_{1}, z_{1}) \, \text{es toto inst. valida}'' \right)
+\;\land\;
+\exists s \,\bigl( \mathrm{Tupla}(s, y_{1}, z_{1}) 
+\;\land\;
+\bigl( (s = \cb \land x_{2} = x_{1}) \;\lor\; (s = S\cb \land x_{2} = x_{1}) 
+\;\land\;
+y_{2} = y_{1} + S\cb
+\;\land\;
+\exists l\,\bigl( \mathrm{long}(l, z_{1}) \land \mathrm{long}(l, z_{2}) 
+\;\land\;
+\forall u < l \,\bigl( u \neq y_{1} \Rightarrow
+\exists t\,(
+\mathrm{Tupla}(t, v, z_{1}) \land \cdots \land \mathrm{Tupla}(t, u, z_{2})
+\land
+(s = \cb \land \mathrm{Tupla}(S\cb, y_{1}, z_{2})
+\;\lor\;
+s = S\cb \land \mathrm{Tupla}(S\cb, y_{1}, z_{2})
+\;\lor\;
+(\mathrm{long}(y_{1}, z_{1}) \land x_{2} = S\cb \land y_{2} = y_{1})
+$.
+        \item ''si yo corro $T$ con input $x$, entonces la máquina se detiene y el output es $y''$ $C(x,y)$:\\
+            $ \exists s\, \exists l \bigl( \mathrm{long}(l, s) \land
+(\exists w)\,( l = SS S \cb w \land
+\mathrm{Tupla}(\cb, \cb, s) \land
+\mathrm{Tupla}(\cb, S \cb, s)
+\land \mathrm{Tupla}(x, S S \cb, s)\\
+\land \forall u < w \,(\exists x_{1}\exists y_{1}\exists z_{1}\exists x_{2}\exists y_{2}\exists z_{2}\;
+T(x_{1}, y_{1}, z_{1}, x_{2}, y_{2}, z_{2})
+\land \mathrm{Tupla}(x_{1}, z\cdot w, s)
+\land \mathrm{Tupla}(y_{1}, S z \cdot w, s)
+\land \mathrm{Tupla}(z_{1}, SS z \cdot w, s)
+\land \mathrm{Tupla}(x_{2}, SSS z \cdot w, s)
+\land \mathrm{Tupla}(y_{2}, SSSS z \cdot w, s)
+\land \mathrm{Tupla}(z_{2}, SSSSS z \cdot w, s) ) 
+\land \exists \alpha \, S S S \alpha = l
+\land \mathrm{Tupla}(S \cb, \alpha, s)
+\land \mathrm{Tupla}(y, SS \alpha, s) $
+    \end{itemize}
+\end{obs}
+\begin{thm}\label{teoremagrafica}
+    Si $f:\n\longrightarrow\n$ es parcialmente computable, entonces \[\text{Gr}(f)=\{(n,f(n))|n\in\dom(f)\}\] es definible.
+\end{thm}
+\begin{proof}
+    Existen las siguientes formulas:
+    \begin{itemize}
+        \item $\text{Par}(x,y,z)$ que es $''z$ codifica $(x,y)''$.
+        \item $\text{Tupla}(x,y,z)$ que es $''x$ es la $y-$ésima entrada de la tupla codificada por $z''$.
+        \item $\text{Long}(y,z)$ que es $''$la longitud de la tupla codificada por $z$ es $y''$.
+        \item $\text{FI}(x,y,z)$.
+        \item $T(x_1,y_1,z_1,x_2,y_2,z_2)$.
+        \item $C(x,y)$.
+    \end{itemize}
+    Por lo que se tiene el teorema.
+\end{proof}
+A partir de ahora y hasta que acabe el capítulo, consideraremos a $\cN$ como el módelo o la teoría de los números naturales. Se definirá más adeltante de forma correcta y formal a este modelo, pero por ahora basta esta intuición para terminar con los prerrequisitos.
+
+\begin{thm} \textit{(Indecibilidad de la Aritmética)}\\
+    El conjunto $\text{Th}(\cN)=\{\cN\vDash\varphi\}$ no es computable.
+\end{thm}
+\begin{proof}
+    Supongamos que sí es decidible, es decir, existe una enumeración efectiva de las formulas $\varphi_1,\ldots,\varphi_n,\ldots$ y un algoritmo que calcula correctamente 
+    \[\chi_{\text{Th}(\cN)}(n)=\begin{cases}
+        1,\text{ si }\cN\vDash\varphi_n\\
+        0,\text{ si }\cN\not\vDash\varphi_n
+    \end{cases}.\]
+    Por el teorema anterior,
+    \[\{(n,0)|\cN\not\vDash\varphi_n\}\cup\{(n,1)|\cN\vDash\varphi_n\}\]
+    es definible, luego, existe una fórmula $\varphi(x,y)$ tal que
+    \[(\cN\vDash\varphi[n,0]\Longleftrightarrow\cN\not\vDash\varphi_n)\land(\cN\vDash\varphi[n,1]\Longleftrightarrow \cN\vDash\varphi_n).\]
+    Sea $\psi(x)\equiv\varphi(x,S\cb)$. Entonces,
+    \[\cN\vDash\psi[m]\Longleftrightarrow\cN\vDash\varphi_m.\]
+    Sea $e$ tal que $\neg\psi$ es $\varphi_e$, entonces 
+    \[\cN\vDash\varphi_e[e]\Longleftrightarrow\cN\vDash\psi[e]\Longleftrightarrow\cN\vDash\neg\psi[e],\]
+    lo cuál es absurdo.
+\end{proof}
+\begin{thm} \textit{(Indefinibilidad de la verdad de Tarski)}\\
+    $\text{Th}(\cN)$ no es definible.
+\end{thm}
+\begin{proof}
+    Si fuera definible, entonces existiría
+    \[\cN\vDash\psi[m]\Longleftrightarrow\cN\vDash\varphi_m.\]
+    Sea $e$ tal que $\neg\psi$ es $\varphi_e$, entonces
+    \[\cN\vDash\varphi_e[e]\Longleftrightarrow\cN\vDash\psi[e]\Longleftrightarrow\cN\vDash\neg\psi[e],\]
+    lo cuál es absurdo.
+\end{proof}
+\begin{cor}
+    Si $\Sigma\subseteq \text{Th}(\cN)$ es computable, entonces es incompleto.
+\end{cor}
+\begin{proof}
+    De lo contrario, si $\Sigma\subseteq \text{Th}(\cN)$ es computable y compacto, entonces:
+    \[\text{Teor}(\Sigma)=\{\varphi|\Sigma\vdash\varphi\}.\]
+    sería computable. Pero,
+    \[\text{Th}(\cN)\subseteq\text{Teor}(\Sigma)\subseteq\text{Th}(\cN);\]
+    ambas contenciones se tienen de los siguientes hechos:
+    \begin{itemize}
+        \item Si $\varphi\not\in\text{Teor}(\Sigma)$, entonces $\Sigma\not\vdash\varphi$ por completud, $\Sigma\vdash\neg\varphi$ por lo tanto $\cN\vDash\neg\varphi\implies\cN\not\vDash\varphi$.
+        \item Por el teorema de correctud: $\cN\vDash\Sigma$ así que si $\Sigma\vdash\varphi$, $\Sigma\vDash\varphi$, luego $\cN\vDash\varphi$.
+    \end{itemize}
+    Pero, $\text{Teor}(\Sigma)$ es computable y $\text{Th}(\cN)$ no lo es, lo cuál es una contradicción.
+\end{proof}
+\begin{defn} \textit{(Aritmética de Robinson)}\\
+    El conjunto $Q$ (RA) consta de las siguientes formulas:
+    \begin{enumerate}
+    \item $\forall x\hspace{0.2cm}\neg(\cb=Sx)$;
+    \item $\forall x\forall y\hspace{0.2cm}(Sx=Sy\implies x=y)$;
+    \item $\forall x\hspace{0.2cm}\neg(x<\cb)$;
+    \item $\forall x\forall y\hspace{0.2cm}(x<Sy\implies(x<y\lor x=y))$;
+    \item $\forall x\forall y\hspace{0.2cm}(x<y\lor x=y\lor y<x)$;
+    \item $\forall x\hspace{0.2cm}(x+\cb=x)$;
+    \item $\forall x\forall y\hspace{0.2cm}(x+Sy=S(x+y))$;
+    \item $\forall x\hspace{0.2cm}(x\cdot\cb=\cb)$;
+    \item $\forall x\forall y\hspace{0.2cm}(x\cdot Sy=x\cdot y+x)$.
+    \end{enumerate}
+\end{defn}
+\begin{obs}
+    $Q$ es un conjunto finito.
+\end{obs}
+\begin{defn}
+    \begin{enumerate}
+        \item $\mathbf{n}:=\underbrace{S\ldots S}_{n-\text{veces}}\cb$.
+        \item Un conjunto $X\subseteq\n^k$ es $\Sigma-$representable si existe una fórmula $\varphi$ tal que:
+            \[(n_1,\ldots,n_k)\in X\Longleftrightarrow\Sigma\vdash\varphi[x_1/\mathbf{n}_1,\ldots,x_k/\mathbf{n}_k]\]
+            y
+            \[(n_1,\ldots,n_k)\not\in X\Longleftrightarrow\Sigma\vdash\neg\varphi[x_1/\mathbf{n}_1,\ldots,x_k/\mathbf{n}_k].\]
+        \item Un conjunto $X\subseteq\n^k$ es débilmente $\Sigma-$representable si existe una fórmula $\varphi$ tal que:
+            \[(n_1,\ldots,n_k)\in X\Longleftrightarrow\Sigma\vdash\varphi[x_1/\mathbf{n}_1,\ldots,x_k/\mathbf{n}_k].\]
+    \end{enumerate}
+\end{defn}
+
+\begin{thm}\hspace{0.5cm}\\
+    \begin{enumerate}
+        \item Toda función computable es $Q-$representable.
+        \item Todo conjunto computable es $Q-$representable.
+    \end{enumerate}
+\end{thm}
+\begin{proof}\hspace{1cm}
+    \begin{enumerate}
+        \item Análoga a la demostración de 
+            \begin{center}
+                ''$f$ es computable $\implies$ $f$ es definible''.
+            \end{center}
+        \item Sea $A$ computable y sea $\varphi(x,y)$ la fórmula que $Q-$representa a $\chi_A$. Es decir,
+            \[(n,m)\in\text{Gr}(\chi_A)\Longleftrightarrow Q\vdash\varphi[\mathbf{n}/x,\mathbf{m}/y]\land (n,m)\not\in\text{Gr}(\chi_A)\Longleftrightarrow Q\vdash\neg\varphi[\mathbf{n}/x,\mathbf{m}/y].\]
+            Sea $\psi(x)\equiv(y=S\cb\land\varphi(x,y))$. Afirmamos que $\psi$ representa a $A$:
+            \begin{align*}
+                n\in A&\Longleftrightarrow\chi_A(n)=1\\
+                &\Longleftrightarrow(n,1)\in\text{Gr}(\chi_A)\\
+                &\Longleftrightarrow Q\vdash\varphi[\mathbf{n}/x,S\cb/y]\\
+                &\Longleftrightarrow Q\vdash(y=S\cb\land\varphi(x,y))[\mathbf{n}/x];
+            \end{align*}
+            y
+            \begin{align*}
+                n\not\in A&\Longleftrightarrow\chi_A(n)=0\\
+                &\Longleftrightarrow(n,1)\not\in\text{Gr}(\chi_A)\\
+                &\Longleftrightarrow Q\vdash\neg\varphi[\mathbf{n}/x,\mathbf{1}/y]\\
+                &\Longleftrightarrow Q\vdash\neg(y=S\cb\land\psi(x,y))[\mathbf{n}/x].
+            \end{align*}
+    \end{enumerate}
+\end{proof}
+\begin{thm} \textit{(Primer teorema de incompletitud de Gödel)}\\
+    Si $\Sigma$ es cualquier conjunto de fórmulas compatible con $Q$, es decir, tal que $\Sigma\cup Q$ es consistente; entonces,
+    \begin{enumerate}
+        \item $\text{Teor}(\Sigma)$ no es conjunto computable;
+        \item si $\Sigma$ es computable, entonces es incompleto.
+    \end{enumerate}
+\end{thm}
+\begin{proof}\hspace{0.5cm}
+    \begin{enumerate}
+        \item Probemos que Teor$(\Sigma\cup Q)$ no es computable. Sea $\varphi_1(x),\varphi_2(x),\ldots,\varphi_n(x),\ldots$ una enumeración efectiva de las fórmulas con una variable libre. Sea
+            \[X=\{m\in\n|\Sigma\cup Q\vdash\varphi_m[\mathbf{m}/x]\}.\]
+            Si Teor$(\Sigma\cup Q)$ fuera computable, $X$ también lo sería, luego $X$ sería $Q-$representable y $X$ también sería $(\Sigma\cup Q)-$representable, es decir, existe una formila $\psi(x)$ tal que para cada $m\in\n$,
+            \[m\in X\Longleftrightarrow\Sigma\cup Q\vdash\psi[\mathbf{m}/x],\]
+            y 
+            \[m\not\in X\Longleftrightarrow\Sigma\cup Q\vdash\neg\psi[\mathbf{m}/x].\]
+            Sea $e$ tal que $\neg\psi$ es la formula $\varphi_e$. Entonces,
+            \begin{align*}
+                e\in X & \Longleftrightarrow\Sigma\cup Q\vdash\varphi_e[\mathbf{e}/x]\hspace{0.5cm}(\text{definición de } X)\\
+                & \Longleftrightarrow\Sigma\cup Q\vdash\psi[\mathbf{e}/x]\hspace{0.5cm}(\text{definición de } \psi)\\
+                & \Longleftrightarrow\Sigma\cup Q\vdash\neg\varphi_e[\mathbf{e}/x],
+            \end{align*}
+            lo cuál es una contradicción. Por lo tanto, $e\not\in X$, pero
+            \begin{align*}
+                e\not\in X & \Longleftrightarrow\Sigma\cup Q\not\vdash\varphi_e[\mathbf{e}/x]\hspace{0.5cm}(\text{definición de } X)\\
+                & \Longleftrightarrow\Sigma\cup Q\vdash\neg\psi[\mathbf{e}/x]\hspace{0.5cm}(\text{definición de } \psi)\\
+                & \Longleftrightarrow\Sigma\cup Q\vdash\varphi_e[\mathbf{e}/x],
+            \end{align*}
+            por lo tanto, Teor$(\Sigma\cup Q)$ es no computable. Ahora, supongamos que Teor$(\Sigma)$ es computable. Sea $\mathcal{O}$ la conjunción de todos los elementos de $Q$. Entonces, el conjunto $\{\varphi|\Sigma\vdash(\mathcal{O}\implies\varphi)\}$ también lo sería. Pero
+            \begin{align*}
+                \{\varphi|\Sigma\vdash(\mathcal{O}\implies\varphi)\}&=\{\varphi|\Sigma\cup\{\mathcal{O}\}\vdash\varphi\}\\
+                &=\{\varphi|\Sigma\cup Q\vdash\varphi\}\\
+                &=\text{Teor}(\Sigma\cup Q),
+            \end{align*}
+            lo cuál es una contradicción.
+        \item $\varphi_e$ como en el punto anterior no se puede demostrar.
+    \end{enumerate}
+\end{proof}
+\begin{cor}
+    El problema de la validez es indecidible, es decir, $\{\varphi|\vdash\varphi\}$ no es computable.
+\end{cor}
+\begin{obs}
+    Sea $\varphi_1,\varphi_2,\ldots,\varphi_n,\ldots$ una enumeración efectiva de los enunciados de $\mathcal{L}_A$. $\psi_1(x),\ldots,\psi_n(x)$ de las fórmulas. Dado un enunciado $\psi$ denotamos por 
+    \[\ulcorner\psi\urcorner=\ulcorner e\urcorner\Longleftrightarrow\psi \text{ es }\varphi_e,\]
+    donde $\ulcorner\psi\urcorner$ es el número de Gödel de $\psi$.
+\end{obs}
+\begin{lem}
+    Para cada fórmula $\theta(y)$, existe un enunciado $\eta$ tal que
+    \[Q\vdash\theta[\ulcorner\eta\urcorner/y]\Longleftrightarrow\eta.\]
+\end{lem}
+\begin{proof}
+    Dada la fórmula $\theta(y)$, consideraremos la función
+    \[m\mapsto\ulcorner\psi_m[\mathbf{m}/x]\urcorner.\]
+    Esta función es computable, luego es $Q-$representable, es decir, existe la fórmula $\psi(x,y)$ tal que
+    \[Q\vdash\psi[\mathbf{m}/x,\mathbf{n}/y]\Longleftrightarrow n=\ulcorner\psi_m[\mathbf{m}/x]\urcorner,\]
+    y
+    \[Q\vdash\neg\psi[\mathbf{m}/x,\mathbf{n}/y]\Longleftrightarrow n\neq\ulcorner\psi_m[\mathbf{m}/x]\urcorner.\]
+    Definimos
+    \[\chi(x)\equiv\forall y(\psi(x,y)\implies\theta(y)).\]
+    Hacemos
+    \[\eta\equiv\chi[\ulcorner\chi\urcorner/x].\]
+    Entonces, 
+    \[Q\vdash\psi[\ulcorner\chi\urcorner/x,y]\Longleftrightarrow y=\ulcorner\chi[\ulcorner\chi\urcorner/x]\urcorner,\]
+    es decir, 
+    \begin{equation}\label{*}\tag{*}
+        Q\vdash\psi[\ulcorner\chi\urcorner/x,y]\Longleftrightarrow y=\ulcorner\eta\urcorner.
+    \end{equation}
+    Por otra parte,
+    \begin{equation}\label{**}\tag{**}
+        \eta\equiv\forall y(\psi[\ulcorner\chi\urcorner/x,y]\implies\theta(y)).
+    \end{equation}
+    De {(\ref{*})} y {(\ref{**})} tenemos que
+    \[Q\vdash\eta\Longleftrightarrow\forall y(y=\ulcorner\eta\urcorner\implies\theta(y));\]
+    por lo tanto,
+    \[Q\vdash\eta\Longleftrightarrow\theta[\ulcorner\eta\urcorner/y].\]
+\end{proof}
+
+\begin{defn} \textit{(Aritmética de Peano)}
+    \[\text{PA}=Q\cup\{(\varphi[\mathbf{0}/x]\land\forall x(\varphi(x)\implies\varphi[Sx/x]))\implies\forall x\varphi(x)|\varphi(x)\text{ es fórmula}\}.\]
+\end{defn}
+
+Esta definición coinscide con la que daremos en el capítulo 3, sin embargo, es importante señalarla ahora para los últimos resultados.
+
+\begin{obs}
+    Sea $\Sigma$ computable tal que $Q\subseteq\Sigma$. Consideramos
+    \[\text{Teor}(\Sigma)=\{m|\Sigma\vdash\varphi_n\},\]
+    el cuál es computablemente enumerable. Por lo tanto, este conjunto es débilmente representable en $Q$, es decir, existe $\psi(x)$ tal que para cada $m\in\mathbf{n}$,
+    \[m\in\text{Teor}(\Sigma)\Longleftrightarrow Q\vdash\psi[\mathbf{m}/x].\]
+    Cabe recalcar que esta última $\psi(x)$ se puede entender por \textit{''$x$ es demostrable''}.
+\end{obs}
+\begin{defn}
+    Definimos Con$(\Sigma)$ como el enunciado $\neg\psi[\ulcorner\mathbf{0}=S\mathbf{0}\urcorner/x]$.
+\end{defn}
+\begin{thm} \textit{(Segundo teorema de incompletitud de Gödel)}\\
+    Si $\Sigma$ es consistente, computable y PA$\subseteq\Sigma$, entonces
+    \[\Sigma\vdash\text{Con}(\Sigma).\]
+\end{thm}
+\begin{proof}
+    Le aplicamos el lema de la autorreferencia a $\neg\psi$, obtenemos $\eta$ tal que 
+    \[Q\vdash\eta\Longleftrightarrow\neg\psi[\ulcorner\eta\urcorner/x].\]
+    Sea $e$ tal que $\eta\equiv\varphi_e$ ($\ulcorner\eta\urcorner=e$). Supongamos que $\Sigma\vdash\eta$, es decir, $\Sigma\vdash\varphi_e$. Entonces, $e\in\text{Teor}(\Sigma)$ lo que implica $Q\vdash\psi[\mathbf{e}/x]$. Por otra parte, $\Sigma\vdash\eta\Longleftrightarrow\neg\psi[\ulcorner\eta\urcorner/x]$, $Q\vdash\psi[\mathbf{e}/x]$, por lo tanto:
+    \[\Sigma\vdash\neg\psi[\ulcorner\eta\urcorner/x]\land\Sigma\vdash\psi[\mathbf{e}/x],\]
+    \[\Sigma\vdash\psi[\mathbf{e}/x]\land\Sigma\vdash\psi[\mathbf{e}/x].\]
+    Esto contradice la consistencia de $\Sigma$. Luego,
+    \[\Sigma\not\vdash\eta.\]
+\end{proof}
+Podemos observar que en el teorema anterior, la proposición $\eta$ se puede entender como \textit{''yo no soy demostrable''}.

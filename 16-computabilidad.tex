@@ -1,0 +1,101 @@
+\section{Teoría de la computabilidad}
+En la siguiente sección abordaremos la teoría de computabilidad, cuyos principales contribuidores fueron \textit{Alan Turing} mediante su \textit{máquina de Turing}, \textit{Kurt Gödel} mediante la \textit{teoría de la recursión} y \textit{Alonzo Church} mediante el $\lambda-$\textit{cálculo.} En esta ocasión nos quedaremos principalmente con ideas intuitivas sobre máquinas de Turing y más formalmente sobre recursión, todo esto con la intención de presentar el concepto de función computable. \cite{comp1}
+
+\begin{defn}
+    Una maquina de Turing consta de:
+    \begin{itemize}
+        \item un alfabeto, es decir, un conjunto finito $L$;
+        \item un conjunto finito $S$ de estados;
+        \item una función de transición con dominio subconjunto de $(S\cup\{s_o\})\times(L\cup\{*\})$ y codominio $S\times(L\cup\{*\})\times\{<,>,-\}$.
+    \end{itemize}
+\end{defn}
+
+\begin{obs}
+    Toda maquina de Turing especifica de manera única una función cuyo dominio y rango son subconjuntos del conjunto de sucesiones finitas de $L$.
+\end{obs}
+
+\begin{ex}
+    Consideremos 
+    \[L=\{1\},\hspace{2cm}S=\{s_1,s_f\},\]
+    y la función de transición:
+    \[\begin{array}{c}
+        (s_0,1,s_0,1,>)\\
+        (s_0,*,s_1,*,<)\\
+        (s_1,1,s_0,1,<)\\
+        (s_1,*,s_f,1,-);
+    \end{array}\]
+    esta es la función sucesor en lenguaje unario.
+\end{ex}
+
+\begin{defn}
+    Una función $f:A\longrightarrow\n^p$, con $p\in\n$, es computable si existe un algoritmo tal que al recibir el input $n$, eventualmente termina si, y sólo si $n\in A$, en cuyo caso el output es $f(n)$.
+\end{defn}
+
+\begin{ex}
+    La función \textit{busy beaver} no es computable:
+    \begin{itemize}
+        \item Fijamos el alfabeto $\{1\}$,
+        \item para cada $n$,
+            \[A_n:=\{f | f\in C\},\]
+            donde $C$ es la colección de funciones computables por una máquina de Turing con a lo más $n$ estados (más, quizá, el estado final).
+            \[A_1:=\{\varnothing,n\mapsto n+1,n\mapsto n,n\mapsto n-1,0,1\}.\]
+    \end{itemize}
+    Cada $A_n$ es finito (tiene a lo sumo $2^{2(n+1)(n+1)\cdot2\cdot3}$ de elementos). La función \textbf{busy beaver} está dada por:
+    \[\begin{array}{c}
+        \sigma:\n\longrightarrow\n\\
+        \sigma(n)=\max\{f(0)|0\in\dom(f),f\in A_n\}.
+    \end{array}\]
+\end{ex}
+
+\begin{defn} \textit{(máquina universal de Turing)}\\
+    Llamamos así a la función $\Phi:A\longrightarrow\n$, con $A\subseteq\n\times\n$. $\Phi(e,n)$ es el resultado de introducir el imput $n$ en la $e-$ésima máquina de Turing.   
+\end{defn}
+
+Por la tesis de Church-Turing, la función $\Phi$ es computable.
+
+\begin{obs}
+    Para toda función computable $f$, existe $e$ tal que 
+    \[f(n)=\Phi(e,n).\]
+\end{obs}
+
+\begin{lem}
+    Para toda función computable $f$, existen una infinidad de $e$ tales que
+    \[f(n)=\Phi(e,n).\]
+\end{lem}
+
+\begin{defn} \textit{(función total)}\\
+    Una función computable se dice total si para cualquier número natural como input, la función se detiene, es decir, el cálculo de su output se puede obtener en un número finito de pasos.
+\end{defn}
+
+\begin{thm}
+    El conjunto
+    \[e\in\n|\Phi(e,-)\text{ es una función total}\]
+    no es computable. Es decir, no existe un algoritmo que, dado $e$, decida si la $e-$ésima función computable es total.
+\end{thm}
+\begin{proof}
+    Supongamos que este conjunto si es computable, entonces hay una función computable
+    \[l\mapsto f_l,\]
+    la $l-$ésima función computable.
+    \begin{verbatim}
+        input(l);
+        j=0;
+        for(i=0;j<l;i++){
+            if(Phi(i,-) es total)
+                j++;
+        }return i;
+    \end{verbatim}
+    Por lo tanto, la función
+    \[\begin{array}{c}
+        u:\n^2\longrightarrow\n\\
+        (a,b)\mapsto f_a(b)
+    \end{array}\]
+    es total computable. Sea $g:\n\longrightarrow\n$, dada para cada $k\in\n$ por
+    \[g(k)=u(k,k)+1.\]
+    Tenemos que $g$ es computable, por lo tanto, existe $l$ tal que $g=f_l$. Entonces,
+    \[u(l,l)=f_l(l)=g(l)=u(l,l)+1,\]
+    lo cuál es una contradicción.
+\end{proof}
+
+\begin{defn} \textit{(conjunto computable)}\\
+    Sea $X\subseteq\n^k$. Decimos que $X$ es computable si $\chi_X:\n^k\longrightarrow\{0,1\}$ es una función total computable. Es decir, $X$ es computable si existe un algoritmo con imput n, tal que determina si $n\in X$ o no.
+\end{defn}

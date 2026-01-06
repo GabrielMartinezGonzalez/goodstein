@@ -1,0 +1,239 @@
+\section{Problema de la detención}
+También conocido por su nombre en alemán \textit{entscheindungsproblem}, o en inglés \textit{halting problem}, este concepto es de importancia capitál para entender las límitaciones de la computabilidad, lo cuál eventualmente nos llevará a la incompletitud. \cite{comp1}
+
+\begin{thm} \textit{(problema de la detención)}\\
+    El conjunto
+    \[\{(e,n)|\Phi(e,n)\text{ está definida}\}\]
+    no es computable. Es decir, no existe un algoritmo que diga cuáles algoritmos se detienen. 
+\end{thm}
+\begin{proof}
+    Basta demostrar que $D=\{e\in\n|\Phi(e,e)\text{ está definido}\}$ no es computable. Supongamos que $D$ es computable. Entonces, la función
+    \[\begin{array}{c}
+        f:\n\longrightarrow\n\\
+        f(n)=\begin{cases}
+            1 & n\not\in D \\
+            \text{indefinido} & n\in D
+        \end{cases}
+    \end{array}\]
+    es computable. Está es representada por el siguiente pseudocodigo:
+    \begin{verbatim}
+        input(n)
+        if(chi_D(n)==0)
+            return 1;
+        else 
+            for(i=1; ;i++)
+    \end{verbatim}
+    Por lo tanto, sea $e$ tal que 
+    \[f=\Phi(e,-).\]
+    Entonces,
+    \begin{align*}
+        \Phi(e,e) &= f(e)\\
+        &= \begin{cases}
+            1 & e\not\in D \\
+            \text{indefinido} & e\in D
+        \end{cases}\\
+        &=\begin{cases}
+            1 & \Phi(e,e) \text{ no está definido} \\
+            \text{indefinido} & \Phi(e,e)\text{ está definido}
+        \end{cases},
+    \end{align*}
+    lo cuál es absurdo, luego $D$ no es computable.
+\end{proof}
+
+\begin{prop}
+    Si $X$ y $Y$ son computables, entonces
+    \[X\cup Y,\hspace{1cm} X\cap Y,\hspace{1cm} X\setminus Y\]
+    también lo son.
+\end{prop}
+\begin{proof}
+    \begin{itemize}
+        \item $\chi_{X\cup Y}=\max\{\chi_X,\chi_Y\}$;
+        \item $\chi_{X\cap Y}=\min\{\chi_X,\chi_Y\}=\chi_X\cdot\chi_Y$;
+        \item $X\setminus Y=X\cap(\n\setminus Y)$, $\chi_{\n\setminus Y}=1-\chi_Y$, entonces $\chi_{X\setminus Y}=\chi_X\cdot(1-\chi_Y)$.
+    \end{itemize}
+\end{proof}
+\begin{prop}
+    Si $X\subseteq\n^2$ es computable, entonces:
+    \begin{enumerate}
+        \item Dado $n$,
+            \[Y=\{m\in\n|\exists k<n((m,k)\in X)\}\]
+            es computable.
+        \item En general, 
+            \[Z=\{m\in\n|\exists k((m,k)\in X)\}\]
+            no es computable.
+    \end{enumerate}
+\end{prop}
+\begin{proof}
+    \begin{enumerate}
+        \item La demostración se sigue del siguiente pseudocodigo:
+            \begin{verbatim}
+                input(m)
+                for(k=0;k<n;k++)
+                    if(Xx(m,k))
+                        return 1;
+                return 0;
+            \end{verbatim}
+        \item Recordemos que
+            \[D=\{e|\Phi(e,e)\text{ está definido}\}\]
+            no es computable. Sea 
+            \[X=\{(m,k)|\Phi(m,m)\text{ se detiene a lo más en }k\text{ pasos}\},\]
+            entonces $X$ es computable. Note que:
+            \[\{m|\exists k((m,k)\in X)\}=\{m|\Phi(m,m)\text{ se detiene eventualmente}\}=D,\]
+            que no es computable.
+    \end{enumerate}
+\end{proof}
+\begin{defn} \textit{(conjunto computablemente enumerable)}\\
+    Un conjunto $X\subseteq\n$ es computablemente enumerable (también listable o c.e.) si existe una función total computable $f:\n\longrightarrow\mathcal{P}(\n)$ tal que:
+    \begin{enumerate}
+        \item $f(0)=\varnothing$,
+        \item $\forall n(|f(n+1)\setminus f(n)|\leq 1\land f(n)\subseteq f(n+1))$,
+        \item $X=\bigcup_{n\in\n}f(n)$.
+    \end{enumerate}
+\end{defn}
+\begin{ex}
+    \hspace{1cm}
+    \begin{enumerate}
+        \item $D=\{n|\Phi(n,n)\text{ está definido}\}$ es c.e.:
+            \begin{verbatim}
+                for(i=0; ;i++)
+                    for(j=0;j<=i;j++)
+                        correr Phi(j,j) i pasos
+                        si se detiene, print j;
+            \end{verbatim}
+        \item $H=\{(a,b)|\Phi(a,b)\text{ está definido}\}$ es c.e.
+    \end{enumerate}
+\end{ex}
+\begin{prop}
+    Todo conjunto computable es c.e.
+\end{prop}
+\begin{proof}
+    Si $X$ es computable, entonces
+        \begin{verbatim}
+            for(n=0; ;n++)
+                if(chi_X(n))
+                    print n;
+        \end{verbatim}
+\end{proof}
+\begin{obs}
+    El reciproco en general es falso, y el contraejemplo viene en los últimos ejemplos dados.
+\end{obs}
+\begin{prop}
+    Si $X$ y $Y$ son computablemente enumerables, entonces:
+    \begin{itemize}
+        \item $X\cup Y$ también lo es,
+        \item $X\cap Y$ también lo es.
+    \end{itemize}
+\end{prop}
+\begin{proof}
+    Si $A_X$ y $A_Y$ son algoritmos que imprimen a $X$ y $Y$ respectivamente. Entonces,
+    \begin{verbatim}
+        for(n=1; ;n++)
+            correr A_X n pasos
+            correr A_Y n pasos
+    \end{verbatim}
+    la cuál imprime a $X\cup Y$. Por otro lado,
+    \begin{verbatim}
+        for(n=1; ;n++)
+            correr A_X n pasos, determinando L;
+            correr A_Y n pasos, determinando L';
+            print(L intersección L')
+    \end{verbatim}
+\end{proof}
+\begin{thm}
+    Para $X\subseteq\n$, los siguientes enunciados son equivalente:
+    \begin{enumerate}
+        \item $X$ es c.e.
+        \item La función semicaracteristica de $X$, denotada $\sigma_X$, es computable. Esta función viene dada por la regla de asignación:
+            \[\sigma_X(n)=\begin{cases}
+            1 \text{ si } n\in X\\
+            \uparrow \text{en otro caso}
+            \end{cases}.\]
+        \item Existe una función computable $f$ tal que $\dom(f)=X$.
+        \item Existe un $Y\subseteq\n\times\n$ computable tal que
+            \[X=\{n\in\n|\exists k\in\n((n,k)\in Y)\}.\]
+    \end{enumerate}
+\end{thm}
+\begin{proof}
+    $1.\implies 2.:$\\
+    Sea $A_X$ el algoritmo que imprime a $X$.
+    Entonces, el siguiente algoritmo calcula a $\sigma_X$:
+    \begin{verbatim}
+        input(n)
+        correr A_X
+            if(se imprimió n)
+                return 1;
+    \end{verbatim}
+    $2. \implies 3.:$\\
+    Inmediato tomando $f=\sigma_X$.\\
+    $3.\implies 4.:$\\
+    Sea $Y=\{(n,k)|\text{el algoritmo que calcula }f(x)\text{ se detiene en, a lo más, k pasos}\}$. Notemos que $Y$ es computable, con input $(n,k)$. Se corre el algoritmo para $f(n)$ $k$ pasos; si alcanza a detenerse, devuelve $1$, en caso contrario devuelve 0. $\pi[Y]=X$, ya que $n\in X$ si, y sólo si $f(x)$ está definido si, y sólo si para algún $k$, el cálculo de $f(n)$ termina en $k$ pasos si, y sólo si $(n,k)\in Y$. \\
+    $4.\implies.:$\\
+    Supongamos $Y$ como en la hipótesis, es decir, hay un algoritmo que calcula $\chi_Y$, entonces el siguiente algoritmo imprime a $X$:
+    \begin{verbatim}
+        for(n=0; ;n++)
+            sean a y b tales que n=2^a(2*b+1)
+            if(chi__Y(a,b))
+                print a;
+    \end{verbatim}
+\end{proof}
+\begin{thm} \textit{(Kleene)}\\
+    Sea $X\subseteq\n$. Entonces, 
+    \[X\text{ es computable}\Longleftrightarrow (X \text{ y } \n\setminus X\text{ son c.e.}).\]
+\end{thm}
+\begin{proof}\hspace{1cm}\\
+    $\implies)$: si $X$ es computable, entonces $\n\setminus X$ también lo es. Luego, $X$ y $\n\setminus X$ son c.e.\\
+    $\Longleftarrow)$: sean $A_X$ y $A_{\n\setminus X}$ los algoritmos que imprimen a $X$ y $\n\setminus X$, respectivamente. El siguiente algoritmo calcula $\chi_X$:
+    \begin{verbatim}
+        input(n)
+        correr A_X y A_{C(X)} en paralelo, esperar a que se imprima $n$
+            si A_X lo imprimió
+                return 1;
+            si A_{C(X)} lo imprimió
+                return 0;
+    \end{verbatim}
+\end{proof}
+\begin{obs}
+    Ni $\n\setminus D$, ni $\n^2\setminus H$ son c.e. (pues por el teorema de Kleene, $D$ y $H$ serían numerables).
+\end{obs}
+\begin{thm}
+    Sea $f:A\longrightarrow\n$ tal que $A\subseteq\n$. Entonces,
+    \[f\text{ es computable }\Longleftrightarrow Gr(f)\text{ es c.e.}\]
+\end{thm}
+\begin{proof}\hspace{1cm}\\
+    $\Longleftarrow)$ Si $A_{Gr(f)}$ es el algoritmo que imprime a $Gr(f)$, entonces:
+    \begin{verbatim}
+        input(n)
+        correr A_{Gr(f)} tal que se imprima una pareja (x,y) tal que x=n
+        en tal caso, return y;
+    \end{verbatim}
+    es un algoritmo que calcula a $f$.\\
+    $\implies)$ Considere el algoritmo:
+    \begin{verbatim}
+        for(n=0; ;n++)
+            for(k=0;k<=;k++)
+                corrar f(k) n pasos
+                si se obtiene una respuesta y
+                    print(k,y);
+    \end{verbatim}
+\end{proof}
+\begin{thm}
+    Sea $X\subseteq\n$, con $X\neq\varnothing$. Entonces,
+    \[X\text{ es c.e. }\Longleftrightarrow (\exists f:\n\longrightarrow\n)(f\text{ es total computable}\land X=\ran(f)).\]
+\end{thm}
+\begin{proof}\hspace{1cm}\\
+    $\Longleftarrow)$ Si hay un algoritmo para $f$, entonces
+    \begin{verbatim}
+        for(n=0; ;n++)
+            print f(n)
+    \end{verbatim}
+    es un algoritmo que imprime $\ran(f)=X$.\\
+    $\implies)$ Sea $x_o\in X$ arbitrario. Considere el siguiente algoritmo:
+    \begin{verbatim}
+        input(n)
+        correr el algoritmo que imprime a X n pasos
+            si no se imprime nada, return x_o;
+            en caso contrario, si y es el último número impreso
+            return y;
+    \end{verbatim}
+    esta última función es total y $\ran(f)=X$.
+\end{proof}
