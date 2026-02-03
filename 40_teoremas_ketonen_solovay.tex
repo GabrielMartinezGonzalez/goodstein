@@ -216,9 +216,9 @@ Este resultado se utilizará libremente a lo largo de esta sección, pues una ca
     Supongamos que no, es decir, existe un número natural $x$ tal que:
     \[h_\alpha(x+1)\leq h_\alpha(x).\]
     Ya sabemos que no existen decrecimientos infinitos en los ordinales, por lo que si aplicamos la función $F$ a $\alpha$, como en la definición de las funciones $h_\alpha$, en una cantidad finita de pasos, digamos $\xi$ pasos, tenemos que:
-    \[h_0(x+1+\chi)\leq h_0(x+\chi);\]
+    \[h_0(x+1+\xi)\leq h_0(x+\xi);\]
     pero esto es:
-    \[x+1+\chi\leq x+\chi,\]
+    \[x+1+\xi\leq x+\xi,\]
     lo que implica
     \[1\leq 0,\]
     lo cuál es una contradicción.
@@ -243,7 +243,8 @@ Este resultado se utilizará libremente a lo largo de esta sección, pues una ca
     luego
     \[h_\alpha(x)<h_\alpha(x+1)<h_{F(\beta,x)}(x+1)=F_\beta(x).\]
 \end{proof}
-\begin{lem}
+
+\begin{lem} \label{LEMAAUX2}
     Dado $x\in\n$, existe un $\alpha\in\varepsilon_0$ tal que:
     \[\forall n\in\n\hspace{0.2cm}n\leq h_\alpha(x).\]
 \end{lem}
@@ -274,6 +275,41 @@ Este resultado se utilizará libremente a lo largo de esta sección, pues una ca
 \end{proof}
 
 Otro argumento útil para el final del lema anterior (\ref{yaelmeroultimo}) es porque los modelos de $\PA$ son cerrados bajo funciones demostrablemente computables, como vimos en la demostración del teorema {\ref{tks0}}.
+
+\begin{lem} \label{LEMAAUX1} \hspace{0.5cm}
+    \begin{center}
+        $[a,b]$ es $\n_n-$grande $\implies Q_n(a)<b$.
+    \end{center}
+\end{lem}
+\begin{proof}
+    \begin{align*}
+        Q_n(a)&=\min\set[y\geq a]{Y(a,y)\geq n}\\
+        &=\min\set[y\geq a]{[a,y]\text{ es }\n_n-\text{grande}}<b.
+    \end{align*}
+\end{proof}
+
+\begin{defn}
+    Sea $M\vDash\PA$, $I$ es un corte si $I\subseteq M$ y 
+    \begin{itemize}
+        \item $(x\in I\land y<x)\implies y\in I$,
+        \item $I\neq\nt$,
+        \item $x\in I\implies x+1\in I$.
+    \end{itemize}
+\end{defn}
+
+\begin{lem} \label{LEMAAUX3} (Teorema de la jerarquia de crecimiento rápido)\\
+    Toda función $\Sigma_k-$definible está dominada por alguna $h_\alpha$.
+\end{lem}
+\begin{proof}
+    YA LA TENGO; HAY QUE ESCRIBIRLA
+\end{proof}
+
+\begin{cor} \label{LEMAAUX4}
+    Sea $M\vDash\PA$ y sea $I=\set[x\in M]{M\vDash\ph(x,p)}$ un corte definible donde $\ph$ es $\Sigma_k$. Entonces, existe $\alpha\in\varepsilon_0$ tal que $I$ no es cerrado bajo $h_\alpha$.
+\end{cor}
+\begin{proof}
+    Se sigue directamente de {\ref{LEMAAUX3}}, al tomar a la función definida por la formula $\ph$.
+\end{proof}
 
 \begin{thm} {\label{tks0}}
     Sea $M$ un modelo no estandar de $\PA$. La función $Y:M^2\longrightarrow \n$ dada por 
@@ -307,13 +343,14 @@ Otro argumento útil para el final del lema anterior (\ref{yaelmeroultimo}) es p
         Por el principio {\ref{overspill}}, existe una $c$ no estándar tal que
         \[[a,b]\text{ es }\n_c-\text{grande},\]
         y como la función $Y$ se define como un máximo, $Y(a,b)$ es no estandar.\\
-        Para la necesidad basta observar lo siguiente: los segmentos iniciales de un modelo de $\PA$ son cerrados bajo funciones demostrablemente computables, esto es porque si $f(x)=y$ es equivalente a una expresión $\Sigma_1$ en $M$, entonces también lo es en $I$, para $I$ segmento inicial.
-        Luego, por el punto 1, tenemos que $Y$ es una función demostrablemente computable. Así pues, tenemos que:
-        \[(a\in I\land b\in I)\implies Y(a,b)\in I;\]
-        o lo que es lo mismo:
-        \[Y(a,b)\not\in I\implies (a\not\in I\lor b\not\in I).\]
-        Ahora bien, todo modelo de $\PA$ tiene segmentos iniciales que satisfacen $\PA$ (al menos, la sección isomorfa al módelo estandar). Sea $I\subeq_i M$ tal que $a\in I$ y $I\vDash\PA$. Si $Y(a,b)$ es no estandar (es decir, no está en $I$), entonces 
-        \[b\not\in I.\]
+        Para la necesidad, definimos el siguiente conjunto:
+        \[I=\set[x\in M]{\exists n\in\n (x<b_n)},\]
+        donde $b_n$ está dada por:
+        \[b_n=q_n(a).\]
+        Ya con esto, y por el lema {\ref{LEMAAUX1}} tenemos que $a\in I$ y $b\not\in I$. Ahora, al generalizar {\ref{LEMAAUX2}} a cualquier modelo y utilizando el lema {\ref{yaelmeroultimo}}, tenemos que $I$ es cerrado bajo funciones demostrablemente computables. Luego, también es cerrado bajo $+$, $\cdot$ y $S$. Lo único que nos falta comprobar es la inducción.
+        Supongamos que $I\not\vDash\PA$, lo que implica que falla alguna instancia de inducción, luego, esto permite definir (bajo lógica de primer orden en $\PA$) a $I$, es decir, existe una fórmula $\ph$ que define esta falla en la inducción y, por lo tanto, a $I$.
+        Luego, $\ph$ es $\Sigma_k$, para alguna $k$. Así, por el teorema LEMAAUX4, $I$ no es cerrado alguna $h_\alpha$, lo que contradice que $I$ era cerrado bajo funciones computables.
+        Por lo tanto, $I\vDash\PA$.
 \end{proof}
 
 \begin{lem}\label{tks} (Primer Teorema de Ketonen-Solovay)\\
