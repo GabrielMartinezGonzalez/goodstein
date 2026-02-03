@@ -84,12 +84,17 @@ Este resultado se utilizará libremente a lo largo de esta sección, pues una ca
 \end{obs}
 
 \begin{defn} \textit{(Jerarquia de Hardy)}\\
-    Definimos la función $h_\alpha:\n\longrightarrow\n$ de la siguiente forma:
+    Definimos las funciones $h_\alpha:\n\longrightarrow\n$ de la siguiente forma:
     \begin{center}
         $h_0(n)=n$,\\
         $h_\alpha(n)=h_{F(\alpha,n)}(n+1)$.
     \end{center}
 \end{defn}
+
+\begin{obs}
+    Cada $h_\alpha$ es demostrablemente computable en $\PA$.
+\end{obs}
+
 \begin{defn}
     Para cada $i\in\n$, definimos las funciones $q_i:\n\longrightarrow\n$
     \[q_i(x)=\min\set{y\geq x|[x,y]\text{ es }\n_i-\text{grande}}.\]
@@ -209,7 +214,7 @@ Este resultado se utilizará libremente a lo largo de esta sección, pues una ca
     El anterior lema se puede entender como lo siguiente: una función es demostrablemente computable si, y sólo si puede obtenerse por una busqueda exhaustiva efectiva cuya terminación puede demostrarse en la teoría.
 \end{obs}
 
-\begin{prop}
+\begin{prop} \label{estcrec}
     Dado $\alpha\in\varepsilon_0$, $h_\alpha$ es una función estrictamente creciente.
 \end{prop}
 \begin{proof}
@@ -301,7 +306,45 @@ Otro argumento útil para el final del lema anterior (\ref{yaelmeroultimo}) es p
     Toda función $\Sigma_k-$definible está dominada por alguna $h_\alpha$.
 \end{lem}
 \begin{proof}
-    YA LA TENGO; HAY QUE ESCRIBIRLA
+    Procedemos por inducción:\\
+    El caso $k=1$ se sigue del lema {\ref{yaelmeroultimo}}.
+    Ahora, supongamos que se cumple el caso $k-$ésimo, y demostremos para el caso $k+1$:\\
+    Consideremos $f(x)=y$ una fórmula $\Sigma_k$, entonces es equivalente a una fórmula de la forma:
+    \[\exists a\forall b\psi(a,b,x,y),\]
+    donde $\psi$ es $\Sigma_{k-1}$. Ahora, consideraremos la función siguiente:
+    \[g_b(x)=a\equiv\exists y\psi(a,b,x,y)\land\forall c<a\neg\psi(a,b,x,y).\]
+    En la expresión anterior, vale la pena darnos cuenta que:
+    \[\exists y\psi(a,b,x,y)\text{ es }\Sigma_{k-1}\]
+    y
+    \[\forall c<a\neg\psi(a,b,x,y)\text{ es }\Pi_{k-1},\]
+    por lo que $g_b(x)=a$ es $\Sigma_k$. Así, por hipótesis de inducción, existe un ordinal $\alpha$ tal que 
+    \[\exists y_g\forall x>y_g\hspace{0.3cm}g_b(x)<h_\alpha(x).\]
+    Por otro lado, tomemos:
+    \[k_{x,y,b}(a)=y\equiv(\psi(a,b,x,y)\land\forall c<a\neg\psi(a,b,x,y))\lor(\neg\exists a\psi(a,b,x,y)\land y=0).\]
+    También vale la pena señalar:
+    \[\psi(a,b,x,y)\land\forall c<a\neg\psi(a,b,x,y)\text{ es }\Sigma_k\]
+    y
+    \[\neg\exists a\psi(a,b,x,y)\land y=0\text{ es }\Pi_{k-1};\]
+    por lo que $k_{x,y,b}(a)=y$ es $\Sigma_k$, luego existe un ordinal $\beta$ tal que
+    \[\exists y_k\forall x>y_b\hspace{0.3cm}k_{x,y,b}(x)<h_\beta.\]
+    Ahora, notemos lo siguiente:
+    \[k_{x,y,b}(a)=y\Longleftrightarrow y=f(x)\land a=g_b(x).\]
+    Así pues, 
+    \[k_{x,y,b}(g_b(x))=\begin{cases}
+        y&y=f(x),\\
+        0.
+    \end{cases}\]
+    Ahora, afirmamos lo siguiente: para $x$ suficientemente grande
+    \[(k_{x,y,b}\circ g_b)(x)<(h_\beta\circ h_\alpha)(x).\]
+    En efecto, tomemos $y=\max\set{y_g,y_k}$. Entonces, 
+    \[\forall x>y\hspace{0.3cm}g(x)<h_\alpha(x),\]
+    y además ya sabemos, por {\ref{estcrec}}, que $h_\beta$ es estrictamente creciente:
+    \[k_{x,y,b}(g_b(x))<h_\beta(g_b(x))<h_\beta(h_\alpha(x)).\]
+    Ahora, por otro lado, como ambas funciones $h_\alpha$ y $h_\beta$ son demostrablemente computables, existe un ordinal $\gamma$ tal que existe $y_\gamma$ tal que:
+    \[\forall x>y_\gamma\hspace{0.3cm}(h_\beta\circ h_\alpha)(x)<h_\gamma(x).\]
+    Luego, nuevamente tomando $y'=\max\set{y,y_\gamma}$, tenemos que
+    \[\forall x<y\hspace{0.3cm} (k_{x,y,b}\circ g_b)(x)<h_\gamma.\]
+    Luego, esto completa la prueba.
 \end{proof}
 
 \begin{cor} \label{LEMAAUX4}
@@ -349,7 +392,7 @@ Otro argumento útil para el final del lema anterior (\ref{yaelmeroultimo}) es p
         \[b_n=q_n(a).\]
         Ya con esto, y por el lema {\ref{LEMAAUX1}} tenemos que $a\in I$ y $b\not\in I$. Ahora, al generalizar {\ref{LEMAAUX2}} a cualquier modelo y utilizando el lema {\ref{yaelmeroultimo}}, tenemos que $I$ es cerrado bajo funciones demostrablemente computables. Luego, también es cerrado bajo $+$, $\cdot$ y $S$. Lo único que nos falta comprobar es la inducción.
         Supongamos que $I\not\vDash\PA$, lo que implica que falla alguna instancia de inducción, luego, esto permite definir (bajo lógica de primer orden en $\PA$) a $I$, es decir, existe una fórmula $\ph$ que define esta falla en la inducción y, por lo tanto, a $I$.
-        Luego, $\ph$ es $\Sigma_k$, para alguna $k$. Así, por el teorema LEMAAUX4, $I$ no es cerrado alguna $h_\alpha$, lo que contradice que $I$ era cerrado bajo funciones computables.
+        Luego, $\ph$ es $\Sigma_k$, para alguna $k$. Así, por el teorema {\ref{LEMAAUX4}}, $I$ no es cerrado alguna $h_\alpha$, lo que contradice que $I$ era cerrado bajo funciones computables.
         Por lo tanto, $I\vDash\PA$.
 \end{proof}
 
