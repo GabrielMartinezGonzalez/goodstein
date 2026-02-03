@@ -20,7 +20,7 @@
 \contentsline {chapter}{\numberline {4}La indemostrabilidad del teorema de Goodstein}{75}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Los teoremas de Ketonen-Solovay}{75}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Antes de la indemostrabilidad}{84}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Indemostrabilidad}{97}{section.4.3}%
+\contentsline {section}{\numberline {4.3}Indemostrabilidad}{98}{section.4.3}%
 \contentsline {chapter}{\numberline {5}Anexo}{101}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Axioma de elección y lema de Zorn}{101}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Código que cálcula sucesiones de Goodstein}{101}{section.5.2}%
