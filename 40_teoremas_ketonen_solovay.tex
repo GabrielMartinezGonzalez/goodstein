@@ -62,56 +62,6 @@ Este resultado se utilizará libremente a lo largo de esta sección, pues una ca
     \end{enumerate}
 \end{defn}
 
-\begin{thm} {\label{tks0}}
-    Sea $M$ un modelo no estandar de $\PA$. La función $Y:M^2\longrightarrow \n$ dada por 
-    \[Y(a,b)=\text{máx}\set{c|[a,b]\text{ es }\n_c-\text{grande}},\]
-    es un indicador bien comportado para modelos de $\PA$.
-\end{thm}
-\begin{proof} \hspace{1cm}\\
-    1. Observemos lo siguiente:
-        \begin{align*}
-            Y(a,b)=d &\Longleftrightarrow \max\set[c]{[a,b]\text{ es }\n_c-\text{grande}}=d\\
-            &\Longleftrightarrow \exists c\hspace{0.3cm}([a,b]\text{ es }\n_c-\text{grande}\land [a,b]\text{ no es }\n_{c+1}-\text{grande}).
-        \end{align*}
-    3. Procedemos por contradicción: si tenemos que $y<Y(x,y)$, entonces tenemos que $y+1\leq Y(x,y)$. Así pues, por la proposición {\ref{mdcg}}, tenemos que $[x,y]$ es $\n_{y+1}-$grande. Luego, por el teorema {\ref{thm10304}} tenemos:
-        \[y-x+1\geq (y+1)+1,\]
-        \[-x\geq 1;\]
-        y dado que $x$ es un mayor o igual a 0, tenemos una contradicción.\\
-    2. Tenemos dos casos: si $\set[c]{[a,b]\text{ es }\n_c-\text{grande}}$ es vacío, basta considerar que
-        \[\max\nt=0,\]
-        lo cuál basta para dar un elemento máximal único. Por otro lado, si el conjunto es no vacío, dado que es un conjunto acotado (por el punto 3), tenemos que posee un elemento máximal, el cuál es único.\\
-    4. Sean $x,y,x',y'$ tales que $x'\leq x$ y $y\leq y'$. Nombremos los siguientes conjuntos:
-        \[A=\set{c|[x,y] \text{ es } \n_c-\text{grande}},\]
-        \[B=\set{c|[x,y'] \text{ es } \n_c-\text{grande}},\]
-        \[C=\set{c|[x',y'] \text{ es } \n_c-\text{grande}}.\]
-        Claramente, por definición, $Y(x,y)=\max{A}$, $Y(x,y')=\max{B}$ y $Y(x',y')=\max{C}$. Así pues, por la proposición {\ref{siabb}}, como $[x,y]$ es $Y(x,y)-$grande, entonces $[x,y']$ es $Y(x,y)-$grande; así, $Y(x,y)\in B$, y por lo tanto
-        \[Y(x,y)\leq Y(x,y').\]
-        Ahora bien, $[x,y']$ es $Y(x,y')-$grande, así, por el lema {\ref{lbdcpd}}, $[x',y']$ es $Y(x,y')-$grande. Así, tenemos que $Y(x,y')\in C$, y por lo tanto, 
-        \[Y(x,y')\leq Y(x',y').\]
-        De estas dos desigualdades, tenemos que $Y(x,y)\leq Y(x',y')$.\\
-    5. Para la suficiencia, consideremos $I\subeq_i M$ tal que $I\vDash\PA$, $a\in I$y $b\not\in I$. Dado $k$ estandar, por la proposición {\ref{prop328}} existe $d_k>a$ tal que $d_k\in I$ (por el teorema {\ref{los}}) y $[a,d_k]$ es $\n_k-$grande, luego como $b>d_k$ y por la proposición {\ref{siabb}} y el teorema {\ref{los}}, $[a,b]$ es $\n_k-$grande. Como $k$ es arbitraria (sólo pidiendole que sea estándar), para cada $k$ estándar tenemos que:
-        \[[a,b]\text{ es }\n_k-\text{grande}.\]
-        Por el principio {\ref{overspill}}, existe una $c$ no estándar tal que
-        \[[a,b]\text{ es }\n_c-\text{grande},\]
-        y como la función $Y$ se define como un máximo, $Y(a,b)$ es no estandar.\\
-        Para la necesidad basta observar lo siguiente: los segmentos iniciales de un modelo de $\PA$ son cerrados bajo funciones demostrablemente computables, esto es porque si $f(x)=y$ es equivalente a una expresión $\Sigma_1$ en $M$, entonces también lo es en $I$, para $I$ segmento inicial.
-        Luego, por el punto 1, tenemos que $Y$ es una función demostrablemente computable. Así pues, tenemos que:
-        \[(a\in I\land b\in I)\implies Y(a,b)\in I;\]
-        o lo que es lo mismo:
-        \[Y(a,b)\not\in I\implies (a\not\in I\lor b\not\in I).\]
-        Ahora bien, todo modelo de $\PA$ tiene segmentos iniciales que satisfacen $\PA$ (al menos, la sección isomorfa al módelo estandar). Sea $I\subeq_i M$ tal que $a\in I$ y $I\vDash\PA$. Si $Y(a,b)$ es no estandar (es decir, no está en $I$), entonces 
-        \[b\not\in I.\]
-\end{proof}
-
-\begin{lem}\label{tks} (Primer Teorema de Ketonen-Solovay)\\
-    Sea $M$ un modelo no estandar de $\PA$. La función $Y:M^2\longrightarrow \n$ dada por 
-    \[Y(a,b)=\text{máx}\set{c|[a,b]\text{ es }\n_c-\text{grande}},\]
-    es un indicador para modelos de $\PA$.
-\end{lem}
-\begin{proof}
-    Se sigue del teorema {\ref{tks0}}.
-\end{proof}
-
 \begin{lem}\label{p3tks}
     Sea $Y(x,y)$ un indicador bien comportado para la propiedad $I\vDash \PA$ de segmentos iniciales $I$, y $Q_n:A_n\longrightarrow\n$ dada por 
     \[Q_n(x)=\min\set{y\geq x|Y(x,y)\geq n},\] 
@@ -324,6 +274,56 @@ Este resultado se utilizará libremente a lo largo de esta sección, pues una ca
 \end{proof}
 
 Otro argumento útil para el final del lema anterior (\ref{yaelmeroultimo}) es porque los modelos de $\PA$ son cerrados bajo funciones demostrablemente computables, como vimos en la demostración del teorema {\ref{tks0}}.
+
+\begin{thm} {\label{tks0}}
+    Sea $M$ un modelo no estandar de $\PA$. La función $Y:M^2\longrightarrow \n$ dada por 
+    \[Y(a,b)=\text{máx}\set{c|[a,b]\text{ es }\n_c-\text{grande}},\]
+    es un indicador bien comportado para modelos de $\PA$.
+\end{thm}
+\begin{proof} \hspace{1cm}\\
+    1. Observemos lo siguiente:
+        \begin{align*}
+            Y(a,b)=d &\Longleftrightarrow \max\set[c]{[a,b]\text{ es }\n_c-\text{grande}}=d\\
+            &\Longleftrightarrow \exists c\hspace{0.3cm}([a,b]\text{ es }\n_c-\text{grande}\land [a,b]\text{ no es }\n_{c+1}-\text{grande}).
+        \end{align*}
+    3. Procedemos por contradicción: si tenemos que $y<Y(x,y)$, entonces tenemos que $y+1\leq Y(x,y)$. Así pues, por la proposición {\ref{mdcg}}, tenemos que $[x,y]$ es $\n_{y+1}-$grande. Luego, por el teorema {\ref{thm10304}} tenemos:
+        \[y-x+1\geq (y+1)+1,\]
+        \[-x\geq 1;\]
+        y dado que $x$ es un mayor o igual a 0, tenemos una contradicción.\\
+    2. Tenemos dos casos: si $\set[c]{[a,b]\text{ es }\n_c-\text{grande}}$ es vacío, basta considerar que
+        \[\max\nt=0,\]
+        lo cuál basta para dar un elemento máximal único. Por otro lado, si el conjunto es no vacío, dado que es un conjunto acotado (por el punto 3), tenemos que posee un elemento máximal, el cuál es único.\\
+    4. Sean $x,y,x',y'$ tales que $x'\leq x$ y $y\leq y'$. Nombremos los siguientes conjuntos:
+        \[A=\set{c|[x,y] \text{ es } \n_c-\text{grande}},\]
+        \[B=\set{c|[x,y'] \text{ es } \n_c-\text{grande}},\]
+        \[C=\set{c|[x',y'] \text{ es } \n_c-\text{grande}}.\]
+        Claramente, por definición, $Y(x,y)=\max{A}$, $Y(x,y')=\max{B}$ y $Y(x',y')=\max{C}$. Así pues, por la proposición {\ref{siabb}}, como $[x,y]$ es $Y(x,y)-$grande, entonces $[x,y']$ es $Y(x,y)-$grande; así, $Y(x,y)\in B$, y por lo tanto
+        \[Y(x,y)\leq Y(x,y').\]
+        Ahora bien, $[x,y']$ es $Y(x,y')-$grande, así, por el lema {\ref{lbdcpd}}, $[x',y']$ es $Y(x,y')-$grande. Así, tenemos que $Y(x,y')\in C$, y por lo tanto, 
+        \[Y(x,y')\leq Y(x',y').\]
+        De estas dos desigualdades, tenemos que $Y(x,y)\leq Y(x',y')$.\\
+    5. Para la suficiencia, consideremos $I\subeq_i M$ tal que $I\vDash\PA$, $a\in I$y $b\not\in I$. Dado $k$ estandar, por la proposición {\ref{prop328}} existe $d_k>a$ tal que $d_k\in I$ (por el teorema {\ref{los}}) y $[a,d_k]$ es $\n_k-$grande, luego como $b>d_k$ y por la proposición {\ref{siabb}} y el teorema {\ref{los}}, $[a,b]$ es $\n_k-$grande. Como $k$ es arbitraria (sólo pidiendole que sea estándar), para cada $k$ estándar tenemos que:
+        \[[a,b]\text{ es }\n_k-\text{grande}.\]
+        Por el principio {\ref{overspill}}, existe una $c$ no estándar tal que
+        \[[a,b]\text{ es }\n_c-\text{grande},\]
+        y como la función $Y$ se define como un máximo, $Y(a,b)$ es no estandar.\\
+        Para la necesidad basta observar lo siguiente: los segmentos iniciales de un modelo de $\PA$ son cerrados bajo funciones demostrablemente computables, esto es porque si $f(x)=y$ es equivalente a una expresión $\Sigma_1$ en $M$, entonces también lo es en $I$, para $I$ segmento inicial.
+        Luego, por el punto 1, tenemos que $Y$ es una función demostrablemente computable. Así pues, tenemos que:
+        \[(a\in I\land b\in I)\implies Y(a,b)\in I;\]
+        o lo que es lo mismo:
+        \[Y(a,b)\not\in I\implies (a\not\in I\lor b\not\in I).\]
+        Ahora bien, todo modelo de $\PA$ tiene segmentos iniciales que satisfacen $\PA$ (al menos, la sección isomorfa al módelo estandar). Sea $I\subeq_i M$ tal que $a\in I$ y $I\vDash\PA$. Si $Y(a,b)$ es no estandar (es decir, no está en $I$), entonces 
+        \[b\not\in I.\]
+\end{proof}
+
+\begin{lem}\label{tks} (Primer Teorema de Ketonen-Solovay)\\
+    Sea $M$ un modelo no estandar de $\PA$. La función $Y:M^2\longrightarrow \n$ dada por 
+    \[Y(a,b)=\text{máx}\set{c|[a,b]\text{ es }\n_c-\text{grande}},\]
+    es un indicador para modelos de $\PA$.
+\end{lem}
+\begin{proof}
+    Se sigue del teorema {\ref{tks0}}.
+\end{proof}
 
 \begin{cor}\label{3tks} (Tercer Teorema de Ketonen-Solovay)\\
     Las funciones
