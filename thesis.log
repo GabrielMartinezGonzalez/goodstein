@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.9.25)  2 FEB 2026 21:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.9.25)  2 FEB 2026 22:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1778,93 +1778,97 @@ LaTeX Info: Redefining \. on input line 62.
 LaTeX Info: Redefining \% on input line 62.
 [76] Excluding 'comment' comment.
 
-LaTeX Info: Redefining \. on input line 125.
-LaTeX Info: Redefining \% on input line 125.
+LaTeX Info: Redefining \. on input line 129.
+LaTeX Info: Redefining \% on input line 129.
 [77]
 
-LaTeX Info: Redefining \. on input line 162.
-LaTeX Info: Redefining \% on input line 162.
+LaTeX Info: Redefining \. on input line 165.
+LaTeX Info: Redefining \% on input line 165.
 [78]
 
-LaTeX Info: Redefining \. on input line 196.
-LaTeX Info: Redefining \% on input line 196.
+LaTeX Info: Redefining \. on input line 201.
+LaTeX Info: Redefining \% on input line 201.
 [79]
 
-LaTeX Info: Redefining \. on input line 233.
-LaTeX Info: Redefining \% on input line 233.
+LaTeX Info: Redefining \. on input line 238.
+LaTeX Info: Redefining \% on input line 238.
 [80]
 
-LaTeX Info: Redefining \. on input line 273.
-LaTeX Info: Redefining \% on input line 273.
+LaTeX Info: Redefining \. on input line 278.
+LaTeX Info: Redefining \% on input line 278.
 [81]
 
-LaTeX Info: Redefining \. on input line 324.
-LaTeX Info: Redefining \% on input line 324.
+LaTeX Info: Redefining \. on input line 319.
+LaTeX Info: Redefining \% on input line 319.
 [82]
 
-LaTeX Info: Redefining \. on input line 347.
-LaTeX Info: Redefining \% on input line 347.
-[83]) (41_antes_de_la_indemostrabilidad.tex
+LaTeX Info: Redefining \. on input line 359.
+LaTeX Info: Redefining \% on input line 359.
+[83]
 
-LaTeX Info: Redefining \. on input line 17.
-LaTeX Info: Redefining \% on input line 17.
-[84]
+LaTeX Info: Redefining \. on input line 387.
+LaTeX Info: Redefining \% on input line 387.
+[84]) (41_antes_de_la_indemostrabilidad.tex
+
+LaTeX Info: Redefining \. on input line 7.
+LaTeX Info: Redefining \% on input line 7.
+[85]
 
 LaTeX Info: Redefining \. on input line 60.
 LaTeX Info: Redefining \% on input line 60.
-[85]
-
-LaTeX Info: Redefining \. on input line 100.
-LaTeX Info: Redefining \% on input line 100.
 [86]
+
+LaTeX Info: Redefining \. on input line 98.
+LaTeX Info: Redefining \% on input line 98.
+[87]
 
 LaTeX Info: Redefining \. on input line 134.
 LaTeX Info: Redefining \% on input line 134.
-[87]
+[88]
 
 LaTeX Info: Redefining \. on input line 172.
 LaTeX Info: Redefining \% on input line 172.
-[88]
+[89]
 
 LaTeX Info: Redefining \. on input line 203.
 LaTeX Info: Redefining \% on input line 203.
-[89]
+[90]
 
 LaTeX Info: Redefining \. on input line 231.
 LaTeX Info: Redefining \% on input line 231.
-[90]
+[91]
 
 LaTeX Info: Redefining \. on input line 270.
 LaTeX Info: Redefining \% on input line 270.
-[91]
+[92]
 
 LaTeX Info: Redefining \. on input line 298.
 LaTeX Info: Redefining \% on input line 298.
-[92]
+[93]
 
 LaTeX Info: Redefining \. on input line 326.
 LaTeX Info: Redefining \% on input line 326.
-[93]
+[94]
 
 LaTeX Info: Redefining \. on input line 357.
 LaTeX Info: Redefining \% on input line 357.
-[94]
+[95]
 
 LaTeX Info: Redefining \. on input line 386.
 LaTeX Info: Redefining \% on input line 386.
-[95]
+[96]
 
 LaTeX Info: Redefining \. on input line 417.
 LaTeX Info: Redefining \% on input line 417.
-[96]) (42_indemostrabilidad.tex
+[97]) (42_indemostrabilidad.tex
 
 LaTeX Info: Redefining \. on input line 3.
 LaTeX Info: Redefining \% on input line 3.
-[97]
+[98]
 
 LaTeX Info: Redefining \. on input line 37.
 LaTeX Info: Redefining \% on input line 37.
-[98
+[99
 pdfTeX warning (ext4): destination with the same identifier (name{equation.4.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -1873,38 +1877,42 @@ l.37 ...s } \n_{{[\id+c_1]}_\sim}-\text{grande},\]
 
 LaTeX Info: Redefining \. on input line 73.
 LaTeX Info: Redefining \% on input line 73.
-[99])
+[100])
 
 LaTeX Info: Redefining \. on input line 171.
 LaTeX Info: Redefining \% on input line 171.
-[100]
+[101]
+
+LaTeX Info: Redefining \. on input line 171.
+LaTeX Info: Redefining \% on input line 171.
+[102
+
+]
 Cap\'{\i }tulo 5.
 (51_ae_lz.tex) (52_code.tex
 
-[101
-
-]
+[103]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 LaTeX Info: Redefining \. on input line 66.
 LaTeX Info: Redefining \% on input line 66.
-[102
+[104
 
 ]) (thesis.bbl
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[103]
+[105]
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[104
+[106
 
 ])
 
-[105] (thesis.aux (portada.aux)
+[107] (thesis.aux (portada.aux)
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
 )
@@ -1920,17 +1928,17 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 7EBBDC1FC80CB5EE4306C2C0F93BCC86;4516.
  ) 
 Here is how much of TeX's memory you used:
- 39605 strings out of 468130
- 817031 string characters out of 5440700
- 1223597 words of memory out of 5000000
- 67094 multiletter control sequences out of 15000+600000
+ 39611 strings out of 468130
+ 817094 string characters out of 5440700
+ 1223625 words of memory out of 5000000
+ 67097 multiletter control sequences out of 15000+600000
  649276 words of font info for 120 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  142i,17n,127p,1647b,2674s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi864\matha12.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi480\mathx10.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\matha6.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi720\mathx10.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\mathb8.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\matha8.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi720\mathb12.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\matha12.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on thesis.pdf (105 pages, 911447 bytes).
+Output written on thesis.pdf (107 pages, 916633 bytes).
 PDF statistics:
- 1509 PDF objects out of 1728 (max. 8388607)
- 527 named destinations out of 1000 (max. 500000)
+ 1522 PDF objects out of 1728 (max. 8388607)
+ 530 named destinations out of 1000 (max. 500000)
  231 words of extra memory for PDF output out of 10000 (max. 10000000)
 
