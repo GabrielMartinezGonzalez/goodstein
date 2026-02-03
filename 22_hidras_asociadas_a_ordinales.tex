@@ -8,28 +8,28 @@ A continuación presentaremos un concepto el cuál es de suma importancia para e
     \begin{center}
     \begin{forest}
         for tree={grow'=north, circle, draw, minimum size=0.2cm, align=center} % Crece hacia arriba
-        [,blue, edge label={node[left] {Letrero}}
+        [°, edge label={node[left] {Letrero}}
           [ 
             [
-                [,green][,green][,green]
+                [.][.][.]
             ]
             [
                 [
-                    [,green]
+                    [.]
                 ]
             ]
           ] 
           [, edge label={node[right] {\ }}
-            [,green]
+            [.]
             [ 
-                [,green][,green]
+                [.][.]
             ]
           ]
         ]
       \end{forest}\\
       \textit{ejemplo de hidra}
     \end{center}
-    Donde el nodo azul es la raíz y los verdes los nodos cima, los cuales, junto con sus respectivas únicas aristas, forman las cabezas de la hidra.
+    Donde el nodo que lleva adentro el símbolo ''°'' es la raíz y los que llevan adentro los simbolos ''.'' son los nodos cima, los cuales, junto con sus respectivas únicas aristas, forman las cabezas de la hidra.
 \end{ex}
 Siguiendo la metafora con respecto a la mitología griega, en la batalla de Hercules contra la hidra; en la instancia $n$, después de Hercules cortar una cabeza de la hidra, de esta creceran $n$ nuevas cabezas. Así pues, al trabajar con nuestras hidras, tendremos un comportamiento similar.
 \begin{defn}
@@ -45,7 +45,7 @@ Siguiendo la metafora con respecto a la mitología griega, en la batalla de Herc
         [, edge label={node[left] {Letrero}}
           [ 
             [
-                [][][,red]
+                [][][.]
             ]
             [
                 [
@@ -87,7 +87,7 @@ Siguiendo la metafora con respecto a la mitología griega, en la batalla de Herc
       \end{forest}\\
       \textit{ejemplo del cambio al cortar una cabeza de una hidra}
     \end{center}
-    En este caso, se ha cortado la cabeza asociada al nodo cima señalado en rojo.
+    En este caso, se ha cortado la cabeza asociada al nodo cima señalado con un ''.'' dentro.
 \end{ex}
 Hercules gana la batalla si, después de un número finito de instancias, no queda nada de la hidra más que su raíz.
 \begin{defn}
@@ -139,7 +139,7 @@ En particular, cada uno de estos ordinales tiene que ser menor a $\varepsilon_0$
             [$\n^{\n^\n+\n^3}+\n^{\n^2+1}$, edge label={node[left] {Letrero}}
               [$\n^\n+\n^3$
                 [3
-                    [0][0][0,red]
+                    [0][0][0, circle]
                 ]
                 [$\omega$
                     [1
@@ -181,7 +181,7 @@ En particular, cada uno de estos ordinales tiene que ser menor a $\varepsilon_0$
           \end{forest}\\
       \textit{ejemplo del cambio al cortar una cabeza de una hidra}
     \end{center}
-    En este caso, al cortar la cabeza asociada al nodo rojo, hemos obtenido el sigueinte cambio:
+    En este caso, al cortar la cabeza asociada al nodo circular, hemos obtenido el sigueinte cambio:
     \[\n^{\n^\n+\n^3}+\n^{\n^2+1}\longrightarrow\n^{\n^\n+\n^2\cdot2}+\n^{\n^2+1}.\]
 \end{ex}
 Así mismo, es importante observar que el ordinal resultante es estrictamente menor que el original. Si bien esto no es una prueba, es un preambulo de un resultado futuro.
