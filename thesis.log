@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.9.25)  23 JUN 2026 22:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.9.25)  23 JUN 2026 23:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1166,8 +1166,8 @@ LaTeX Info: Redefining \. on input line 68.
 LaTeX Info: Redefining \% on input line 68.
 [10]
 
-LaTeX Info: Redefining \. on input line 106.
-LaTeX Info: Redefining \% on input line 106.
+LaTeX Info: Redefining \. on input line 103.
+LaTeX Info: Redefining \% on input line 103.
 [11]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.1.1}) has been already used, duplicate ignored
 <to be read again> 
@@ -1190,16 +1190,16 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.1.1})
 l.127     \begin{equation}
                           \tag{*}\label{*}
 
-LaTeX Info: Redefining \. on input line 144.
-LaTeX Info: Redefining \% on input line 144.
+LaTeX Info: Redefining \. on input line 139.
+LaTeX Info: Redefining \% on input line 139.
 [12]
 
-LaTeX Info: Redefining \. on input line 174.
-LaTeX Info: Redefining \% on input line 174.
+LaTeX Info: Redefining \. on input line 170.
+LaTeX Info: Redefining \% on input line 170.
 [13]
 
-LaTeX Info: Redefining \. on input line 207.
-LaTeX Info: Redefining \% on input line 207.
+LaTeX Info: Redefining \. on input line 205.
+LaTeX Info: Redefining \% on input line 205.
 [14]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.1.1}) has been already used, duplicate ignored
 <to be read again> 
@@ -1627,12 +1627,12 @@ LaTeX Info: Redefining \. on input line 380.
 LaTeX Info: Redefining \% on input line 380.
 [48])
 
-LaTeX Info: Redefining \. on input line 152.
-LaTeX Info: Redefining \% on input line 152.
+LaTeX Info: Redefining \. on input line 153.
+LaTeX Info: Redefining \% on input line 153.
 [49]
 
-LaTeX Info: Redefining \. on input line 152.
-LaTeX Info: Redefining \% on input line 152.
+LaTeX Info: Redefining \. on input line 153.
+LaTeX Info: Redefining \% on input line 153.
 [50
 
 ]
@@ -1657,8 +1657,8 @@ LaTeX Info: Redefining \. on input line 193.
 LaTeX Info: Redefining \% on input line 193.
 [55])
 
-LaTeX Info: Redefining \. on input line 158.
-LaTeX Info: Redefining \% on input line 158.
+LaTeX Info: Redefining \. on input line 159.
+LaTeX Info: Redefining \% on input line 159.
 [56]
 Cap\'{\i }tulo 3.
 (31_los_axiomas_de_peano.tex
@@ -1760,12 +1760,12 @@ LaTeX Info: Redefining \. on input line 180.
 LaTeX Info: Redefining \% on input line 180.
 [72])
 
-LaTeX Info: Redefining \. on input line 165.
-LaTeX Info: Redefining \% on input line 165.
+LaTeX Info: Redefining \. on input line 166.
+LaTeX Info: Redefining \% on input line 166.
 [73]
 
-LaTeX Info: Redefining \. on input line 165.
-LaTeX Info: Redefining \% on input line 165.
+LaTeX Info: Redefining \. on input line 166.
+LaTeX Info: Redefining \% on input line 166.
 [74
 
 ]
@@ -1879,12 +1879,12 @@ LaTeX Info: Redefining \. on input line 73.
 LaTeX Info: Redefining \% on input line 73.
 [100])
 
-LaTeX Info: Redefining \. on input line 171.
-LaTeX Info: Redefining \% on input line 171.
+LaTeX Info: Redefining \. on input line 172.
+LaTeX Info: Redefining \% on input line 172.
 [101]
 
-LaTeX Info: Redefining \. on input line 171.
-LaTeX Info: Redefining \% on input line 171.
+LaTeX Info: Redefining \. on input line 172.
+LaTeX Info: Redefining \% on input line 172.
 [102
 
 ]
@@ -1930,13 +1930,13 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 Here is how much of TeX's memory you used:
  39611 strings out of 468130
  817094 string characters out of 5440700
- 1223625 words of memory out of 5000000
+ 1223626 words of memory out of 5000000
  67097 multiletter control sequences out of 15000+600000
  649276 words of font info for 120 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  142i,17n,127p,1647b,2674s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi864\matha12.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi480\mathx10.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\matha6.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi720\mathx10.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\mathb8.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\matha8.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi720\mathb12.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\matha12.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on thesis.pdf (107 pages, 916652 bytes).
+Output written on thesis.pdf (107 pages, 916750 bytes).
 PDF statistics:
  1522 PDF objects out of 1728 (max. 8388607)
  530 named destinations out of 1000 (max. 500000)
