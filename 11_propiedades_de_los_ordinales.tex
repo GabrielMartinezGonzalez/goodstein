@@ -1,12 +1,13 @@
 \section{Propiedades de los ordinales}
 A continuación se presenta la teoría de ordinales, su tratamiento en la teoría de conjuntos y sus relaciones con elementos importantes de la matemática, como los segmentos iniciales o los buenos órdenes.{\cite{SetTheory}}
+Consideraremos que trabajamos bajo los axiomas de Zermelo-Freankel (ZF).
 \begin{defn}\label{d1}
 Un conjunto $\alpha$ es llamado un \textbf{ordinal} si $\alpha$ es transitivo y estrictamente bien ordenado por $\in$.
 \end{defn}
 La definición anterior se puede escribir de la siguiente forma:
 $\alpha$ es ordinal si $(\forall a,b,c\in\alpha)$,
 \[(a\in b\land b\in c)\Longrightarrow a\in c,\]
-y todo subconjunto de $\alpha$ tiene primer elemento. Se podría señalar que la irreflexividad se sigue del axioma de Fundación.
+y todo subconjunto de $\alpha$ tiene primer elemento. Se podría señalar que la irreflexividad se sigue de asumir cierto el axioma de Fundación.
 \begin{thm}\label{t1}
     $\alpha$ es un ordinal si, y sólo si, $\alpha$ es transitivo y se cumple la tricotomía bajo $\in$.
 \end{thm}
@@ -14,7 +15,20 @@ y todo subconjunto de $\alpha$ tiene primer elemento. Se podría señalar que la
 Definimos $\prec$ como la relación tal que, para cualesquiera $\beta$ y $\gamma$, elementos de $\alpha$,
 \[\beta\prec\gamma\Longleftrightarrow (\beta\in\gamma\lor\beta=\gamma)\]
 Es decir, $\prec$ es el orden parcial inducido por la relación $\in$ en $\alpha$. Luego, consideremos el subconjunto de $\alpha$ $\{\beta,\gamma\}$. Como $\prec$ es un buen orden, tenemos que $\beta\prec\gamma\lor\gamma\prec\beta$. Así, tenemos que:
-\[\beta\in\gamma\lor\beta=\gamma\lor\gamma\in\beta\]
+\[\beta\in\gamma\lor\beta=\gamma\lor\gamma\in\beta.\]
+Por otro lado, para cualesquiera $a,b\in\alpha$, si se cumple la tricotomía, tenemos que:
+\[a\in b\lor a=b\lor b\in a.\]
+De aquí, se sigue que $x\not\in x$ (es decir, se cumple la irreflexividad) y es una relación total. Además, si suponemos que $\alpha$ es transitivo, tenemos que $\in$ define un orden lineal estricto en $\alpha$.
+Sea $A\subeq \al$ no vacío, entonces si suponemos que $A$ no tiene elemento mínimo, para cada $a\in A$ existe un $b\in A$ tal que
+\[b\in a.\]
+Tomemos un $c_0\in A$. Como no es mínimo, tenemos que existe $c_1\in A$ tal que
+\[c_1\in c_0.\]
+Repitiendo, tenemos
+\[c_2\in c_1\land c_3\in c_2\land \cdots,\]
+por lo que obtenemos una cadena descendente infinita
+\[c_0\ni c_1\ni c_2\ni\cdots.\]
+Lo cuál contradice el axioma de fundación.
+Luego, todo subconjunto no vacío de $\alpha$ tiene elemento mínimo y $\alpha$ es ordinal.
 \end{proof}
 
 Considerando $\langle X,\prec\rangle$ un buen orden estricto. Entonces, $\prec$ es una relación bien fundada estricta sobre $X$. Luego, existe exactamente un conjunto transitivo $\alpha$, llamado \textit{el colapso de Mostowki} de $\langle X,\prec\rangle$, y una única biyección $F:X\longrightarrow\alpha$, llamada \textit{la función colapsante} tal que
