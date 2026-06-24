@@ -1,12 +1,12 @@
 \section{Propiedades de los ordinales}
-A continuación se presenta la teoria de ordinales, su tratamiento en la teoría de conjuntos y sus relaciones con elementos importantes de la matemática, como los segmentos iniciales o los buenos ordenes.{\cite{SetTheory}}
+A continuación se presenta la teoría de ordinales, su tratamiento en la teoría de conjuntos y sus relaciones con elementos importantes de la matemática, como los segmentos iniciales o los buenos órdenes.{\cite{SetTheory}}
 \begin{defn}\label{d1}
-Un conjunto $\alpha$ es llamado un ordinal si $\alpha$ es transitivo y estrictamente bien ordenado por $\in$.
+Un conjunto $\alpha$ es llamado un \textbf{ordinal} si $\alpha$ es transitivo y estrictamente bien ordenado por $\in$.
 \end{defn}
 La definición anterior se puede escribir de la siguiente forma:
 $\alpha$ es ordinal si $(\forall a,b,c\in\alpha)$,
 \[(a\in b\land b\in c)\Longrightarrow a\in c,\]
-y todo subconjunto de $\alpha$ tiene primer elemento.
+y todo subconjunto de $\alpha$ tiene primer elemento. Se podría señalar que la irreflexividad se sigue del axioma de Fundación.
 \begin{thm}\label{t1}
     $\alpha$ es un ordinal si, y sólo si, $\alpha$ es transitivo y se cumple la tricotomía bajo $\in$.
 \end{thm}
@@ -50,8 +50,8 @@ Lo anterior puede escribirse como:
 WOT es una clase funcional que satisface lo siguiente:
 \begin{enumerate}
     \item Si $\la x,y\ra\in\text{WOT}$, entonces $x$ y $\la y,\in\ra$ son bien ordenado estricto isomorfos. 
-    \item El dominio de WOT es la clase de todos los buenos ordenes estrictos.
-    \item Para cualesquiera buenos ordenes estrictos $x$ y $y$, y para todo ordinal $z$, si $\la x,z\ra\in\text{WOT}$ y $x\cong y$, entonces $\la y,z\ra\in\text{WOT}$.
+    \item El dominio de WOT es la clase de todos los buenos órdenes estrictos.
+    \item Para cualesquiera buenos órdenes estrictos $x$ y $y$, y para todo ordinal $z$, si $\la x,z\ra\in\text{WOT}$ y $x\cong y$, entonces $\la y,z\ra\in\text{WOT}$.
 \end{enumerate}
 \end{prop}
 \begin{proof} Que sea clase funcional viene del hecho de que el colapso de Mostowski es único. Por otro lado:
@@ -182,7 +182,7 @@ Supongamos que $\lar{X,\preceq}$ es un buen orden, y asumimos $y\not\in X$. Por 
 \end{prop}
 %%a partir de acá demostraciones
 La propiedad anterior muestra que, para cualquier ordinal $\alpha$, su sucesor $S(\alpha)$ también es un ordinal. Más aún, como $S(\alpha)=\alpha\cup\set\alpha$, tenemos que $\alpha\in S(\alpha)$, y si $\beta\in S(\alpha)$, entonces $\beta\in\alpha\veebar\beta=\alpha$. Por lo tanto, $S(\alpha)$ es el más pequeño ordinal, mayor que $\alpha$; por lo que $S(\alpha)$ es el sucesor inmediato de $\alpha$ en $\ON$.\\
-El conjunto vacio es un ordinal. Esto se ve de que $\varnothing$ satisface la definción, o porque $\varnothing$ es el colapso de Mostowski de $\lar{\varnothing,\varnothing}$. Más aún, como $\varnothing$ no contiene elementos, este debería ser el ordinal más pequeño. Los siguientes ordinales son $S(\nt),S(S(\nt)),\ldots$, etcetera. En la teoria de conjuntos, se denota al $n-$ésimo sucesor de $\nt$ por $\widetilde n$ y se identifica por el número natural $n$. Entonces, ahora vemos que cada $\widetilde n$ es un ordinal; más aún, la relación $<$ restringida a los ordinales $\widetilde n$ restringida a los ordinales $\widetilde{n}$ es el orden estricto usual de los números naturales, y $\widetilde n=\ot(\lar{\set{0,1,\ldots,n-1},<})$. Así, los números naturales son los ordinales finitos.
+El conjunto vacio es un ordinal. Esto se ve de que $\varnothing$ satisface la definción, o porque $\varnothing$ es el colapso de Mostowski de $\lar{\varnothing,\varnothing}$. Más aún, como $\varnothing$ no contiene elementos, este debería ser el ordinal más pequeño. Los siguientes ordinales son $S(\nt),S(S(\nt)),\ldots$, etcetera. En la teoría de conjuntos, se denota al $n-$ésimo sucesor de $\nt$ por $\widetilde n$ y se identifica por el número natural $n$. Entonces, ahora vemos que cada $\widetilde n$ es un ordinal; más aún, la relación $<$ restringida a los ordinales $\widetilde n$ restringida a los ordinales $\widetilde{n}$ es el orden estricto usual de los números naturales, y $\widetilde n=\ot(\lar{\set{0,1,\ldots,n-1},<})$. Así, los números naturales son los ordinales finitos.
 \begin{prop}
     Muestre que un ordinal $\alpha$ es un conjunto finito si, y sólo si es un número natural.
 \end{prop}
@@ -241,7 +241,7 @@ Observemos que los números naturales son ordinales sucesores (empezando por el 
 \begin{thm}\label{t13}
     Cada subclase cofinal de $\ON$ es propia. En particular, $\text{SUCC}$ y $\text{LIM}$ son ambas clases propias.
 \end{thm}
-Los siguientes resultados muestran la relación entre los ordinales y los buenos ordenes, entre otros conceptos asociados.
+Los siguientes resultados muestran la relación entre los ordinales y los buenos órdenes, entre otros conceptos asociados.
 \begin{defn}
     Sea $Z$ un conjunto arbitrario, sea $W$ una relación bien fundada sobre $Z$, y sea $\lar{X,\prec}$ un buen orden estricto. Una función $\rk:Z\longrightarrow X$ es llamada una función rango para $W$ con respecto a $\prec$ si 
     \[(\forall z\in Z)(\rk(z)={\sup}^+\text{rng}(\rk|I(z))).\]
