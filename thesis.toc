@@ -6,7 +6,7 @@
 \contentsline {section}{\numberline {1.2}Aritmética ordinal}{19}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Ultrafiltros}{22}{section.1.3}%
 \contentsline {section}{\numberline {1.4}Lógica de primer orden}{25}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Semantica en la lógica de primer orden}{32}{section.1.5}%
+\contentsline {section}{\numberline {1.5}Semántica en la lógica de primer orden}{32}{section.1.5}%
 \contentsline {section}{\numberline {1.6}Teoría de la computabilidad}{34}{section.1.6}%
 \contentsline {section}{\numberline {1.7}Problema de la detención}{36}{section.1.7}%
 \contentsline {section}{\numberline {1.8}Los teoremas de incompletitud de Gödel}{41}{section.1.8}%
