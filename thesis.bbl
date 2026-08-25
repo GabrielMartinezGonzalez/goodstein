@@ -8,37 +8,40 @@
 \providecommand{\eprint}[2][]{\url{#2}}
 
 \bibitem{SetTheory}
-Just~W., Weese~M., Discovery modern set theory, Vol.~1, American Mathematical
-  Society, (1996).
+Just~W., Weese~M., \textit{Discovery modern set theory}, Vol.~1, American
+  Mathematical Society, (1996).
 
 \bibitem{Ultrafilter}
-Fernández~Bretón~D.~J., The American Mathematical Monthly, (2021),
-  \textbf{129}, 116--131.
+Fernández~Bretón~D.~J., \textit{Using ultrafilters to prove Ramsey-type
+  Theorem}, The American Mathematical Monthly, (2021), \textbf{129}, 116--131.
 
 \bibitem{logic}
-Enderton~H.~B., A mathematical introduction to logic, Academic Press Inc.,
-  (1972).
+Enderton~H.~B., \textit{A mathematical introduction to logic}, Academic Press
+  Inc., (1972).
 
 \bibitem{comp1}
-Weber~R., Computability theory, American Mathematical Society, 1 edn., (1977).
+Weber~R., \textit{Computability theory}, American Mathematical Society, 1 edn.,
+  (1977).
 
 \bibitem{Goodstein}
-Kirby~L., Paris~J., Bulletin of the London Mathematical Society, (1982),
+Kirby~L., Paris~J., \textit{Accessible independence results for Peano
+  arithmetic}, Bulletin of the London Mathematical Society, (1982),
   \textbf{14}, 285--293.
 
 \bibitem{indicators}
-Kaye~R., Models of Peano Arithmetic, Oxford University Press, 1 edn., (1991).
+Kaye~R., \textit{Models of Peano Arithmetic}, Oxford University Press, 1 edn.,
+  (1991).
 
 \bibitem{Ultraproducts}
-Chang~C.~C., Keisler~H.~J., Model theory, Elsevier Science Publishers, 3 edn.,
-  (1990).
+Chang~C.~C., Keisler~H.~J., \textit{Model theory}, Elsevier Science Publishers,
+  3 edn., (1990).
 
 \bibitem{thmsigma1comp}
-Hájek~P., Pudlák~P., Metamathematics of first-order arithmetic, Cambridge
-  University Press, 1 edn., (1998).
+Hájek~P., Pudlák~P., \textit{Metamathematics of first-order arithmetic},
+  Cambridge University Press, 1 edn., (1998).
 
 \bibitem{demoscomp}
-Schwichtenberg~H., Wainer~S.~S., Proofs and computations, Cambridge University
-  Press, 1 edn., (2012).
+Schwichtenberg~H., Wainer~S.~S., \textit{Proofs and computations}, Cambridge
+  University Press, 1 edn., (2012).
 
 \end{thebibliography}
