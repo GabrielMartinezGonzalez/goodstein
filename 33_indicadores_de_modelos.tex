@@ -1,5 +1,5 @@
 \section{Conjuntos $\alpha-$grandes}
-En el siguiente capítulo desarrollaremos la teoria de conjuntos $\alpha-$grande; una poderosa teoría que será exageradamente útil en lo que resta del presente trabajo.
+En el siguiente capítulo desarrollaremos la teoria de conjuntos $\alpha-$grandes; una poderosa teoría que será exageradamente útil en lo que resta del presente trabajo.
 
 \begin{defn}\label{defF}
     Definimos la operación $F:\varepsilon_0\times\n\longrightarrow\varepsilon_0$ como sigue:
@@ -15,16 +15,16 @@ En el siguiente capítulo desarrollaremos la teoria de conjuntos $\alpha-$grande
 \end{defn}
 Vale la pena observar que $F(\al,n)<\al$, para cualquier ordinal $\al$. Más aún, $F$ es inyectiva con respecto a su primer entrada; es decir:
 \[F(\alpha,n)=F(\beta,n)\Longrightarrow \alpha=\beta.\]
-\begin{defn}
+\begin{defn} \textit{(conjuntos $\alpha-$grandes)}\\
     Definiremos el concepto de $\al-$grande por inducción sobre $\alpha\in\varepsilon_0\setminus\set{0}$ como sigue:
     Sea $X\subeq\n$, finito. Enumeramos los elementos de $X$ en orden ascendente en la forma $x_0,x_1,\ldots,x_{|X|-1}$. Así,
     \begin{itemize}
-        \item $X$ es $1-$grande si $2\leq |X|$;
-        \item $X$ es $\alpha-$grande si $X\setminus\set{x_0}$ es $F(\al,x_1)-$grande.
+        \item $X$ es \textit{$1-$grande} si $2\leq |X|$;
+        \item $X$ es \textit{$\alpha-$grande} si $X\setminus\set{x_0}$ es $F(\al,x_1)-$grande.
     \end{itemize}
 \end{defn}
 \begin{obs}
-    Por como se definio el concepto de $\alpha-$\textit{grande} y la función $F$, tenemos:
+    Por como se definió el concepto de $\alpha-$\textit{grande} y la función $F$, tenemos:
     \begin{itemize}
         \item Para $X$ un conjunto y $n\in\n$, 
             \[X\text{ es }n-\text{grande}\Longleftrightarrow |X|\geq n+1.\]
@@ -136,7 +136,7 @@ Vale la pena observar que $F(\al,n)<\al$, para cualquier ordinal $\al$. Más aú
     \begin{itemize}
         \item $\beta=2$:
             si $\beta=2$, entonces $\alpha$ es igual a 1 o a 0. De cualquier forma; $F(\beta,n)=1$ y $F(\alpha,n)=0$. Así, se cumple el enunciado.
-        \item $\beta=\alpha+1$:
+        \item $\beta=\gamma+1$:
             como $\alpha<\beta$, tenemos que $\alpha\leq\gamma<\beta$. Si $\alpha<\gamma$, entonces por hipótesis de inducción $F(\alpha,n)<F(\gamma,n)$. Si $\alpha=\gamma$, entonces $F(\alpha,n)=F(\gamma,n)$.
             Así pues, 
             \[F(\alpha,n)\leq F(\gamma,n)<\gamma=F(\gamma+1,n)=F(\beta,n),\]
@@ -173,7 +173,7 @@ Vale la pena observar que $F(\al,n)<\al$, para cualquier ordinal $\al$. Más aú
     entonces $X\cup Y$ es $\alpha-$grande.
 \end{lem}
 \begin{proof}
-    Sin perdida de generalidad, suponemos $Y$ no vacío. Procedemos por inducción sobre $\alpha$:
+    Sin pérdida de generalidad, suponemos $Y$ no vacío. Procedemos por inducción sobre $\alpha$:
     \begin{itemize}
         \item Si $\alpha=1$, entonces al ser $X$ $\alpha-$grande, $X$ tiene al menos dos elementos; luego para cualquier conjunto $Y$ como en el enunciado, $X\cup Y$ tiene al menos dos elementos, luego $X\cup Y$ es $\alpha-$grande.
         \item Supongamos que el enunciado se cumple para todo ordinal menor a $\alpha$; y supongamos $Y=\set{y_1,\ldots,y_n}$, con $n\geq 2$. Ahora, por el lema {\ref{mdcg}} que $X$ sea $\alpha-$grande implica que $X$ es $F(\alpha,y_2)-$grande. Ahora, por hipótesis de inducción, $(Y\setminus\set{y_1})\cup X$ es $F(\alpha,y_2)-$grande. Así, por definición, $Y\cup X$ es $\alpha-$grande. En el caso de que $Y$ sea un conjunto de un sólo elemento, si $X\cap Y=\nt$ podemos considerar el conjunto $Y'=Y\cup\min{X}$ y el paso inductivo se cumple igual para este nuevo conjunto; en otro caso, no hay nada que probar, pues $Y\subeq X$.
