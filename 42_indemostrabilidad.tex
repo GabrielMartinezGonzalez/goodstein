@@ -17,12 +17,12 @@ Un trabajo común en matemáticas es demostrar que una propiedad no se sigue de 
     \[[[{[c_1]}_\sim,{[b]}_\sim]]\text{ es }\n_{{[\id+c_1]}_\sim}-\text{grande}.\]
     Más aún, denotando $i={[\id]}_\sim$. Tenemos que 
     \[Y({[c_1]}_\sim,{[b]}_\sim)> i.\]
-    Por lo que tenemos que $Y({[c_1]}_\sim,{[b]}_\sim)$ es no estandar. Por lo tanto, existe un segmento inicial $I$ de $\hp$ tal que
+    Por lo que tenemos que $Y({[c_1]}_\sim,{[b]}_\sim)$ es no estándar. Por lo tanto, existe un segmento inicial $I$ de $\hp$ tal que
     \[I\vDash\PA\land{[b]}_\sim\not\in I.\]
     Por lo tanto, el conjunto
-    \[\cC=\set{{{[t]}_\sim}|[[{[c_1]}_\sim,{[t]}_\sim]]\text{ es }\n_{{[\id+c_1]}_\sim}-\text{grande}\land Y({[c_1]}_\sim,{[t]}_\sim)\text{ es no estandar}}\neq\nt.\]
+    \[\cC=\set{{{[t]}_\sim}|[[{[c_1]}_\sim,{[t]}_\sim]]\text{ es }\n_{{[\id+c_1]}_\sim}-\text{grande}\land Y({[c_1]}_\sim,{[t]}_\sim)\text{ es no estándar}}\neq\nt.\]
     Pues ${[b]}_\sim\in\cC$. Tomemos ${[j]}_\sim$ el mínimo elemento de este conjunto. Entonces,
-    \[[[{[c_1]}_\sim,{[j]}_\sim]]\text{ es }\n_{{[\id+c_1]}_\sim}-\text{grande}\land Y({[c_1]}_\sim,{[j]}_\sim)\text{ es no estandar};\]
+    \[[[{[c_1]}_\sim,{[j]}_\sim]]\text{ es }\n_{{[\id+c_1]}_\sim}-\text{grande}\land Y({[c_1]}_\sim,{[j]}_\sim)\text{ es no estándar};\]
     luego existe $M$, segmento inicial de $\hp$, tal que:
     \[M\vDash\PA\land{[j]}_\sim\not\in M.\]
     Luego, tenemos:
@@ -40,10 +40,10 @@ Un trabajo común en matemáticas es demostrar que una propiedad no se sigue de 
 \end{proof}
 Ahora, veamos el equivalente para hidras.
 \begin{thm}
-    El enunciado \textit{toda estrategía computable es una estrategia ganadora} no es demostrable bajo $\PA$.
+    El enunciado ``\textit{toda estrategia computable es una estrategia ganadora}'' no es demostrable bajo $\PA$.
 \end{thm}
 \begin{proof}
-    Sea $\tau$ una estrategía recursiva tal que 
+    Sea $\tau$ una estrategia recursiva tal que 
     \[G_\tau(\alpha,n)=F(\alpha,n).\]
     Cualquier prueba de que $\tau$ es ganadora es equivalente a demostrar lo mismo por inducción sobre $\alpha\in\varepsilon_0$; es decir, se puede demostrar por inducción que:
     \[(\exists k)(F(\alpha,k)=0).\]
@@ -66,15 +66,15 @@ Ahora, veamos el equivalente para hidras.
     \begin{verbatim}
         if grande([x,y],omega_n)
     \end{verbatim}
-    está bien definida y no es necesario usar que $F$ es decreciente dejando fijo el primer argumento (no se podría usar esto, pues el primer argumento varia en $\varepsilon_0$). Esto prueba que $Q$ es total computable. Sin embargo, observemos lo siguiente: definimos:
+    está bien definida y no es necesario usar que $F$ es decreciente dejando fijo el primer argumento (no se podría usar esto, pues el primer argumento varía en $\varepsilon_0$). Esto prueba que $Q$ es total computable. Sin embargo, observemos lo siguiente: definimos:
     \[\begin{array}{c}
         q:\n\longrightarrow\n\\
         x\mapsto\max\set{q_j(i)}[j,i\leq x]+1
     \end{array};\]
-    la cuál es una función computable, gracias a qué $Q$ lo es.
+    la cuál es una función computable, gracias a que $Q$ lo es.
     Luego, por el corolario {\ref{3tks}}, existe $n$ tal que para cada $x$ suficientemente grande
     \[q(x)<q_n(x).\]
     En particular, tomando $x>n$ y suficientemente grande, tenemos:
     \[q_n(x)<q(x)<q_n(x),\]
-    lo cuál es absurdo. Así, tenemos qué no se puede demostrar que $\tau$ es ganadora. 
+    lo cuál es absurdo. Así, tenemos que no se puede demostrar que $\tau$ es ganadora. 
 \end{proof}
