@@ -1,5 +1,5 @@
 \section{Ultraproductos}
-En este espacio mostraremos las estructuras conocidas como ultraproductos y mostraremos como construir modelos no estandar de la axiomatica de Peano utilizando dichas estructuras. Así mismo, presentaremos el teorema fundamental de los ultraproductos sustentar afirmaciones sobre dichos modelos.{\cite{Ultraproducts}}
+En este espacio mostraremos las estructuras conocidas como ultraproductos y mostraremos cómo construir modelos no estándar de la axiomática de Peano utilizando dichas estructuras. Asimismo, presentaremos el teorema fundamental de los ultraproductos para sustentar afirmaciones sobre dichos modelos.{\cite{Ultraproducts}}
 \begin{defn}
     Sea $X$ un conjunto. Entonces el producto directo de $\set{\n}_{x\in X}$ está dado por 
     \[\prod_{x\in X}\n:=\set{f:X\longrightarrow\n}\]
@@ -25,7 +25,7 @@ En este espacio mostraremos las estructuras conocidas como ultraproductos y most
 \end{proof}
 \begin{defn}
     Sea $X$ un conjunto y $u$ un ultrafiltro sobre $X$. Definimos el ultraproducto de $\n$ sobre $u$ como:
-    \[\prod{\rfrac{\n}{u}}:=\rfrac{\left(\prod_{x\in X}\n\right)}{\sim}\]
+    \[\hp:=\rfrac{\left(\prod_{x\in X}\n\right)}{\sim}\]
 \end{defn}
 \begin{defn}
     Definimos la función
@@ -38,7 +38,7 @@ En este espacio mostraremos las estructuras conocidas como ultraproductos y most
 \begin{prop}\label{iota}
     La función
     \[\begin{array}{c}
-        \iota:\n\longrightarrow\prod{\rfrac{\n}{u}}\\
+        \iota:\n\longrightarrow\hp\\
         n\mapsto {[c_n]}_\sim,
     \end{array}\]
     es inyectiva.
@@ -47,7 +47,7 @@ En este espacio mostraremos las estructuras conocidas como ultraproductos y most
     Sean $n,m\in\n$ tal que $n\neq m$. Entonces,  \[(\forall x\in X)(c_n(x)\neq c_m(x)),\] es decir, \[\set{x\in X|c_n(x)=c_m(x)}=\nt.\]
     Luego, $\nt\not\in u $, por lo que $c_n\not\sim c_m$, es decir; \[{[c_n]}_\sim\neq{[c_m]}_\sim.\]
 \end{proof}
-La proposición anterior nos permite hablar de elementos de $\n$ en el ultraproducto, refiriendonos realmente a la imagen de los elementos de $\n$ encajados en el ultraproducto.
+La proposición anterior nos permite hablar de elementos de $\n$ en el ultraproducto, refiriéndonos realmente a la imagen de los elementos de $\n$ encajados en el ultraproducto.
 \begin{thm} \label{sucult}
     La función sucesor en el ultraproducto, dada por
     \[
@@ -65,7 +65,7 @@ La proposición anterior nos permite hablar de elementos de $\n$ en el ultraprod
     \begin{equation}\tag{S}\label{S}
         \set{x\in X|f(x)=g(x)}\subeq\set{x\in X|S\circ f(x)=S\circ g(x)}.
     \end{equation}
-    Así, como los ultrafiltros son cerrador por arriba, 
+    Así, como los ultrafiltros son cerrados por arriba, 
     \[\set{x\in X|S\circ f(x)=S\circ g(x)}\in u,\]
     es decir, ${[S\circ f]}_\sim={{[S\circ g]}_\sim}$, justo lo que se quería demostrar.
 \end{proof}
@@ -90,7 +90,7 @@ Nos referiremos como $S$ indistintamente a $S$ como a $S_\sim$, por simplicidad.
     \[x\in\set{x\in X|(f+g)(x)=(h+k)(x)}.\]
     Así, recordando que los ultrafiltros son cerrados por intersecciones, tenemos que
     \[\set{x\in X|f(x)=h(x)}\cap\set{x\in X|g(x)=k(x)}\in u,\]
-    más aún, recordando que los ultrafiltros son cerrador por arriba, tenemos que 
+    más aún, recordando que los ultrafiltros son cerrados por arriba, tenemos que 
     \[\set{x\in X|(f+g)(x)=(h+k)(x)}\in u,\]
     es decir 
     \[{[f+g]}_\sim={[h+k]}_\sim,\]
@@ -112,12 +112,12 @@ Nos referiremos como $S$ indistintamente a $S$ como a $S_\sim$, por simplicidad.
     \[{[f]}_\sim<_\sim{[g]}_\sim\Longleftrightarrow\set{x\in X|f(x)<g(x)}\in u\]
 \end{defn}
 \begin{prop}
-    La relación $<_\sim$ es una relación de orden parcial total estricto.
+    La relación $<_\sim$ es una relación de orden parcial estricto.
 \end{prop}
 \begin{proof}
     Demostramos las siguientes propiedades:
     \begin{itemize}
-        \item Antireflexivo:
+        \item Antirreflexivo:
             Sea ${[f]}_\sim\in\hp$, entonces \[\set{x\in X|f(x)<f(x)}=\nt\]
             Luego, como $\nt\not\in u$, tenemos que ${[f]}_\sim\not<_{\sim}{[f]}_\sim$.
         \item Transitividad: 
@@ -151,7 +151,7 @@ Nos referiremos como $<$ indistintamente a $<$ como a $<_\sim$, por simplicidad.
     como la del ultraproducto de los naturales con respecto a $u$, o como la de \textit{la aritmética del ultraproducto de} $\n$.
 \end{defn}
 Antes de proseguir con el siguiente teorema importante, se mostrará un resultado que ayudará a mostrar la idea intuitiva de dicho teorema.
-\begin{prop}
+\begin{prop} \label{emergenci}
     \[\lpr{\forall{[f]}_\sim\in\hp}\lpr{\forall{[g]}_\sim\in\hp}\lpr{S\lpr{{[f]}_\sim}=S\lpr{{[g]}_\sim}\Longrightarrow {[f]}_\sim={[g]}_\sim}\]
 \end{prop}
 \begin{proof}
@@ -159,25 +159,25 @@ Antes de proseguir con el siguiente teorema importante, se mostrará un resultad
     \[\set{x\in X|S\circ f(x)=S\circ g(x)}\in u,\]
     es decir, $S({[f]}_\sim)=S({[g]}_\sim)$. Pero, si $x\in X$ es tal que 
     \[S(f(x))=S(g(x)),\]
-    entonces, un teorema conocido es que $f(x)=g(x)$. Luego, tenemos que:
+    entonces, es sabido que $S$ es inyectiva, por lo tanto $f(x)=g(x)$. Luego, tenemos que:
     \begin{equation}\tag{S'}\label{S'}
         \set{x\in X|S\circ f(x)=S\circ g(x)}\subeq\set{x\in X|f(x)=g(x)}
     \end{equation}
-    Y como los ultrafiltros son cerrador por arriba, tenemos que:
+    Y como los ultrafiltros son cerrados por arriba, tenemos que:
     \[\set{x\in X|f(x)=g(x)}\in u\]
     Esto concluye el teorema.
 \end{proof}
 \begin{obs}
-    De las ecuaciones {\refeq{S}} y {\refeq{S'}} se sigue que:
+    De las ecuaciones {\refeq{S}} y {\refeq{S'}}, ubicadas en la demostración del teorema {\ref{sucult}} y la proposición {\ref{emergenci}}, se sigue que:
     \[\set{x\in X|S\circ f(x)=S\circ g(x)}=\set{x\in X|f(x)=g(x)}\]
 \end{obs}
 El teorema anterior se podría interpretar como que la estructura del ultraproducto hereda el teorema de la estructura de los naturales. Esto pareciera indicar que la estructura de los ultraproductos heredará algunos cuantos teoremas de los naturales. El siguiente teorema nos indicará que tanto es esto verdad.
 
-Observese que de los teoremas {\ref{sucult}}, {\ref{sumult}} y {\ref{prodult}} se sigue que lso términos en una estructura son términos en la otra, mientra que de la proposición {\ref{iota}} se sigue que el cero es término en ambas estructuras.
+Obsérvese que de los teoremas {\ref{sucult}}, {\ref{sumult}} y {\ref{prodult}} se sigue que los términos en una estructura son términos en la otra, mientra que de la proposición {\ref{iota}} se sigue que el cero es término en ambas estructuras.
 \begin{thm}\label{los}
     (Fundamental de los ultraproductos) (de {\rlap{L}--}o\'{s}){\cite{Ultraproducts}}
     \\
-    Para cada $\ph$, formula en el lenguje de \textit{PA}, con $f_1,\ldots,f_n\in\prod_{x\in X}\n$:
+    Para cada $\ph$, fórmula en el lenguaje de \textit{PA}, con $f_1,\ldots,f_n\in\prod_{x\in X}\n$:
     \[\left(\hp,+_\sim,\cdot_\sim,S_\sim,<_\sim,{[c_1]}_\sim\right)\vDash\ph[{[f_1]}_\sim,\ldots,{[f_n]}_\sim]\]
     si, y sólo si
     \[\set{x\in X|(\n,+,\cdot,S,<,1)\vDash\ph[{f_1(x)},\ldots,{f_n(x)}]}\in u\]
@@ -250,7 +250,7 @@ es decir,
 \[X=\set{x\in X|(\n,+,\cdot,S,<,1)\vDash\left(\not\exists f\in\prod_{x\in X}\n\right)(0=S(f(x)))}\in u\]
 Por lo que, tenemos que:
 \[\left(\hp,+_\sim,\cdot_\sim,S_\sim,<_\sim,{[c_1]}_\sim\right)\vDash\left(\not\exists f\in\prod_{x\in X}\n\right)({[c_0]}_\sim={[f]}_\sim)\]
-Si se pone atención, este teorema permite heredar todas las formulas que se cumplen en los números naturales a la estrucutra del ultraproducto. Es decir, desde propiedades de los exponentes, hasta los axiomas de Peano, se satisfacen todos en la estructura de $\hp$ (mientras que no hayan variables libres). Así, se tiene que $\hp$ es un \textit{modelo no estandar} de los axiomas de Peano.
+Si se pone atención, este teorema permite heredar todas las fórmulas que se cumplen en los números naturales a la estrucutra del ultraproducto. Es decir, desde propiedades de los exponentes, hasta los axiomas de Peano, se satisfacen todos en la estructura de $\hp$ (mientras que no hayan variables libres). Así, se tiene que $\hp$ es un \textit{modelo no estándar} de los axiomas de Peano.
 \begin{thm}\label{isoiota}
     Si $u$ es un ultrafiltro principal sobre $X$, entonces
     \[\left(\hp,+_\sim,\cdot_\sim,S_\sim,<_\sim,{[c_1]}_\sim\right)\cong(\n,+,\cdot,S,<,1)\]
@@ -304,10 +304,10 @@ Si se revisa cuidadosamente la demostración de {\ref{isoiota}}, veremos que par
     Pero $K$ es un conjunto finito y por el teorema {\ref{u5}}, $u$ es principal, lo cuál es una contradicción. 
     Luego, basta tomar $h=\text{id}_\n$
 \end{proof}
-Así, si el ultreproducto definido por un ultrafiltro no principal fuera isomorfo a los números naturales, entonces existiría un elemento en los naturales que sería mayor a todos los naturales, lo cuál es absurdo.
-Así mismo, quizá sea bueno recordar que el teorema {\ref{u9}} garantiza la existencia de los ultrafiltros no principales.
+Así, si el ultraproducto definido por un ultrafiltro no principal fuera isomorfo a los números naturales, entonces existiría un elemento en los naturales que sería mayor a todos los naturales, lo cuál es absurdo.
+Asimismo, quizá sea bueno recordar que el teorema {\ref{u9}} garantiza la existencia de los ultrafiltros no principales.
 
-Cabe recalcar lo siguiente: las clases o categorias $\Delta_0$ son absolutas entre modelos y submodelos, es decir: si $N\subeq M$ son modelos de $\PA$, entonces
+Cabe recalcar lo siguiente: las clases o categorías $\Delta_0$ son absolutas entre modelos y submodelos, es decir: si $N\subeq M$ son modelos de $\PA$, entonces
 \[N\vDash\psi(x,y)\Longleftrightarrow M\vDash\psi(x,y),\]
 para cualquier fórmula $\psi$. Este resultado es clásico en teorías de modelos, aunque requiere un desarrollo un poco más extenso, por lo que simplemente lo citamos. {\cite{thmsigma1comp}}
 
@@ -336,12 +336,12 @@ para cualquier fórmula $\psi$. Este resultado es clásico en teorías de modelo
     \[M\vDash\exists y\psi(a,y).\]
 \end{proof}
 
-Antes de terminar esta sección, mencionaremos un teorema de importancia capital en la teoría de los modelos no estandar.
+Antes de terminar esta sección, mencionaremos un teorema de importancia capital en la teoría de los modelos no estándar.
 \begin{thm} \label{overspill} \textit{(Principio de derramamiento) (overspill principle)}\\
-    Sea $\ph(x)$ una fórmula (quizá con más parametros) en un modelo $M$ no estandar. Si $\ph(n)$ se satisface para cada $n$ estandar de $M$, entonces existe $a\in M$ no estandar tal que $\ph(a)$ se satisface en $M$.
+    Sea $\ph(x)$ una fórmula (quizá con más parámetros) en un modelo $M$ no estándar. Si $\ph(n)$ se satisface para cada $n$ estándar de $M$, entonces existe $a\in M$ no estándar tal que $\ph(a)$ se satisface en $M$.
 \end{thm}
 \begin{proof}
-    Supongamos que $\ph(n)$ se satisface para cada $n$ estandar, pero $\ph(a)$ no se satisface para ningún $a$ no estandar. Entonces, tenemos que 
+    Supongamos que $\ph(n)$ se satisface para cada $n$ estándar, pero $\ph(a)$ no se satisface para ningún $a$ no estándar. Entonces, tenemos que 
     \[\n=\set[b]{\ph({b})}.\]
     Ento implica que, para cada $x\in X$, 
     \[(\n,+,\cdot,S,<,1)\vDash\n=\set[f\in\prod_{x\in X}\n]{\ph({f(x)})},\]
@@ -349,7 +349,7 @@ Antes de terminar esta sección, mencionaremos un teorema de importancia capital
     \[X=\set[x\in X]{(\n,+,\cdot,S,<,1)\vDash\n=\set[f\in\prod_{x\in X}\n]{\ph({f(x)})}}\in u;\]
     por lo que, por el teorema {\ref{los}} tenemos que:
     \[\left(\hp,+_\sim,\cdot_\sim,S_\sim,<_\sim,{[c_1]}_\sim\right)\vDash M=\set[{[f]}_\sim\in\prod_{x\in X}\n]{\ph([f]_\sim)},\]
-    y como $M$ no es estandar, tenemos que existe al menos una $a$ no estandar en $M$, por lo que $a$ satisfacería $\ph$, lo cuál es una contradicción.
+    y como $M$ no es estándar, tenemos que existe al menos una $a$ no estándar en $M$, por lo que $a$ satisfacería $\ph$, lo cuál es una contradicción.
 \end{proof}
 El teorema anterior tiene una consecuencia muy curiosa como parte de su demostración.
 \begin{cor}
