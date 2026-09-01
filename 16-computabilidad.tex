@@ -2,7 +2,7 @@
 En la siguiente sección abordaremos la teoría de computabilidad, cuyos principales contribuidores fueron \textit{Alan Turing} mediante su \textit{máquina de Turing}, \textit{Kurt Gödel} mediante la \textit{teoría de la recursión} y \textit{Alonzo Church} mediante el $\lambda-$\textit{cálculo.} En esta ocasión nos quedaremos principalmente con ideas intuitivas sobre máquinas de Turing y más formalmente sobre recursión, todo esto con la intención de presentar el concepto de función computable. \cite{comp1}
 
 \begin{defn}
-    Una maquina de Turing consta de:
+    Una máquina de Turing consta de:
     \begin{itemize}
         \item un alfabeto, es decir, un conjunto finito $L$;
         \item un conjunto finito $S$ de estados;
@@ -11,7 +11,7 @@ En la siguiente sección abordaremos la teoría de computabilidad, cuyos princip
 \end{defn}
 
 \begin{obs}
-    Toda maquina de Turing especifica de manera única una función cuyo dominio y rango son subconjuntos del conjunto de sucesiones finitas de $L$.
+    Toda máquina de Turing especifica de manera única una función cuyo dominio y rango son subconjuntos del conjunto de sucesiones finitas de $L$.
 \end{obs}
 
 \begin{ex}
@@ -28,7 +28,7 @@ En la siguiente sección abordaremos la teoría de computabilidad, cuyos princip
 \end{ex}
 
 \begin{defn}
-    Una función $f:A\longrightarrow\n^p$, con $p\in\n$, es computable si existe un algoritmo tal que al recibir el input $n$, eventualmente termina si, y sólo si $n\in A$, en cuyo caso el output es $f(n)$.
+    Dado $A\subeq \n$, una función $f:A\longrightarrow\n^p$, con $p\in\n$, es computable si existe un algoritmo tal que al recibir el input $n$, eventualmente termina si, y sólo si $n\in A$, en cuyo caso el output es $f(n)$.
 \end{defn}
 
 \begin{ex}
@@ -36,8 +36,8 @@ En la siguiente sección abordaremos la teoría de computabilidad, cuyos princip
     \begin{itemize}
         \item Fijamos el alfabeto $\{1\}$,
         \item para cada $n$,
-            \[A_n:=\{f | f\in C\},\]
-            donde $C$ es la colección de funciones computables por una máquina de Turing con a lo más $n$ estados (más, quizá, el estado final).
+            \[A_n:=\{f | f\in C_n\},\]
+            donde $C_n$ es la colección de funciones computables por una máquina de Turing con a lo más $n$ estados (más, quizá, el estado final).
             \[A_1:=\{\varnothing,n\mapsto n+1,n\mapsto n,n\mapsto n-1,0,1\}.\]
     \end{itemize}
     Cada $A_n$ es finito (tiene a lo sumo $2^{2(n+1)(n+1)\cdot2\cdot3}$ de elementos). La función \textbf{busy beaver} está dada por:
@@ -64,16 +64,17 @@ Por la tesis de Church-Turing, la función $\Phi$ es computable.
 \end{lem}
 
 \begin{defn} \textit{(función total)}\\
-    Una función computable se dice total si para cualquier número natural como input, la función se detiene, es decir, el cálculo de su output se puede obtener en un número finito de pasos.
+    Una función computable se dice total si para cualquier número natural como input, la función se detiene, es decir, el cálculo de su output se puede obtener en un número finito de pasos. En otras palabras, la función es total si su dominio es $\mathbb{N}^k$.
 \end{defn}
+
 
 \begin{thm}
     El conjunto
-    \[e\in\n|\Phi(e,-)\text{ es una función total}\]
+    \[\set{e\in\n|\Phi(e,-)\text{ es una función total}}\]
     no es computable. Es decir, no existe un algoritmo que, dado $e$, decida si la $e-$ésima función computable es total.
 \end{thm}
 \begin{proof}
-    Supongamos que este conjunto si es computable, entonces hay una función computable
+    Supongamos que este conjunto sí es computable, entonces hay una función computable
     \[l\mapsto f_l,\]
     la $l-$ésima función computable.
     \begin{verbatim}
@@ -97,5 +98,5 @@ Por la tesis de Church-Turing, la función $\Phi$ es computable.
 \end{proof}
 
 \begin{defn} \textit{(conjunto computable)}\\
-    Sea $X\subseteq\n^k$. Decimos que $X$ es computable si $\chi_X:\n^k\longrightarrow\{0,1\}$ es una función total computable. Es decir, $X$ es computable si existe un algoritmo con imput n, tal que determina si $n\in X$ o no.
+    Sea $X\subseteq\n^k$. Decimos que $X$ es computable si $\chi_X:\n^k\longrightarrow\{0,1\}$ es una función total computable. Es decir, $X$ es computable si existe un algoritmo con input $n$, tal que determina si $n\in X$ o no.
 \end{defn}
