@@ -1,5 +1,5 @@
 \section{Problema de la detención}
-También conocido por su nombre en alemán \textit{entscheindungsproblem}, o en inglés \textit{halting problem}, este concepto es de importancia capitál para entender las límitaciones de la computabilidad, lo cuál eventualmente nos llevará a la incompletitud. \cite{comp1}
+También conocido por su nombre en alemán \textit{Entscheindungsproblem}, o en inglés \textit{halting problem}, este concepto es de importancia capital para entender las limitaciones de la computabilidad, lo cuál eventualmente nos llevará a la incompletitud. \cite{comp1}
 
 \begin{thm} \textit{(problema de la detención)}\\
     El conjunto
@@ -15,7 +15,7 @@ También conocido por su nombre en alemán \textit{entscheindungsproblem}, o en 
             \text{indefinido} & n\in D
         \end{cases}
     \end{array}\]
-    es computable. Está es representada por el siguiente pseudocodigo:
+    es computable. Está es representada por el siguiente pseudocódigo:
     \begin{verbatim}
         input(n)
         if(chi_D(n)==0)
@@ -65,7 +65,7 @@ También conocido por su nombre en alemán \textit{entscheindungsproblem}, o en 
 \end{prop}
 \begin{proof}
     \begin{enumerate}
-        \item La demostración se sigue del siguiente pseudocodigo:
+        \item La demostración se sigue del siguiente pseudocódigo:
             \begin{verbatim}
                 input(m)
                 for(k=0;k<n;k++)
@@ -115,7 +115,7 @@ También conocido por su nombre en alemán \textit{entscheindungsproblem}, o en 
         \end{verbatim}
 \end{proof}
 \begin{obs}
-    El reciproco en general es falso, y el contraejemplo viene en los últimos ejemplos dados.
+    El recíproco en general es falso, y el contraejemplo viene en los últimos ejemplos dados.
 \end{obs}
 \begin{prop}
     Si $X$ y $Y$ son computablemente enumerables, entonces:
@@ -143,7 +143,7 @@ También conocido por su nombre en alemán \textit{entscheindungsproblem}, o en 
     Para $X\subseteq\n$, los siguientes enunciados son equivalente:
     \begin{enumerate}
         \item $X$ es c.e.
-        \item La función semicaracteristica de $X$, denotada $\sigma_X$, es computable. Esta función viene dada por la regla de asignación:
+        \item La función semicaracterística de $X$, denotada $\sigma_X$, es computable. Esta función viene dada por la regla de asignación:
             \[\sigma_X(n)=\begin{cases}
             1 \text{ si } n\in X\\
             \uparrow \text{en otro caso}
