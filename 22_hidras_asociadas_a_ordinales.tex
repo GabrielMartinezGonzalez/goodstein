@@ -29,13 +29,13 @@ A continuación presentaremos un concepto el cuál es de suma importancia para e
       \end{forest}\\
       \textit{ejemplo de hidra}
     \end{center}
-    Donde el nodo que lleva adentro el símbolo ''°'' es la raíz y los que llevan adentro los simbolos ''.'' son los nodos cima, los cuales, junto con sus respectivas únicas aristas, forman las cabezas de la hidra.
+    Donde el nodo que lleva adentro el símbolo ``\hspace{0.1cm}°\hspace{0.1cm}'' es la raíz y los que llevan adentro los símbolos ``.'' son los nodos cima, los cuales, junto con sus respectivas únicas aristas, forman las cabezas de la hidra.
 \end{ex}
-Siguiendo la metafora con respecto a la mitología griega, en la batalla de Hercules contra la hidra; en la instancia $n$, después de Hercules cortar una cabeza de la hidra, de esta creceran $n$ nuevas cabezas. Así pues, al trabajar con nuestras hidras, tendremos un comportamiento similar.
+Siguiendo la metáfora con respecto a la mitología griega, en la batalla de Hércules contra la hidra; en la instancia $n$, después de Hércules cortar una cabeza de la hidra, de ésta crecerán $n$ nuevas cabezas. Así pues, al trabajar con nuestras hidras, tendremos un comportamiento similar.
 \begin{defn}
     (Algoritmo del crecimiento de una cabeza)\\
     Al cortarle una cabeza a una hidra, la hidra se comportará de la siguiente manera:\\
-    Desde el nodo que solía estar conectado a la cabeza que acaba de ser cortada, avanza un arista hacia la raíz hasta alcanzar el siguiente nodo de la red. Desde este nodo, brotan $n$ réplicas de la parte de la hidra (después de la decapitación) que está \textit{por encima} de la arista recién recorrida; en otras palabras, aquellos nodos y aristas por los cuales, para llegar a la raíz, sería necesario atravesar dicha arista. Si la cabeza recién cortada tenía la raíz como uno de sus nodos, no se genera una nueva cabeza.
+    Desde el nodo que solía estar conectado a la cabeza que acaba de ser cortada, avanza una arista hacia la raíz hasta alcanzar el siguiente nodo de la red. Desde este nodo, brotan $n$ réplicas de la parte de la hidra (después de la decapitación) que está \textit{por encima} de la arista recién recorrida; en otras palabras, aquellos nodos y aristas por los cuales, para llegar a la raíz, sería necesario atravesar dicha arista. Si la cabeza recién cortada tenía la raíz como uno de sus nodos, no se genera una nueva cabeza.
 \end{defn}
 \begin{ex}\label{exh2}
     Observemos el lo que pasa al cortar la cabeza de una hidra:
@@ -87,15 +87,15 @@ Siguiendo la metafora con respecto a la mitología griega, en la batalla de Herc
       \end{forest}\\
       \textit{ejemplo del cambio al cortar una cabeza de una hidra}
     \end{center}
-    En este caso, se ha cortado la cabeza asociada al nodo cima señalado con un ''.'' dentro.
+    En este caso, se ha cortado la cabeza asociada al nodo cima señalado con un ``.'' dentro.
 \end{ex}
-Hercules gana la batalla si, después de un número finito de instancias, no queda nada de la hidra más que su raíz.
+Hércules gana la batalla si, después de un número finito de instancias, no queda nada de la hidra más que su raíz.
 \begin{defn}
     Una estrategia es una función la cuál determina cuál cabeza será cortada en cada instancia de cualquier batalla. Una estrategia se dice ganadora si, en un número finito de instancias, no queda nada más de la hidra que su raíz.
 \end{defn}
 Ahora, la razón por la que las hidras son un concepto importante en nuestro estudio viene del hecho de que podemos asignarle a cada hidra un ordinal. 
 \begin{defn}
-    El ordinal asociado a un hidra viene dado por las siguientes reglas:
+    El ordinal asociado a una hidra viene dado por las siguientes reglas:
     \begin{enumerate}[label=\roman*]
     \item A cada nodo cima le asignamos el 0
     \item Al resto de nodos les asignamos $\n^{\al_1}+\cdots+\n^{\al_n}$, donde $\al_1\geq\cdots\geq\al_n$ son los ordinales asignados a los nodos inmediatamente \textit{superiores} (es decir, por los que habría que pasar para llegar a un nodo cima).  
@@ -184,17 +184,17 @@ En particular, cada uno de estos ordinales tiene que ser menor a $\varepsilon_0$
     En este caso, al cortar la cabeza asociada al nodo circular, hemos obtenido el sigueinte cambio:
     \[\n^{\n^\n+\n^3}+\n^{\n^2+1}\longrightarrow\n^{\n^\n+\n^2\cdot2}+\n^{\n^2+1}.\]
 \end{ex}
-Así mismo, es importante observar que el ordinal resultante es estrictamente menor que el original. Si bien esto no es una prueba, es un preambulo de un resultado futuro.
+Asimismo, es importante observar que el ordinal resultante es estrictamente menor que el original. Si bien esto no es una prueba, es un preámbulo de un resultado futuro.
 \begin{defn}
-    Para cualquier estrategia $\sigma$, definimos una operación $G_\sigma:\varepsilon_0\times\omega\longrightarrow\varepsilon_0$, explicitamente escrita como $G_\sigma(\alpha, n)$, la cuál mapea el ordinal asociado a la hidra después de su instancia $n-1$, al ordinal de la hidra después después de la instancia $n$, donde $\sigma$ es la estrategia utilizada.
+    Sea $\alpha$ el ordinal asociado a una hidra. Para cualquier estrategia $\sigma$, definimos una operación $G_\sigma:\varepsilon_0\times\omega\longrightarrow\varepsilon_0$, explícitamente escrita como $G_\sigma(\alpha, n)$, la cuál mapea el ordinal asociado a la hidra después de su instancia $n-1$, al ordinal de la hidra después después de la instancia $n$, donde $\sigma$ es la estrategia utilizada.
 \end{defn}
 Ahora, demostraremos un lema de suma importancia en el entendimiento de las estrategias contra las hidras.
 \begin{lem}\label{lh1}
     Para toda estrategia $\sigma$, para todo ordinal $0<\alpha<\varepsilon_0$, y para toda $n\in\n$, tenemos \[G_\sigma(\alpha,n)<\alpha.\]
 \end{lem}
 \begin{proof}
-    Sea $\alpha\in\ON$ y $\sigma$ una estrategía.
-    Observemos que si nuestra hidra está asociada a un ordinal finito, todos los nodos que no son raices son nodos cima, por lo que al cortar una cabeza, no crecerá ninguna más, luego, para cada $n$: \[G_\sigma(\alpha,n)=\alpha-1<\alpha.\]
+    Sea $\alpha\in\ON$ y $\sigma$ una estrategia.
+    Observemos que si nuestra hidra está asociada a un ordinal finito, todos los nodos que no son raíces son nodos cima, por lo que al cortar una cabeza, no crecerá ninguna más, luego, para cada $n$: \[G_\sigma(\alpha,n)=\alpha-1<\alpha.\]
     Por otro lado, consideremos el caso en el que crecerán ramas cuando una cabeza es cortada: en tal caso, sólo es necesario fijarnos en nodo a partir de cuál crecerán las copias. Esto es de la forma siguiente:
     \begin{center}
         \begin{forest}
@@ -207,16 +207,16 @@ Ahora, demostraremos un lema de suma importancia en el entendimiento de las estr
             ]
           \end{forest}
     \end{center}
-    Donde el nodo asociado al $0$ es la cabeza que se cortará (siguiendo la estrategía $\sigma$), $r_1$ el nodo a partir del cuál crecerán las copias y los $m$ nodos de la izquierda están asociados a $m$ ordinales menores que $\varepsilon_0$. Sin perdida de generalidad, asumimos que estos ordinales están en orden de tal forma que \[r_2=\n^{\beta_1}+\cdots+\n^{\beta_m}+1.\] Luego, \[r_1=\n^{\n^{\beta_1}+\cdots+\n^{\beta_m}+1}=\n^{\n^{\beta_1}+\cdots+\n^{\beta_m}}\cdot\n.\]
+    Donde el nodo asociado al $0$ es la cabeza que se cortará (siguiendo la estrategia $\sigma$), $r_1$ el nodo a partir del cuál crecerán las copias y los $m$ nodos de la izquierda están asociados a $m$ ordinales menores que $\varepsilon_0$. Sin pérdida de generalidad, asumimos que estos ordinales están en orden de tal forma que \[r_2=\n^{\beta_1}+\cdots+\n^{\beta_m}+1.\] Luego, \[r_1=\n^{\n^{\beta_1}+\cdots+\n^{\beta_m}+1}=\n^{\n^{\beta_1}+\cdots+\n^{\beta_m}}\cdot\n.\]
     Así pues, para cada $n\in\n$, tenemos: \[G_\sigma(r_1,n)=\n^{\n^{\beta_1}+\cdots+\n^{\beta_m}}\cdot(n+1)<\n^{\n^{\beta_1}+\cdots+\n^{\beta_m}}\cdot\n.\]
     Así, $G_\sigma(r_1,n)<r_1$. De aquí, si $r_1$ es raíz, hemos terminado. En caso de que $r_1$ no sea raíz, al menos hay un nodo abajo de $r_1$, de tal forma que en el ordinal asociado a $\alpha$, aparezca un sumando (o un exponente) de la forma $\omega^{r_1}$ y en la de $G_\sigma(\alpha,n)$ uno de la forma $\n^{G_\sigma(r_1,n)}$. Luego, como el orden se preserva por potencias (o sumandos) se tiene lo que se quería demostrar.
 \end{proof}
 \begin{thm}
-    Toda estrategía es una estrategía ganadora.
+    Toda estrategia es una estrategia ganadora.
 \end{thm}
 \begin{proof}
     Consideremos la función $A_{(\al,\sigma)}:\n\longrightarrow\varepsilon_0$, dada por: 
     \[A_{(\al,\sigma)}(n)=G_\sigma(\alpha,n).\]
-    Del lema\ref{lh1}, tenemos que $A_{(\al.\sigma)}$ es una sucesión decreciente de ordinales.
+    Del lema \ref{lh1}, tenemos que $A_{(\al.\sigma)}$ es una sucesión decreciente de ordinales.
     Ahora, del hecho de que no hay secuencias decrecientes infinitas de ordinales, para un $m$ suficientemente grande, $A_{(\al,\sigma)}(m)$ es la hidra que consta únicamente de su raíz. Esto concluye el teorema.
 \end{proof}
