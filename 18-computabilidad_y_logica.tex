@@ -44,9 +44,9 @@ Tenemos el siguiente hecho:
 \end{defn}
 
 \begin{obs}
-    Señalaremos una nueva forma de códificar parejas:
+    Señalaremos una nueva forma de codificar parejas:
     \[(a,b)\text{ se codifica por }(a+b)^2+a.\]
-    Dadp $n$, me fijo en la sucesión de cuadrados perfectos ${(n^2)}_{n\in\n}$, y encuentro $m$ tal que $m^2\leq n<{(m+1)}^2$. Hacemos $a=n-m^2$, $b=m-a$, y $n$ codifica $(a,b)$. Notemos:
+    Dado $n$, me fijo en la sucesión de cuadrados perfectos ${(n^2)}_{n\in\n}$, y encuentro $m$ tal que $m^2\leq n<{(m+1)}^2$. Hacemos $a=n-m^2$, $b=m-a$, y $n$ codifica $(a,b)$. Notemos:
     \[''n\text{ codifica }(a,b)''\Longleftrightarrow \n\vDash ((x+y)*(x+y)+x=z)[a,b,n].\]
     Ahora, para codificar tuplas:
     Para cada $i$, $q_i=\text{código}(m_i,i)$. Sea
@@ -113,12 +113,12 @@ Tenemos el siguiente hecho:
     \end{itemize}
     Así pues,
     \begin{itemize}
-        \item $''(x,y,z)$ es una foto instantanea valida'' $(FI(x,y,z))$:\\
+        \item $''(x,y,z)$ es una foto instantánea válida'' $(FI(x,y,z))$:\\
             $(x=\cb\lor x=S\cb)\land\forall u(\exists l(u<l\land \text{long}(l,z)) (\exists l(\text{long}(l,z)\land y\leq l)\implies \exists v(\text{Tupla}(v,n,z)$
             $\implies(v=\cb\lor v=S\cb\lor v=SS\cb)))).$
-        \item $''(x_1,y_1,z_1)$ es la foto instantanea inmeadiatamente posterior a $(x_2,y_2,z_2)''$ \\
+        \item $''(x_1,y_1,z_1)$ es la foto instantánea inmediatamente posterior a $(x_2,y_2,z_2)''$ \\
         $T(x_1,y_1,z_1,x_2,y_2,z_2)$:\\
-            $\left(''(x_{1}, y_{1}, z_{1}) \, \text{es toto inst. valida}'' \right)
+            $\left(''(x_{1}, y_{1}, z_{1}) \, \text{es foto inst. válida}'' \right)
 \;\land\;
 \exists s \,\bigl( \mathrm{Tupla}(s, y_{1}, z_{1}) 
 \;\land\;
@@ -138,7 +138,7 @@ s = S\cb \land \mathrm{Tupla}(S\cb, y_{1}, z_{2})
 \;\lor\;
 (\mathrm{long}(y_{1}, z_{1}) \land x_{2} = S\cb \land y_{2} = y_{1})
 $.
-        \item ''si yo corro $T$ con input $x$, entonces la máquina se detiene y el output es $y''$ $C(x,y)$:\\
+        \item ``si yo corro $T$ con input $x$, entonces la máquina se detiene y el output es $y''$ $C(x,y)$:\\
             $ \exists s\, \exists l \bigl( \mathrm{long}(l, s) \land
 (\exists w)\,( l = SS S \cb w \land
 \mathrm{Tupla}(\cb, \cb, s) \land
@@ -207,7 +207,7 @@ A partir de ahora y hasta que acabe el capítulo, consideraremos a $\cN$ como el
     Si $\Sigma\subseteq \text{Th}(\cN)$ es computable, entonces es incompleto.
 \end{cor}
 \begin{proof}
-    De lo contrario, si $\Sigma\subseteq \text{Th}(\cN)$ es computable y compacto, entonces:
+    De lo contrario, si $\Sigma\subseteq \text{Th}(\cN)$ es computable y completo, entonces:
     \[\text{Teor}(\Sigma)=\{\varphi|\Sigma\vdash\varphi\}.\]
     sería computable. Pero,
     \[\text{Th}(\cN)\subseteq\text{Teor}(\Sigma)\subseteq\text{Th}(\cN);\]
@@ -257,7 +257,7 @@ A partir de ahora y hasta que acabe el capítulo, consideraremos a $\cN$ como el
     \begin{enumerate}
         \item Análoga a la demostración de 
             \begin{center}
-                ''$f$ es computable $\implies$ $f$ es definible''.
+                ``$f$ es computable $\implies$ $f$ es definible''.
             \end{center}
         \item Sea $A$ computable y sea $\varphi(x,y)$ la fórmula que $Q-$representa a $\chi_A$. Es decir,
             \[(n,m)\in\text{Gr}(\chi_A)\Longleftrightarrow Q\vdash\varphi[\mathbf{n}/x,\mathbf{m}/y]\land (n,m)\not\in\text{Gr}(\chi_A)\Longleftrightarrow Q\vdash\neg\varphi[\mathbf{n}/x,\mathbf{m}/y].\]
@@ -382,4 +382,4 @@ Esta definición coinscide con la que daremos en el capítulo 3, sin embargo, es
     Esto contradice la consistencia de $\Sigma$. Luego,
     \[\Sigma\not\vdash\eta.\]
 \end{proof}
-Podemos observar que en el teorema anterior, la proposición $\eta$ se puede entender como \textit{''yo no soy demostrable''}.
+Podemos observar que en el teorema anterior, la proposición $\eta$ se puede entender como \textit{``yo no soy demostrable''}.
