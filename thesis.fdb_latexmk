@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex thesis"] 1787624163.95088 "thesis.aux" "thesis.bbl" "thesis" 1787624990.22818 0
+["bibtex thesis"] 1788228358.99462 "thesis.aux" "thesis.bbl" "thesis" 1788228930.01317 0
   "./bibliography.bib" 1787621683 2188 7abcb130e976756b59d42587f41c554e ""
   "C:/Program Files/MiKTeX/bibtex/bst/cmpj/cmpj.bst" 1608999027 38577 583f8e9e4b6937a24d90d79ef06cecee ""
-  "portada.aux" 1787624985 676 07a81586ca54e6447b650581afe63653 "pdflatex"
-  "thesis.aux" 1787624989 10135 b4c65d9619a2c617c79c23ce042a5834 "pdflatex"
+  "portada.aux" 1788228922 676 07a81586ca54e6447b650581afe63653 "pdflatex"
+  "thesis.aux" 1788228928 10182 6f162d12e5d0b7ff4574e154bc073651 "pdflatex"
   (generated)
   "thesis.bbl"
   "thesis.blg"
   (rewritten before read)
-["pdflatex"] 1787624984.24095 "c:/Users/gabri/OneDrive/Documents/goodstein/thesis.tex" "thesis.pdf" "thesis" 1787624990.22934 0
+["pdflatex"] 1788228920.16486 "c:/Users/gabri/OneDrive/Documents/goodstein/thesis.tex" "thesis.pdf" "thesis" 1788228930.01455 0
   "11_propiedades_de_los_ordinales.tex" 1782280159 30500 7fbc24827d4ae78226086863dc67de3f ""
   "12_aritmetica_ordinal.tex" 1758842280 10081 54dfdd4f1ad03e918b7f10b685461101 ""
   "13_ultrafiltros.tex" 1758842280 8032 215f9b10fc78391aa00c03609d789304 ""
@@ -20,7 +20,7 @@
   "21_sucesiones_de_goodstein.tex" 1758842280 6882 75d50f9c46823f3d85bf5780c49d6d80 ""
   "22_hidras_asociadas_a_ordinales.tex" 1770079598 11324 ec8a421363f38d173f965d84993269de ""
   "31_los_axiomas_de_peano.tex" 1766885087 2854 b0bdc39cab1f947d11210de46bc3357d ""
-  "32_ultraproductos.tex" 1766797670 22069 3e286ceae146355ee1d55ddcdf34a986 ""
+  "32_ultraproductos.tex" 1788228919 22180 dd13c77b3e577ab07dc8bb75704d1e0f ""
   "33_indicadores_de_modelos.tex" 1787624983 11744 a4666f2ad9fdd0dadf7f6fe0b28d7129 ""
   "40_teoremas_ketonen_solovay.tex" 1787624261 27417 e6340eaa729892c654c960c537d631fe ""
   "41_antes_de_la_indemostrabilidad.tex" 1787622976 29878 c8616cfdf7acf604388fdaa73947b3c0 ""
@@ -252,6 +252,7 @@
   "C:/Program Files/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/gabri/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1758844419 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/gabri/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1758844991 14064 465432e46e24d3ea960191f53535fdc3 ""
+  "C:/Users/gabri/AppData/Local/MiKTeX/fonts/pk/ljfour/public/mathabx/dpi360/mathx10.pk" 1788227701 18828 6259fd3f2ff5cb1f20dad229a0d5988f ""
   "C:/Users/gabri/AppData/Local/MiKTeX/fonts/pk/ljfour/public/mathabx/dpi480/mathx10.pk" 1758844993 24888 f51fa5fade210f77daa787495925b3ec ""
   "C:/Users/gabri/AppData/Local/MiKTeX/fonts/pk/ljfour/public/mathabx/dpi600/matha12.pk" 1758845003 29292 0ce6563207dcac46e8199de75254bd8a ""
   "C:/Users/gabri/AppData/Local/MiKTeX/fonts/pk/ljfour/public/mathabx/dpi600/matha6.pk" 1758844994 16824 a43d73104d0127f6d4bb45cbe37c5e59 ""
@@ -274,16 +275,16 @@
   "C:/Users/gabri/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1758844970 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/gabri/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs5.tfm" 1758844971 684 3a51bd4fd9600428d5264cf25f04bb9a ""
   "C:/Users/gabri/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1758844470 13276899 8da2a053bc64ac22b132561ed26c81c8 ""
-  "c:/Users/gabri/OneDrive/Documents/goodstein/thesis.tex" 1782280159 8136 d74dac72f874646f5ed8c0ecd4267f4c ""
+  "c:/Users/gabri/OneDrive/Documents/goodstein/thesis.tex" 1788227688 8136 359e54e2556b37eaae173ee8fae37a1b ""
   "escudo-esfm.png" 1758842280 134199 3893abf6de393aa0b21f96ff2a87d0da ""
   "logo-ipn.png" 1758842281 147498 815118d5893dd85ee9acde00569de2af ""
-  "portada.aux" 1787624985 676 07a81586ca54e6447b650581afe63653 "pdflatex"
+  "portada.aux" 1788228922 676 07a81586ca54e6447b650581afe63653 "pdflatex"
   "portada.tex" 1782274702 2424 773218563445160e8de761a33dced65b ""
-  "thesis.aux" 1787624989 10135 b4c65d9619a2c617c79c23ce042a5834 "pdflatex"
-  "thesis.bbl" 1787624164 1621 5d1c537526ff14dd37e7bdaea8e863a2 "bibtex thesis"
-  "thesis.out" 1787624989 4519 6d5c7a9dd3f0f953538ae0401aec2ed2 "pdflatex"
-  "thesis.tex" 1782280159 8136 d74dac72f874646f5ed8c0ecd4267f4c ""
-  "thesis.toc" 1787624989 2158 aa3067c02e2606e42139f949e1257767 "pdflatex"
+  "thesis.aux" 1788228928 10182 6f162d12e5d0b7ff4574e154bc073651 "pdflatex"
+  "thesis.bbl" 1788228359 1621 5d1c537526ff14dd37e7bdaea8e863a2 "bibtex thesis"
+  "thesis.out" 1788228928 4519 6d5c7a9dd3f0f953538ae0401aec2ed2 "pdflatex"
+  "thesis.tex" 1788227688 8136 359e54e2556b37eaae173ee8fae37a1b ""
+  "thesis.toc" 1788228928 2158 aa3067c02e2606e42139f949e1257767 "pdflatex"
   (generated)
   "portada.aux"
   "thesis.aux"
