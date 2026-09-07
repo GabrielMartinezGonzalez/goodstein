@@ -2,25 +2,25 @@
 A continuación, presentaremos la utilidad de la sección anterior, mediante los resultados más significativos. Así mismo, omitiremos varias demostraciones. \cite{logic}
 
 \begin{defn} \textit{(Modelo)}\\
-    Sea $\mathcal{L}_{\PA}=\set{\gc,+,\cdot,S,<}$ el lenguaje de la aritmetica de Peano previamente definido. Un modelo para $\cL_{\PA}$ es una tupla de la forma
+    Sea $\mathcal{L}_{\PA}=\set{\gc,+,\cdot,S,<}$ el lenguaje de la aritmética de Peano previamente definido. Un modelo para $\cL_{\PA}$ es una tupla de la forma
     \[(A,O,\oplus,\odot,s,\prec)\]
     tal que
     \begin{enumerate}
         \item $A$ es conjunto no vacío;
         \item $O\in A$;
-        \item $<$ es un símbolo de relación binaria tal que $\prec\subeq A^2$; 
-        \item $+,\cdot$ son símbolos de funcion binaria tal que $\oplus,\odot:A^2\longrightarrow A$ y $S$ es símbolo de función unaria tal que $s:A\longrightarrow A$.
+        \item $<$ es una relación binaria sobre $A$, es decir $\prec\subeq A^2$; 
+        \item $+,\cdot$ son funciones binarias en $A$, es decir $\oplus,\odot:A^2\longrightarrow A$. Similarmente  $S$ es una función unaria sobre $A$, es decir $s:A\longrightarrow A$.
     \end{enumerate}
 \end{defn}
 \begin{defn} \textit{(interpretación)}\\
-    Sea $\cL_{\PA}$ el lenguaje de la aritmetica de Peano, y sea
+    Sea $\cL_{\PA}$ el lenguaje de la aritmética de Peano, y sea
     \[\mathcal{A}=(A,O,\oplus,\odot,s,\prec)\]
     un modelo para $\cL_{\PA}$.
     Una interpretación para $\cA$ es una función
     \[\iota:\set[v_i]{i\in\n}\longrightarrow A.\]
 \end{defn}
 \begin{thm}
-    Sea el lenguaje $\cL_{\PA}$, el modelo $\cA$ para $\cL_{\PA}$ y dada una interpretación $\iota:\set[v_i]{i\in\n}\longrightarrow A$, existe una única función $\hat{\iota}$, a la que llamatemos una extensión de $\iota$: 
+    Sea el lenguaje $\cL_{\PA}$ y sea $\cA$ un modelo para $\cL_{\PA}$. Dada una interpretación $\iota:\set[v_i]{i\in\n}\longrightarrow A$, existe una única función $\hat{\iota}$, a la que llamatemos una extensión de $\iota$: 
     \[\hat{\iota}:\set[t]{t\text{ es un }\cL-\text{término}}\longrightarrow A\]
     tal que
     \begin{itemize}
@@ -33,20 +33,20 @@ A continuación, presentaremos la utilidad de la sección anterior, mediante los
     \end{itemize}
 \end{thm}
 \begin{defn} \textit{(satisfacción)}\\
-    Sea $\cL_{\PA}$ el lenguaje de la aritmetica de Peano. Sea
+    Sea $\cL_{\PA}$ el lenguaje de la aritmética de Peano. Sea
     \[\mathcal{A}=(A,O,\oplus,\odot,s,\prec)\]
     un modelo para $\cL_{\PA}$ y sea $\iota$ una interpretación.
-    Dada una fórmula $\ph$, definimos $\cA\vDash\ph[\iota]$, leido como $\cA$ satisface $\ph$ de acuerdo a la interpretación $\iota$, por recursión sobre $\ph$:
+    Dada una fórmula $\ph$, definimos $\cA\vDash\ph[\iota]$, leído como $\cA$ satisface $\ph$ de acuerdo a la interpretación $\iota$, por recursión sobre $\ph$:
     \begin{enumerate}
         \item $\cA\vDash(t_1=t_2)[\iota]\Longleftrightarrow\hat{\iota}(t_1)$ es lo mismo que $\hat{\iota}(t_2)$;
         \item $\cA\vDash<{t_1}{t_2}[\iota]\Longleftrightarrow(\hat{\iota}(t_1),\hat{\iota}(t_2))\in\prec$;
         \item $\cA\vDash(\neg\ph)[\iota]\Longleftrightarrow\cA\not\vDash\ph[\iota]$;
-        \item $\cA\vDash(\ph\imp\psi)[\iota]\Longleftrightarrow(\cA\not\vDash\ph[i]\veebar \cA\vDash\psi[i])$;
+        \item $\cA\vDash(\ph\imp\psi)[\iota]\Longleftrightarrow(\cA\not\vDash\ph[i]\lor \cA\vDash\psi[i])$;
         \item $\cA\vDash(\forall v_i\ph)[\iota]\Longleftrightarrow\forall a\in A\hspace{0.3cm}\cA\vDash\ph[\iota(a/v_i)]$.
     \end{enumerate}
 \end{defn}
 \begin{lem}
-    Sea $\cL_{\PA}$ el lenguaje de la aritmetica de Peano, $\cA$ un modelo para $\cL_{\PA}$, sean $\iota$ e $\iota'$ dos interpretaciones y sean $v_{i_1},\ldots,v_{i_k}$ tales que
+    Sea $\cL_{\PA}$ el lenguaje de la aritmética de Peano, $\cA$ un modelo para $\cL_{\PA}$, sean $\iota$ e $\iota'$ dos interpretaciones y sean $v_{i_1},\ldots,v_{i_k}$ tales que
     \[\forall j\hspace{0.5cm}(\iota(v_{i_j})=\iota'(v_{i_j})).\]
     \begin{enumerate}
         \item Si $t$ es un término y todas las varaibles que aparecen en $t$ se encuentran entre $v_{i_1},\ldots,v_{i_k}$, entonces
@@ -55,8 +55,10 @@ A continuación, presentaremos la utilidad de la sección anterior, mediante los
             \[\cA\vDash\ph[\iota]\Longleftrightarrow\cA\vDash\ph[\iota'].\]
     \end{enumerate}
 \end{lem}
-\begin{defn} \textit{(consecuencía lógica)}
-    \[\Sigma\vDash\ph\Longleftrightarrow(\forall\cA)(\forall\iota)(\cA\vDash\Sigma[\iota]\Longrightarrow\cA\vDash\ph[\iota]).\]
+\begin{defn} \textit{(consecuencia lógica)}\\
+    Decimos que $\ph$ es consecuencia lógica de $\Sigma$, denoto por $\Sigma\vDash \ph$, si para cada modelo de $\cL_{\PA}$, $\cA$, y para cada interpretación para ese modelo $\cA$, se satisface que
+
+    \[\cA\vDash\Sigma[\iota]\text{ implica }\cA\vDash\ph[\iota].\]
 \end{defn}
 \begin{thm} (de correctud del cálculo proposicional)\\
     Sea $\ph$ una fórmula y sea $\Sigma$ un conjunto de fórmulas. Entonces, 
