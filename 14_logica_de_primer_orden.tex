@@ -52,7 +52,7 @@ Definida por las siguientes reglas:\\
    Fr($C_k)=\emptyset$ (es decir, la tupla vacía),\\
    Fr($V_k)=(V_k,1)$, \hspace{5mm} Fr$(F_k t_1 \cdots t_n)=$Fr$(t_1) \oplus\cdots\oplus $Fr$(t_n)$. \\
 
-Esta función simplemente recoge las variables que aparecen en un cierto termino, en orden y con repeticiones, y pone un 1 inmediatamente después de cada una. Ahora, consideremos el conjunto de formulas, al cuál denotaremos por \textit{Form}. Consideremos la siguiente función:
+Esta función simplemente recoge las variables que aparecen en un cierto término, en orden y con repeticiones, y pone un 1 inmediatamente después de cada una. Ahora, consideremos el conjunto de formulas, al cuál denotaremos por \textit{Form}. Consideremos la siguiente función:
 
 \begin{center}
         Op:tup$\times$var$\longrightarrow$tup
@@ -86,7 +86,7 @@ El anterior es simplemente un bosquejo, pues una formalización de dichos concep
     Diremos que $v_i$ es libre en $\ph$ si ${(\text{Free}(\ph))}_{j+1}=1$. En caso contrario, es decir, ${(\text{Free}(\ph))}_{j+1}=0$, diremos que está ligada en $\ph$.
 \end{defn}
 \begin{obs}
-    Denotaremos por $\ph\left[t/x\right]$ al resultado de sustituir (en $\ph$) cada aparición libre de $x$ con el termino $t$.
+    Denotaremos por $\ph\left[t/x\right]$ al resultado de sustituir (en $\ph$) cada aparición libre de $x$ con el término $t$.
 \end{obs}
 \begin{defn}
     Diremos que $t$ es sustituible por $x$ en $\ph$ si cada aparición de $t$ en $\ph\left[t/x\right]$ contiene únicamente variables libres.
@@ -127,13 +127,13 @@ El anterior es simplemente un bosquejo, pues una formalización de dichos concep
 
 \begin{defn} \textit{(demostración)}
     \begin{itemize}
-        \item Una demostración de $\ph$ a partir de $\Sigma$ es una sucesión finita de formulas $(\ph_1,\ldots,\ph_n)$ tal que $\ph_i$ es elemento de $\Sigma$, axioma lógico o existen $j,k<i$ tales que $\ph_k$ es la fórmula $\ph_j\imp\ph_i$.
+        \item Una demostración de $\ph$ a partir de $\Sigma$ es una sucesión finita de formulas $(\ph_1,\ldots,\ph_n)$ tal que, para cada $i$, $\ph_i$ es elemento de $\Sigma$, axioma lógico o existen $j,k<i$ tales que $\ph_k$ es la fórmula $\ph_j\imp\ph_i$.
         \item $\Sigma\vdash\ph$ significa que existe una demostración formal de $\ph$ a partir de $\Sigma$.
         \item $\Sigma$ es consistente si no hay $\psi$ tal que 
         \[\Sigma\vdash\psi\land\neg\psi.\]
     \end{itemize}
 \end{defn}
-No prestaremos mayor importancia al cálculo deductivo, pues sale de las intenciones de este trabajo; sin embargo, por completitud, presentaremos algunas reglas de inferencia a continuación. Claramente no presentaremos prueba de todas ellas, sólo de algunas para ejemplificar.\\
+No prestaremos mayor importancia al cálculo deductivo, pues sale de las intenciones de este trabajo; sin embargo, por completitud, presentaremos algunas reglas de inferencia a continuación. No presentaremos prueba de todas ellas, sólo de algunas para ejemplificar.\\
 \textbf{Modus Tollens:}
 \[
     \begin{array}{c}
@@ -268,11 +268,11 @@ La prueba de dicha regla va como sigue:
 Mencionaremos dos teoremas antes de dar las últimas reglas de inferencia.
 \begin{thm} (de deducción) {\label{deduc}}\\
     Sean $\ph$ y $\psi$ formulas y $\Sigma$ un conjunto de fórmulas. Entonces,
-    \[\Sigma\cup\set{\ph}\vdash\Longleftrightarrow\Sigma\vdash(\ph\imp\psi).\]
+    \[\Sigma\cup\set{\ph}\vdash\psi\text{ si, y sólo si, }\Sigma\vdash(\ph\imp\psi).\]
 \end{thm}
 \begin{thm}
     Sea $\ph$ una fórmula, y sea $\Sigma$ un conjunto de fórmulas. Entonces,
-    \[\Sigma\cup\set{\neg\ph}\vdash\psi\land\neg\psi\imp\Sigma\vdash\ph.\]
+    \[\Sigma\cup\set{\neg\ph}\vdash\psi\land\neg\psi\text{ implica }\Sigma\vdash\ph.\]
 \end{thm}
 \textbf{Instanciación universal:}
 \[
