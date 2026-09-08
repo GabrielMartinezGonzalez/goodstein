@@ -7,6 +7,11 @@
   \urlstyle{rm}\Url}\fi
 \providecommand{\eprint}[2][]{\url{#2}}
 
+\bibitem{Goodstein}
+Kirby~L., Paris~J., \textit{Accessible independence results for Peano
+  arithmetic}, Bulletin of the London Mathematical Society, (1982),
+  \textbf{14}, 285--293.
+
 \bibitem{SetTheory}
 Just~W., Weese~M., \textit{Discovery modern set theory}, Vol.~1, American
   Mathematical Society, (1996).
@@ -22,11 +27,6 @@ Enderton~H.~B., \textit{A mathematical introduction to logic}, Academic Press
 \bibitem{comp1}
 Weber~R., \textit{Computability theory}, American Mathematical Society, 1 edn.,
   (1977).
-
-\bibitem{Goodstein}
-Kirby~L., Paris~J., \textit{Accessible independence results for Peano
-  arithmetic}, Bulletin of the London Mathematical Society, (1982),
-  \textbf{14}, 285--293.
 
 \bibitem{indicators}
 Kaye~R., \textit{Models of Peano Arithmetic}, Oxford University Press, 1 edn.,
