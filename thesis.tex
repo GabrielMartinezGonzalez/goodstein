@@ -59,6 +59,10 @@
 \newcommand{\dom}{\operatorname{dom}}
 \newcommand{\ran}{\operatorname{ran}}
 \newcommand{\cb}{\mathbf{0}}
+\newcommand{\blankpage}{
+    \newpage
+  \thispagestyle{empty}
+}
 \usepackage{extarrows}
 \usepackage{mathabx}
 \usepackage{xparse}
@@ -114,6 +118,14 @@
 \begin{document}
 \include{portada}
 %%\includepdf[pages=1]{portada.pdf}
+
+\blankpage
+
+\hspace{0.5cm}
+\newpage
+\begin{flushright}
+  \textit{--dedicatoria--}
+\end{flushright}
 
 % Agradecimientos
 \chapter*{Agradecimientos}
