@@ -24,4 +24,4 @@
 \contentsline {chapter}{\numberline {5}Anexo}{103}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Axioma de elección y lema de Zorn}{103}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Código que cálcula sucesiones de Goodstein}{103}{section.5.2}%
-\contentsline {chapter}{Bibliografía}{107}{chapter*.24}%
+\contentsline {chapter}{Bibliografía}{109}{chapter*.25}%
