@@ -13,6 +13,15 @@ Observemos que $Q$ puede ser $I\vDash\PA$. Este es un caso particular de la defi
     \[Y(a,b)\text{ es no estándar de }\PA\Longleftrightarrow (\exists I\subeq M)(a\in I\land b\not\in I\land I\vDash\PA);\]
     con $I$ un segmento inicial de $M$. 
 \end{defn}
+\begin{defn} \textit{(función demostrablemente computable)}\\
+    Sea $f:\n^k\longrightarrow \n$. Decimos que $f$ es demostrablemente computable en $\PA$ si existe una máquina de Turing $M$ tal que:
+    \begin{itemize}
+        \item $M$ calcula $f$, es decir, para cada $x\in\n^k$, la máquina $M$, al recibir como entrada a $x$, devuelve $f(x)$;
+        \item $\PA$ puede demostrar que $M$ termina para toda entrada en una cantidad finita de pasos.
+            
+    \end{itemize}
+\end{defn}
+
 
 \begin{thm}\cite{thmsigma1comp}\\
     Sea $f:\n^k\longrightarrow\n$. Entonces, son equivalentes las siguientes proposiciones:
