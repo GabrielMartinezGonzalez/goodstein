@@ -280,12 +280,17 @@ Los siguientes resultados muestran la relación entre los ordinales y los buenos
             Luego,
             \[\set[S(F(\rk(y)))]{y W z}=F{\set[S(\rk(y))]{yWz}}.\]
             Así, el supremo de ambos conjuntos coincide y es $F(rk(z))$ para cada $z$.
-        \item La existencia viene asegurada por el axioma de elección. Supongamos que existen dos funciones diferentes $f$ y $g$ tales que ambas son funciones rango. Sin pérdida de generalidad, supongamos que el contradominio de ambas es $f(Z)$ y $g(Z)$.
-            Consideremos que la regla de asignación es diferente. Sin pérdida de generalidad, supongamos $f(Z)\subsetneqq g(Z)$. Por el axioma de fundación, $g(Z)$ está bien ordenado, por lo que bajo $g^{-1}$ podemos bien ordenar $Z$. Luego, $f$ debe seguir el mismo orden impuesto en $Z$ por $g^{-1}$ (por la definición de función rango), así los supremos de los conjuntos
-            \[\set[S(f(y))]{y W z},\]
-            y
-            \[\set[S(g(y))]{y W z}\] 
-            deben de coincidir, lo cuál contradice que las reglas de asignación sean diferentes, luego la función rango es única.
+        \item Supongamos que $f$ y $g$ son dos funciones rango para $W$. Tomemos $z\in Z$ y supongamos, como hipótesis inductiva que para cada $yWz$
+            \[f(y)=g(y).\]
+            Como $f$ y $g$ son funciones rango,
+            \[f(z)=\sup\set[S(f(y))]{yWz}\]
+            y 
+            \[g(z)=\sup\set[S(g(y))]{yWz}.\]
+            Pero, por hipótesis inductiva $f(y)=g(y)$ para cada $yWz$. Entonces,
+            \[\set[S(f(y))]{yWz}=\set[S(g(y))]{yWz}.\]
+            Por lo tanto, 
+            \[f(z)=g(z).\]
+            Así, por inducción bien fundada, $f=g$ y tenemos la unicidad.
     \end{enumerate}
 \end{proof}
 \begin{defn}
