@@ -10,18 +10,18 @@
 \contentsline {section}{\numberline {1.6}Teoría de la computabilidad}{40}{section.1.6}%
 \contentsline {section}{\numberline {1.7}Problema de la detención}{42}{section.1.7}%
 \contentsline {section}{\numberline {1.8}Los teoremas de incompletitud de Gödel}{46}{section.1.8}%
-\contentsline {chapter}{\numberline {2}Sucesiones e hidras}{55}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Sucesiones de Goodstein}{55}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Hidras asociadas a ordinales}{57}{section.2.2}%
-\contentsline {chapter}{\numberline {3}Sistema axiomático}{61}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Los axiomas de Peano}{61}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Ultraproductos}{62}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Conjuntos $\alpha -$grandes}{72}{section.3.3}%
-\contentsline {chapter}{\numberline {4}La indemostrabilidad del teorema de Goodstein}{79}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Los teoremas de Ketonen-Solovay}{79}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Antes de la indemostrabilidad}{89}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Indemostrabilidad}{103}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Anexo}{107}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Axioma de elección y lema de Zorn}{107}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Código que cálcula sucesiones de Goodstein}{107}{section.5.2}%
-\contentsline {chapter}{Bibliografía}{113}{chapter*.25}%
+\contentsline {chapter}{\numberline {2}Sucesiones e hidras}{57}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Sucesiones de Goodstein}{57}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Hidras asociadas a ordinales}{59}{section.2.2}%
+\contentsline {chapter}{\numberline {3}Sistema axiomático}{63}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Los axiomas de Peano}{63}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Ultraproductos}{64}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Conjuntos $\alpha -$grandes}{74}{section.3.3}%
+\contentsline {chapter}{\numberline {4}La indemostrabilidad del teorema de Goodstein}{81}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Los teoremas de Ketonen-Solovay}{81}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Antes de la indemostrabilidad}{91}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Indemostrabilidad}{105}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Anexo}{109}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Axioma de elección y lema de Zorn}{109}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Código que cálcula sucesiones de Goodstein}{109}{section.5.2}%
+\contentsline {chapter}{Bibliografía}{115}{chapter*.25}%
