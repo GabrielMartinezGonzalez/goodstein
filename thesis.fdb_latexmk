@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex thesis"] 1788892598.86897 "thesis.aux" "thesis.bbl" "thesis" 1789414628.17632 0
+["bibtex thesis"] 1789440664.80575 "thesis.aux" "thesis.bbl" "thesis" 1789441678.67798 0
   "./bibliography.bib" 1787621683 2188 7abcb130e976756b59d42587f41c554e ""
   "C:/Program Files/MiKTeX/bibtex/bst/cmpj/cmpj.bst" 1608999027 38577 583f8e9e4b6937a24d90d79ef06cecee ""
-  "portada.aux" 1789414612 676 07a81586ca54e6447b650581afe63653 "pdflatex"
-  "thesis.aux" 1789414625 10256 148713ccbfd96116ab71898f738f7f6c "pdflatex"
+  "portada.aux" 1789441672 676 07a81586ca54e6447b650581afe63653 "pdflatex"
+  "thesis.aux" 1789441677 10256 a950ded86d5d1a1df6b6df2885a2125f "pdflatex"
   (generated)
   "thesis.bbl"
   "thesis.blg"
   (rewritten before read)
-["pdflatex"] 1789414606.11772 "c:/Users/gabri/OneDrive/Documents/goodstein/thesis.tex" "thesis.pdf" "thesis" 1789414628.17981 0
+["pdflatex"] 1789441669.6434 "c:/Users/gabri/OneDrive/Documents/goodstein/thesis.tex" "thesis.pdf" "thesis" 1789441678.67917 0
   "11_propiedades_de_los_ordinales.tex" 1789414605 33210 ff441c64832db4ea0c9f82201b6c6848 ""
   "12_aritmetica_ordinal.tex" 1788821714 10197 5688105da83e092b81f2e1eee7f17fe1 ""
   "13_ultrafiltros.tex" 1788821109 8066 74512f2adb2a51f72a601ddac3ee3fa3 ""
@@ -16,7 +16,7 @@
   "15_semantica_logica_de_primer_orden.tex" 1788819731 5448 e8826fcdc38e1ec10105d455f184b239 ""
   "16-computabilidad.tex" 1788238550 4612 cba51b36e17bf2cec03c0de3d50047cb ""
   "17-problema_detencion.tex" 1788831267 9481 3f7a2b8791663aae6ea6ebe3cbbdaebf ""
-  "18-computabilidad_y_logica.tex" 1788237217 21227 c4b5ca2be319ad76a5a3c1daed94d07b ""
+  "18-computabilidad_y_logica.tex" 1789441668 21748 a4f3a28660dd61f0eb264b97c585e100 ""
   "21_sucesiones_de_goodstein.tex" 1788829473 7003 bc34a27452160baec4a65b1a87dd943d ""
   "22_hidras_asociadas_a_ordinales.tex" 1788235589 11406 83efe1f31d793d775389b641025aa3cd ""
   "31_los_axiomas_de_peano.tex" 1788229348 2877 f64698e81cbbb8edb964b6d4331c4306 ""
@@ -278,13 +278,13 @@
   "c:/Users/gabri/OneDrive/Documents/goodstein/thesis.tex" 1788892590 15619 83445d4adcfad135adb98124f2a458f7 ""
   "escudo-esfm.png" 1758842280 134199 3893abf6de393aa0b21f96ff2a87d0da ""
   "logo-ipn.png" 1758842281 147498 815118d5893dd85ee9acde00569de2af ""
-  "portada.aux" 1789414612 676 07a81586ca54e6447b650581afe63653 "pdflatex"
+  "portada.aux" 1789441672 676 07a81586ca54e6447b650581afe63653 "pdflatex"
   "portada.tex" 1782274702 2424 773218563445160e8de761a33dced65b ""
-  "thesis.aux" 1789414625 10256 148713ccbfd96116ab71898f738f7f6c "pdflatex"
-  "thesis.bbl" 1788892599 1621 b096093a96cd5cd691d47fc1c9db0558 "bibtex thesis"
-  "thesis.out" 1789414625 4522 12e6cd3af06c30db3a1445ef650b94eb "pdflatex"
+  "thesis.aux" 1789441677 10256 a950ded86d5d1a1df6b6df2885a2125f "pdflatex"
+  "thesis.bbl" 1789440665 1621 b096093a96cd5cd691d47fc1c9db0558 "bibtex thesis"
+  "thesis.out" 1789441677 4522 12e6cd3af06c30db3a1445ef650b94eb "pdflatex"
   "thesis.tex" 1788892590 15619 83445d4adcfad135adb98124f2a458f7 ""
-  "thesis.toc" 1789414625 2162 0d07e6eadcc33cae6e7bd3250b787660 "pdflatex"
+  "thesis.toc" 1789441677 2162 c676518d92eebf27cd86ba8dda523a78 "pdflatex"
   (generated)
   "portada.aux"
   "thesis.aux"
