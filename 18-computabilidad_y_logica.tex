@@ -39,7 +39,7 @@ Tenemos el siguiente hecho:
 \textit{Ningún $\Sigma$ en $\mathcal{L}_A=\{+,\cdot,\mathbf{0},S,<\}$, que sea un intento razonable de axiomatizar $\n$, puede ser completo y computable.}
 
 \begin{defn} {\label{definiblexd}}
-    Un conjunto $X\subseteq\n^k$ es definible si existe una formula $\varphi(x_1,\ldots,x_k)$ tal que
+    Un conjunto $X\subseteq\n^k$ es definible si existe una fórmula $\varphi(x_1,\ldots,x_k)$ tal que
     \[X=\{(a_1,\ldots,a_k)|\n\vDash\varphi[a_1,\ldots,a_k]\}.\]
 \end{defn}
 
@@ -56,6 +56,7 @@ Tenemos el siguiente hecho:
     entonces,
     \[(m_0,\ldots,m_{n-1})\text{ se codifica como }(u+n!)^2+u=\text{código}(u,n!).\]
 \end{obs}
+De la observación anterior la fórmula que significa ``$z$ codifica a $(x,y)$'', para futuras referencias, la llamaremos Par$(x,y,z)$.
 \begin{lem}
     Si $q<r<n$, entonces $(1+(q+1)n!)$ es primo relativo con $(1+(r+1)n!)$.
 \end{lem}
@@ -94,8 +95,9 @@ Tenemos el siguiente hecho:
     \[(\exists u<t\land \exists v<t)[(t\text{ códifica a }(u,v)\land \exists z(z\text{ codifica a }(a,i))\land 1+(z+1)v|u)]\]
     \[\land(\text{además, $a$ es el mínimo con esa propiedad}).\]
     \[(\exists a)\psi(a,i,t)\land \forall j>i\exists a\psi(a,i,t)\]
-    ''la sucesión codificada por $t$ es de longitud $i$''.
+    ``la sucesión codificada por $t$ es de longitud $i$''.
 \end{obs}
+De la anterior observación la fórmula que significa ``$x$ es la $y-$ésima entrada de la tupla codificada por $z$'', para futuras referencias, la llamaremos Tupla$(x,y,z)$. Asimismo, a la fórmula que  significa ``la longitud de la tupla codificada por $z$ es $y$'' la llamaremos Long$(y,z)$.
 \begin{obs}
     $T$ máquina de Turing.
 
@@ -113,11 +115,10 @@ Tenemos el siguiente hecho:
     \end{itemize}
     Así pues,
     \begin{itemize}
-        \item $''(x,y,z)$ es una foto instantánea válida'' $(FI(x,y,z))$:\\
+        \item ``$(x,y,z)$ es una foto instantánea válida'', que llamaremos FI$(x,y,z)$, viene dada por:\\
             $(x=\cb\lor x=S\cb)\land\forall u(\exists l(u<l\land \text{long}(l,z)) (\exists l(\text{long}(l,z)\land y\leq l)\implies \exists v(\text{Tupla}(v,n,z)$
             $\implies(v=\cb\lor v=S\cb\lor v=SS\cb)))).$
-        \item $''(x_1,y_1,z_1)$ es la foto instantánea inmediatamente posterior a $(x_2,y_2,z_2)''$ \\
-        $T(x_1,y_1,z_1,x_2,y_2,z_2)$:\\
+        \item ``$(x_1,y_1,z_1)$ es la foto instantánea inmediatamente posterior a $(x_2,y_2,z_2)$'', que llamaremos T$(x_1,y_1,z_1,x_2,y_2,z_2)$, viene dada por:\\
             $\left(''(x_{1}, y_{1}, z_{1}) \, \text{es foto inst. válida}'' \right)
 \;\land\;
 \exists s \,\bigl( \mathrm{Tupla}(s, y_{1}, z_{1}) 
@@ -138,7 +139,7 @@ s = S\cb \land \mathrm{Tupla}(S\cb, y_{1}, z_{2})
 \;\lor\;
 (\mathrm{long}(y_{1}, z_{1}) \land x_{2} = S\cb \land y_{2} = y_{1})
 $.
-        \item ``si yo corro $T$ con input $x$, entonces la máquina se detiene y el output es $y''$ $C(x,y)$:\\
+        \item ``si yo corro $T$ con input $x$, entonces la máquina se detiene y el output es $y$'', que llamaremos C$(x,y)$, viene dada por:\\
             $ \exists s\, \exists l \bigl( \mathrm{long}(l, s) \land
 (\exists w)\,( l = SS S \cb w \land
 \mathrm{Tupla}(\cb, \cb, s) \land
@@ -154,21 +155,21 @@ T(x_{1}, y_{1}, z_{1}, x_{2}, y_{2}, z_{2})
 \land \mathrm{Tupla}(z_{2}, SSSSS z \cdot w, s) ) 
 \land \exists \alpha \, S S S \alpha = l
 \land \mathrm{Tupla}(S \cb, \alpha, s)
-\land \mathrm{Tupla}(y, SS \alpha, s) $
+\land \mathrm{Tupla}(y, SS \alpha, s) $.
     \end{itemize}
 \end{obs}
 \begin{thm}\label{teoremagrafica}
     Si $f:\n\longrightarrow\n$ es parcialmente computable, entonces \[\text{Gr}(f)=\{(n,f(n))|n\in\dom(f)\}\] es definible.
 \end{thm}
 \begin{proof}
-    Existen las siguientes formulas:
+    Existen las siguientes fórmulas:
     \begin{itemize}
         \item $\text{Par}(x,y,z)$ que es $''z$ codifica $(x,y)''$.
         \item $\text{Tupla}(x,y,z)$ que es $''x$ es la $y-$ésima entrada de la tupla codificada por $z''$.
         \item $\text{Long}(y,z)$ que es $''$la longitud de la tupla codificada por $z$ es $y''$.
         \item $\text{FI}(x,y,z)$.
-        \item $T(x_1,y_1,z_1,x_2,y_2,z_2)$.
-        \item $C(x,y)$.
+        \item T$(x_1,y_1,z_1,x_2,y_2,z_2)$.
+        \item C$(x,y)$.
     \end{itemize}
     Por lo que se tiene el teorema.
 \end{proof}
@@ -178,7 +179,7 @@ A partir de ahora y hasta que acabe el capítulo, consideraremos a $\cN$ como el
     El conjunto $\text{Th}(\cN)=\{\cN\vDash\varphi\}$ no es computable.
 \end{thm}
 \begin{proof}
-    Supongamos que sí es decidible, es decir, existe una enumeración efectiva de las formulas $\varphi_1,\ldots,\varphi_n,\ldots$ y un algoritmo que calcula correctamente 
+    Supongamos que sí es decidible, es decir, existe una enumeración efectiva de las fórmulas $\varphi_1,\ldots,\varphi_n,\ldots$ y un algoritmo que calcula correctamente 
     \[\chi_{\text{Th}(\cN)}(n)=\begin{cases}
         1,\text{ si }\cN\vDash\varphi_n\\
         0,\text{ si }\cN\not\vDash\varphi_n
@@ -219,7 +220,7 @@ A partir de ahora y hasta que acabe el capítulo, consideraremos a $\cN$ como el
     Pero, $\text{Teor}(\Sigma)$ es computable y $\text{Th}(\cN)$ no lo es, lo cuál es una contradicción.
 \end{proof}
 \begin{defn} \textit{(Aritmética de Robinson)}\\
-    El conjunto $Q$ (RA) consta de las siguientes formulas:
+    El conjunto $Q$ (RA) consta de las siguientes fórmulas:
     \begin{enumerate}
     \item $\forall x\hspace{0.2cm}\neg(\cb=Sx)$;
     \item $\forall x\forall y\hspace{0.2cm}(Sx=Sy\implies x=y)$;
@@ -292,7 +293,7 @@ A partir de ahora y hasta que acabe el capítulo, consideraremos a $\cN$ como el
             \[m\in X\Longleftrightarrow\Sigma\cup Q\vdash\psi[\mathbf{m}/x],\]
             y 
             \[m\not\in X\Longleftrightarrow\Sigma\cup Q\vdash\neg\psi[\mathbf{m}/x].\]
-            Sea $e$ tal que $\neg\psi$ es la formula $\varphi_e$. Entonces,
+            Sea $e$ tal que $\neg\psi$ es la fórmula $\varphi_e$. Entonces,
             \begin{align*}
                 e\in X & \Longleftrightarrow\Sigma\cup Q\vdash\varphi_e[\mathbf{e}/x]\hspace{0.5cm}(\text{definición de } X)\\
                 & \Longleftrightarrow\Sigma\cup Q\vdash\psi[\mathbf{e}/x]\hspace{0.5cm}(\text{definición de } \psi)\\
