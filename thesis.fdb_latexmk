@@ -1,17 +1,17 @@
 # Fdb version 4
-["bibtex thesis"] 1789440664.80575 "thesis.aux" "thesis.bbl" "thesis" 1790185192.17874 0
+["bibtex thesis"] 1789440664.80575 "thesis.aux" "thesis.bbl" "thesis" 1790185339.66249 0
   "./bibliography.bib" 1787621683 2188 7abcb130e976756b59d42587f41c554e ""
   "C:/Program Files/MiKTeX/bibtex/bst/cmpj/cmpj.bst" 1608999027 38577 583f8e9e4b6937a24d90d79ef06cecee ""
-  "portada.aux" 1790185181 676 07a81586ca54e6447b650581afe63653 "pdflatex"
-  "thesis.aux" 1790185189 10256 a950ded86d5d1a1df6b6df2885a2125f "pdflatex"
+  "portada.aux" 1790185333 676 07a81586ca54e6447b650581afe63653 "pdflatex"
+  "thesis.aux" 1790185338 10256 a950ded86d5d1a1df6b6df2885a2125f "pdflatex"
   (generated)
   "thesis.bbl"
   "thesis.blg"
   (rewritten before read)
-["pdflatex"] 1790185176.77383 "c:/Users/gabri/OneDrive/Documents/goodstein/thesis.tex" "thesis.pdf" "thesis" 1790185192.18065 0
+["pdflatex"] 1790185331.25078 "c:/Users/gabri/OneDrive/Documents/goodstein/thesis.tex" "thesis.pdf" "thesis" 1790185339.6637 0
   "11_propiedades_de_los_ordinales.tex" 1790185174 33204 f3d87c0f56d88fbb0f80e95ee2616d1e ""
   "12_aritmetica_ordinal.tex" 1788821714 10197 5688105da83e092b81f2e1eee7f17fe1 ""
-  "13_ultrafiltros.tex" 1788821109 8066 74512f2adb2a51f72a601ddac3ee3fa3 ""
+  "13_ultrafiltros.tex" 1790185328 8067 ea16479354338b63cc16409e69b9db7d ""
   "14_logica_de_primer_orden.tex" 1788820464 18142 a3594c65ef35371324211a3c6ca1c993 ""
   "15_semantica_logica_de_primer_orden.tex" 1788819731 5448 e8826fcdc38e1ec10105d455f184b239 ""
   "16-computabilidad.tex" 1788238550 4612 cba51b36e17bf2cec03c0de3d50047cb ""
@@ -278,13 +278,13 @@
   "c:/Users/gabri/OneDrive/Documents/goodstein/thesis.tex" 1790183828 15636 d2e4c3038fee971dc28f424a6fb575bd ""
   "escudo-esfm.png" 1758842280 134199 3893abf6de393aa0b21f96ff2a87d0da ""
   "logo-ipn.png" 1758842281 147498 815118d5893dd85ee9acde00569de2af ""
-  "portada.aux" 1790185181 676 07a81586ca54e6447b650581afe63653 "pdflatex"
+  "portada.aux" 1790185333 676 07a81586ca54e6447b650581afe63653 "pdflatex"
   "portada.tex" 1782274702 2424 773218563445160e8de761a33dced65b ""
-  "thesis.aux" 1790185189 10256 a950ded86d5d1a1df6b6df2885a2125f "pdflatex"
+  "thesis.aux" 1790185338 10256 a950ded86d5d1a1df6b6df2885a2125f "pdflatex"
   "thesis.bbl" 1789440665 1621 b096093a96cd5cd691d47fc1c9db0558 "bibtex thesis"
-  "thesis.out" 1790185189 4522 12e6cd3af06c30db3a1445ef650b94eb "pdflatex"
+  "thesis.out" 1790185338 4522 12e6cd3af06c30db3a1445ef650b94eb "pdflatex"
   "thesis.tex" 1790183828 15636 d2e4c3038fee971dc28f424a6fb575bd ""
-  "thesis.toc" 1790185189 2162 c676518d92eebf27cd86ba8dda523a78 "pdflatex"
+  "thesis.toc" 1790185338 2162 c676518d92eebf27cd86ba8dda523a78 "pdflatex"
   (generated)
   "portada.aux"
   "thesis.aux"
