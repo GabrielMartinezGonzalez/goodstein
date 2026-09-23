@@ -13,7 +13,7 @@ y todo subconjunto de $\alpha$ tiene primer elemento. Se podría señalar que la
 \begin{proof}
 Definimos $\prec$ como la relación tal que, para cualesquiera $\beta$ y $\gamma$, elementos de $\alpha$,
 \[\beta\prec\gamma\Longleftrightarrow (\beta\in\gamma\lor\beta=\gamma)\]
-Es decir, $\prec$ es el orden parcial inducido por la relación $\in$ en $\alpha$. Luego, consideremos el subconjunto de $\alpha$ $\{\beta,\gamma\}$. Como $\prec$ es un buen orden, tenemos que $\beta\prec\gamma\lor\gamma\prec\beta$. Así, tenemos que:
+Es decir, $\prec$ es el orden parcial inducido por la relación $\in$ en $\alpha$. Luego, consideremos el subconjunto $\{\beta,\gamma\}$ de $\alpha$. Como $\prec$ es un buen orden, tenemos que $\beta\prec\gamma\lor\gamma\prec\beta$. Así, tenemos que:
 \[\beta\in\gamma\lor\beta=\gamma\lor\gamma\in\beta.\]
 Por otro lado, para cualesquiera $a,b\in\alpha$, si se cumple la tricotomía, tenemos que:
 \[a\in b\lor a=b\lor b\in a.\]
@@ -70,7 +70,7 @@ Lo anterior puede escribirse como:
 \begin{prop}\label{p2}
 WOT es una clase función que satisface lo siguiente:
 \begin{enumerate}
-    \item Si $\la x,y\ra\in\text{WOT}$, entonces $x$ y $\la y,\in\ra$ son buenos ordenes estrictos isomorfos. 
+    \item Si $\la x,y\ra\in\text{WOT}$, entonces $x$ y $\la y,\in\ra$ son buenos órdenes estrictos isomorfos. 
     \item El dominio de WOT es la clase de todos los buenos órdenes estrictos.
     \item Para cualesquiera buenos órdenes estrictos $x$ y $y$, y para todo ordinal $z$, si $\la x,z\ra\in\text{WOT}$ y $x\cong y$, entonces $\la y,z\ra\in\text{WOT}$.
 \end{enumerate}
@@ -310,11 +310,11 @@ Los siguientes resultados muestran la relación entre los ordinales y los buenos
     Consideremos 
     \[\mathcal{W}=\set[R\subeq x\times x]{R\text{ es estrictamente bien fundada sobre }x}.\]
     Ahora, para cada $R$ en $\mathcal W$, definimos
-    \[\rk_R=x\longrightarrow\ON\]
+    \[\rk_R:x\longrightarrow\ON\]
     la función rango asociada a la relación $R$. Consideremos entonces:
     \[A=\set[\rk_R(x)]{R\in\mathcal{W}}.\]
     Tenemos que $A$ es un conjunto de ordinales. Así, podemos definir:
-    \[\beta=\bigcup\bigcup A,\]
+    \[\beta=\bigcup A,\]
     el cuál es un ordinal. Tomemos entonces $\alpha=\beta+1$. Si suponemos que existe una función sobreyectiva $f:x\longrightarrow \alpha$, entonces, por {\ref{p15}} existe una relación bien fundada $R_f$ tal que 
     \[f=\rk_{R_f}.\]
     Como $f$ es sobreyectiva sobre $\alpha$, tenemos que
