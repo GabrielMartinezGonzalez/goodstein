@@ -21,7 +21,6 @@
 \contentsline {section}{\numberline {4.1}Los teoremas de Ketonen-Solovay}{81}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Antes de la indemostrabilidad}{91}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Indemostrabilidad}{105}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Anexo}{109}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Axioma de elección y lema de Zorn}{109}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Código que cálcula sucesiones de Goodstein}{109}{section.5.2}%
-\contentsline {chapter}{Bibliografía}{115}{chapter*.25}%
+\contentsline {chapter}{\numberline {A}Axioma de elección y lema de Zorn}{109}{appendix.Alph1}%
+\contentsline {chapter}{\numberline {B}Código que cálcula sucesiones de Goodstein}{111}{appendix.Alph2}%
+\contentsline {chapter}{Bibliografía}{115}{appendix*.25}%
