@@ -78,16 +78,14 @@ Por la tesis de Church-Turing, la función $\Phi$ es computable.
     \[l\mapsto f_l,\]
     la $l-$ésima función computable.
     \begin{center}
-    \begin{minipage}{0.8\textwidth}
-    \begin{lstlisting}
+    \begin{pseudocodigo}
         input(l);
         j=0;
         for(i=0;j<l;i++){
             if(Phi(i,-) es total)
                 j++;
         }return i;
-    \end{lstlisting}
-    \end{minipage}
+    \end{pseudocodigo}
     \end{center}
     Por lo tanto, la función
     \[\begin{array}{c}
