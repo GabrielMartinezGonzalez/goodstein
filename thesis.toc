@@ -9,7 +9,7 @@
 \contentsline {section}{\numberline {1.5}Semántica en la lógica de primer orden}{38}{section.1.5}%
 \contentsline {section}{\numberline {1.6}Teoría de la computabilidad}{40}{section.1.6}%
 \contentsline {section}{\numberline {1.7}Problema de la detención}{42}{section.1.7}%
-\contentsline {section}{\numberline {1.8}Los teoremas de incompletitud de Gödel}{46}{section.1.8}%
+\contentsline {section}{\numberline {1.8}Los teoremas de incompletitud de Gödel}{47}{section.1.8}%
 \contentsline {chapter}{\numberline {2}Sucesiones e hidras}{57}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Sucesiones de Goodstein}{57}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Hidras asociadas a ordinales}{59}{section.2.2}%
