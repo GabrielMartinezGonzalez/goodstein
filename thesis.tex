@@ -100,6 +100,23 @@
     {\left(#1 \mid#2\right)}%
   % <code>
 }
+\lstnewenvironment{pseudocodigo}[1][0.8\textwidth]
+{
+    \lstset{
+        basicstyle=\ttfamily\small,
+        frame=single,
+        numbers=none,
+        breaklines=true,
+        backgroundcolor=\color{gray!10},
+        rulecolor=\color{black!50},
+        framesep=8pt,
+        framerule=0.5pt,
+        linewidth=#1,
+        xleftmargin=\dimexpr\textwidth/2-#1/2\relax,
+        aboveskip=12pt,
+        belowskip=12pt
+    }
+}
 \swapnumbers
 \newtheorem{thm}{Teorema}
 \numberwithin{thm}{chapter}
