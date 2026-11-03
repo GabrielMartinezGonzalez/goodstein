@@ -77,14 +77,18 @@ Por la tesis de Church-Turing, la función $\Phi$ es computable.
     Supongamos que este conjunto sí es computable, entonces hay una función computable
     \[l\mapsto f_l,\]
     la $l-$ésima función computable.
-    \begin{verbatim}
+    \begin{center}
+    \begin{minipage}{0.8\textwidth}
+    \begin{lstlisting}
         input(l);
         j=0;
         for(i=0;j<l;i++){
             if(Phi(i,-) es total)
                 j++;
         }return i;
-    \end{verbatim}
+    \end{lstlisting}
+    \end{minipage}
+    \end{center}
     Por lo tanto, la función
     \[\begin{array}{c}
         u:\n^2\longrightarrow\n\\
