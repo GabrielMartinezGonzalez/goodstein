@@ -65,16 +65,18 @@ También conocido por su nombre en alemán \textit{Entscheindungsproblem}, o en 
             no es computable.
     \end{enumerate}
 \end{prop}
-\begin{proof}
-    \begin{enumerate}
+\begin{proof} {\hspace{0.5cm}}
+    \begin{enumerate} 
         \item La demostración se sigue del siguiente pseudocódigo:
-            \begin{verbatim}
+            \begin{center}
+            \begin{pseudocodigo}[0.8\textwidth]
                 input(m)
                 for(k=0;k<n;k++)
                     if(Xx(m,k))
                         return 1;
                 return 0;
-            \end{verbatim}
+            \end{pseudocodigo}
+            \end{center}
         \item Recordemos que
             \[D=\{e|\Phi(e,e)\text{ está definido}\}\]
             no es computable. Sea 
@@ -96,12 +98,14 @@ También conocido por su nombre en alemán \textit{Entscheindungsproblem}, o en 
     \hspace{1cm}
     \begin{enumerate}
         \item $D=\{n|\Phi(n,n)\text{ está definido}\}$ es c.e.:
-            \begin{verbatim}
+            \begin{center}
+            \begin{pseudocodigo}
                 for(i=0; ;i++)
                     for(j=0;j<=i;j++)
                         correr Phi(j,j) i pasos
                         si se detiene, print j;
-            \end{verbatim}
+            \end{pseudocodigo}
+            \end{center}
         \item $H=\{(a,b)|\Phi(a,b)\text{ está definido}\}$ es c.e.
     \end{enumerate}
 \end{ex}
