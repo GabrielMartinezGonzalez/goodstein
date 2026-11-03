@@ -17,6 +17,21 @@
 \usepackage{tikz}
 \usepackage{bbm}
 \usepackage{amsmath,amssymb,mathtools}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{extarrows}
+\usepackage{mathabx}
+\usepackage{xparse}
+\usepackage{amsthm}
+\lstset{
+    basicstyle=\ttfamily\small,
+    frame=single,
+    numbers=none,
+    breaklines=true,
+    backgroundcolor=\color{gray!5},
+    rulecolor=\color{black!40},
+    captionpos=b
+}
 \hypersetup{linkcolor=black}
 \newcommand{\arccot}{\operatorname{arccot}}
 \newcommand{\bC}{\mathbb{C}}
@@ -63,9 +78,6 @@
     \newpage
   \thispagestyle{empty}
 }
-\usepackage{extarrows}
-\usepackage{mathabx}
-\usepackage{xparse}
 \NewDocumentCommand{\set}{o m}{%
   % <code>
   \IfNoValueTF{#1}
@@ -87,8 +99,6 @@
     {\left(#1 \mid#2\right)}%
   % <code>
 }
-\usepackage{xcolor}
-\usepackage{amsthm}
 \swapnumbers
 \newtheorem{thm}{Teorema}
 \numberwithin{thm}{chapter}
