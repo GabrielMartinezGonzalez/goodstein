@@ -48,12 +48,14 @@ Observemos que $Q$ puede ser $I\vDash\PA$. Este es un caso particular de la defi
     con $\psi$ del tipo $\Delta_0$, tal que $\PA$ demuestra:
     \[\forall x\exists!y\ph(x,y).\]
     Ahora, definimos el siguiente algoritmo:
-    \begin{verbatim}
+    \begin{center}
+    \begin{pseudocodigo}
         for y=0,1,2,... 
             for t = 0,1,2,... 
                 if \psi(x,y,t)
                     return y
-    \end{verbatim}
+    \end{pseudocodigo}
+    \end{center}
     Este algoritmo es efectivo, pues $\psi$ es $\Delta_0$, luego es decidible, además de que la búsqueda es computable. Ahora bien, $\PA$ demuestra que:
     \[\forall x\exists y\exists t\psi(x,y,t);\]
     esto significa que la búsqueda siempre encuentra un testigo, por lo tanto $\PA$ demuestra que el algoritmo termina y que devuelve un único $y$. Así, con dicho algoritmo se construye una  máquina de Turing $M_\ph$ tal que busca testigos de forma efectiva, siempre termina y devuelve las salidas de $f$; y $\PA$ demuestra que la máquina termina.
@@ -63,7 +65,7 @@ Este resultado se utilizará libremente a lo largo de esta sección, pues es una
 \begin{defn} \textit{(bien comportado)}\\
     Un indicador $Y(x,y)$ se dice que es un indicador bien comportado para $Q$ en $\PA$ si 
     \begin{enumerate}
-        \item $Y(x,y)=z$ es una $\Sigma_1$ $\cL_A-$fórmula con únicamente las variables libres $x$, $y$ y $z$;
+        \item $Y(x,y)=z$ es una $\Sigma_1$ $\cL_A$-fórmula con únicamente las variables libres $x$, $y$ y $z$;
         \item $\PA\vdash\forall x,y\exists!z Y(x,y)=z$;
         \item $\PA\vdash\forall x,y Y(x,y)\leq y$;
         \item $\PA\vdash x,y,x',y'(x'\leq x\land y\leq y'\imp Y(x,y)\leq Y(x',y'))$;
@@ -87,9 +89,9 @@ Este resultado se utilizará libremente a lo largo de esta sección, pues es una
 \end{proof}
 \begin{obs}
     Un hecho resaltable es que:
-    \[\min\set[y\geq x]{\max\set[c]{[x,y]\text{ es }\n_c-\text{grande}}\geq n}=\min\set[y\geq x]{[x,y]\text{ es }\n_n-\text{grande}}.\]
+    \[\min\set[y\geq x]{\max\set[c]{[x,y]\text{ es }\n_c\text{-grande}}\geq n}=\min\set[y\geq x]{[x,y]\text{ es }\n_n\text{-grande}}.\]
     Este hecho se sigue de lo siguiente:\\
-    Sea $y'=\min\set[y\geq x]{\max\set[c]{[x,y]\text{ es }\n_c-\text{grande}}}$. Es decir, el mayor $c$ tal que $[x,y']$ es $\n_c-$grande, es mayor a $n$; entonces, como $c\geq n$ y por el lema {\ref{mdcg}}, $[x,y']$ es $\n_n-$grande. Luego \[y'\in\set[y\geq x]{[x,y]\text{ es }\n_n-\text{grande}}.\] Por otro lado, si $y''=\min\set{\set[y\geq x]{[x,y]\text{ es }\n_n-\text{grande}}}$, entonces el mayor $c$ tal que $[x,y'']$ es $\n_c-$grande es mayor o igual a $n$, luego \[y''\in \set[y\geq x]{\max\set[c]{[x,y]\text{ es }\n_c-\text{grande}}}.\] Luego, se sigue la igualdad.
+    Sea $y'=\min\set[y\geq x]{\max\set[c]{[x,y]\text{ es }\n_c\text{-grande}}}$. Es decir, el mayor $c$ tal que $[x,y']$ es $\n_c$-grande, es mayor a $n$; entonces, como $c\geq n$ y por el lema {\ref{mdcg}}, $[x,y']$ es $\n_n$-grande. Luego \[y'\in\set[y\geq x]{[x,y]\text{ es }\n_n\text{-grande}}.\] Por otro lado, si $y''=\min\set{\set[y\geq x]{[x,y]\text{ es }\n_n\text{-grande}}}$, entonces el mayor $c$ tal que $[x,y'']$ es $\n_c$-grande es mayor o igual a $n$, luego \[y''\in \set[y\geq x]{\max\set[c]{[x,y]\text{ es }\n_c\text{-grande}}}.\] Luego, se sigue la igualdad.
 \end{obs}
 
 \begin{defn} \textit{(Jerarquía de Hardy)}\\
@@ -106,7 +108,7 @@ Este resultado se utilizará libremente a lo largo de esta sección, pues es una
 
 \begin{defn}
     Para cada $i\in\n$, definimos las funciones $q_i:\n\longrightarrow\n$
-    \[q_i(x)=\min\set{y\geq x|[x,y]\text{ es }\n_i-\text{grande}}.\]
+    \[q_i(x)=\min\set{y\geq x|[x,y]\text{ es }\n_i\text{-grande}}.\]
 \end{defn}
 \begin{comment}
 \begin{lem}{\label{lemfc1}}
@@ -114,11 +116,11 @@ Este resultado se utilizará libremente a lo largo de esta sección, pues es una
     \[q_n(x)<q_m(x).\]
 \end{lem}
 \begin{proof}
-    Primero observemos que si $n<m$, $q_n(x)\leq q_m(x)$: en efecto, tenemos que $[x,q_m(x)]$ es $\n_m-$grande. Entonces, por el lema {\ref{mdcg}}, tenemos que $[x,q_m(x)]$ es $\n_n-$grande. Luego, como $q_n(x)$ es el mínimo número $y$ tal que $[x,y]$ es $\n_n-$grande, tenemos que:
+    Primero observemos que si $n<m$, $q_n(x)\leq q_m(x)$: en efecto, tenemos que $[x,q_m(x)]$ es $\n_m$-grande. Entonces, por el lema {\ref{mdcg}}, tenemos que $[x,q_m(x)]$ es $\n_n$-grande. Luego, como $q_n(x)$ es el mínimo número $y$ tal que $[x,y]$ es $\n_n$-grande, tenemos que:
     \[q_n(x)\leq q_m(x).\]
     Ahora, demostraremos la desigualdad estricta (para $x$ suficientemente grande) por inducción sobre $m$ a partir de $n+1$: por el corolario {\ref{corutil}}, tenemos lo siguiente:
-    \[[x,y]\text{ es }\n_n-\text{grande}\implies y\geq n+x,\]
-    \[[x,y]\text{ es }\n_{n+1}-\text{grande}\implies y\geq n+x+1;\]
+    \[[x,y]\text{ es }\n_n\text{-grande}\implies y\geq n+x,\]
+    \[[x,y]\text{ es }\n_{n+1}\text{-grande}\implies y\geq n+x+1;\]
     por lo que, al pasar al caso de las mínimas $y$ que satisfacen las hipótesis de las implicaciones anteriores, tendríamos que:
     \[q_n(x)=n+x\land q_{n+1}(x)=n+x+1.\]
     Si estos números coinciden, tendríamos 
@@ -141,8 +143,8 @@ Este resultado se utilizará libremente a lo largo de esta sección, pues es una
 \begin{proof}
     Por el corolario {\ref{corutil}}, tenemos las siguientes implicaciones:
     \begin{center}
-        $[x,y]$ es $\n_{n+1}-$grande $\implies y-x+1\geq (n+1)+1$;\\
-        $[x+1,y]$ es $\n_n-$grande $\implies y-(x+1)+1\geq n+1$.
+        $[x,y]$ es $\n_{n+1}$-grande $\implies y-x+1\geq (n+1)+1$;\\
+        $[x+1,y]$ es $\n_n$-grande $\implies y-(x+1)+1\geq n+1$.
     \end{center}
     Así, tomando los mínimos valores que puede tomar $y$ en cada caso, tenemos lo siguiente:
     \[q_{n+1}(x)-x+1= (n+1)+1\land q_n(x)-(x+1)+1= n+1.\]
@@ -158,8 +160,8 @@ Este resultado se utilizará libremente a lo largo de esta sección, pues es una
 \end{lem}
 \begin{proof}
     Procedemos por inducción sobre $\alpha$:\\
-    Observemos que $x< q_0(x)$, pues $[x,q_0(x)]$ es $\n-$grande si y sólo si $[x+1,q_0(x)]$ es $F(\n_0,x+1)-$grande, pero  $F(\n_0,x+1)=x+1$, además que
-    \[X\text{ es }n-\text{grande}\Longleftrightarrow |X|\geq n+1,\]
+    Observemos que $x< q_0(x)$, pues $[x,q_0(x)]$ es $\n$-grande si y sólo si $[x+1,q_0(x)]$ es $F(\n_0,x+1)$-grande, pero  $F(\n_0,x+1)=x+1$, además que
+    \[X\text{ es }n\text{-grande}\Longleftrightarrow |X|\geq n+1,\]
     por lo que tenemos, por la mínimalidad de $q_0(x)$, que $q_0(x)-(x+1)+1=(x+1)+1$, es decir:
     \[q_0(x)=2(x+1)>x.\]
     Como $h_0$ es simplemente la identidad, para cada $x$, $h_0(x)<q_0(x)$, además
@@ -198,23 +200,27 @@ Este resultado se utilizará libremente a lo largo de esta sección, pues es una
     donde $\text{Halt}_M(x,t)$ se interpreta como \textit{$M$ se detiene sobre $x$ en $t$ pasos}. Ahora bien, la relación 
     \[\text{Comp}_M(x,y,t),\]
     la cuál se interpreta como \textit{$t$ codifica un cálculo válido de $M$ sobre $x$ que termina con salida $y$} es tal que toda verificación es finita y se recorren los $t$ pasos; es decir, es $\Delta_0$. Ahora, definimos el algoritmo:
-    \begin{verbatim}
+    \begin{center}
+    \begin{pseudocodigo}
         for y = 0,1,2,... 
             for t = 0,1,2,... 
                 if Comp_M(x,y,t)
                     return y
-    \end{verbatim}
+    \end{pseudocodigo}
+    \end{center}
     Este algoritmo es computable y $\PA$ demuestra que existe algún $t$ en donde termina el algoritmo y que el $y$ encontrado es único. Cabe recalcar que esta búsqueda es exhaustiva.\\
     Para la suficiencia:\\
     Supongamos que existe $\psi(x,y,t)\in\Delta_0$ tal que 
     \[T\vdash\forall x\exists!y\exists t\psi(x,y,t).\]
     Definimos el algoritmo:
-    \begin{verbatim}
+    \begin{center}
+    \begin{pseudocodigo}
         for y = 0,1,2,... 
             for t = 0,1,2,... 
                 if Comp_M(x,y,t)
                     return y
-    \end{verbatim}
+    \end{pseudocodigo}
+    \end{center}
     Este algoritmo es efectivo porque $\Delta_0$ es decidible y la búsqueda es computable. $\PA$ también demuestra que:
     \[\forall x\forall y_1\forall y_2(\exists t_1\psi(x,y_1,t_1)\land \exists t_2\psi(x,y_2,t_2)\implies y_1=y_2),\]
     lo cuál implica que la salida $y$ es la correcta y única. Ahora, como el algoritmo define una máquina de Turing que siempre termina y que $\PA$ demuestra esto último, entonces $f$ es demostrablemente computable.
@@ -237,7 +243,7 @@ Este resultado se utilizará libremente a lo largo de esta sección, pues es una
     \[1\leq 0,\]
     lo cuál es una contradicción.
 \end{proof}
-\begin{prop} \label{paralonoestándarxdxdxd}
+\begin{prop} \label{paralonoestandarxdxdxd}
     Sean $\alpha$ y $\beta$ dos ordinales. Entonces, para $x$ suficientemente grande, tenemos que:
     \[\alpha<\beta\implies h_\alpha(x)<h_\beta(x).\]
 \end{prop}
@@ -292,13 +298,13 @@ Otro argumento útil para el final del lema anterior (\ref{yaelmeroultimo}) es p
 
 \begin{lem} \label{LEMAAUX1} \hspace{0.5cm}
     \begin{center}
-        $[a,b]$ es $\n_n-$grande $\implies Q_n(a)<b$.
+        $[a,b]$ es $\n_n$-grande $\implies Q_n(a)<b$.
     \end{center}
 \end{lem}
 \begin{proof}
     \begin{align*}
         Q_n(a)&=\min\set[y\geq a]{Y(a,y)\geq n}\\
-        &=\min\set[y\geq a]{[a,y]\text{ es }\n_n-\text{grande}}<b.
+        &=\min\set[y\geq a]{[a,y]\text{ es }\n_n\text{-grande}}<b.
     \end{align*}
 \end{proof}
 
@@ -312,12 +318,12 @@ Otro argumento útil para el final del lema anterior (\ref{yaelmeroultimo}) es p
 \end{defn}
 
 \begin{lem} \label{LEMAAUX3} (Teorema de la jerarquía de crecimiento rápido)\\
-    Toda función $\Sigma_k-$definible está dominada por alguna $h_\alpha$.
+    Toda función $\Sigma_k$-definible está dominada por alguna $h_\alpha$.
 \end{lem}
 \begin{proof}
     Procedemos por inducción:\\
     El caso $k=1$ se sigue del lema {\ref{yaelmeroultimo}}.
-    Ahora, supongamos que se cumple el caso $k-$ésimo, y demostremos para el caso $k+1$:\\
+    Ahora, supongamos que se cumple el caso $k$-ésimo, y demostremos para el caso $k+1$:\\
     Consideremos $f(x)=y$ una fórmula $\Sigma_k$, entonces es equivalente a una fórmula de la forma:
     \[\exists a\forall b\psi(a,b,x,y),\]
     donde $\psi$ es $\Sigma_{k-1}$. Ahora, consideraremos la función siguiente:
@@ -365,36 +371,36 @@ Otro argumento útil para el final del lema anterior (\ref{yaelmeroultimo}) es p
 
 \begin{thm} {\label{tks0}}
     Sea $M$ un modelo no estándar de $\PA$. La función $Y:M^2\longrightarrow \n$ dada por 
-    \[Y(a,b)=\text{máx}\set{c|[a,b]\text{ es }\n_c-\text{grande}},\]
+    \[Y(a,b)=\text{máx}\set{c|[a,b]\text{ es }\n_c\text{-grande}},\]
     es un indicador bien comportado para modelos de $\PA$.
 \end{thm}
 \begin{proof} 
     Demostremos que se satisfacen los puntos de la definición {\ref{defn42xd}}:\\
     1. Observemos lo siguiente:
         \begin{align*}
-            Y(a,b)=d &\Longleftrightarrow \max\set[c]{[a,b]\text{ es }\n_c-\text{grande}}=d\\
-            &\Longleftrightarrow \exists c\hspace{0.3cm}([a,b]\text{ es }\n_c-\text{grande}\land [a,b]\text{ no es }\n_{c+1}-\text{grande}).
+            Y(a,b)=d &\Longleftrightarrow \max\set[c]{[a,b]\text{ es }\n_c\text{-grande}}=d\\
+            &\Longleftrightarrow \exists c\hspace{0.3cm}([a,b]\text{ es }\n_c\text{-grande}\land [a,b]\text{ no es }\n_{c+1}\text{-grande}).
         \end{align*}
-    3. Procedemos por contradicción: si tenemos que $y<Y(x,y)$, entonces tenemos que $y+1\leq Y(x,y)$. Así pues, por la proposición {\ref{mdcg}}, tenemos que $[x,y]$ es $\n_{y+1}-$grande. Luego, por el teorema {\ref{thm10304}} tenemos:
+    3. Procedemos por contradicción: si tenemos que $y<Y(x,y)$, entonces tenemos que $y+1\leq Y(x,y)$. Así pues, por la proposición {\ref{mdcg}}, tenemos que $[x,y]$ es $\n_{y+1}$-grande. Luego, por el teorema {\ref{thm10304}} tenemos:
         \[y-x+1\geq (y+1)+1,\]
         \[-x\geq 1;\]
         y dado que $x$ es un mayor o igual a 0, tenemos una contradicción.\\
-    2. Tenemos dos casos: si $\set[c]{[a,b]\text{ es }\n_c-\text{grande}}$ es vacío, basta considerar que
+    2. Tenemos dos casos: si $\set[c]{[a,b]\text{ es }\n_c\text{-grande}}$ es vacío, basta considerar que
         \[\max\nt=0,\]
         lo cuál basta para dar un elemento máximal único. Por otro lado, si el conjunto es no vacío, dado que es un conjunto acotado (por el punto 3), tenemos que posee un elemento máximal, el cuál es único.\\
     4. Sean $x,y,x',y'$ tales que $x'\leq x$ y $y\leq y'$. Nombremos los siguientes conjuntos:
-        \[A=\set{c|[x,y] \text{ es } \n_c-\text{grande}},\]
-        \[B=\set{c|[x,y'] \text{ es } \n_c-\text{grande}},\]
-        \[C=\set{c|[x',y'] \text{ es } \n_c-\text{grande}}.\]
-        Claramente, por definición, $Y(x,y)=\max{A}$, $Y(x,y')=\max{B}$ y $Y(x',y')=\max{C}$. Así pues, por la proposición {\ref{siabb}}, como $[x,y]$ es $Y(x,y)-$grande, entonces $[x,y']$ es $Y(x,y)-$grande; así, $Y(x,y)\in B$, y por lo tanto
+        \[A=\set{c|[x,y] \text{ es } \n_c\text{-grande}},\]
+        \[B=\set{c|[x,y'] \text{ es } \n_c\text{-grande}},\]
+        \[C=\set{c|[x',y'] \text{ es } \n_c\text{-grande}}.\]
+        Claramente, por definición, $Y(x,y)=\max{A}$, $Y(x,y')=\max{B}$ y $Y(x',y')=\max{C}$. Así pues, por la proposición {\ref{siabb}}, como $[x,y]$ es $Y(x,y)$-grande, entonces $[x,y']$ es $Y(x,y)$-grande; así, $Y(x,y)\in B$, y por lo tanto
         \[Y(x,y)\leq Y(x,y').\]
-        Ahora bien, $[x,y']$ es $Y(x,y')-$grande, así, por el lema {\ref{lbdcpd}}, $[x',y']$ es $Y(x,y')-$grande. Así, tenemos que $Y(x,y')\in C$, y por lo tanto, 
+        Ahora bien, $[x,y']$ es $Y(x,y')$-grande, así, por el lema {\ref{lbdcpd}}, $[x',y']$ es $Y(x,y')$-grande. Así, tenemos que $Y(x,y')\in C$, y por lo tanto, 
         \[Y(x,y')\leq Y(x',y').\]
         De estas dos desigualdades, tenemos que $Y(x,y)\leq Y(x',y')$.\\
-    5. Para la suficiencia, consideremos $I\subeq_i M$ tal que $I\vDash\PA$, $a\in I$y $b\not\in I$. Dado $k$ estándar, por la proposición {\ref{prop328}} existe $d_k>a$ tal que $d_k\in I$ (por el teorema {\ref{los}}) y $[a,d_k]$ es $\n_k-$grande, luego como $b>d_k$ y por la proposición {\ref{siabb}} y el teorema {\ref{los}}, $[a,b]$ es $\n_k-$grande. Como $k$ es arbitraria (sólo pidiendole que sea estándar), para cada $k$ estándar tenemos que:
-        \[[a,b]\text{ es }\n_k-\text{grande}.\]
+    5. Para la suficiencia, consideremos $I\subeq_i M$ tal que $I\vDash\PA$, $a\in I$y $b\not\in I$. Dado $k$ estándar, por la proposición {\ref{prop328}} existe $d_k>a$ tal que $d_k\in I$ (por el teorema {\ref{los}}) y $[a,d_k]$ es $\n_k$-grande, luego como $b>d_k$ y por la proposición {\ref{siabb}} y el teorema {\ref{los}}, $[a,b]$ es $\n_k$-grande. Como $k$ es arbitraria (sólo pidiendole que sea estándar), para cada $k$ estándar tenemos que:
+        \[[a,b]\text{ es }\n_k\text{-grande}.\]
         Por el principio {\ref{overspill}}, existe una $c$ no estándar tal que
-        \[[a,b]\text{ es }\n_c-\text{grande},\]
+        \[[a,b]\text{ es }\n_c\text{-grande},\]
         y como la función $Y$ se define como un máximo, $Y(a,b)$ es no estándar.\\
         Para la necesidad, definimos el siguiente conjunto:
         \[I=\set[x\in M]{\exists n\in\n (x<b_n)},\]
@@ -408,7 +414,7 @@ Otro argumento útil para el final del lema anterior (\ref{yaelmeroultimo}) es p
 
 \begin{lem}\label{tks} (Primer Teorema de Ketonen-Solovay)\\
     Sea $M$ un modelo no estándar de $\PA$. La función $Y:M^2\longrightarrow \n$ dada por 
-    \[Y(a,b)=\text{máx}\set{c|[a,b]\text{ es }\n_c-\text{grande}},\]
+    \[Y(a,b)=\text{máx}\set{c|[a,b]\text{ es }\n_c\text{-grande}},\]
     es un indicador para modelos de $\PA$.
 \end{lem}
 \begin{proof}
@@ -419,7 +425,7 @@ Otro argumento útil para el final del lema anterior (\ref{yaelmeroultimo}) es p
     Las funciones
     \[\begin{array}{c}
         q_n:\n\longrightarrow\n\\
-        x\mapsto\min\set{y\geq x|[x,y]\text{ es }\n_n-\text{grande}}
+        x\mapsto\min\set{y\geq x|[x,y]\text{ es }\n_n\text{-grande}}
     \end{array}\]
     son total computables (demostrable en $\PA$), y para cada función total demostrablemente computable $f$, existe $n\in\n$ tal que $f(x)<q_n(x)$ para toda $x\in\n$ suficientemente grande.
 \end{cor}
