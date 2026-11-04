@@ -9,32 +9,32 @@ Un trabajo común en matemáticas es demostrar que una propiedad no se sigue de 
         \PA\vdash(\forall m)(\exists k)(g_{k}(m)=0);
     \end{equation}
     es decir, que el teorema de Goodstein es demostrable en $\PA$.
-    Del corolario {\ref{corind1}}, para cada $n$, número natural, existe $b_n$ tal que $[[1,b_n]]$ es $\n_{n+1}-$grande. Por el corolario {\ref{cor10304}} tenemos que $n+1<b_n$. Luego, consideremos $Y$ como en el teormea {\ref{tks}}, por lo que
-    \[Y(1,b_n)=\text{máx}\set{c|[[1,b_n]]\text{ es }\n_c-\text{grande}},\]
+    Del corolario {\ref{corind1}}, para cada $n$, número natural, existe $b_n$ tal que $[[1,b_n]]$ es $\n_{n+1}$-grande. Por el corolario {\ref{cor10304}} tenemos que $n+1<b_n$. Luego, consideremos $Y$ como en el teormea {\ref{tks}}, por lo que
+    \[Y(1,b_n)=\text{máx}\set{c|[[1,b_n]]\text{ es }\n_c\text{-grande}},\]
     podemos afirmar que:
     \[Y(1,b_n)\geq n+1>n.\]
     Luego, por el teorema {\ref{los}} y tomando $b:\n\longrightarrow\n$ tal que $b(n)=b_n$, tenemos que:
-    \[[[{[c_1]}_\sim,{[b]}_\sim]]\text{ es }\n_{{[\id+c_1]}_\sim}-\text{grande}.\]
+    \[[[{[c_1]}_\sim,{[b]}_\sim]]\text{ es }\n_{{[\id+c_1]}_\sim}\text{-grande}.\]
     Más aún, denotando $i={[\id]}_\sim$. Tenemos que 
     \[Y({[c_1]}_\sim,{[b]}_\sim)> i.\]
     Por lo que tenemos que $Y({[c_1]}_\sim,{[b]}_\sim)$ es no estándar. Por lo tanto, existe un segmento inicial $I$ de $\hp$ tal que
     \[I\vDash\PA\land{[b]}_\sim\not\in I.\]
     Por lo tanto, el conjunto
-    \[\cC=\set{{{[t]}_\sim}|[[{[c_1]}_\sim,{[t]}_\sim]]\text{ es }\n_{{[\id+c_1]}_\sim}-\text{grande}\land Y({[c_1]}_\sim,{[t]}_\sim)\text{ es no estándar}}\neq\nt.\]
+    \[\cC=\set{{{[t]}_\sim}|[[{[c_1]}_\sim,{[t]}_\sim]]\text{ es }\n_{{[\id+c_1]}_\sim}\text{-grande}\land Y({[c_1]}_\sim,{[t]}_\sim)\text{ es no estándar}}\neq\nt.\]
     Pues ${[b]}_\sim\in\cC$. Tomemos ${[j]}_\sim$ el mínimo elemento de este conjunto. Entonces,
-    \[[[{[c_1]}_\sim,{[j]}_\sim]]\text{ es }\n_{{[\id+c_1]}_\sim}-\text{grande}\land Y({[c_1]}_\sim,{[j]}_\sim)\text{ es no estándar};\]
+    \[[[{[c_1]}_\sim,{[j]}_\sim]]\text{ es }\n_{{[\id+c_1]}_\sim}\text{-grande}\land Y({[c_1]}_\sim,{[j]}_\sim)\text{ es no estándar};\]
     luego existe $M$, segmento inicial de $\hp$, tal que:
     \[M\vDash\PA\land{[j]}_\sim\not\in M.\]
     Luego, tenemos:
     \begin{equation}\tag{NE}\label{ne}
-        M\vDash(\neg\exists {[j]}_\sim)([[{[c_1]}_\sim,{[t]}_\sim]]\text{ es }\n_{{[\id+c_1]}_\sim}-\text{grande}).
+        M\vDash(\neg\exists {[j]}_\sim)([[{[c_1]}_\sim,{[t]}_\sim]]\text{ es }\n_{{[\id+c_1]}_\sim}\text{-grande}).
     \end{equation}
     Ahora, consideremos en $M$ el número $d=2^{2^{\cdot^{\cdot^{\cdot^{2}}}}}$ con ${[\id+c_1]}_\sim$ exponenciaciones iteradas. Así, considerando $f_n$ como en {\ref{d38}}, tenemos que:
     \[f_2(d)=\n_{{[\id+c_1]}_\sim}.\]
     Ahora, por {\ref{tg}}, existe ${[e]}_\sim\in M$ suficientemente grande tal que
     \[g_{{[e]}_\sim}(d)=0.\]
     Dado que la proposición {\ref{kpp8}} se puede probar bajo $\PA$, tenemos en $M$:
-    \[[[{[c_1]}_\sim,{[c_2+e]}_\sim]] \text{ es } \n_{{[\id+c_1]}_\sim}-\text{grande},\]
+    \[[[{[c_1]}_\sim,{[c_2+e]}_\sim]] \text{ es } \n_{{[\id+c_1]}_\sim}\text{-grande},\]
     lo que contradice {\ref{ne}}. Por lo tanto, en $M$ no se satisface el teorema de Goodstein. Luego, 
     \[\PA\not\vdash(\forall m)(\exists k)(g_{k}(m)=0).\]
 \end{proof}
@@ -56,16 +56,20 @@ Ahora, veamos el equivalente para hidras.
         (n,x)\mapsto q_n(x)
     \end{array},\]
     con $q_n$ como en el corolario {\ref{3tks}}. Así pues, tenemos
-    \begin{verbatim}
+    \begin{center}
+    \begin{pseudocodigo}
         input(n,x)
         for(y=x+1; ;y++):
             if grande([x,y],omega_n)
                 return y
-    \end{verbatim}
+    \end{pseudocodigo}
+    \end{center}
     Claramente este es el algoritmo qué calcula $Q$, más aún, como $F$ es total computable, la parte del código
-    \begin{verbatim}
+    \begin{center}
+    \begin{pseudocodigo}
         if grande([x,y],omega_n)
-    \end{verbatim}
+    \end{pseudocodigo}
+    \end{center}
     está bien definida y no es necesario usar que $F$ es decreciente dejando fijo el primer argumento (no se podría usar esto, pues el primer argumento varía en $\varepsilon_0$). Esto prueba que $Q$ es total computable. Sin embargo, observemos lo siguiente: definimos:
     \[\begin{array}{c}
         q:\n\longrightarrow\n\\
