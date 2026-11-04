@@ -4,9 +4,10 @@ A continuación presentaremos un concepto el cuál es de suma importancia para e
     Una \textit{hidra} es un árbol fínito el cuál puede entenderse como una colección de aristas, cada uno unido a dos nodos, para los cuales cada nodo está conectado por un único camino de aristas a un nodo fijo llamado \textit{raíz}. Un \textit{nodo cima} de una hidra es uno el cuál es un nodo conectado a una sola arista, y no es la raíz. Una \textit{cabeza} de la hidra es un nodo cima junto con su arista adjunta.
 \end{defn}
 \begin{ex}\label{exh1}
-    Observemos el siguiente ejemplo de hidra:
-    \begin{center}
-    \begin{forest}
+    Observemos la hidra de la Figura {\ref{hidra1}}.
+    \begin{figure}[h]
+        \centering
+        \begin{forest}
         for tree={grow'=north, circle, draw, minimum size=0.2cm, align=center} % Crece hacia arriba
         [°, edge label={node[left] {Letrero}}
           [ 
@@ -26,10 +27,11 @@ A continuación presentaremos un concepto el cuál es de suma importancia para e
             ]
           ]
         ]
-      \end{forest}\\
-      \textit{ejemplo de hidra}
-    \end{center}
-    Donde el nodo que lleva adentro el símbolo ``\hspace{0.1cm}°\hspace{0.1cm}'' es la raíz y los que llevan adentro los símbolos ``.'' son los nodos cima, los cuales, junto con sus respectivas únicas aristas, forman las cabezas de la hidra.
+      \end{forest}
+      \caption{ejemplo de hidra.}
+      \label{hidra1}
+    \end{figure}
+    En esta, el nodo que lleva adentro el símbolo ``\hspace{0.1cm}°\hspace{0.1cm}'' es la raíz y los que llevan adentro los símbolos ``.'' son los nodos cima, los cuales, junto con sus respectivas únicas aristas, forman las cabezas de la hidra.
 \end{ex}
 Siguiendo la metáfora con respecto a la mitología griega, en la batalla de Hércules contra la hidra; en la instancia $n$, después de Hércules cortar una cabeza de la hidra, de ésta crecerán $n$ nuevas cabezas. Así pues, al trabajar con nuestras hidras, tendremos un comportamiento similar.
 \begin{defn}
@@ -38,9 +40,10 @@ Siguiendo la metáfora con respecto a la mitología griega, en la batalla de Hé
     Desde el nodo que solía estar conectado a la cabeza que acaba de ser cortada, avanza una arista hacia la raíz hasta alcanzar el siguiente nodo de la red. Desde este nodo, brotan $n$ réplicas de la parte de la hidra (después de la decapitación) que está \textit{por encima} de la arista recién recorrida; en otras palabras, aquellos nodos y aristas por los cuales, para llegar a la raíz, sería necesario atravesar dicha arista. Si la cabeza recién cortada tenía la raíz como uno de sus nodos, no se genera una nueva cabeza.
 \end{defn}
 \begin{ex}\label{exh2}
-    Observemos el lo que pasa al cortar la cabeza de una hidra:
-    \begin{center}
-    \begin{forest}
+    Observemos el lo que pasa al cortar la cabeza de una hidra. 
+    \begin{figure}[h]
+        \centering
+        \begin{forest}
         for tree={grow'=north, circle, draw, minimum size=0.2cm, align=center} % Crece hacia arriba
         [, edge label={node[left] {Letrero}}
           [ 
@@ -60,8 +63,8 @@ Siguiendo la metáfora con respecto a la mitología griega, en la batalla de Hé
             ]
           ]
         ]
-      \end{forest}se convierte en
-      \begin{forest}
+        \end{forest}\textit{se convierte en}
+        \begin{forest}
         for tree={grow'=north, circle, draw, minimum size=0.2cm, align=center} % Crece hacia arriba
         [, edge label={node[left] {Letrero}}
           [ 
@@ -84,10 +87,11 @@ Siguiendo la metáfora con respecto a la mitología griega, en la batalla de Hé
             ]
           ]
         ]
-      \end{forest}\\
-      \textit{ejemplo del cambio al cortar una cabeza de una hidra}
-    \end{center}
-    En este caso, se ha cortado la cabeza asociada al nodo cima señalado con un ``.'' dentro.
+        \end{forest}
+        \caption{ejemplo del cambio al cortar una cabeza de una hidra.}
+        \label{hidra2}
+    \end{figure}
+    En el caso de la Figura {\ref{hidra2}}, se ha cortado la cabeza asociada al nodo cima señalado con un ``.'' dentro.
 \end{ex}
 Hércules gana la batalla si, después de un número finito de instancias, no queda nada de la hidra más que su raíz.
 \begin{defn}
@@ -103,8 +107,9 @@ Ahora, la razón por la que las hidras son un concepto importante en nuestro est
     \end{enumerate}
 \end{defn}
 \begin{ex}
-    A continuación, mostremos cuál es el ordinal del ejemplo {\ref{exh1}}:
-    \begin{center}
+    A continuación, mostremos cuál es el ordinal del ejemplo {\ref{exh1}}.
+    \begin{figure}[h]
+        \centering
         \begin{forest}
             for tree={grow'=north, draw, minimum size=0.2cm, align=center} % Crece hacia arriba
             [$\n^{\n^\n+\n^3}+\n^{\n^2+1}$, edge label={node[left] {Letrero}}
@@ -126,14 +131,16 @@ Ahora, la razón por la que las hidras son un concepto importante en nuestro est
               ]
             ]
           \end{forest}\\
-          \textit{ejemplo de asignación de ordinales a una hidra}
-        \end{center}
-    Así pues, el ordinal asociado a la hidra del ejemplo {\ref{exh1}} es $\n^{\n^\n+\n^3}+\n^{\n^2+1}$.
+          \caption{ejemplo de asignación de ordinales a una hidra.}
+          \label{hidra3}
+        \end{figure}
+    El ordinal asociado a la hidra del ejemplo {\ref{exh1}} es $\n^{\n^\n+\n^3}+\n^{\n^2+1}$, como se muestra en la Figura {\ref{hidra3}}, siendo este número el que tiene escrito en su raíz. Así mismo, y para no dejar lugar a dudas, cada nodo tiene escrito el ordinal que le corresponde según el algoritmo definido.
 \end{ex}
 En particular, cada uno de estos ordinales tiene que ser menor a $\varepsilon_0$, por el hecho de que las hidras son árboles finitos. Por otro lado, observemos lo que pasa con el ordinal asociado cuando se corta una cabeza de una hidra.
 \begin{ex}
     El cambio en el ordinal después de cortar una cabeza:
-    \begin{center}
+    \begin{figure}[h]
+        \centering
         \begin{forest}
             for tree={grow'=north, draw, minimum size=0.2cm, align=center} % Crece hacia arriba
             [$\n^{\n^\n+\n^3}+\n^{\n^2+1}$, edge label={node[left] {Letrero}}
@@ -154,7 +161,7 @@ En particular, cada uno de estos ordinales tiene que ser menor a $\varepsilon_0$
                 ]
               ]
             ]
-          \end{forest}se convierte en
+          \end{forest}\textit{se convierte en}
           \begin{forest}
             for tree={grow'=north, draw, minimum size=0.2cm, align=center} % Crece hacia arriba
             [$\n^{\n^\n+\n^2\cdot2}+\n^{\n^2+1}$, edge label={node[left] {Letrero}}
@@ -178,11 +185,13 @@ En particular, cada uno de estos ordinales tiene que ser menor a $\varepsilon_0$
                 ]
               ]
             ]
-          \end{forest}\\
-      \textit{ejemplo del cambio al cortar una cabeza de una hidra}
-    \end{center}
-    En este caso, al cortar la cabeza asociada al nodo circular, hemos obtenido el sigueinte cambio:
+          \end{forest}
+      \caption{ejemplo del cambio al cortar una cabeza de una hidra.}
+      \label{hidra4}
+    \end{figure}
+    en este caso, al cortar la cabeza asociada al nodo circular en la parte izquierda de la Figura {\ref{hidra4}}, hemos obtenido el siguiente cambio en el ordinal asociado a la hidra:
     \[\n^{\n^\n+\n^3}+\n^{\n^2+1}\longrightarrow\n^{\n^\n+\n^2\cdot2}+\n^{\n^2+1}.\]
+    De esta forma, cortar una cabeza afecta a la hidra, como se ve en la Figura {\ref{hidra4}} y afecta al ordinal asociado a estas mismas. 
 \end{ex}
 Asimismo, es importante observar que el ordinal resultante es estrictamente menor que el original. Si bien esto no es una prueba, es un preámbulo de un resultado futuro.
 \begin{defn}
@@ -195,8 +204,9 @@ Ahora, demostraremos un lema de suma importancia en el entendimiento de las estr
 \begin{proof}
     Sea $\alpha\in\ON$ y $\sigma$ una estrategia.
     Observemos que si nuestra hidra está asociada a un ordinal finito, todos los nodos que no son raíces son nodos cima, por lo que al cortar una cabeza, no crecerá ninguna más, luego, para cada $n$: \[G_\sigma(\alpha,n)=\alpha-1<\alpha.\]
-    Por otro lado, consideremos el caso en el que crecerán ramas cuando una cabeza es cortada: en tal caso, sólo es necesario fijarnos en nodo a partir de cuál crecerán las copias. Esto es de la forma siguiente:
-    \begin{center}
+    Por otro lado, consideremos el caso en el que crecerán ramas cuando una cabeza es cortada: en tal caso, sólo es necesario fijarnos en nodo a partir de cuál crecerán las copias. 
+    \begin{figure}[h]
+        \centering
         \begin{forest}
             for tree={grow'=north, circle, draw, minimum size=0.2cm, align=center} % Crece hacia arriba
             [$r_1$, edge label={node[left] {Letrero}}
@@ -206,8 +216,10 @@ Ahora, demostraremos un lema de suma importancia en el entendimiento de las estr
               ]
             ]
           \end{forest}
-    \end{center}
-    Donde el nodo asociado al $0$ es la cabeza que se cortará (siguiendo la estrategia $\sigma$), $r_1$ el nodo a partir del cuál crecerán las copias y los $m$ nodos de la izquierda están asociados a $m$ ordinales menores que $\varepsilon_0$. Sin pérdida de generalidad, asumimos que estos ordinales están en orden de tal forma que \[r_2=\n^{\beta_1}+\cdots+\n^{\beta_m}+1.\] Luego, \[r_1=\n^{\n^{\beta_1}+\cdots+\n^{\beta_m}+1}=\n^{\n^{\beta_1}+\cdots+\n^{\beta_m}}\cdot\n.\]
+          \caption{subhidra a la que afecta cortar una cabeza}
+          \label{hidra5}
+    \end{figure}
+    Fijémonos en la subhidra de la Figura {\ref{hidra5}}, en la cual el nodo asociado al $0$ es la cabeza que se cortará (siguiendo la estrategia $\sigma$), $r_1$ el nodo a partir del cuál crecerán las copias y los $m$ nodos de la izquierda están asociados a $m$ ordinales menores que $\varepsilon_0$. Sin pérdida de generalidad, asumimos que estos ordinales están en orden de tal forma que \[r_2=\n^{\beta_1}+\cdots+\n^{\beta_m}+1.\] Luego, \[r_1=\n^{\n^{\beta_1}+\cdots+\n^{\beta_m}+1}=\n^{\n^{\beta_1}+\cdots+\n^{\beta_m}}\cdot\n.\]
     Así pues, para cada $n\in\n$, tenemos: \[G_\sigma(r_1,n)=\n^{\n^{\beta_1}+\cdots+\n^{\beta_m}}\cdot(n+1)<\n^{\n^{\beta_1}+\cdots+\n^{\beta_m}}\cdot\n.\]
     Así, $G_\sigma(r_1,n)<r_1$. De aquí, si $r_1$ es raíz, hemos terminado. En caso de que $r_1$ no sea raíz, al menos hay un nodo abajo de $r_1$, de tal forma que en el ordinal asociado a $\alpha$, aparezca un sumando (o un exponente) de la forma $\omega^{r_1}$ y en la de $G_\sigma(\alpha,n)$ uno de la forma $\n^{G_\sigma(r_1,n)}$. Luego, como el orden se preserva por potencias (o sumandos) se tiene lo que se quería demostrar.
 \end{proof}
