@@ -16,7 +16,7 @@ A continuación se presentarán dos de los resultados más importantes en la his
 \end{obs}
 
 \begin{prop}
-    Sea $\Sigma$ un conjunto de $\mathcal{L}-$fórmulas.
+    Sea $\Sigma$ un conjunto de $\mathcal{L}$-fórmulas.
     \[\text{Dem}(\Sigma)=\{(\varphi_1,\ldots,\varphi_n)|(n\in\n)(\varphi_i\text{ fórmula})\land(\varphi_1,\ldots,\varphi_n)\text{ demostración a partir de $\Sigma$}\}.\]
     Si $\Sigma$ es computable, entonces $\text{Dem}(\Sigma)$ también lo es. Por otro lado,
     \begin{align*}
@@ -91,13 +91,13 @@ De la observación anterior la fórmula que significa ``$z$ codifica a $(x,y)$''
     Luego, $q=q_i$, es decir, $m=m_i$, lo cuál es absurdo.
 \end{proof}
 \begin{obs}
-    $a$ es la $i-$ésima entrada de la tupla codificada por $t$.
+    $a$ es la $i$-ésima entrada de la tupla codificada por $t$.
     \[(\exists u<t\land \exists v<t)[(t\text{ códifica a }(u,v)\land \exists z(z\text{ codifica a }(a,i))\land 1+(z+1)v|u)]\]
     \[\land(\text{además, $a$ es el mínimo con esa propiedad}).\]
     \[(\exists a)\psi(a,i,t)\land \forall j>i\exists a\psi(a,i,t)\]
     ``la sucesión codificada por $t$ es de longitud $i$''.
 \end{obs}
-De la anterior observación la fórmula que significa ``$x$ es la $y-$ésima entrada de la tupla codificada por $z$'', para futuras referencias, la llamaremos Tupla$(x,y,z)$. Asimismo, a la fórmula que  significa ``la longitud de la tupla codificada por $z$ es $y$'' la llamaremos Long$(y,z)$.
+De la anterior observación la fórmula que significa ``$x$ es la $y$-ésima entrada de la tupla codificada por $z$'', para futuras referencias, la llamaremos Tupla$(x,y,z)$. Asimismo, a la fórmula que  significa ``la longitud de la tupla codificada por $z$ es $y$'' la llamaremos Long$(y,z)$.
 \begin{obs}
     $T$ máquina de Turing.
 
@@ -165,7 +165,7 @@ T(x_{1}, y_{1}, z_{1}, x_{2}, y_{2}, z_{2})
     Existen las siguientes fórmulas:
     \begin{itemize}
         \item $\text{Par}(x,y,z)$ que es $''z$ codifica $(x,y)''$.
-        \item $\text{Tupla}(x,y,z)$ que es $''x$ es la $y-$ésima entrada de la tupla codificada por $z''$.
+        \item $\text{Tupla}(x,y,z)$ que es $''x$ es la $y$-ésima entrada de la tupla codificada por $z''$.
         \item $\text{Long}(y,z)$ que es $''$la longitud de la tupla codificada por $z$ es $y''$.
         \item $\text{FI}(x,y,z)$.
         \item T$(x_1,y_1,z_1,x_2,y_2,z_2)$.
@@ -238,20 +238,20 @@ A partir de ahora y hasta que acabe el capítulo, consideraremos a $\cN$ como el
 \end{obs}
 \begin{defn}
     \begin{enumerate}
-        \item $\mathbf{n}:=\underbrace{S\ldots S}_{n-\text{veces}}\cb$.
-        \item Un conjunto $X\subseteq\n^k$ es $\Sigma-$representable si existe una fórmula $\varphi$ tal que:
+        \item $\mathbf{n}:=\underbrace{S\ldots S}_{n\text{-veces}}\cb$.
+        \item Un conjunto $X\subseteq\n^k$ es $\Sigma$-representable si existe una fórmula $\varphi$ tal que:
             \[(n_1,\ldots,n_k)\in X\Longleftrightarrow\Sigma\vdash\varphi[x_1/\mathbf{n}_1,\ldots,x_k/\mathbf{n}_k]\]
             y
             \[(n_1,\ldots,n_k)\not\in X\Longleftrightarrow\Sigma\vdash\neg\varphi[x_1/\mathbf{n}_1,\ldots,x_k/\mathbf{n}_k].\]
-        \item Un conjunto $X\subseteq\n^k$ es débilmente $\Sigma-$representable si existe una fórmula $\varphi$ tal que:
+        \item Un conjunto $X\subseteq\n^k$ es débilmente $\Sigma$-representable si existe una fórmula $\varphi$ tal que:
             \[(n_1,\ldots,n_k)\in X\Longleftrightarrow\Sigma\vdash\varphi[x_1/\mathbf{n}_1,\ldots,x_k/\mathbf{n}_k].\]
     \end{enumerate}
 \end{defn}
 
-\begin{thm}\hspace{0.5cm}\\
+\begin{thm}\hspace{0.5cm}
     \begin{enumerate}
-        \item Toda función computable es $Q-$representable.
-        \item Todo conjunto computable es $Q-$representable.
+        \item Toda función computable es $Q$-representable.
+        \item Todo conjunto computable es $Q$-representable.
     \end{enumerate}
 \end{thm}
 \begin{proof}\hspace{1cm}
@@ -260,7 +260,7 @@ A partir de ahora y hasta que acabe el capítulo, consideraremos a $\cN$ como el
             \begin{center}
                 ``$f$ es computable $\implies$ $f$ es definible''.
             \end{center}
-        \item Sea $A$ computable y sea $\varphi(x,y)$ la fórmula que $Q-$representa a $\chi_A$. Es decir,
+        \item Sea $A$ computable y sea $\varphi(x,y)$ la fórmula que $Q$-representa a $\chi_A$. Es decir,
             \[(n,m)\in\text{Gr}(\chi_A)\Longleftrightarrow Q\vdash\varphi[\mathbf{n}/x,\mathbf{m}/y]\land (n,m)\not\in\text{Gr}(\chi_A)\Longleftrightarrow Q\vdash\neg\varphi[\mathbf{n}/x,\mathbf{m}/y].\]
             Sea $\psi(x)\equiv(y=S\cb\land\varphi(x,y))$. Afirmamos que $\psi$ representa a $A$:
             \begin{align*}
@@ -289,7 +289,7 @@ A partir de ahora y hasta que acabe el capítulo, consideraremos a $\cN$ como el
     \begin{enumerate}
         \item Probemos que Teor$(\Sigma\cup Q)$ no es computable. Sea $\varphi_1(x),\varphi_2(x),\ldots,\varphi_n(x),\ldots$ una enumeración efectiva de las fórmulas con una variable libre. Sea
             \[X=\{m\in\n|\Sigma\cup Q\vdash\varphi_m[\mathbf{m}/x]\}.\]
-            Si Teor$(\Sigma\cup Q)$ fuera computable, $X$ también lo sería, luego $X$ sería $Q-$representable y $X$ también sería $(\Sigma\cup Q)-$representable, es decir, existe una formila $\psi(x)$ tal que para cada $m\in\n$,
+            Si Teor$(\Sigma\cup Q)$ fuera computable, $X$ también lo sería, luego $X$ sería $Q$-representable y $X$ también sería $(\Sigma\cup Q)$-representable, es decir, existe una formila $\psi(x)$ tal que para cada $m\in\n$,
             \[m\in X\Longleftrightarrow\Sigma\cup Q\vdash\psi[\mathbf{m}/x],\]
             y 
             \[m\not\in X\Longleftrightarrow\Sigma\cup Q\vdash\neg\psi[\mathbf{m}/x].\]
@@ -330,7 +330,7 @@ A partir de ahora y hasta que acabe el capítulo, consideraremos a $\cN$ como el
 \begin{proof}
     Dada la fórmula $\theta(y)$, consideraremos la función
     \[m\mapsto\ulcorner\psi_m[\mathbf{m}/x]\urcorner.\]
-    Esta función es computable, luego es $Q-$representable, es decir, existe la fórmula $\psi(x,y)$ tal que
+    Esta función es computable, luego es $Q$-representable, es decir, existe la fórmula $\psi(x,y)$ tal que
     \[Q\vdash\psi[\mathbf{m}/x,\mathbf{n}/y]\Longleftrightarrow n=\ulcorner\psi_m[\mathbf{m}/x]\urcorner,\]
     y
     \[Q\vdash\neg\psi[\mathbf{m}/x,\mathbf{n}/y]\Longleftrightarrow n\neq\ulcorner\psi_m[\mathbf{m}/x]\urcorner.\]
