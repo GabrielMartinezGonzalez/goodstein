@@ -17,22 +17,13 @@
 \usepackage{tikz}
 \usepackage{bbm}
 \usepackage{amsmath,amssymb,mathtools}
+\usepackage[T1]{fontenc}
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{extarrows}
 \usepackage{mathabx}
 \usepackage{xparse}
 \usepackage{amsthm}
-\lstset{
-    basicstyle=\ttfamily\small,
-    frame=single,
-    numbers=none,
-    breaklines=true,
-    backgroundcolor=\color{gray!15},
-    rulecolor=\color{black!50},
-    framesep=8pt,
-    framerule=0.5pt
-}
 \hypersetup{linkcolor=black}
 \newcommand{\arccot}{\operatorname{arccot}}
 \newcommand{\bC}{\mathbb{C}}
@@ -100,7 +91,7 @@
     {\left(#1 \mid#2\right)}%
   % <code>
 }
-\lstnewenvironment{pseudocodigo}[1][0.9\linewidth]
+\lstnewenvironment{pseudocodigo}[1][0.7\linewidth]
 {
     \lstset{
         basicstyle=\ttfamily\small,
@@ -115,6 +106,23 @@
         framerule=0.5pt,
         aboveskip=5pt,
         belowskip=5pt,
+        xleftmargin=0pt,
+        columns=fullflexible,
+        literate=
+          {á}{{\'a}}1
+          {é}{{\'e}}1
+          {í}{{\'i}}1
+          {ó}{{\'o}}1
+          {ú}{{\'u}}1
+          {Á}{{\'A}}1
+          {É}{{\'E}}1
+          {Í}{{\'I}}1
+          {Ó}{{\'O}}1
+          {Ú}{{\'U}}1
+          {ñ}{{\~n}}1
+          {Ñ}{{\~N}}1
+          {ü}{{\"u}}1
+          {Ü}{{\"U}}1,
         keepspaces=true
     }
 }
