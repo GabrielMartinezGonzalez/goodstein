@@ -202,7 +202,7 @@ Supongamos que $\lar{X,\preceq}$ es un buen orden, y asumimos $y\not\in X$. Por 
 \end{prop}
 %%a partir de acá demostraciones
 La propiedad anterior muestra que, para cualquier ordinal $\alpha$, su sucesor $S(\alpha)$ también es un ordinal. Más aún, como $S(\alpha)=\alpha\cup\set\alpha$, tenemos que $\alpha\in S(\alpha)$, y si $\beta\in S(\alpha)$, entonces $\beta\in\alpha$ o $\beta=\alpha$, pero no ambos. Por lo tanto, $S(\alpha)$ es el más pequeño ordinal, mayor que $\alpha$; por lo que $S(\alpha)$ es el sucesor inmediato de $\alpha$ en $\ON$.\\
-El conjunto vacío es un ordinal. Esto se ve de que $\varnothing$ satisface la definición, o porque $\varnothing$ es el colapso de Mostowski de $\lar{\varnothing,\varnothing}$. Más aún, como $\varnothing$ no contiene elementos, este debería ser el ordinal más pequeño. Los siguientes ordinales son $S(\nt),S(S(\nt)),\ldots$, etcétera. En la teoría de conjuntos, se denota al $n-$ésimo sucesor de $\nt$ por $\widetilde n$ y se identifica por el número natural $n$. Entonces, ahora vemos que cada $\widetilde n$ es un ordinal; más aún, la relación $<$ restringida a los ordinales $\widetilde n$ es el orden estricto usual de los números naturales, y $\widetilde n=\ot(\lar{\set{0,1,\ldots,n-1},<})$. Así, los números naturales son los ordinales finitos.
+El conjunto vacío es un ordinal. Esto se ve de que $\varnothing$ satisface la definición, o porque $\varnothing$ es el colapso de Mostowski de $\lar{\varnothing,\varnothing}$. Más aún, como $\varnothing$ no contiene elementos, este debería ser el ordinal más pequeño. Los siguientes ordinales son $S(\nt),S(S(\nt)),\ldots$, etcétera. En la teoría de conjuntos, se denota al $n$-ésimo sucesor de $\nt$ por $\widetilde n$ y se identifica por el número natural $n$. Entonces, ahora vemos que cada $\widetilde n$ es un ordinal; más aún, la relación $<$ restringida a los ordinales $\widetilde n$ es el orden estricto usual de los números naturales, y $\widetilde n=\ot(\lar{\set{0,1,\ldots,n-1},<})$. Así, los números naturales son los ordinales finitos.
 \begin{prop}
     Un ordinal $\alpha$ es un conjunto finito si, y sólo si es un número natural.
 \end{prop}
@@ -357,7 +357,7 @@ Los siguientes resultados muestran la relación entre los ordinales y los buenos
     es válida para cada $x\in X$, entonces $X=Y$.
 \end{thm}
 \begin{proof}
-    Sea $X,Y$ y $W$ como en el enunciado y asumimos que {\eqref{Ind}} es válida para cada $x\in X$. Supongamos $C=X\setminus Y\neq \nt$. Por la bien fundación de $W$, existe un elemento $W-$mínimal de $C$. Pero, si $x_o$ es un elemento $W-$mínimal de $C$, entonces $I_W(x_o)\subeq Y$, y de {\eqref{Ind}} (considerada con $x_o$) se sigue que $x_o\in Y$, lo cuál es imposible, pues $x_o\in X\setminus Y$, lo cuál es una contradicción.
+    Sea $X,Y$ y $W$ como en el enunciado y asumimos que {\eqref{Ind}} es válida para cada $x\in X$. Supongamos $C=X\setminus Y\neq \nt$. Por la bien fundación de $W$, existe un elemento $W$-mínimal de $C$. Pero, si $x_o$ es un elemento $W$-mínimal de $C$, entonces $I_W(x_o)\subeq Y$, y de {\eqref{Ind}} (considerada con $x_o$) se sigue que $x_o\in Y$, lo cuál es imposible, pues $x_o\in X\setminus Y$, lo cuál es una contradicción.
 \end{proof}
 \begin{thm}
     (Principio de Definición Recursiva Generalizado)\\
