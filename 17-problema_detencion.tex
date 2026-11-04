@@ -114,11 +114,13 @@ También conocido por su nombre en alemán \textit{Entscheindungsproblem}, o en 
 \end{prop}
 \begin{proof}
     Si $X$ es computable, entonces
-        \begin{verbatim}
+        \begin{center}
+        \begin{pseudocodigo}
             for(n=0; ;n++)
                 if(chi_X(n))
                     print n;
-        \end{verbatim}
+        \end{pseudocodigo}
+        \end{center}
 \end{proof}
 \begin{obs}
     El recíproco en general es falso, y el contraejemplo viene en los últimos ejemplos dados.
@@ -132,18 +134,22 @@ También conocido por su nombre en alemán \textit{Entscheindungsproblem}, o en 
 \end{prop}
 \begin{proof}
     Si $A_X$ y $A_Y$ son algoritmos que imprimen a $X$ y $Y$ respectivamente. Entonces,
-    \begin{verbatim}
+    \begin{center}
+    \begin{pseudocodigo}
         for(n=1; ;n++)
             correr A_X n pasos
             correr A_Y n pasos
-    \end{verbatim}
+    \end{pseudocodigo}
+    \end{center}
     la cuál imprime a $X\cup Y$. Por otro lado,
-    \begin{verbatim}
+    \begin{center}
+    \begin{pseudocodigo}
         for(n=1; ;n++)
             correr A_X n pasos, determinando L;
             correr A_Y n pasos, determinando L';
             print(L intersección L')
-    \end{verbatim}
+    \end{pseudocodigo}
+    \end{center}
 \end{proof}
 \begin{thm}
     Para $X\subseteq\n$, los siguientes enunciados son equivalente:
@@ -163,24 +169,28 @@ También conocido por su nombre en alemán \textit{Entscheindungsproblem}, o en 
     $1.\implies 2.:$\\
     Sea $A_X$ el algoritmo que imprime a $X$.
     Entonces, el siguiente algoritmo calcula a $\sigma_X$:
-    \begin{verbatim}
+    \begin{center}
+    \begin{pseudocodigo}
         input(n)
         correr A_X
             if(se imprimió n)
                 return 1;
-    \end{verbatim}
+    \end{pseudocodigo}
+    \end{center}
     $2. \implies 3.:$\\
     Inmediato tomando $f=\sigma_X$.\\
     $3.\implies 4.:$\\
     Sea $Y=\{(n,k)|\text{el algoritmo que calcula }f(x)\text{ se detiene en, a lo más, k pasos}\}$. Notemos que $Y$ es computable, con input $(n,k)$. Se corre el algoritmo para $f(n)$ $k$ pasos; si alcanza a detenerse, devuelve $1$, en caso contrario devuelve 0. $\pi[Y]=X$, ya que $n\in X$ si, y sólo si $f(x)$ está definido si, y sólo si para algún $k$, el cálculo de $f(n)$ termina en $k$ pasos si, y sólo si $(n,k)\in Y$. \\
     $4.\implies.:$\\
     Supongamos $Y$ como en la hipótesis, es decir, hay un algoritmo que calcula $\chi_Y$, entonces el siguiente algoritmo imprime a $X$:
-    \begin{verbatim}
+    \begin{center}
+    \begin{pseudocodigo}
         for(n=0; ;n++)
             sean a y b tales que n=2^a(2*b+1)
-            if(chi__Y(a,b))
+            if(chi_Y(a,b))
                 print a;
-    \end{verbatim}
+    \end{pseudocodigo}
+    \end{center}
 \end{proof}
 \begin{thm} \textit{(Kleene)}\\
     Sea $X\subseteq\n$. Entonces, 
@@ -189,14 +199,16 @@ También conocido por su nombre en alemán \textit{Entscheindungsproblem}, o en 
 \begin{proof}\hspace{1cm}\\
     $\implies)$: si $X$ es computable, entonces $\n\setminus X$ también lo es. Luego, $X$ y $\n\setminus X$ son c.e.\\
     $\Longleftarrow)$: sean $A_X$ y $A_{\n\setminus X}$ los algoritmos que imprimen a $X$ y $\n\setminus X$, respectivamente. El siguiente algoritmo calcula $\chi_X$:
-    \begin{verbatim}
+    \begin{center}
+    \begin{pseudocodigo}[0.9\linewidth]
         input(n)
         correr A_X y A_{C(X)} en paralelo, esperar a que se imprima $n$
             si A_X lo imprimió
                 return 1;
             si A_{C(X)} lo imprimió
                 return 0;
-    \end{verbatim}
+    \end{pseudocodigo}
+    \end{center}
 \end{proof}
 \begin{obs}
     Ni $\n\setminus D$, ni $\n^2\setminus H$ son c.e. (pues por el teorema de Kleene, $D$ y $H$ serían numerables).
@@ -207,20 +219,24 @@ También conocido por su nombre en alemán \textit{Entscheindungsproblem}, o en 
 \end{thm}
 \begin{proof}\hspace{1cm}\\
     $\Longleftarrow)$ Si $A_{Gr(f)}$ es el algoritmo que imprime a $Gr(f)$, entonces:
-    \begin{verbatim}
+    \begin{center}
+    \begin{pseudocodigo}[0.9\linewidth]
         input(n)
         correr A_{Gr(f)} tal que se imprima una pareja (x,y) tal que x=n
         en tal caso, return y;
-    \end{verbatim}
+    \end{pseudocodigo}
+    \end{center}
     es un algoritmo que calcula a $f$.\\
     $\implies)$ Considere el algoritmo:
-    \begin{verbatim}
+    \begin{center}
+    \begin{pseudocodigo}
         for(n=0; ;n++)
             for(k=0;k<=;k++)
                 corrar f(k) n pasos
                 si se obtiene una respuesta y
                     print(k,y);
-    \end{verbatim}
+    \end{pseudocodigo}
+    \end{center}
 \end{proof}
 \begin{thm}
     Sea $X\subseteq\n$, con $X\neq\varnothing$. Entonces,
@@ -228,18 +244,22 @@ También conocido por su nombre en alemán \textit{Entscheindungsproblem}, o en 
 \end{thm}
 \begin{proof}\hspace{1cm}\\
     $\Longleftarrow)$ Si hay un algoritmo para $f$, entonces
-    \begin{verbatim}
+    \begin{center}
+    \begin{pseudocodigo}
         for(n=0; ;n++)
             print f(n)
-    \end{verbatim}
+    \end{pseudocodigo}
+    \end{center}
     es un algoritmo que imprime $\ran(f)=X$.\\
     $\implies)$ Sea $x_o\in X$ arbitrario. Considere el siguiente algoritmo:
-    \begin{verbatim}
+    \begin{center}
+    \begin{pseudocodigo}
         input(n)
         correr el algoritmo que imprime a X n pasos
             si no se imprime nada, return x_o;
             en caso contrario, si y es el último número impreso
             return y;
-    \end{verbatim}
+    \end{pseudocodigo}
+    \end{center}
     esta última función es total y $\ran(f)=X$.
 \end{proof}
