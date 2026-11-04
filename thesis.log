@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.9.25)  3 NOV 2026 14:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.9.25)  3 NOV 2026 21:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -668,6 +668,8 @@ LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
 (Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
 ) (C:\Program Files\MiKTeX\tex/latex/amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
+) (C:\Program Files\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2024/12/21 v2.1c Standard LaTeX package
 ) (C:\Program Files\MiKTeX\tex/latex/listings\listings.sty
 \lst@mode=\count373
 \lst@gtempboxa=\box91
@@ -1007,31 +1009,31 @@ LaTeX Warning: Label `*' multiply defined.
 )
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
-Package hyperref Info: Link coloring ON on input line 147.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+Package hyperref Info: Link coloring ON on input line 155.
  (thesis.out) (thesis.out)
 \@outlinefile=\write6
 \openout6 = `thesis.out'.
 
-LaTeX Info: Redefining \. on input line 147.
-LaTeX Info: Redefining \% on input line 147.
+LaTeX Info: Redefining \. on input line 155.
+LaTeX Info: Redefining \% on input line 155.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1067,8 +1069,8 @@ LaTeX Info: Redefining \% on input line 147.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Command `\dddot' is already robust on input line 147.
-LaTeX Info: Command `\ddddot' is already robust on input line 147.
+LaTeX Info: Command `\dddot' is already robust on input line 155.
+LaTeX Info: Command `\ddddot' is already robust on input line 155.
 (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count386
@@ -1123,12 +1125,12 @@ File: escudo-esfm.png Graphic file (type png)
 Package pdftex.def Info: escudo-esfm.png  used on input line 34.
 (pdftex.def)             Requested size: 88.02864pt x 113.81102pt.
 
-Overfull \hbox (20.23589pt too wide) in paragraph at lines 4--72
+Overfull \hbox (20.23529pt too wide) in paragraph at lines 4--72
 []$[]$ $[]$
  []
 
 
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 4--72
+Overfull \hbox (2.61047pt too wide) in paragraph at lines 4--72
 []$ $[]$ 
  []
 
@@ -1153,7 +1155,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [4
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 162--165
+Underfull \hbox (badness 10000) in paragraph at lines 170--173
 
  []
 
@@ -1187,10 +1189,10 @@ LaTeX Info: Redefining \% on input line 1.
 
 [11]
 
-LaTeX Info: Redefining \. on input line 215.
-LaTeX Info: Redefining \% on input line 215.
+LaTeX Info: Redefining \. on input line 223.
+LaTeX Info: Redefining \% on input line 223.
 Package babel Info: 'spanish' activates 'spanish' shorthands.
-(babel)             Reported on input line 215.
+(babel)             Reported on input line 223.
 [12
 
 ]
@@ -1548,20 +1550,20 @@ LaTeX Info: Redefining \. on input line 110.
 LaTeX Info: Redefining \% on input line 110.
 [43]
 
-LaTeX Info: Redefining \. on input line 159.
-LaTeX Info: Redefining \% on input line 159.
+LaTeX Info: Redefining \. on input line 164.
+LaTeX Info: Redefining \% on input line 164.
 [44]
 
-LaTeX Info: Redefining \. on input line 203.
-LaTeX Info: Redefining \% on input line 203.
-[45]) (18-computabilidad_y_logica.tex
+LaTeX Info: Redefining \. on input line 207.
+LaTeX Info: Redefining \% on input line 207.
+[45]
 
-LaTeX Info: Redefining \. on input line 5.
-LaTeX Info: Redefining \% on input line 5.
-[46]
+LaTeX Info: Redefining \. on input line 260.
+LaTeX Info: Redefining \% on input line 260.
+[46]) (18-computabilidad_y_logica.tex
 
-LaTeX Info: Redefining \. on input line 53.
-LaTeX Info: Redefining \% on input line 53.
+LaTeX Info: Redefining \. on input line 41.
+LaTeX Info: Redefining \% on input line 41.
 [47]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.1.1}) has been already used, duplicate ignored
 <to be read again> 
@@ -1584,10 +1586,10 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.1.1})
 l.84     \begin{equation}
                          \tag{R}\label{R}
 
-LaTeX Info: Redefining \. on input line 97.
-LaTeX Info: Redefining \% on input line 97.
+LaTeX Info: Redefining \. on input line 90.
+LaTeX Info: Redefining \% on input line 90.
 [48]
-Overfull \hbox (4.8768pt too wide) in paragraph at lines 118--121
+Overfull \hbox (4.85886pt too wide) in paragraph at lines 118--121
 \U/matha/m/n/12 p\OML/cmm/m/it/12 x \U/matha/m/n/12 ^^P \OT1/cmr/bx/n/12 0 \U/matha/m/n/12 _ \OML/cmm/m/it/12 x \U/matha/m/n/12 ^^P \OML/cmm/m/it/12 S\OT1/cmr/bx/n/12 0\U/matha/m/n/12 q ^ @\OML/cmm/m/it/12 u\U/matha/m/n/12 pD\OML/cmm/m/it/12 l\U/matha/m/n/12 p\OML/cmm/m/it/12 u \U/matha/m/n/12   \OML/cmm/m/it/12 l \U/matha/m/n/12 ^ []p\OML/cmm/m/it/12 l; z\U/matha/m/n/12 qqpD\OML/cmm/m/it/12 l\U/matha/m/n/12 p[]p\OML/cmm/m/it/12 l; z\U/matha/m/n/12 q ^ \OML/cmm/m/it/12 y \U/matha/m/n/12 ¤ \OML/cmm/m/it/12 l\U/matha/m/n/12 q  ù[]ñ  D\OML/cmm/m/it/12 v\U/matha/m/n/12 p[]p\OML/cmm/m/it/12 v; n; z\U/matha/m/n/12 q$
  []
 
@@ -1603,29 +1605,29 @@ Overfull \hbox (8.48451pt too wide) in paragraph at lines 142--159
 
 
 
-LaTeX Info: Redefining \. on input line 163.
-LaTeX Info: Redefining \% on input line 163.
+LaTeX Info: Redefining \. on input line 159.
+LaTeX Info: Redefining \% on input line 159.
 [49]
 
-LaTeX Info: Redefining \. on input line 212.
-LaTeX Info: Redefining \% on input line 212.
+LaTeX Info: Redefining \. on input line 194.
+LaTeX Info: Redefining \% on input line 194.
 [50]
+
+LaTeX Info: Redefining \. on input line 242.
+LaTeX Info: Redefining \% on input line 242.
+[51]
 Underfull \hbox (badness 10000) in paragraph at lines 251--253
 
  []
 
 
 
-LaTeX Info: Redefining \. on input line 253.
-LaTeX Info: Redefining \% on input line 253.
-[51]
-
-LaTeX Info: Redefining \. on input line 293.
-LaTeX Info: Redefining \% on input line 293.
+LaTeX Info: Redefining \. on input line 286.
+LaTeX Info: Redefining \% on input line 286.
 [52]
 
-LaTeX Info: Redefining \. on input line 336.
-LaTeX Info: Redefining \% on input line 336.
+LaTeX Info: Redefining \. on input line 328.
+LaTeX Info: Redefining \% on input line 328.
 [53]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.1.1}) has been already used, duplicate ignored
 <to be read again> 
@@ -1668,16 +1670,16 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.1.1})
 l.348     \begin{equation}
                           \label{**}\tag{**}
 
-LaTeX Info: Redefining \. on input line 381.
-LaTeX Info: Redefining \% on input line 381.
+LaTeX Info: Redefining \. on input line 375.
+LaTeX Info: Redefining \% on input line 375.
 [54])
 
-LaTeX Info: Redefining \. on input line 228.
-LaTeX Info: Redefining \% on input line 228.
+LaTeX Info: Redefining \. on input line 236.
+LaTeX Info: Redefining \% on input line 236.
 [55]
 
-LaTeX Info: Redefining \. on input line 228.
-LaTeX Info: Redefining \% on input line 228.
+LaTeX Info: Redefining \. on input line 236.
+LaTeX Info: Redefining \% on input line 236.
 [56
 
 ]
@@ -1702,8 +1704,8 @@ LaTeX Info: Redefining \. on input line 193.
 LaTeX Info: Redefining \% on input line 193.
 [61])
 
-LaTeX Info: Redefining \. on input line 234.
-LaTeX Info: Redefining \% on input line 234.
+LaTeX Info: Redefining \. on input line 242.
+LaTeX Info: Redefining \% on input line 242.
 [62]
 Cap\'{\i }tulo 3.
 (31_los_axiomas_de_peano.tex
@@ -1784,8 +1786,8 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1.
 
 
-Overfull \hbox (6.81085pt too wide) in paragraph at lines 18--22
-\OML/cmm/m/it/12 !$\OT1/cmr/m/n/12 , fi-ni-to. Enu-me-ra-mos los ele-men-tos de $\OML/cmm/m/it/12 X$ \OT1/cmr/m/n/12 en or-den as-cen-den-te en la for-ma $\OML/cmm/m/it/12 x[]; x[]; [] ; x[]$\OT1/cmr/m/n/12 .
+Overfull \hbox (6.72716pt too wide) in paragraph at lines 18--22
+\OML/cmm/m/it/12 !$\T1/cmr/m/n/12 , fi-ni-to. Enu-me-ra-mos los ele-men-tos de $\OML/cmm/m/it/12 X$ \T1/cmr/m/n/12 en or-den as-cen-den-te en la for-ma $\OML/cmm/m/it/12 x[]; x[]; [] ; x[]$\T1/cmr/m/n/12 .
  []
 
 
@@ -1810,12 +1812,12 @@ LaTeX Info: Redefining \. on input line 180.
 LaTeX Info: Redefining \% on input line 180.
 [78])
 
-LaTeX Info: Redefining \. on input line 241.
-LaTeX Info: Redefining \% on input line 241.
+LaTeX Info: Redefining \. on input line 249.
+LaTeX Info: Redefining \% on input line 249.
 [79]
 
-LaTeX Info: Redefining \. on input line 241.
-LaTeX Info: Redefining \% on input line 241.
+LaTeX Info: Redefining \. on input line 249.
+LaTeX Info: Redefining \% on input line 249.
 [80
 
 ]
@@ -1880,8 +1882,8 @@ LaTeX Info: Redefining \. on input line 172.
 LaTeX Info: Redefining \% on input line 172.
 [95]
 
-LaTeX Info: Redefining \. on input line 203.
-LaTeX Info: Redefining \% on input line 203.
+LaTeX Info: Redefining \. on input line 204.
+LaTeX Info: Redefining \% on input line 204.
 [96]
 
 LaTeX Info: Redefining \. on input line 231.
@@ -1929,12 +1931,12 @@ LaTeX Info: Redefining \. on input line 73.
 LaTeX Info: Redefining \% on input line 73.
 [106])
 
-LaTeX Info: Redefining \. on input line 248.
-LaTeX Info: Redefining \% on input line 248.
+LaTeX Info: Redefining \. on input line 256.
+LaTeX Info: Redefining \% on input line 256.
 [107]
 
-LaTeX Info: Redefining \. on input line 248.
-LaTeX Info: Redefining \% on input line 248.
+LaTeX Info: Redefining \. on input line 256.
+LaTeX Info: Redefining \% on input line 256.
 [108
 
 ]
@@ -1943,8 +1945,8 @@ Ap\'{e}ndice A.
 
 [109]
 
-LaTeX Info: Redefining \. on input line 252.
-LaTeX Info: Redefining \% on input line 252.
+LaTeX Info: Redefining \. on input line 260.
+LaTeX Info: Redefining \% on input line 260.
 [110
 
 ]
@@ -1953,8 +1955,8 @@ Ap\'{e}ndice B.
 
 [111])
 
-LaTeX Info: Redefining \. on input line 256.
-LaTeX Info: Redefining \% on input line 256.
+LaTeX Info: Redefining \. on input line 264.
+LaTeX Info: Redefining \% on input line 264.
 [112] (thesis.bbl
 
 [113
@@ -1983,17 +1985,17 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 3EE7C737057E1797C232371502BCDF90;4442.
  ) 
 Here is how much of TeX's memory you used:
- 41286 strings out of 468130
- 839532 string characters out of 5440700
- 1349062 words of memory out of 5000000
- 68719 multiletter control sequences out of 15000+600000
- 649444 words of font info for 121 fonts, out of 8000000 for 9000
+ 41426 strings out of 468130
+ 840241 string characters out of 5440700
+ 1478771 words of memory out of 5000000
+ 68783 multiletter control sequences out of 15000+600000
+ 660317 words of font info for 128 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 142i,17n,127p,1647b,2674s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi864\matha12.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi360\mathx10.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi480\mathx10.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\matha6.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi720\mathx10.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\mathb8.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\matha8.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi720\mathb12.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\matha12.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on thesis.pdf (115 pages, 959126 bytes).
+ 142i,16n,127p,1647b,2584s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1200.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0600.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi864\matha12.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi360\mathx10.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi480\mathx10.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbi1200.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti0800.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\matha6.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi720\mathx10.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\mathb8.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\matha8.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi720\mathb12.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsl1200.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\matha12.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1728.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc2074.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1200.pk> <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1440.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb>
+Output written on thesis.pdf (115 pages, 1054336 bytes).
 PDF statistics:
- 1611 PDF objects out of 1728 (max. 8388607)
- 570 named destinations out of 1000 (max. 500000)
+ 2278 PDF objects out of 2487 (max. 8388607)
+ 629 named destinations out of 1000 (max. 500000)
  223 words of extra memory for PDF output out of 10000 (max. 10000000)
 
