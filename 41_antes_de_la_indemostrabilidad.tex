@@ -4,7 +4,7 @@ En la siguiente sección daremos herramientas y resultados útiles para dar con 
     En lo siguiente, designaremos al conjunto de todas las tuplas finitas con entradas de números naturales por $T$.
 \end{obs}
 \begin{defn}
-    Definimos la función $v:T\longrightarrow\n$ dada para cada $(x_1,x_2,\ldots,x_n)\in T$ como,\[v(x_1,x_2,\ldots,x_n)=p_1^{x_1}\cdot p_2^{x_2}\cdots p_n^{x_{n}+1},\] con $p_i$ el $i-$ésimo número primo.
+    Definimos la función $v:T\longrightarrow\n$ dada para cada $(x_1,x_2,\ldots,x_n)\in T$ como,\[v(x_1,x_2,\ldots,x_n)=p_1^{x_1}\cdot p_2^{x_2}\cdots p_n^{x_{n}+1},\] con $p_i$ el $i$-ésimo número primo.
 \end{defn}
 \begin{defn}
     Definimos la función $u:\varepsilon_0\longrightarrow T$, dada por $\forall \alpha\in\varepsilon_0$,
@@ -111,17 +111,17 @@ Las anteriores funciones simplemente se ponen de manifiesto para recalcar que to
 \begin{obs}
     Para alguna operación $P(\alpha,n)$, denotamos:
     \[P(\beta,\lpr{n_1,\ldots,n_k}):=P(P(\beta,n_1),\lpr{n_2,\ldots,n_k});\]
-    es decir, iterando la operación $P$, $k-$veces, de forma que el primer parámetro en cada ocasión es, o bien el ordinal $\beta$, o bien la iteración anterior; y el segundo parámetro uno de los elementos del conjunto $\set{n_1,\ldots,n_k}$.
+    es decir, iterando la operación $P$, $k$-veces, de forma que el primer parámetro en cada ocasión es, o bien el ordinal $\beta$, o bien la iteración anterior; y el segundo parámetro uno de los elementos del conjunto $\set{n_1,\ldots,n_k}$.
     De manera análoga, si contamos con un conjunto $X=\set{x_1,\ldots,x_n}$, con sus elementos ordenados de forma ascendente, tenemos:
     \[P(\beta,X)=P(\beta,\lpr{x_1,\ldots,x_k}).\]
 \end{obs}
 \begin{lem}\label{eselemita}
     Dado un conjunto finito $X=\set{x_1,\ldots,x_k}$, con al menos dos elementos,
-    \[X\text{ es }\alpha-\text{grande}\Longleftrightarrow F(\alpha,X)=0.\]
+    \[X\text{ es }\alpha\text{-grande}\Longleftrightarrow F(\alpha,X)=0.\]
 \end{lem}
 \begin{proof}
     Procedemos por inducción sobre $\alpha$:\\
-    Si $X$ es $1-$grande, tenemos que $X$ tiene al menos dos elementos; luego,
+    Si $X$ es $1$-grande, tenemos que $X$ tiene al menos dos elementos; luego,
     \[F(1,x_1)=0,\]
     es decir:
     \[F(1,X)=F(F(1,x_1),\lpr{x_2,\ldots,x_k})=0.\]
@@ -129,19 +129,19 @@ Las anteriores funciones simplemente se ponen de manifiesto para recalcar que to
     \[F(1,X)=0,\]
     entonces,
     \[F(F(1,x_1),\lpr{x_2,\ldots,x_k})=0;\]
-    luego, como $\set{x_2,\ldots,x_k}\neq\nt$, tenemos que $X$ es $1-$grande.
+    luego, como $\set{x_2,\ldots,x_k}\neq\nt$, tenemos que $X$ es $1$-grande.
     Así pues, si tenemos
-    \[X\text{ es }\alpha-\text{grande},\]
+    \[X\text{ es }\alpha\text{-grande},\]
     de inmediato tenemos que
-    \[\set{x_2,\ldots,x_k}\text{ es }F(\alpha,x_1)-\text{grande}.\]
+    \[\set{x_2,\ldots,x_k}\text{ es }F(\alpha,x_1)\text{-grande}.\]
     Así, considerando que $F(\alpha,x_1)<\alpha$, por hipótesis de inducción tenemos:
     \[F(F(\alpha,x_1),\lpr{x_2,\ldots,x_k})=F(\alpha,X)=0.\]
     Recíprocamente, si tenemos $F(\alpha,X)=0$, tenemos que
     \[F(F(\alpha,x_1),\lpr{x_2,\ldots,x_k})=0,\]
     lo cuál, por hipótesis de inducción nos arroja que 
-    \[\set{x_2,\ldots,x_k}\text{ es }F(\alpha,x_1)-\text{grande};\]
+    \[\set{x_2,\ldots,x_k}\text{ es }F(\alpha,x_1)\text{-grande};\]
     es decir
-    \[X\text{ es }\alpha-\text{grande},\]
+    \[X\text{ es }\alpha\text{-grande},\]
     justo lo que buscabamos.
 \end{proof}
 \begin{defn}
@@ -156,9 +156,9 @@ Las anteriores funciones simplemente se ponen de manifiesto para recalcar que to
 \end{defn}
 \begin{obs}
     La relación $\underset{n}{\Rightarrow}$ es transitiva, pues si tenemos $\alpha\underset{n}{\Rightarrow}\beta$ y $\beta\underset{n}{\Rightarrow}\gamma$,
-    \[\beta=F(\alpha,\underbrace{(n,\ldots,n)}_{k-\text{veces}})\land\gamma=F(\beta,\underbrace{(n,\ldots,n)}_{k'-\text{veces}});\]
+    \[\beta=F(\alpha,\underbrace{(n,\ldots,n)}_{k\text{-veces}})\land\gamma=F(\beta,\underbrace{(n,\ldots,n)}_{k'\text{-veces}});\]
     por lo que:
-    \[\gamma=F(F(\alpha,\underbrace{(n,\ldots,n)}_{k-\text{veces}}),\underbrace{(n,\ldots,n)}_{k'-\text{veces}})=F(\alpha,\underbrace{(n,\ldots,n)}_{(k+k')-\text{veces}}),\]
+    \[\gamma=F(F(\alpha,\underbrace{(n,\ldots,n)}_{k\text{-veces}}),\underbrace{(n,\ldots,n)}_{k'\text{-veces}})=F(\alpha,\underbrace{(n,\ldots,n)}_{(k+k')\text{-veces}}),\]
     es decir,
     \[\alpha\underset{n}{\Rightarrow}\gamma.\]
     De manera análoga con $\underset{n}{\rightarrow}$.
@@ -166,10 +166,10 @@ Las anteriores funciones simplemente se ponen de manifiesto para recalcar que to
 %%a partir de aquí faltan demostraciones xd%%
 \begin{lem} {\label{lemkpl5}}
     Sea $n>0$ y sea $l\in\n$ tal que 
-    \[F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{l-\text{veces}})\geq\n^\delta(n-1)\]
+    \[F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{l\text{-veces}})\geq\n^\delta(n-1)\]
     entonces, existen $\xi_1,\ldots,\xi_l$ ordinales tales que:
     \begin{itemize}
-        \item $k<l\Longrightarrow F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{k-\text{veces}})=\n^\delta(n-1)+\xi_k$;
+        \item $k<l\Longrightarrow F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{k\text{-veces}})=\n^\delta(n-1)+\xi_k$;
         \item $\n^\delta>\xi_1>\cdots>\xi_l$.
     \end{itemize}
 \end{lem}
@@ -184,15 +184,15 @@ Las anteriores funciones simplemente se ponen de manifiesto para recalcar que to
             así, $\xi_1=\n^{F(\delta,n)}$. Observemos que si bien, no tiene sentido hablar de $\delta-F(\delta,n)$, ya que delta es límite, podemos entenderlo como para algún ordinal entre $F(\delta,n)$ y $\delta$, y al tomar el límite (el supremo) esto coincide con lo que buscamos.
     \end{itemize}
     Ahora, supongamos que ya están dado los $\xi_1,\ldots,\xi_k$, con $k\in[1,l-1]$, entonces
-    \[F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{(k+1)-\text{veces}})=F(F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{k-\text{veces}}),n)=F(\n^\delta(n-1)+\xi_k,n).\]
+    \[F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{(k+1)\text{-veces}})=F(F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{k\text{-veces}}),n)=F(\n^\delta(n-1)+\xi_k,n).\]
     Observemos que $\xi_k\neq 0$, pues por hipótesis:
-    \[F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{l-\text{veces}})\geq \n^\delta(n-1);\]
+    \[F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{l\text{-veces}})\geq \n^\delta(n-1);\]
     entonces, si $\xi_k=0$, por lo que:
-    \[F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{k-\text{veces}})=\n^\delta(n-1);\]
+    \[F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{k\text{-veces}})=\n^\delta(n-1);\]
     luego,
-    \[F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{(k+1)-\text{veces}})<\n^\delta(n-1);\]
+    \[F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{(k+1)\text{-veces}})<\n^\delta(n-1);\]
     por lo que,
-    \[F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{l-\text{veces}})<\n^\delta(n-1),\]
+    \[F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{l\text{-veces}})<\n^\delta(n-1),\]
     lo cuál es una contradicción.
     \begin{itemize}
         \item Si $\xi_k=\gamma+1$, para algún ordinal $\gamma$, entonces
@@ -207,12 +207,12 @@ Las anteriores funciones simplemente se ponen de manifiesto para recalcar que to
             luego
             \[\alpha<\delta.\]
             Señalemos que
-            \[F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{k-\text{veces}})=\n^\delta(n-1)+\n^\alpha(\beta+1)=\n^\alpha(\n^{\delta-\alpha}(n-1)+\beta+1),\]
+            \[F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{k\text{-veces}})=\n^\delta(n-1)+\n^\alpha(\beta+1)=\n^\alpha(\n^{\delta-\alpha}(n-1)+\beta+1),\]
             y
-            \[F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{(k+1)-\text{veces}})=F(\n^\alpha(\n^{\delta-\alpha}(n-1)+\beta+1),n).\]
+            \[F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{(k+1)\text{-veces}})=F(\n^\alpha(\n^{\delta-\alpha}(n-1)+\beta+1),n).\]
             \begin{enumerate}
                 \item Caso 1: $\alpha\in\text{SUCC}$:
-                    \[F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{(k+1)-\text{veces}})=\n^\alpha(\n^{\delta-\alpha}(n-1)+\beta)+\n^{\alpha-1}\cdot n\]
+                    \[F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{(k+1)\text{-veces}})=\n^\alpha(\n^{\delta-\alpha}(n-1)+\beta)+\n^{\alpha-1}\cdot n\]
                     \[=\n^\delta(n-1)+\n^\alpha\cdot\beta+\n^{\alpha-1}\cdot n.\]
                     Además, 
                     \[F(\n^\alpha(\beta+1),n)=\n^\alpha\cdot\beta+\n^{\alpha-1}\cdot n,\]
@@ -221,7 +221,7 @@ Las anteriores funciones simplemente se ponen de manifiesto para recalcar que to
                     Así, tomamos $\xi_{k+1}=\n^\alpha\cdot\beta+\n^{\alpha-1}\cdot n$, y claro que
                     \[\xi_{k+1}<\xi_k.\]
                 \item Caso 2: $\alpha\in\text{LIM}$:
-                    \[F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{(k+1)-\text{veces}})=\n^\alpha(\n^{\delta-\alpha}(n-1)+\beta)+\n^{F(\alpha,n)}\]
+                    \[F(\n^\delta\cdot n,\underbrace{(n,\ldots,n)}_{(k+1)\text{-veces}})=\n^\alpha(\n^{\delta-\alpha}(n-1)+\beta)+\n^{F(\alpha,n)}\]
                     \[=\n^\delta(n-1)+\n^\alpha\cdot\beta+\n^{F(\alpha,n)}.\]
                     Y como
                     \[F(\n^\alpha(\beta+1),n)=\n^\alpha\cdot\beta+\n^{F(\alpha,n)},\]
@@ -254,20 +254,20 @@ Las anteriores funciones simplemente se ponen de manifiesto para recalcar que to
     \begin{enumerate}
         \item Procedemos por inducción sobre $\beta$:
             si $\beta=0$ y $\beta\underset{n}{\Rightarrow}\alpha$, entonces:
-            \[\alpha=F(\beta,\underbrace{(n,\ldots,n)}_{k-\text{veces}})=F(0,\underbrace{(n,\ldots,n)}_{k-\text{veces}})=0.\]
+            \[\alpha=F(\beta,\underbrace{(n,\ldots,n)}_{k\text{-veces}})=F(0,\underbrace{(n,\ldots,n)}_{k\text{-veces}})=0.\]
             Por lo tanto $\alpha=\beta$ y $\n^\alpha=\n^\beta$, lo cual es suficiente.
             Consideremos que se cumple para cada $\lambda<\beta$. El caso $\beta=\alpha$ es inmediato, por lo que consideraremos $\alpha\neq\beta$. 
             \begin{itemize}
                 \item Si $\beta\in\text{LIM}$, existe $k>0$ tal que: 
-                    \[\beta\underset{n}{\Rightarrow}\alpha\Longleftrightarrow \alpha=F(\beta,\underbrace{(n,\ldots,n)}_{k-\text{veces}})=F(F(\beta,n),\underbrace{(n,\ldots,n)}_{(k-1)-\text{veces}})\Longleftrightarrow F(\beta,n)\underset{n}{\Rightarrow}\alpha.\]
+                    \[\beta\underset{n}{\Rightarrow}\alpha\Longleftrightarrow \alpha=F(\beta,\underbrace{(n,\ldots,n)}_{k\text{-veces}})=F(F(\beta,n),\underbrace{(n,\ldots,n)}_{(k-1)\text{-veces}})\Longleftrightarrow F(\beta,n)\underset{n}{\Rightarrow}\alpha.\]
                     Como $F(\beta,n)<\beta$, por hipótesis de inducción:
                     \[\n^{F(\beta,n)}\underset{n}{\Rightarrow}\n^{\alpha};\]
                     es decir, existe $j$ tal que:
-                    \[\n^\alpha=F(\n^{F(\beta,n)},\underbrace{(n,\ldots,n)}_{j-\text{veces}})\]
+                    \[\n^\alpha=F(\n^{F(\beta,n)},\underbrace{(n,\ldots,n)}_{j\text{-veces}})\]
                     Ahora, observemos que:
                     \[F(\n^\beta,n)=\n^{F(\beta,n)},\]
                     por lo que:
-                    \[\n^\alpha=F(F(\n^\beta,n),\underbrace{(n,\ldots,n)}_{j-\text{veces}})=F(\n^\beta,\underbrace{(n,\ldots,n)}_{(j+1)-\text{veces}});\]
+                    \[\n^\alpha=F(F(\n^\beta,n),\underbrace{(n,\ldots,n)}_{j\text{-veces}})=F(\n^\beta,\underbrace{(n,\ldots,n)}_{(j+1)\text{-veces}});\]
                     es decir, 
                     \[\n^\beta\underset{n}{\Rightarrow}\n^\alpha.\]
                 \item Si $\beta\in\text{SUCC}$, existe un ordinal límite $\gamma$, y un ordinal finito no nulo $k$ tal que $\beta=\gamma+k$. Primero, observemos que:
@@ -279,12 +279,12 @@ Las anteriores funciones simplemente se ponen de manifiesto para recalcar que to
                     es decir,
                     \[\n^{\gamma+k}\underset{n}{\Rightarrow}\n^{\gamma+k-1}\cdot n.\]
                     Ahora, consideremos el conjunto
-                    \[C=\set[i\in\n\setminus\set0]{F(\n^{\gamma+k-1}\cdot n,\underbrace{(n,\ldots,n)}_{i-\text{veces}})\geq\n^{\gamma+k-1}\cdot(n-1)}.\]
+                    \[C=\set[i\in\n\setminus\set0]{F(\n^{\gamma+k-1}\cdot n,\underbrace{(n,\ldots,n)}_{i\text{-veces}})\geq\n^{\gamma+k-1}\cdot(n-1)}.\]
                     Este conjunto claro que no es vacío, pues al menos $1\in C$ por definción.
                     Observemos que $C$ debe tener elemento máximo, pues en caso contrario tendríamos un decrecimiento infinito dado por los $\xi_i$ del lema {\ref{lemkpl5}}, lo cuál es imposible. Más aún, como estos $\xi_i$ determinan una sucesión decreciente, 
                     \[\xi_{\max{C}}=0;\]
                     es decir:
-                    \[F(\n^{\gamma+k-1}\cdot n,\underbrace{(n,\ldots,n)}_{\max{C}-\text{veces}})=\n^{\gamma+k-1}\cdot(n-1),\]
+                    \[F(\n^{\gamma+k-1}\cdot n,\underbrace{(n,\ldots,n)}_{\max{C}\text{-veces}})=\n^{\gamma+k-1}\cdot(n-1),\]
                     es decir,
                     \[\n^{\gamma+k-1}\cdot n\underset{n}{\Rightarrow}\n^{\gamma+k-1}\cdot (n-1);\]
                     y como $n$ es arbitraria, tenemos que:
@@ -299,8 +299,8 @@ Las anteriores funciones simplemente se ponen de manifiesto para recalcar que to
                         \item $\alpha=\gamma$. Entonces, nuevamente por lo anterior:
                             \[\n^{\gamma+k}\underset{n}{\Rightarrow}\n^{\gamma}=\n^\alpha.\]
                         \item $\alpha<\gamma$. Entonces, como $\beta\underset{n}{\Rightarrow}\alpha$, entonces existe $m$ tal que:
-                            \[F(\beta,\underbrace{(n,\ldots,n)}_{m-\text{veces}})=\alpha.\]
-                            Además, $F(\beta,\underbrace{(n,\ldots,n)}_{k-\text{veces}})=\gamma$, por lo que $k<m$ y $\gamma\underset{n}{\Rightarrow}\alpha$. Así, como ya tenemos que
+                            \[F(\beta,\underbrace{(n,\ldots,n)}_{m\text{-veces}})=\alpha.\]
+                            Además, $F(\beta,\underbrace{(n,\ldots,n)}_{k\text{-veces}})=\gamma$, por lo que $k<m$ y $\gamma\underset{n}{\Rightarrow}\alpha$. Así, como ya tenemos que
                             \[\n^{\gamma+k}\underset{n}{\Rightarrow}\n^\gamma,\]
                             y por el caso límite, ya sabemos que:
                             \[\n^\gamma\underset{n}{\Rightarrow}\n^\alpha.\]
@@ -332,17 +332,17 @@ Las anteriores funciones simplemente se ponen de manifiesto para recalcar que to
             Esto termina el inciso.
         \item La necesidad es inmediata por definición. Para la suficiencia procedemos por contrapositiva:
             supongamos que $\beta\underset{n}{\not\Rightarrow} \alpha$, es decir, para cada número natural $k$ tenemos,
-            \[\alpha\neq F(\beta,\underbrace{(n,\ldots,n)}_{k-\text{veces}}).\]
+            \[\alpha\neq F(\beta,\underbrace{(n,\ldots,n)}_{k\text{-veces}}).\]
             Ahora, supongamos que existen $j_1,\ldots,j_m$ tales que:
             \[(\forall i\in[1,m])(j_i<n)\land F(\beta,(j_1,\ldots,j_m))=\alpha.\]
             Por el inciso anterior, tenemos que:
             \[F(\beta,n)\underset{n}{\Rightarrow}F(\beta,j_1),\]
             es decir, existe $m_{j_1}$ tal que:
-            \[F(\beta,j_1)=F(F(\beta,n),\underbrace{(n,\ldots,n)}_{m_{j_1}-\text{veces}})=F(\beta,\underbrace{(n,\ldots,n)}_{m_{j_1}+1-\text{veces}}).\]
+            \[F(\beta,j_1)=F(F(\beta,n),\underbrace{(n,\ldots,n)}_{m_{j_1}\text{-veces}})=F(\beta,\underbrace{(n,\ldots,n)}_{m_{j_1}+1\text{-veces}}).\]
             Aplicando el mismo proceso a $F(\beta,n)$ y a las expresiones resultantes con cada $j_i$, tenemos que:
-            \[F(\beta,(j_1,\ldots,j_m))=F(\beta,\underbrace{(n,\ldots,n)}_{m_{j_1}+\cdots+m_{j_m}+1-\text{veces}}).\]
+            \[F(\beta,(j_1,\ldots,j_m))=F(\beta,\underbrace{(n,\ldots,n)}_{m_{j_1}+\cdots+m_{j_m}+1\text{-veces}}).\]
             Por lo tanto, tomando $k=m_{j_1}+\cdots+m_{j_m}+1$, tenemos:
-            \[\alpha= F(\beta,\underbrace{(n,\ldots,n)}_{k-\text{veces}}).\]
+            \[\alpha= F(\beta,\underbrace{(n,\ldots,n)}_{k\text{-veces}}).\]
             Esto es una contradicción, y por lo tanto, tenemos que:
             \[\beta\underset{n}{\not\rightarrow}\alpha.\]
             Esto termina el inciso.
@@ -427,7 +427,7 @@ Las anteriores funciones simplemente se ponen de manifiesto para recalcar que to
 \end{proof}
 
 \begin{thm}\label{kpp8}
-    Sean $b_0,b_1,b_2,\ldots$ la sucesión de Goodstein de $m$ en el $n-$ésimo paso y sea $k$ el mínimo número tal que $b_k=0$. Entonces, $[[n-1,n+k]]$ es $f_n(m)-$grande.
+    Sean $b_0,b_1,b_2,\ldots$ la sucesión de Goodstein de $m$ en el $n$-ésimo paso y sea $k$ el mínimo número tal que $b_k=0$. Entonces, $[[n-1,n+k]]$ es $f_n(m)$-grande.
 \end{thm}
 \begin{proof}
     Consideremos $\alpha=f_n(b_0)$. Tomando en cuenta el lema {\ref{kpl3ii}}, tenemos la siguiente sucesión de ordinales:
@@ -440,5 +440,5 @@ Las anteriores funciones simplemente se ponen de manifiesto para recalcar que to
     \[F(\alpha,\set{n,n+1,\ldots,n+k})\leq F(H(\alpha,n),\set{n+1,\ldots,n+k})\]
     \[\leq F(H(\alpha,\set{n,n+1}),\set{n+2,\ldots,n+k})\]
     \[\leq\cdots\leq H(\alpha,\set{n,\ldots,n+k})=0.\]
-    Luego, por el lema {\ref{eselemita}}, $[[n-1,n+k]]$ es $\alpha-$grande.
+    Luego, por el lema {\ref{eselemita}}, $[[n-1,n+k]]$ es $\alpha$-grande.
 \end{proof}
