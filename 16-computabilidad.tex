@@ -1,5 +1,5 @@
 \section{Teoría de la computabilidad}
-En la siguiente sección abordaremos la teoría de computabilidad, cuyos principales contribuidores fueron \textit{Alan Turing} mediante su \textit{máquina de Turing}, \textit{Kurt Gödel} mediante la \textit{teoría de la recursión} y \textit{Alonzo Church} mediante el $\lambda-$\textit{cálculo.} En esta ocasión nos quedaremos principalmente con ideas intuitivas sobre máquinas de Turing y más formalmente sobre recursión, todo esto con la intención de presentar el concepto de función computable. \cite{comp1}
+En la siguiente sección abordaremos la teoría de computabilidad, cuyos principales contribuidores fueron \textit{Alan Turing} mediante su \textit{máquina de Turing}, \textit{Kurt Gödel} mediante la \textit{teoría de la recursión} y \textit{Alonzo Church} mediante el $\lambda$-\textit{cálculo.} En esta ocasión nos quedaremos principalmente con ideas intuitivas sobre máquinas de Turing y más formalmente sobre recursión, todo esto con la intención de presentar el concepto de función computable. \cite{comp1}
 
 \begin{defn}
     Una máquina de Turing consta de:
@@ -48,7 +48,7 @@ En la siguiente sección abordaremos la teoría de computabilidad, cuyos princip
 \end{ex}
 
 \begin{defn} \textit{(máquina universal de Turing)}\\
-    Llamamos así a la función $\Phi:A\longrightarrow\n$, con $A\subseteq\n\times\n$. $\Phi(e,n)$ es el resultado de introducir el imput $n$ en la $e-$ésima máquina de Turing.   
+    Llamamos así a la función $\Phi:A\longrightarrow\n$, con $A\subseteq\n\times\n$. $\Phi(e,n)$ es el resultado de introducir el imput $n$ en la $e$-ésima máquina de Turing.   
 \end{defn}
 
 Por la tesis de Church-Turing, la función $\Phi$ es computable.
@@ -71,12 +71,12 @@ Por la tesis de Church-Turing, la función $\Phi$ es computable.
 \begin{thm}
     El conjunto
     \[\set{e\in\n|\Phi(e,-)\text{ es una función total}}\]
-    no es computable. Es decir, no existe un algoritmo que, dado $e$, decida si la $e-$ésima función computable es total.
+    no es computable. Es decir, no existe un algoritmo que, dado $e$, decida si la $e$-ésima función computable es total.
 \end{thm}
 \begin{proof}
     Supongamos que este conjunto sí es computable, entonces hay una función computable
     \[l\mapsto f_l,\]
-    la $l-$ésima función computable.
+    la $l$-ésima función computable.
     \begin{center}
     \begin{pseudocodigo}
         input(l);
