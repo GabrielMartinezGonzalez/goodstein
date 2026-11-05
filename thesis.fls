@@ -423,6 +423,9 @@ INPUT .\thesis.toc
 INPUT thesis.toc
 INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\ecbx1200.tfm
 OUTPUT thesis.toc
+INPUT .\03_introduccion.tex
+INPUT .\03_introduccion.tex
+INPUT 03_introduccion.tex
 INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\ecrm0800.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\ecrm1000.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
@@ -570,6 +573,8 @@ INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\public\mathabx\dpi600\
 INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\public\mathabx\dpi600\matha8.pk
 INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\public\mathabx\dpi720\mathb12.pk
 INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\public\mathabx\dpi720\mathb12.pk
+INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\public\mathabx\dpi600\matha10.pk
+INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\public\mathabx\dpi600\matha10.pk
 INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk
 INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk
 INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk
@@ -602,6 +607,8 @@ INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecc
 INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1440.pk
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
