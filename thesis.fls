@@ -423,12 +423,34 @@ INPUT .\thesis.toc
 INPUT thesis.toc
 INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\ecbx1200.tfm
 OUTPUT thesis.toc
+INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\ecrm0800.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\ecrm1000.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam5.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
+INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
+INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs7.tfm
+INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs5.tfm
+INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\tfm\public\mathabx\matha10.tfm
+INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\tfm\public\mathabx\matha7.tfm
+INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\tfm\public\mathabx\matha5.tfm
+INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\tfm\public\mathabx\mathb10.tfm
+INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\tfm\public\mathabx\mathb7.tfm
+INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\tfm\public\mathabx\mathb5.tfm
+INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\tfm\public\mathabx\mathx10.tfm
+INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\tfm\public\mathabx\mathx10.tfm
+INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\tfm\public\mathabx\mathx10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\ecrm0700.tfm
 INPUT .\11_propiedades_de_los_ordinales.tex
 INPUT .\11_propiedades_de_los_ordinales.tex
 INPUT 11_propiedades_de_los_ordinales.tex
 INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\ecrm1728.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\ecbx1728.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\ecrm0800.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\ecrm0600.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\ecti0800.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\ecti0600.tfm
@@ -447,14 +469,7 @@ INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\ueuf.fd
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm7.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam5.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm5.tfm
-INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs5.tfm
-INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\tfm\public\mathabx\matha5.tfm
-INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\tfm\public\mathabx\mathb5.tfm
-INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\tfm\public\mathabx\mathx10.tfm
 INPUT .\15_semantica_logica_de_primer_orden.tex
 INPUT .\15_semantica_logica_de_primer_orden.tex
 INPUT 15_semantica_logica_de_primer_orden.tex
@@ -498,18 +513,12 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm10.tfm
-INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
 INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
 INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\tfm\public\mathabx\matha12.tfm
-INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\tfm\public\mathabx\matha10.tfm
 INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\tfm\public\mathabx\mathb12.tfm
-INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\tfm\public\mathabx\mathb10.tfm
-INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\tfm\public\mathabx\mathx10.tfm
 INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\tfm\public\mathabx\mathx10.tfm
 INPUT .\40_teoremas_ketonen_solovay.tex
 INPUT .\40_teoremas_ketonen_solovay.tex
@@ -551,8 +560,6 @@ INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ect
 INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1095.pk
 INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti0800.pk
 INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti0800.pk
-INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk
-INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk
 INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\public\mathabx\dpi600\matha6.pk
 INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\public\mathabx\dpi600\matha6.pk
 INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\public\mathabx\dpi720\mathx10.pk
@@ -565,6 +572,12 @@ INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\public\mathabx\dpi720\
 INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\public\mathabx\dpi720\mathb12.pk
 INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk
 INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk
+INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk
+INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk
+INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0700.pk
+INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0700.pk
+INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk
+INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk
 INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\public\mathabx\dpi600\matha12.pk
 INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\public\mathabx\dpi600\matha12.pk
 INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecsl1200.pk
