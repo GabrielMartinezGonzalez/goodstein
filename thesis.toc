@@ -4,13 +4,13 @@
 \contentsline {chapter}{Introducción}{11}{chapter*.4}%
 \contentsline {chapter}{\numberline {1}Preliminares}{15}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Propiedades de los ordinales}{15}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Aritmética ordinal}{26}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Ultrafiltros}{30}{section.1.3}%
+\contentsline {section}{\numberline {1.2}Aritmética ordinal}{27}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Ultrafiltros}{31}{section.1.3}%
 \contentsline {section}{\numberline {1.4}Lógica de primer orden}{33}{section.1.4}%
 \contentsline {section}{\numberline {1.5}Semántica en la lógica de primer orden}{40}{section.1.5}%
 \contentsline {section}{\numberline {1.6}Teoría de la computabilidad}{42}{section.1.6}%
 \contentsline {section}{\numberline {1.7}Problema de la detención}{44}{section.1.7}%
-\contentsline {section}{\numberline {1.8}Los teoremas de incompletitud de Gödel}{49}{section.1.8}%
+\contentsline {section}{\numberline {1.8}Los teoremas de incompletitud de Gödel}{50}{section.1.8}%
 \contentsline {chapter}{\numberline {2}Sucesiones e hidras}{59}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Sucesiones de Goodstein}{59}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Hidras asociadas a ordinales}{61}{section.2.2}%
