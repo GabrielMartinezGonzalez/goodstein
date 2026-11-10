@@ -32,6 +32,10 @@ Weber~R., \textit{Computability theory}, American Mathematical Society, 1 edn.,
 Kaye~R., \textit{Models of Peano Arithmetic}, Oxford University Press, 1 edn.,
   (1991).
 
+\bibitem{demoscomp}
+Schwichtenberg~H., Wainer~S.~S., \textit{Proofs and computations}, Cambridge
+  University Press, 1 edn., (2012).
+
 \bibitem{Ultraproducts}
 Chang~C.~C., Keisler~H.~J., \textit{Model theory}, Elsevier Science Publishers,
   3 edn., (1990).
@@ -47,9 +51,5 @@ Ketonen~J., Solovay~R., \textit{Using ultrafilters to prove Ramsey-type
 \bibitem{gerarquias}
 Wainer~S.~S., \textit{A classification of the ordinal recursive functions},
   Arch. math. Logik, (1970), \textbf{13}, 136--153.
-
-\bibitem{demoscomp}
-Schwichtenberg~H., Wainer~S.~S., \textit{Proofs and computations}, Cambridge
-  University Press, 1 edn., (2012).
 
 \end{thebibliography}
