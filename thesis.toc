@@ -16,11 +16,11 @@
 \contentsline {section}{\numberline {2.2}Hidras asociadas a ordinales}{61}{section.2.2}%
 \contentsline {chapter}{\numberline {3}Sistema axiomático}{67}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Los axiomas de Peano}{67}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Ultraproductos}{68}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Conjuntos $\alpha $-grandes}{78}{section.3.3}%
+\contentsline {section}{\numberline {3.2}Ultraproductos}{69}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Conjuntos $\alpha $-grandes}{79}{section.3.3}%
 \contentsline {chapter}{\numberline {4}La indemostrabilidad del teorema de Goodstein}{85}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Los teoremas de Ketonen-Solovay}{85}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Antes de la indemostrabilidad}{95}{section.4.2}%
+\contentsline {section}{\numberline {4.2}Antes de la indemostrabilidad}{96}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Indemostrabilidad}{109}{section.4.3}%
 \contentsline {chapter}{\numberline {A}Axioma de elección y lema de Zorn}{113}{appendix.Alph1}%
 \contentsline {chapter}{\numberline {B}Código que cálcula sucesiones de Goodstein}{115}{appendix.Alph2}%
