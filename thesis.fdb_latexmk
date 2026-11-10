@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex thesis"] 1793859984.99787 "thesis.aux" "thesis.bbl" "thesis" 1793860538.15191 0
+["bibtex thesis"] 1794277076.51631 "thesis.aux" "thesis.bbl" "thesis" 1794277086.25128 0
   "./bibliography.bib" 1787621683 2188 7abcb130e976756b59d42587f41c554e ""
   "C:/Program Files/MiKTeX/bibtex/bst/cmpj/cmpj.bst" 1608999027 38577 583f8e9e4b6937a24d90d79ef06cecee ""
-  "portada.aux" 1793860530 729 0075f1d36897da23b422c66c85a5a87d "pdflatex"
-  "thesis.aux" 1793860536 12209 4ff632cdc48fc140110481996d58d9ac "pdflatex"
+  "portada.aux" 1794277079 729 0075f1d36897da23b422c66c85a5a87d "pdflatex"
+  "thesis.aux" 1794277084 12209 0b94bde770ac6f72d5932fb010a2d3c5 "pdflatex"
   (generated)
   "thesis.bbl"
   "thesis.blg"
   (rewritten before read)
-["pdflatex"] 1793860526.67255 "c:/Users/gabri/OneDrive/Documents/goodstein/thesis.tex" "thesis.pdf" "thesis" 1793860538.1535 0
+["pdflatex"] 1794277077.14387 "c:/Users/gabri/OneDrive/Documents/goodstein/thesis.tex" "thesis.pdf" "thesis" 1794277086.25249 0
   "03_introduccion.tex" 1793854505 8590 3a96ce23a7457ab42f42873a61c8c169 ""
   "11_propiedades_de_los_ordinales.tex" 1793860525 33490 11c7536d15af00b97862714a4a7bc33e ""
   "12_aritmetica_ordinal.tex" 1793858774 10193 bd4999b5814f493ec55b72844ae00abb ""
@@ -315,16 +315,16 @@
   "C:/Users/gabri/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs5.tfm" 1758844971 684 3a51bd4fd9600428d5264cf25f04bb9a ""
   "C:/Users/gabri/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs7.tfm" 1758933290 692 1b6510779f0f05e9cbf03e0f6c8361e6 ""
   "C:/Users/gabri/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1758844470 13276899 8da2a053bc64ac22b132561ed26c81c8 ""
-  "c:/Users/gabri/OneDrive/Documents/goodstein/thesis.tex" 1793858832 9461 0d47253d6e8f07d41336df08d9d56290 ""
+  "c:/Users/gabri/OneDrive/Documents/goodstein/thesis.tex" 1794277059 10227 e1b41acdecb70fc3753d4d5af01ea526 ""
   "escudo-esfm.png" 1758842280 134199 3893abf6de393aa0b21f96ff2a87d0da ""
   "logo-ipn.png" 1758842281 147498 815118d5893dd85ee9acde00569de2af ""
-  "portada.aux" 1793860530 729 0075f1d36897da23b422c66c85a5a87d "pdflatex"
+  "portada.aux" 1794277079 729 0075f1d36897da23b422c66c85a5a87d "pdflatex"
   "portada.tex" 1782274702 2424 773218563445160e8de761a33dced65b ""
-  "thesis.aux" 1793860536 12209 4ff632cdc48fc140110481996d58d9ac "pdflatex"
-  "thesis.bbl" 1793859985 1621 b096093a96cd5cd691d47fc1c9db0558 "bibtex thesis"
-  "thesis.out" 1793860536 4550 96b224dea3ca164aba7e48aa08794223 "pdflatex"
-  "thesis.tex" 1793858832 9461 0d47253d6e8f07d41336df08d9d56290 ""
-  "thesis.toc" 1793860536 2158 1105fecab13de0b9cc1fd05be5985ffa "pdflatex"
+  "thesis.aux" 1794277084 12209 0b94bde770ac6f72d5932fb010a2d3c5 "pdflatex"
+  "thesis.bbl" 1794277077 1621 b096093a96cd5cd691d47fc1c9db0558 "bibtex thesis"
+  "thesis.out" 1794277084 4550 96b224dea3ca164aba7e48aa08794223 "pdflatex"
+  "thesis.tex" 1794277059 10227 e1b41acdecb70fc3753d4d5af01ea526 ""
+  "thesis.toc" 1794277084 2158 1105fecab13de0b9cc1fd05be5985ffa "pdflatex"
   (generated)
   "portada.aux"
   "thesis.aux"
