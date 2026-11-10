@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -39,6 +39,14 @@ Chang~C.~C., Keisler~H.~J., \textit{Model theory}, Elsevier Science Publishers,
 \bibitem{thmsigma1comp}
 Hájek~P., Pudlák~P., \textit{Metamathematics of first-order arithmetic},
   Cambridge University Press, 1 edn., (1998).
+
+\bibitem{KetonenSolovay}
+Ketonen~J., Solovay~R., \textit{Using ultrafilters to prove Ramsey-type
+  Theorem}, Annals of Mathematics, (1981), \textbf{113}, 267--314.
+
+\bibitem{gerarquias}
+Wainer~S.~S., \textit{A classification of the ordinal recursive functions},
+  Arch. math. Logik, (1970), \textbf{13}, 136--153.
 
 \bibitem{demoscomp}
 Schwichtenberg~H., Wainer~S.~S., \textit{Proofs and computations}, Cambridge
