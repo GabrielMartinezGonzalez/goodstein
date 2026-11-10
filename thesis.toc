@@ -1,7 +1,8 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {chapter}{Agradecimientos}{5}{chapter*.1}%
-\contentsline {chapter}{Resumen}{7}{chapter*.2}%
-\contentsline {chapter}{Introducción}{11}{chapter*.4}%
+\contentsline {chapter}{Resumen}{7}{section*.3}%
+\contentsline {chapter}{Abstract}{7}{section*.4}%
+\contentsline {chapter}{Introducción}{11}{chapter*.6}%
 \contentsline {chapter}{\numberline {1}Preliminares}{15}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Propiedades de los ordinales}{15}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Aritmética ordinal}{27}{section.1.2}%
@@ -24,4 +25,4 @@
 \contentsline {section}{\numberline {4.3}Indemostrabilidad}{109}{section.4.3}%
 \contentsline {chapter}{\numberline {A}Axioma de elección y lema de Zorn}{113}{appendix.Alph1}%
 \contentsline {chapter}{\numberline {B}Código que cálcula sucesiones de Goodstein}{115}{appendix.Alph2}%
-\contentsline {chapter}{Bibliografía}{119}{appendix*.26}%
+\contentsline {chapter}{Bibliografía}{119}{appendix*.28}%
