@@ -461,6 +461,7 @@ INPUT .\11_propiedades_de_los_ordinales.tex
 INPUT .\11_propiedades_de_los_ordinales.tex
 INPUT 11_propiedades_de_los_ordinales.tex
 INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\ecrm0600.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\ecti1000.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\ecti0800.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\ecti0600.tfm
 INPUT .\12_aritmetica_ordinal.tex
@@ -575,6 +576,8 @@ INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\public\mathabx\dpi720\
 INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\public\mathabx\dpi720\mathx10.pk
 INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\public\mathabx\dpi600\mathb8.pk
 INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\public\mathabx\dpi600\mathb8.pk
+INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1000.pk
+INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1000.pk
 INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\public\mathabx\dpi600\matha8.pk
 INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\public\mathabx\dpi600\matha8.pk
 INPUT C:\Users\gabri\AppData\Local\MiKTeX\fonts\pk\ljfour\public\mathabx\dpi720\mathb12.pk

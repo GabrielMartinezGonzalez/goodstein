@@ -1,18 +1,18 @@
 # Fdb version 4
-["bibtex thesis"] 1794289468.83682 "thesis.aux" "thesis.bbl" "thesis" 1794289477.54937 0
+["bibtex thesis"] 1794376017.56014 "thesis.aux" "thesis.bbl" "thesis" 1794376624.14645 0
   "./bibliography.bib" 1794278810 2468 2a06dc287f3f3895c02dd7ed104d4bf6 ""
   "C:/Program Files/MiKTeX/bibtex/bst/cmpj/cmpj.bst" 1608999027 38577 583f8e9e4b6937a24d90d79ef06cecee ""
-  "portada.aux" 1794289471 729 0075f1d36897da23b422c66c85a5a87d "pdflatex"
-  "thesis.aux" 1794289476 12534 2a198554c3368538b020c0f931ae2611 "pdflatex"
+  "portada.aux" 1794376619 729 0075f1d36897da23b422c66c85a5a87d "pdflatex"
+  "thesis.aux" 1794376623 12555 c4c86c94f4ffe514e525f49263f5ebe6 "pdflatex"
   (generated)
   "thesis.bbl"
   "thesis.blg"
   (rewritten before read)
-["pdflatex"] 1794289469.17432 "c:/Users/gabri/OneDrive/Documents/goodstein/thesis.tex" "thesis.pdf" "thesis" 1794289477.55068 0
+["pdflatex"] 1794376617.16777 "c:/Users/gabri/OneDrive/Documents/goodstein/thesis.tex" "thesis.pdf" "thesis" 1794376624.14768 0
   "01_abstrac.tex" 1794288202 1084 b8378d7efafb6e46d944e7a73ce307ae ""
   "01_resumen.tex" 1794287976 1173 af0f99047850c87cded1719a279a4c6f ""
-  "03_introduccion.tex" 1794287984 8580 a152e3664123eb31c021ba911c139541 ""
-  "11_propiedades_de_los_ordinales.tex" 1793860525 33490 11c7536d15af00b97862714a4a7bc33e ""
+  "03_introduccion.tex" 1794375610 8631 78c6b862739a4bad249a0b70d9cb8a78 ""
+  "11_propiedades_de_los_ordinales.tex" 1794376616 33804 cb3d4e678ffafcf4ea9347a13be21bf7 ""
   "12_aritmetica_ordinal.tex" 1793858774 10193 bd4999b5814f493ec55b72844ae00abb ""
   "13_ultrafiltros.tex" 1793858774 8062 f61dd0e57d66578e7418f7eab33f6cd4 ""
   "14_logica_de_primer_orden.tex" 1793858774 18144 fe99254fe86fe575c8680091f6c37d5a ""
@@ -51,6 +51,7 @@
   "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/ecsl1200.tfm" 993062194 3380 9020be658781595c61e159c66a595769 ""
   "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/ecti0600.tfm" 993062312 2844 9478d4df495beb3586d88f9bc53af51f ""
   "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/ecti0800.tfm" 993062316 2840 b6fc7cd2d2eed024b253ee3d8fe2d4cb ""
+  "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/ecti1000.tfm" 993062320 2840 5606e1a681c23005308de9d61c09a8ff ""
   "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/ecti1200.tfm" 993062324 2832 28bbd97ca29f46e76c87a158a9915203 ""
   "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/ectt1095.tfm" 993062342 1352 fa21dcb5ddc7d1dc47d14cd897fdeb0f ""
   "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/ectt1200.tfm" 993062344 1348 c48a0620e07683860afba1730adf9e53 ""
@@ -287,6 +288,7 @@
   "C:/Users/gabri/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1440.pk" 1793762377 34320 8e20609da52a6914b53db81f492f3fff ""
   "C:/Users/gabri/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecsl1200.pk" 1793762369 35064 a0c32723193f56bea56e672e6d33691e ""
   "C:/Users/gabri/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecti0800.pk" 1793762364 24968 f0cd9e83bc0d123d05589be55dbc038a ""
+  "C:/Users/gabri/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1000.pk" 1794376016 31892 6c5a597f2bb93aae75d9e49cd8200a4c ""
   "C:/Users/gabri/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1200.pk" 1793762374 39120 284742dc3472a3410e83c9e253a66c77 ""
   "C:/Users/gabri/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ectt1095.pk" 1793762363 21972 044d83a86771e0a3030ea9ea722bf31c ""
   "C:/Users/gabri/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ectt1200.pk" 1793762361 24152 55be058b64e4414948c431f25b03d6d1 ""
@@ -320,13 +322,13 @@
   "c:/Users/gabri/OneDrive/Documents/goodstein/thesis.tex" 1794289452 13339 a09abb19dd0d1664592a0d2f301aa0c6 ""
   "escudo-esfm.png" 1758842280 134199 3893abf6de393aa0b21f96ff2a87d0da ""
   "logo-ipn.png" 1758842281 147498 815118d5893dd85ee9acde00569de2af ""
-  "portada.aux" 1794289471 729 0075f1d36897da23b422c66c85a5a87d "pdflatex"
+  "portada.aux" 1794376619 729 0075f1d36897da23b422c66c85a5a87d "pdflatex"
   "portada.tex" 1782274702 2424 773218563445160e8de761a33dced65b ""
-  "thesis.aux" 1794289476 12534 2a198554c3368538b020c0f931ae2611 "pdflatex"
-  "thesis.bbl" 1794289469 1945 85240d94b6abca8991773917ec33a229 "bibtex thesis"
-  "thesis.out" 1794289476 4635 c9fe5f0b91cd35227f6f8d2e4498429c "pdflatex"
+  "thesis.aux" 1794376623 12555 c4c86c94f4ffe514e525f49263f5ebe6 "pdflatex"
+  "thesis.bbl" 1794376017 1945 85240d94b6abca8991773917ec33a229 "bibtex thesis"
+  "thesis.out" 1794376623 4635 c9fe5f0b91cd35227f6f8d2e4498429c "pdflatex"
   "thesis.tex" 1794289452 13339 a09abb19dd0d1664592a0d2f301aa0c6 ""
-  "thesis.toc" 1794289476 2208 f35c536356a02cbeb3b4bb6c01062660 "pdflatex"
+  "thesis.toc" 1794376623 2208 f35c536356a02cbeb3b4bb6c01062660 "pdflatex"
   (generated)
   "portada.aux"
   "thesis.aux"

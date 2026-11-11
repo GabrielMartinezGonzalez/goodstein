@@ -18,18 +18,18 @@ y todo subconjunto de $\alpha$ tiene primer elemento.
 \end{thm}
 \begin{proof}
 Definimos $\prec$ como la relación tal que, para cualesquiera $\beta$ y $\gamma$, elementos de $\alpha$,
-\[\beta\prec\gamma\Longleftrightarrow (\beta\in\gamma\lor\beta=\gamma)\]
-Es decir, $\prec$ es el orden parcial inducido por la relación $\in$ en $\alpha$. Luego, consideremos el subconjunto $\{\beta,\gamma\}$ de $\alpha$. Como $\prec$ es un buen orden, tenemos que $\beta\prec\gamma\lor\gamma\prec\beta$. Así, tenemos que:
-\[\beta\in\gamma\lor\beta=\gamma\lor\gamma\in\beta.\]
+\[\beta\prec\gamma\Longleftrightarrow ((\beta\in\gamma)\lor(\beta=\gamma))\]
+Es decir, $\prec$ es el orden parcial inducido por la relación $\in$ en $\alpha$. Luego, consideremos el subconjunto $\{\beta,\gamma\}$ de $\alpha$. Como $\prec$ es un buen orden, tenemos que $(\beta\prec\gamma)\lor(\gamma\prec\beta)$. Así, tenemos que:
+\[(\beta\in\gamma)\lor(\beta=\gamma)\lor(\gamma\in\beta).\]
 Por otro lado, para cualesquiera $a,b\in\alpha$, si se cumple la tricotomía, tenemos que:
-\[a\in b\lor a=b\lor b\in a.\]
+\[(a\in b)\lor (a=b)\lor (b\in a).\]
 De aquí, se sigue que $x\not\in x$ (es decir, se cumple la irreflexividad) y es una relación total. Además, si suponemos que $\alpha$ es transitivo, tenemos que $\in$ define un orden lineal estricto en $\alpha$.
 Sea $A\subeq \al$ no vacío, entonces si suponemos que $A$ no tiene elemento mínimo, para cada $a\in A$ existe un $b\in A$ tal que
 \[b\in a.\]
 Tomemos un $c_0\in A$. Como no es mínimo, tenemos que existe $c_1\in A$ tal que
 \[c_1\in c_0.\]
 Repitiendo, tenemos
-\[c_2\in c_1\land c_3\in c_2\land \cdots,\]
+\[(c_2\in c_1)\land (c_3\in c_2)\land \cdots,\]
 por lo que obtenemos una cadena descendente infinita
 \[c_0\ni c_1\ni c_2\ni\cdots.\]
 Lo cuál contradice el axioma de fundación.
@@ -38,6 +38,7 @@ Luego, todo subconjunto no vacío de $\alpha$ tiene elemento mínimo y $\alpha$ 
 
 Considerando $\langle X,\prec\rangle$ un buen orden estricto. Entonces, $\prec$ es una relación bien fundada estricta sobre $X$. Luego, existe exactamente un conjunto transitivo $\alpha$ y una única biyección $F:X\longrightarrow\alpha$ tal que
 \[(\forall x,x'\in X)(x\prec x'\Longleftrightarrow F(x)\in F(x')).\]
+La demostración de este hecho se sale de los fines de este trabajo y requiere mucha construcción. Si se desea profundizar en los detalles, se puede consultar {\cite[Capítulo 4]{SetTheory}}.
 
 \begin{defn} \label{Mostowskixd}
     Sea $\langle X,\prec\rangle$ un buen orden estricto. Al conjunto transitivo $\alpha$ y a la biyección $F:\alpha\longrightarrow X$ que satisfacen
@@ -53,7 +54,7 @@ $\alpha$ es un ordinal si, y sólo si, $\alpha$ es el colapso de Mostowski de un
 \end{thm}
 \begin{proof}
 Si $\alpha$ es un ordinal, entonces $\alpha$ es el colapso de Mostowski de $\langle\alpha,\in\rangle$, con la función colapsante dada por la identidad. Por otro lado, si $\alpha$ es el colapso de Mostowski de un buen orden estricto $\langle X,\prec\rangle$, entonces $\alpha$ es transitivo. Además, para cualesquiera dos elementos distintos $a$ y $b$ en $X$, el conjunto $\set{a,b}$ tiene primer elemento, por lo que
-\[a\prec b\lor b\prec a.\]
+\[(a\prec b)\lor (b\prec a).\]
 Y como la función colapsante es un isomorfismo de orden entre $\langle X,\prec\rangle$ y $\langle\alpha,\in\rangle$, tenemos que para cualesquiera dos elementos de $\alpha$ se cumple la tricotomía.
 \end{proof}
 
@@ -70,11 +71,9 @@ Así pues, tomando $F'$ como la función colapsante de $\la Y,\prec_Y\ra$, tenem
 \begin{defn}\label{d2}
 Se define el conjunto $\text{WOT}$ como el conjunto de las parejas ordenadas $\la x,y\ra$ tales que $x$ es un buen orden estricto y $y$ es el colapso de Mostowski de $x$.
 \end{defn}
-Lo anterior puede escribirse como:
-\[\text{WOT}=\set{\la x,y\ra|x \text{ es buen orden estricto}\land y \text{ es colapso de Mostowski de }x}\]
 
 \begin{prop}\label{p2}
-WOT es una clase función que satisface lo siguiente:
+WOT es una clase función\footnote{El concepto de función, formalmente, se define en conjuntos; por lo que al hablar de \textit{clase funciones} nos referimos al análogo de una función que no trabaja exclusivamente en conjuntos, sino en clases.} que satisface lo siguiente:
 \begin{enumerate}
     \item Si $\la x,y\ra\in\text{WOT}$, entonces $x$ y $\la y,\in\ra$ son buenos órdenes estrictos isomorfos. 
     \item El dominio de WOT es la clase de todos los buenos órdenes estrictos.
@@ -83,9 +82,9 @@ WOT es una clase función que satisface lo siguiente:
 \end{prop}
 \begin{proof} Que sea clase función viene del hecho de que el colapso de Mostowski es único. Por otro lado:
     \begin{enumerate}
-        \item Como $\la x,y\ra\in\text{WOT}$, $x$ es buen orden estricto, de la forma $\la X,\prec\ra$, y $y$ su colapso de Mostowski. Luego, existe una función biyectiva $F:X\longrightarrow y$ tal que se satisface {\eqref{M}}, ecuación la cuál garantiza que $F$ preserva el orden entre $x=\la X,\prec\ra$ y $\la y,\in\ra$. Más aún, por un teorema anterior, ya sabemos que $\in$ es un orden parcial estricto en $y$ (por ser colapso de Mostowski, luego ordinal), por lo que se satisface la proposición, con $F$ el isomorfismo.
+        \item Como $\la x,y\ra\in\text{WOT}$, $x$ es buen orden estricto, de la forma $\la X,\prec\ra$, y $y$ su colapso de Mostowski. Luego, existe una función biyectiva $F:X\longrightarrow y$ tal que se satisface {\eqref{M}}, ecuación que garantiza que $F$ preserva el orden entre $x=\la X,\prec\ra$ y $\la y,\in\ra$. Más aún, por el teorema {\ref{t2}}, ya sabemos que $\in$ es un orden parcial estricto en $y$ (por ser colapso de Mostowski), luego es un ordinal, por lo que se satisface la proposición, con $F$ el isomorfismo buscado.
         \item Inmediato del hecho de que sólo pedimos que $x$ sea un buen orden estricto para asegurar la existencia de su colapso de Mostowski.
-        \item Por la proposición anterior, $x$ y $y$ tienen el mismo colapso de Mostowski, el cuál, por hipótesis, es $z$. Luego, por la proposición anterior, como $y$ es un buen orden estricto y $z$ su colapso de Mostowski, $\la y,z\ra\in\text{WOT}$.
+        \item Por la proposición {\ref{p1}}, $x$ y $y$ tienen el mismo colapso de Mostowski, el cuál, por hipótesis, es $z$. Luego, por la proposición {\ref{p1}}, como $y$ es un buen orden estricto y $z$ su colapso de Mostowski, $\la y,z\ra\in\text{WOT}$.
     \end{enumerate}
 \end{proof}
 
