@@ -1,7 +1,7 @@
 \section{Ultrafiltros}
 \label{sec13}
 A continuación presentaremos algunos resultados importantes sobre las estructuras conocidas como ultrafiltros, los cuales serán muy importantes en el desarrollo de capítulos posteriores.
-\begin{defn}\label{u1}
+\begin{defn} (ultrafiltro)\label{u1}\\
     Sea $X$ un conjunto. Un ultrafiltro sobre $X$ es una familia $u\in \PX$ que satisface para cada $A,B\in \PX$:
     \begin{itemize}
         \item $A\cap B\in u\Longleftrightarrow (A\in u\land B\in u)$
@@ -34,10 +34,10 @@ Una cosa que es buena tener en cuenta es que no existen ultrafiltros sobre $\nt$
     \[A\cup B\in u\Longleftrightarrow x\in A\cup B\Longleftrightarrow (x\in A\lor x\in B)\Longleftrightarrow (A\in u\lor B\in u)\]
     \[A\in u\Longleftrightarrow x\in A\Longleftrightarrow x\not\in X\setminus A\Longleftrightarrow X\setminus A\not\in u\]
 \end{obs}
-\begin{defn}\label{u4}
-    Sean $X$ un conjunto. Un ultrafiltro $u$ sobre $X$ es llamado \textbf{principal} si existe un elemento $x$ de $X$ tal que
+\begin{defn} (ultrafiltros principales)\label{u4}\\
+    Sean $X$ un conjunto. Un ultrafiltro $u$ sobre $X$ es llamado {principal} si existe un elemento $x$ de $X$ tal que
     \[u_x:=\set{A\in \PX|x\in A}=u.\]
-    En otro caso, $u$ es \textbf{no principal}.
+    En otro caso, $u$ es {no principal}.
 \end{defn}
 \begin{thm}\label{u5}
     Sea $X$ un conjunto y $u$ un ultrafiltro sobre $X$. Entonces, $u$ es principal si y sólo si existe un conjunto finito $F\in \PX$ tal que $F\in u$.

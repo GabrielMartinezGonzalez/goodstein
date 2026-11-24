@@ -104,7 +104,7 @@ WOT es una clase función\footnote{El concepto de función, formalmente, se defi
 \begin{proof}
     Notemos que 
     \[\ot(\lar{X,\preceq})=\al\Longleftrightarrow \ot(\lar{X,\prec})=\al.\] 
-    Si $\ot(\lar{X,\prec})=\al$, por ser $\lar{X,\prec}$ buen orden estricto, existe un $\beta$, ordinal, tal que $\beta$ es el colapso de Mostowski de $\lar{X,\prec}$. Luego $\lar{\lar{X,\prec},\beta}\in\text{WOT}$, y por la proposición anterior, $\lar{X,\prec}\cong\lar{\beta,\in}$. Por como se define el tipo de orden, $\al=\beta$ y $\lar{\lar{X,\prec},\al}\in\text{WOT}$. \\
+    Si $\ot(\lar{X,\prec})=\al$, por ser $\lar{X,\prec}$ buen orden estricto, existe un $\beta$, ordinal, tal que $\beta$ es el colapso de Mostowski de $\lar{X,\prec}$. Luego $\lar{\lar{X,\prec},\beta}\in\text{WOT}$, y por la proposición {\ref{p2}}, $\lar{X,\prec}\cong\lar{\beta,\in}$. Por como se define el tipo de orden, $\al=\beta$ y $\lar{\lar{X,\prec},\al}\in\text{WOT}$. \\
     Por otro lado, si suponemos $\lar{\lar{X,\prec},\alpha}\in\text{WOT}$, de inmediato tenemos (por la proposición anterior) \[\lar{X,\prec}\cong\lar{\al,\in},\] luego $\ot(\lar{X,\preceq})=\al$.
 \end{proof}
 
@@ -120,7 +120,7 @@ WOT es una clase función\footnote{El concepto de función, formalmente, se defi
     de los cuales, los últimos dos casos son imposibles. Así pues, $\beta\in\text{ON}$ y se concluye lo deseado.
 \end{proof}
 \begin{defn}
-    Sea $X$ un conjunto no vacío. Sea $x\in X$ y $Y\subseteq X$. Asumimos que $W$ es una relación bien fundada en $X$. El conjunto $\set{z\in X|\lar{z,x}\in W\land z\neq x}$ es llamado segmento inicial de $\lar{X,W}$ determinado por $x$, y denotado por $I_W(x)$. Decimos que $x$ es $W\text{-minimal}$ para $Y$ si 
+    Sea $X$ un conjunto no vacío. Sea $x\in X$ y $Y\subseteq X$. Sea también $W$ una relación bien fundada en $X$. El conjunto $\set{z\in X|\lar{z,x}\in W\land z\neq x}$ es llamado segmento inicial de $\lar{X,W}$ determinado por $x$, y denotado por $I_W(x)$. Decimos que $x$ es $W\text{-minimal}$ para $Y$ si 
     \[x\in Y\land I_W(x)\cap Y=\varnothing.\] 
     Si $x$ es $W\text{-minimal}$ para $X$, entonces decimos que $x$ es $W\text{-minimal}$.
 \end{defn}
@@ -135,16 +135,10 @@ WOT es una clase función\footnote{El concepto de función, formalmente, se defi
 \end{proof}
 \begin{defn}
     Sea $\lar{X,\preceq}$ un orden parcial. Un subconjunto $I\subseteq X$ es llamado un segmento inicial de $\lar{X,\preceq}$ si 
-    \[(\forall y\in I)(\forall x\in X)(x\preceq y\Longrightarrow x\in I).\] 
-    Si $Y$ es cualquier subconjunto de $X$, entonces se denota el conjunto \[\text{DC}(Y)=\set{x\in X|(\exists y\in Y)(x\preceq y)}\] 
-    el cuál es llamado la cerradura inferior de $Y$ o el segmento inicial de $\lar{X\preceq}$ generado por $Y$. 
+    \[(\forall y\in I)(\forall x\in X)(x\preceq y\Longrightarrow x\in I).\]  
 \end{defn}
-En \textit{teoría de conjuntos}, se demuestra el hecho presentado a continuación.
-\begin{prop}
-    Si $\lar{X,\preceq}$ es un buen orden y\hspace{0.1cm} $Y$ es un segmento inicial de $X$, entonces 
-    \[I(Y)=X\lor \text{DC}(Y)=T_{\preceq}(x_o),\] 
-    donde $x_o$ es el elemento mínimo de $X\setminus\text{DC}(Y)$.
-\end{prop}
+
+
 \begin{lem}\label{l6}
     \[(\forall\alpha,\beta\in\text{ON})(\al\in\beta\lor\beta\in\alpha\lor\alpha=\beta)\]
 \end{lem}
@@ -156,7 +150,7 @@ En \textit{teoría de conjuntos}, se demuestra el hecho presentado a continuaci�
     Por el corolario anterior, $\text{rng}(F)$ es un ordinal. En particular, el rango de $F$ es un conjunto transitivo. Se tiene que {\eqref{*}} es la misma condición que {\eqref{M}} para la función colapsante de $\lar{\alpha,\in}$. Por lo tanto, $\text{rng}(F)$ es el colapso de Mostowski de $\lar{\alpha, \in}$. Por el teorema 3, $\text{rng}(F)=\alpha$. Si $F$ es sobreyectiva, entonces $\al=\text{rng}(F)=\beta$. En caso contrario, $\alpha=\text{rng}(F)=I_\in(\zeta)=\zeta$, para algún $\zeta\in\beta$. En otras palabras, $\alpha\in\beta$.
 \end{proof}
 \begin{cor}
-    La clase relacional $\in\cap(\ON\times\ON)$ bien ordena estrictamente $\ON$.
+    La clase relacional $\in\cap(\ON\times\ON)$ está bien ordena estrictamente en $\ON$.
 \end{cor}
 \begin{proof}
     Por simplicidad, escribiremos $\in$ en lugar de $\in\cap\ON\times\ON$. Procederemos explicando dos casos:
@@ -201,23 +195,64 @@ Teniendo en cuenta resultados anteriores, se tiene de inmediato lo siguiente:
             Como $\beta$ es transitivo, en ambos casos $\alpha\leq\beta$.
     \end{itemize}
 \end{proof}
-Supongamos que $\lar{X,\preceq}$ es un buen orden, y asumimos $y\not\in X$. Por \textit{teoría de conjuntos}, si $Y=X\cup\set y$ y $\preceq_Y=\preceq\cup\set{\lar{x,y}|x\in Y}$, entonces $\lar{Y,\preceq_Y}$ está también bien ordenado.
+Supongamos que $\lar{X,\preceq}$ es un buen orden, y asumimos $y\not\in X$. En el libro {\cite[Capítulo 9]{SetTheory}} tenemos el material para demostrar que si $Y=X\cup\set y$ y $\preceq_Y=\preceq\cup\set{\lar{x,y}|x\in Y}$, entonces $\lar{Y,\preceq_Y}$ está también bien ordenado.
 \begin{prop}\label{ex7}
     \[\alpha=\ot(\lar{X,\preceq})\Longrightarrow S(\alpha)=\ot(\lar{Y,\preceq_Y}).\]
 \end{prop}
 %%a partir de acá demostraciones
-La propiedad anterior muestra que, para cualquier ordinal $\alpha$, su sucesor $S(\alpha)$ también es un ordinal. Más aún, como $S(\alpha)=\alpha\cup\set\alpha$, tenemos que $\alpha\in S(\alpha)$, y si $\beta\in S(\alpha)$, entonces $\beta\in\alpha$ o $\beta=\alpha$, pero no ambos. Por lo tanto, $S(\alpha)$ es el más pequeño ordinal, mayor que $\alpha$; por lo que $S(\alpha)$ es el sucesor inmediato de $\alpha$ en $\ON$.\\
+La propiedad {\ref{p8}} muestra que, para cualquier ordinal $\alpha$, su sucesor $S(\alpha)$ también es un ordinal. Más aún, como $S(\alpha)=\alpha\cup\set\alpha$, tenemos que $\alpha\in S(\alpha)$, y si $\beta\in S(\alpha)$, entonces $\beta\in\alpha$ o $\beta=\alpha$, pero no ambos. Por lo tanto, $S(\alpha)$ es el más pequeño ordinal, mayor que $\alpha$; por lo que $S(\alpha)$ es el sucesor inmediato de $\alpha$ en $\ON$.\\
 El conjunto vacío es un ordinal. Esto se ve de que $\varnothing$ satisface la definición, o porque $\varnothing$ es el colapso de Mostowski de $\lar{\varnothing,\varnothing}$. Más aún, como $\varnothing$ no contiene elementos, este debería ser el ordinal más pequeño. Los siguientes ordinales son $S(\nt),S(S(\nt)),\ldots$, etcétera. En la teoría de conjuntos, se denota al $n$-ésimo sucesor de $\nt$ por $\widetilde n$ y se identifica por el número natural $n$. Entonces, ahora vemos que cada $\widetilde n$ es un ordinal; más aún, la relación $<$ restringida a los ordinales $\widetilde n$ es el orden estricto usual de los números naturales, y $\widetilde n=\ot(\lar{\set{0,1,\ldots,n-1},<})$. Así, los números naturales son los ordinales finitos.
-\begin{prop}
+\begin{prop}\label{emergencia}
     Un ordinal $\alpha$ es un conjunto finito si, y sólo si es un número natural.
 \end{prop}
-Observemos que el más pequeño de los ordinales infinitos es el conjunto $\omega$ de todos los números naturales (pues no hay números naturales que sean infinitos). Así mismo, $\omega$ es el colapso de Mostowski de $\lar{\omega,<}$.
-\begin{lem}\label{l9}
-    (ZF): $\omega$ es el más pequeño ordinal $\alpha$ tal que
-    \begin{enumerate}
-        \item $\alpha\neq0$.
-        \item $(\forall\beta\in\alpha)(S(\beta)\in\alpha)$.
+\begin{defn}
+    Denotamos al conjunto de todos los números naturales por $\n$.
+\end{defn}
+La proposición {\ref{emergencia}} se sigue del siguiente resultado:
+
+\begin{thm}
+    Para un ordinal $\alpha$, las siguientes condiciones son equivalentes:
+    \begin{enumerate}  
+        \item $\alpha\in\omega$;
+        \item para cada $\beta\leq\alpha$, o bien $\beta=0$, o bien $\beta$ es un ordinal sucesor;
+        \item $\alpha$ es bien-ordenado por la relación $\ni$.
     \end{enumerate}
+\end{thm}
+\begin{proof} \hspace{0.5cm}
+    \begin{itemize}
+  \item $1\Longrightarrow2$: \\
+    Consideremos el conjunto 
+    \[A:=\{\alpha\in\omega\mid \forall\beta\leq\alpha\hspace{0.2cm}(\beta=0\lor\exists\gamma\hspace{0.2cm}(\beta=\gamma+1))\},\]
+    Demostremos que $A$ es, de hecho, $\omega$. Procedemos por inducción matemática:
+    El caso base es inmediato, pues $0\in A$. Ahora, si suponemos $\alpha\in A$, entonces 
+    \[\forall \beta\leq \alpha\hspace{0.4cm}(\beta=0\lor\exists\gamma(\beta=\gamma+1)).\]
+    Ahora, démonos cuenta que $\forall\beta'\leq \alpha+1$, tenemos que, o bien $\beta'\leq\alpha$ o bien $\beta'=\alpha+1$, es decir:
+    \[\forall \beta'\leq \alpha+1\hspace{0.4cm}(\beta'=0\lor\exists\gamma(\beta'=\gamma+1))\lor \beta'=\alpha+1.\]
+    Y como $\alpha+1$ es sucesor, entonces:
+    \[\forall \beta'\leq \alpha+1\hspace{0.4cm}(\beta'=0\lor\exists\gamma(\beta'=\gamma+1)).\]
+    Con esto concluimos lo que queríamos, pues todo natural satisface el enunciado $2$.
+  \item $2\Longrightarrow3$:\\
+    Que la relación $\ni$ bien ordene a $\alpha$ es equivalente al enunciado:
+    \textit{todo subconjunto no vacio de $\alpha$ tiene elemento máximo}. 
+    Sea $U\subseteq\alpha$ un conjunto tal que $U$ no tiene máximo. Además, sabemos que todo ordinal satisface qué:
+    \[0\in\alpha.\]
+    Entonces, por la hipótesis,
+    \[\forall x\in U\hspace{0.2cm}(x\leq 0).\]
+    Como $0$ es el único ordinal que satisface lo anterior, él único conjunto no vacio que satisface lo anterior sería $U=\{0\}$. Pero, en tal caso, $0$ sería un elemento máximo, lo cuál contradice cómo tomamos $U$. Así pues,
+    \[U=\varnothing.\]
+  \item $3\Longrightarrow1$:\\
+    Procedemos por contrapositiva: sea $\alpha\geq \omega$. Entonces, $\omega\subseteq\alpha$ y $\omega$ no está bien ordenado por $\ni$, pues si ese fuera el caso, existiría un número natural máximo, es decir, los naturales estarían acotados, y eso es absurdo.
+\end{itemize}
+\end{proof}
+
+Observemos que el más pequeño de los ordinales infinitos es el conjunto $\omega$ (pues no hay números naturales que sean infinitos). Así mismo, $\omega$ es el colapso de Mostowski de $\lar{\omega,<}$.
+\begin{lem}\label{l9}
+    (ZF): Si $\alpha$ es el ordinal más pequeño  tal que
+    \begin{enumerate}
+        \item $\alpha\neq0$;
+        \item $(\forall\beta\in\alpha)(S(\beta)\in\alpha)$;
+    \end{enumerate}
+    entonces $\alpha =\n$.
 \end{lem}
 \begin{proof}
     Consideremos que existe un ordinal $\alpha<\omega$, no cero, y tal que 
@@ -259,7 +294,7 @@ en lugar de $\sup\set{\alpha_\beta|\beta<\gamma}$.
     \[(\forall\alpha\in\ON)(\exists\beta\in X)(\alpha\leq\beta).\]
     Un ordinal $\alpha$ es llamado \textit{ordinal sucesor} si existe un ordinal $\beta$ tal que $\alpha=S(\beta)$. Un ordinal el cual no es sucesor es llamado \textit{ordinal límite}. Denotatemos la clase de ordinales sucesores por $\text{SUCC}$ y la clase de ordinales limite por $\text{LIM}$. 
 \end{defn}
-Observemos que los números naturales son ordinales sucesores (empezando por el 1), mientras que 0 y $\omega$ son ordinales límite. Por otro lado, si $\alpha\in\ON$, entonces $\alpha<S(\alpha)\in\text{SUCC}$, por lo que $SUCC$ es cofinal en $\ON$. Por otro lado, $\text{LIM}$ es cofinal en $\ON$.
+Observemos que los números naturales son ordinales sucesores (empezando por el 1), mientras que 0 y $\omega$ son ordinales límite. Por otro lado, si $\alpha\in\ON$, entonces $\alpha<S(\alpha)\in\text{SUCC}$, por lo que SUCC es cofinal en $\ON$. Por otro lado, $\text{LIM}$ es cofinal en $\ON$.
 \begin{prop}
     Si un conjunto de ordinales $A$ satisface {\eqref{H}}, entonces $\bigcup A$ es un ordinal límite.
 \end{prop}
@@ -332,9 +367,9 @@ Los siguientes resultados muestran la relación entre los ordinales y los buenos
     lo cual es una contradicción.
     Así, tenemos lo que queríamos demostrar.
 \end{proof}
-\begin{prop}\label{ex17}
-    Existe una fórmula $\Psi(r,\alpha)$ de $L_s$ con dos variables libres tal que $\Psi(r,\alpha)$ es válida si, y sólo si $r$ es una relación de buen orden estricto en $x$ y $\alpha$ es el rango de la función rango para $r$.
-\end{prop}
+%\begin{prop}\label{ex17}
+%    Existe una fórmula $\Psi(r,\alpha)$ de $L_s$ con dos variables libres tal que $\Psi(r,\alpha)$ es válida si, y sólo si $r$ es una relación de buen orden estricto en $x$ y $\alpha$ es el rango de la función rango para $r$.
+%\end{prop}
 \begin{cor}\label{c16}
     Para cada conjunto $x$, existe un ordinal $\alpha$ tal que $\alpha$ no puede ser mapeado en $x$ por una función inyectiva.
 \end{cor}
